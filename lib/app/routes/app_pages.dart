@@ -12,7 +12,7 @@ class AppPages {
     GetPage(
       name: Approutes.login,
       page: () => LoginView(),
-      // binding: LoginBinding(),
+      binding: LoginBinding(),
     ),
   ];
 }
