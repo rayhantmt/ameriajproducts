@@ -13,8 +13,8 @@ class SplashScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SvgPicture.asset(Appimages.mainlogo),
-            Image.asset(Appimages.helicopter, height: 300),
-            SvgPicture.asset(Appimages.mainlogo),
+            Image.asset(Appimages.helicopter),
+            Image.asset(Appimages.bottomlogo),
           ],
         ),
         height: double.infinity,
