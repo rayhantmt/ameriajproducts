@@ -1,22 +1,28 @@
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.offAllNamed('/onboarding');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SvgPicture.asset(Appimages.mainlogo),
-            Image.asset(Appimages.helicopter),
-            Image.asset(Appimages.bottomlogo),
-          ],
-        ),
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
@@ -25,6 +31,14 @@ class SplashScreen extends StatelessWidget {
             end: Alignment.bottomCenter,
             colors: [Color(0xff133D24), Color(0xff396E4E)],
           ),
+        ),
+        child: Column(
+          children: [
+            Expanded(child: SizedBox()),
+            SvgPicture.asset(Appimages.mainlogo),
+            Image.asset(Appimages.helicopter, height: 250),
+            Image.asset(Appimages.bottomlogo, height: 181),
+          ],
         ),
       ),
     );
