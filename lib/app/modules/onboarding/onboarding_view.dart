@@ -1,6 +1,7 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
@@ -13,6 +14,13 @@ class OnboardingView extends StatelessWidget {
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Stack(
           children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Image.asset(Appimages.helicopter, height: 150),
+                Image.asset(Appimages.bottomlogo),
+              ],
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,31 +41,27 @@ class OnboardingView extends StatelessWidget {
                 SizedBox(height: 20),
                 CommonButton(tittle: 'Open Account'),
                 SizedBox(height: 20),
-                Container(
-                  height: 46,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Color(0xffB9B3B3)),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Log in',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                        color: Color(0xff667085),
+                GestureDetector(
+                  onTap: () => Get.toNamed('/login'),
+                  child: Container(
+                    height: 46,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: Color(0xffB9B3B3)),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Log in',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          color: Color(0xff667085),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Image.asset(Appimages.helicopter, height: 150),
-                Image.asset(Appimages.bottomlogo),
               ],
             ),
           ],
