@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/formfield.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_controller.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
@@ -57,8 +58,42 @@ class LoginView extends StatelessWidget {
                     tittle: 'Enter Password',
                     keyboardtype: TextInputType.text,
                     obsecuretext: fieldviewcontrorller.isObscured.value,
+                    icon: GestureDetector(
+                      onTap: fieldviewcontrorller.toggleObscureText,
+                      child: Icon(
+                        fieldviewcontrorller.isObscured.value
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                      ),
+                    ),
                   ),
                 ),
+                SizedBox(height: 20),
+                Text(
+                  'Forgot Password?',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12,
+                    color: Color(0xff1F93FF),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'I don’t have an account',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff979797),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                CommonButton(tittle: 'Login'),
               ],
             ),
           ),
