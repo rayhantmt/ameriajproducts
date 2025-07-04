@@ -39,7 +39,9 @@ class OnboardingView extends StatelessWidget {
                   'Stay mission-ready with real-time readiness tracking, trusted appointment scheduling – all in one place. Begin your journey to staying prepared, wherever you serve.',
                 ),
                 SizedBox(height: 20),
-                CommonButton(tittle: 'Open Account'),
+                GestureDetector(
+                  onTap: () => Get.toNamed('/signup'),
+                  child: CommonButton(tittle: 'Open Account')),
                 SizedBox(height: 20),
                 GestureDetector(
                   onTap: () => Get.toNamed('/login'),
