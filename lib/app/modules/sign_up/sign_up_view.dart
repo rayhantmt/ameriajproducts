@@ -93,7 +93,9 @@ SizedBox(height: Get.height * 0.02),
                 ),
               ),
               SizedBox(height: Get.height * 0.02),
-              CommonButton(tittle: 'Create Account')
+              GestureDetector(
+                onTap: () => {},
+                child: CommonButton(tittle: 'Create Account'))
             ],
           ),
         ),

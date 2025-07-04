@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/modules/forgot_password/forgot_password_view.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_binding.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_view.dart';
 import 'package:ameriajproducts/app/modules/onboarding/onboarding_view.dart';
@@ -16,6 +17,7 @@ class AppPages {
       page: () => LoginView(),
       binding: LoginBinding(),
     ),
-    GetPage(name: Approutes.signup, page:()=> SignUpView(),binding: SignUpBinding())
+    GetPage(name: Approutes.signup, page:()=> SignUpView(),binding: SignUpBinding()),
+    GetPage(name: Approutes.forgotpassword, page: () => ForgotPasswordView(),)
   ];
 }

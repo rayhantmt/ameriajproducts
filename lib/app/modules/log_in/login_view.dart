@@ -69,12 +69,15 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                Text(
-                  'Forgot Password?',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 12,
-                    color: Color(0xff1F93FF),
+                GestureDetector(
+                  onTap: () => Get.toNamed('/forgotpassword'),
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      color: Color(0xff1F93FF),
+                    ),
                   ),
                 ),
                 SizedBox(height: 20),
