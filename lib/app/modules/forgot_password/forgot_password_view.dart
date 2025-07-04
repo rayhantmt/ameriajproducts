@@ -42,7 +42,9 @@ class ForgotPasswordView extends StatelessWidget {
                 keyboardtype: TextInputType.emailAddress,
               ),
               SizedBox(height: Get.height * 0.02),
-              CommonButton(tittle: 'Send Verification Code'),
+              GestureDetector(
+                onTap: () => Get.toNamed('/otp'),
+                child: CommonButton(tittle: 'Send Verification Code')),
             ],
           ),
         ),

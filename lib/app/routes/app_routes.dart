@@ -4,4 +4,5 @@ abstract class Approutes {
   static const login = '/login';
   static const signup='/signup';
   static const forgotpassword= '/forgotpassword';
+  static const otp='/otp';
 }
