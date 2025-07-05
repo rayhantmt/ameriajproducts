@@ -11,7 +11,10 @@ class SignUpView extends StatelessWidget {
   Widget build(BuildContext context) {
     final fieldviewcontrorller = Get.find<SignUpPasswordviewController>();
     return Scaffold(
-      appBar: AppBar(title: Text('')),
+      
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('')),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
@@ -94,7 +97,7 @@ SizedBox(height: Get.height * 0.02),
               ),
               SizedBox(height: Get.height * 0.02),
               GestureDetector(
-                onTap: () => {},
+                onTap: () => Get.toNamed('/login'),
                 child: CommonButton(tittle: 'Create Account'))
             ],
           ),

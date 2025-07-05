@@ -12,7 +12,10 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     final fieldviewcontrorller = Get.find<PasswordFieldController>();
     return Scaffold(
-      appBar: AppBar(title: Text('')),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('')),
+      
       backgroundColor: Colors.white,
       body: Stack(
         children: [
@@ -84,13 +87,16 @@ class LoginView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'I don’t have an account',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Color(0xff979797),
+                    GestureDetector(
+                      onTap: () => Get.toNamed('/signup'),
+                      child: Text(
+                        'I don’t have an account',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff979797),
+                        ),
                       ),
                     ),
                   ],

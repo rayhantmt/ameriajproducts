@@ -15,7 +15,7 @@ class OtpVerificationView extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFFFFCF5),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         leading: const BackButton(color: Colors.black),
       ),
@@ -95,7 +95,7 @@ class OtpVerificationView extends StatelessWidget {
                 )),
             const SizedBox(height: 32),
            GestureDetector(
-           onTap: () => Get.toNamed('/otpsuccess'),
+           onTap: () => Get.toNamed('/changepassword'),
             child: CommonButton(tittle: 'Verify '))
           ],
         ),
