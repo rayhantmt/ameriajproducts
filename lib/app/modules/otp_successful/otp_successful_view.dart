@@ -1,6 +1,8 @@
+import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 
 class OtpSuccessfulView extends StatelessWidget {
@@ -9,10 +11,25 @@ class OtpSuccessfulView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Column(
-        children: [
-          SvgPicture.asset(Appimages.otpsuccess)
-        ],
+      body:Padding(
+        padding: const EdgeInsets.only(left: 20,right: 20),
+        child: Column(
+        
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: Get.height*0.2),
+            SvgPicture.asset(Appimages.otpsuccess),
+            SizedBox(height: 10,),
+            Text('Success',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 24,
+              color: Color(0xff000000)
+            ),
+            ),
+            CommonButton(tittle: 'Back to Log in')
+          ],
+        ),
       )
     );
   }
