@@ -27,7 +27,19 @@ class OtpSuccessfulView extends StatelessWidget {
               color: Color(0xff000000)
             ),
             ),
-            CommonButton(tittle: 'Back to Log in')
+            SizedBox(height: 10,),
+            Text('Your password has been successfully reset',
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff475569)
+            ),
+            
+            ),
+            SizedBox(height: 10,),
+            GestureDetector(
+              onTap: () => Get.toNamed('/login'),
+              child: CommonButton(tittle: 'Back to Log in'))
           ],
         ),
       )
