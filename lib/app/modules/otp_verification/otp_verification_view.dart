@@ -1,12 +1,105 @@
+import 'package:ameriajproducts/app/common_widgets/common_button.dart';
+import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:flutter/services.dart';
+
 
 class OtpVerificationView extends StatelessWidget {
   const OtpVerificationView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Sex'),
+    final controller = Get.find<OtpController>();
+
+    return Scaffold(
+      backgroundColor: const Color(0xFFFFFCF5),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: const BackButton(color: Colors.black),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "OTP Verification",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFF1B1E28),
+              ),
+            ),
+            const SizedBox(height: 12),
+            const Text(
+              "Enter 6-digit Code",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF1B1E28),
+              ),
+            ),
+            const SizedBox(height: 4),
+            const Text(
+              "Your code was sent to +1111499350",
+              style: TextStyle(
+                fontSize: 14,
+                color: Color(0xFF7D848D),
+              ),
+            ),
+            const SizedBox(height: 24),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: List.generate(6, (index) {
+                return SizedBox(
+                  width: 40,
+                  child: TextField(
+                    controller: controller.otpControllers[index],
+                    focusNode: controller.otpFocusNodes[index],
+                    keyboardType: TextInputType.number,
+                    maxLength: 1,
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    decoration: const InputDecoration(
+                      counterText: '',
+                      border: UnderlineInputBorder(),
+                    ),
+                    onChanged: (value) {
+                      controller.onOtpFieldChanged(value, index);
+                    },
+                  ),
+                );
+              }),
+            ),
+            const SizedBox(height: 16),
+            Obx(() => GestureDetector(
+                  onTap: controller.secondsRemaining.value == 0
+                      ? controller.resendCode
+                      : null,
+                  child: Text(
+                    controller.secondsRemaining.value == 0
+                        ? "Resend code"
+                        : "Resend code ${controller.secondsRemaining}s",
+                    style: TextStyle(
+                      color: controller.secondsRemaining.value == 0
+                          ? const Color(0xFF1B1E28)
+                          : const Color(0xFF7D848D),
+                    ),
+                  ),
+                )),
+            const SizedBox(height: 32),
+           GestureDetector(
+           onTap: () => Get.toNamed('/otpsuccess'),
+            child: CommonButton(tittle: 'Verify '))
+          ],
+        ),
+      ),
     );
   }
 }
