@@ -13,7 +13,7 @@ class OtpVerificationView extends StatelessWidget {
     final controller = Get.find<OtpController>();
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFCF5),
+      backgroundColor:Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,

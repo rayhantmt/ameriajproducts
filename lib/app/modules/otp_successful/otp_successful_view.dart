@@ -39,7 +39,7 @@ class OtpSuccessfulView extends StatelessWidget {
             ),
             SizedBox(height: 10,),
             GestureDetector(
-              onTap: () => Get.toNamed('/login'),
+              onTap: () => Get.offAllNamed('/login'),
               child: CommonButton(tittle: 'Back to Log in'))
           ],
         ),
