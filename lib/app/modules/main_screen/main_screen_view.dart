@@ -23,7 +23,19 @@ final mainscreencontroller= Get.find<MainScreenController>();
     return Scaffold(
       backgroundColor: Colors.white,
       body:Obx(()=>screens[mainscreencontroller.currentIndex.value] ),
-      bottomNavigationBar: BottomNavigationBar(items:[ BottomNavigationBarItem(icon: Icon(Icons.home))]),
+      bottomNavigationBar: Obx(()=>BottomNavigationBar(
+        onTap: mainscreencontroller.changeTab,
+        currentIndex: mainscreencontroller.currentIndex.value,
+        selectedItemColor: Color(0xff08692C),
+        unselectedItemColor: Colors.white,
+        
+        items:[ BottomNavigationBarItem(icon: Icon(Icons.home)),
+        BottomNavigationBarItem(icon: Icon(Icons.folder)),
+        BottomNavigationBarItem(icon: Icon(Icons.calendar_today)),
+        BottomNavigationBarItem(icon: Icon(Icons.account_circle))
+        
+        
+        ]),)
     );
   }
 }
