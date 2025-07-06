@@ -8,4 +8,8 @@ abstract class Approutes {
   static const otpsuccess='/otpsuccess';
   static const mainscreen='/mainscreen';
   static const changepassword='/changepassword';
+  static const home='/home';
+  static const task ='/task';
+  static const schedule='/schedule';
+  static const profile ='/profile';
 }
