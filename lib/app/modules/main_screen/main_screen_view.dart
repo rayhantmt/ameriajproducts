@@ -27,12 +27,13 @@ final mainscreencontroller= Get.find<MainScreenController>();
         onTap: mainscreencontroller.changeTab,
         currentIndex: mainscreencontroller.currentIndex.value,
         selectedItemColor: Color(0xff08692C),
-        unselectedItemColor: Colors.white,
+        unselectedItemColor:Color(0xff010101),
+        backgroundColor: Colors.white,
         
-        items:[ BottomNavigationBarItem(icon: Icon(Icons.home)),
-        BottomNavigationBarItem(icon: Icon(Icons.folder)),
-        BottomNavigationBarItem(icon: Icon(Icons.calendar_today)),
-        BottomNavigationBarItem(icon: Icon(Icons.account_circle))
+        items:[ BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.folder_outlined),label: 'Task'),
+        BottomNavigationBarItem(icon: Icon(Icons.calendar_month),label: 'Schedule'),
+        BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Profile')
         
         
         ]),)
