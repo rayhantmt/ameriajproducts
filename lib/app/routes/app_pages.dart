@@ -6,6 +6,7 @@ import 'package:ameriajproducts/app/modules/log_in/login_binding.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_view.dart';
 import 'package:ameriajproducts/app/modules/main_screen/main_screen_binding.dart';
 import 'package:ameriajproducts/app/modules/main_screen/main_screen_view.dart';
+import 'package:ameriajproducts/app/modules/medpro_details/medpro_view.dart';
 import 'package:ameriajproducts/app/modules/onboarding/onboarding_view.dart';
 import 'package:ameriajproducts/app/modules/otp_successful/otp_successful_view.dart';
 import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_binding.dart';
@@ -37,6 +38,7 @@ class AppPages {
     GetPage(name: Approutes.home, page: ()=>HomeView()),
     GetPage(name: Approutes.task, page: ()=>TaskView()),
     GetPage(name: Approutes.schedule, page: ()=>ScheduleView()),
-    GetPage(name: Approutes.profile, page: ()=>ProfileView())
+    GetPage(name: Approutes.profile, page: ()=>ProfileView()),
+    GetPage(name: Approutes.medpro, page: ()=>MedproView())
   ];
 }

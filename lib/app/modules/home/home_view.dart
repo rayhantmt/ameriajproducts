@@ -163,7 +163,7 @@ class HomeView extends StatelessWidget {
               ),
               SizedBox(height: Get.height * 0.006),
               Container(
-                height: Get.height * 0.42,
+                height: Get.height * 0.40,
                 child: ListView.builder(
                   itemCount: data.length,
                   itemBuilder: (context, index) => Column(

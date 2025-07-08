@@ -12,4 +12,5 @@ abstract class Approutes {
   static const task ='/task';
   static const schedule='/schedule';
   static const profile ='/profile';
+  static const medpro='/medpro';
 }
