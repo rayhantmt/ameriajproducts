@@ -13,4 +13,9 @@ abstract class Approutes {
   static const schedule='/schedule';
   static const profile ='/profile';
   static const medpro='/medpro';
+  static const weapon='/weapon';
+  static const range ='/range';
+  static const fitnessdetails='/fitnessdetails';
+  static const counseling='/counseling';
+  static const admindetails='/admindetails';
 }

@@ -1,5 +1,8 @@
+import 'package:ameriajproducts/app/modules/admin_details/admin_details_view.dart';
 import 'package:ameriajproducts/app/modules/change_password/change_password_binding.dart';
 import 'package:ameriajproducts/app/modules/change_password/change_password_view.dart';
+import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_view.dart';
+import 'package:ameriajproducts/app/modules/fitness_details/fitness_details_view.dart';
 import 'package:ameriajproducts/app/modules/forgot_password/forgot_password_view.dart';
 import 'package:ameriajproducts/app/modules/home/home_view.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_binding.dart';
@@ -12,11 +15,13 @@ import 'package:ameriajproducts/app/modules/otp_successful/otp_successful_view.d
 import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_binding.dart';
 import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_view.dart';
 import 'package:ameriajproducts/app/modules/profile/profile_view.dart';
+import 'package:ameriajproducts/app/modules/range_detailss/range_details_view.dart';
 import 'package:ameriajproducts/app/modules/schedule/schedule_view.dart';
 import 'package:ameriajproducts/app/modules/sign_up/sign_up_binding.dart';
 import 'package:ameriajproducts/app/modules/sign_up/sign_up_view.dart';
 import 'package:ameriajproducts/app/modules/splash_screen/splash_screen.dart';
 import 'package:ameriajproducts/app/modules/task/task_view.dart';
+import 'package:ameriajproducts/app/modules/weapon_details/weapon.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
@@ -39,6 +44,11 @@ class AppPages {
     GetPage(name: Approutes.task, page: ()=>TaskView()),
     GetPage(name: Approutes.schedule, page: ()=>ScheduleView()),
     GetPage(name: Approutes.profile, page: ()=>ProfileView()),
-    GetPage(name: Approutes.medpro, page: ()=>MedproView())
+    GetPage(name: Approutes.medpro, page: ()=>MedproView()),
+    GetPage(name: Approutes.weapon, page: ()=> Weapon()),
+    GetPage(name: Approutes.range, page: ()=>RangeDetailsView()),
+    GetPage(name: Approutes.fitnessdetails, page: ()=> FitnessDetailsView()),
+    GetPage(name: Approutes.counseling, page: ()=>CounselingDetailsView()),
+    GetPage(name: Approutes.admindetails, page: ()=>AdminDetailsView())
   ];
 }
