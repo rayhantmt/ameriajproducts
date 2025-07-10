@@ -54,8 +54,25 @@ class MedproView extends StatelessWidget {
                     ),
                   ),
                 ),
+                
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                 Container(
+                  height: Get.height*0.13,
+                  width: Get.width*0.4,
+                  color: Colors.blue,
+                ),
+
+                    Container(
+                  height: Get.height*0.13,
+                  width: Get.width*0.4,
+                  color: Colors.red,
+                )
+              ],
+            )
           ],
         ),
       ),
