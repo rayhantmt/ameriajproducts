@@ -18,4 +18,5 @@ abstract class Approutes {
   static const fitnessdetails='/fitnessdetails';
   static const counseling='/counseling';
   static const admindetails='/admindetails';
+  static const medprohistory='/medprohistory';
 }

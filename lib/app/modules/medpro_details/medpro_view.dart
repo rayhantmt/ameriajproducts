@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,27 +28,30 @@ class MedproView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(
-                  height: 28,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Color(0xff08692C)),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Icon(Icons.history,
-                      color:Color(0xff08692C),
-                      ),
-                      Text('View History',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12,
-                        color: Color(0xff08692C)
-                      ),
-                      )
-                    ],
+                GestureDetector(
+                  onTap: () => Get.toNamed(Approutes.medprohistory),
+                  child: Container(
+                    height: 28,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: Color(0xff08692C)),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(Icons.history,
+                        color:Color(0xff08692C),
+                        ),
+                        Text('View History',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                          color: Color(0xff08692C)
+                        ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
