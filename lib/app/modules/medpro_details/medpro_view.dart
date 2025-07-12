@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/common_widgets/medpro_card.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -60,17 +61,8 @@ class MedproView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Container(
-                  height: Get.height*0.13,
-                  width: Get.width*0.4,
-                  color: Colors.blue,
-                ),
-
-                    Container(
-                  height: Get.height*0.13,
-                  width: Get.width*0.4,
-                  color: Colors.red,
-                )
+                MedproCard(tittle: 'Vision', color: Color(0xff4279F5), icon: Icons.remove_red_eye_outlined),
+                MedproCard(tittle: 'Immunization', color: Color(0xffEF4444), icon: Icons.sim_card)
               ],
             )
           ],
