@@ -1,6 +1,7 @@
 import 'package:ameriajproducts/app/common_widgets/medpro_card.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class MedproView extends StatelessWidget {
@@ -23,9 +24,8 @@ class MedproView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
-          
           children: [
-            SizedBox(height: Get.height*0.008,),
+            SizedBox(height: Get.height * 0.008),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -41,28 +41,66 @@ class MedproView extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Icon(Icons.history,
-                        color:Color(0xff08692C),
+                        Icon(Icons.history, color: Color(0xff08692C)),
+                        Text(
+                          'View History',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: Color(0xff08692C),
+                          ),
                         ),
-                        Text('View History',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                          color: Color(0xff08692C)
-                        ),
-                        )
                       ],
                     ),
                   ),
                 ),
-                
               ],
             ),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                MedproCard(tittle: 'Vision', color: Color(0xff4279F5), icon: Icons.remove_red_eye_outlined),
-                MedproCard(tittle: 'Immunization', color: Color(0xffEF4444), icon: Icons.sim_card)
+                MedproCard(
+                  tittle: 'Vision',
+                  color: Color(0xff4279F5),
+                  icon: Icons.remove_red_eye_outlined,
+                ),
+                MedproCard(
+                  tittle: 'Immunization',
+                  color: Color(0xffEF4444),
+                  icon: FontAwesomeIcons.syringe,
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                MedproCard(
+                  tittle: 'Hearing',
+                  color: Color(0xff6642F5),
+                  icon: Icons.hearing,
+                ),
+                MedproCard(
+                  tittle: 'Dental',
+                  color: Color(0xff22C55E),
+                  icon: FontAwesomeIcons.tooth,
+                ),
+              ],
+            ),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                MedproCard(tittle: 'DLC', color: Color(0xffE58B2F), icon: Icons.cookie),
+                MedproCard(tittle: 'HIV', color: Color(0xffEF44B9), icon: FontAwesomeIcons.ribbon)
+              ],
+            ),
+            SizedBox(height: 20,),
+            Row(
+              children: [
+                MedproCard(tittle: 'PHA', color: Color(0xff6642F5), icon: Icons.water_drop_outlined),
+                MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna)
               ],
             )
           ],
