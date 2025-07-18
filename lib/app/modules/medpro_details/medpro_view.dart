@@ -1,5 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/medpro_card.dart';
+import 'package:ameriajproducts/app/common_widgets/medpro_details_alert_dialouge.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -62,10 +63,16 @@ class MedproView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                MedproCard(
-                  tittle: 'Vision',
-                  color: Color(0xff4279F5),
-                  icon: Icons.remove_red_eye_outlined,
+                GestureDetector(
+                  onTap: () => showDialog(
+                    context: context,
+                    builder: (context) => MedproDetailsAlertDialouge()
+                  ),
+                  child: MedproCard(
+                    tittle: 'Vision',
+                    color: Color(0xff4279F5),
+                    icon: Icons.remove_red_eye_outlined,
+                  ),
                 ),
                 MedproCard(
                   tittle: 'Immunization',
