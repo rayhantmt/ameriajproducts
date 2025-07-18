@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/medpro_card.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -104,7 +105,12 @@ class MedproView extends StatelessWidget {
                 MedproCard(tittle: 'PHA', color: Color(0xff6642F5), icon: Icons.water_drop_outlined),
                 MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna)
               ],
-            )
+            ),
+            Expanded(child: SizedBox()),
+            GestureDetector(
+              onTap: () => Get.toNamed(Approutes.mainscreen),
+              child: CommonButton(tittle: 'Save')),
+            SizedBox(height: 10,)
           ],
         ),
       ),
