@@ -7,11 +7,17 @@ class MedproDetailsAlertDialouge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(left: 20,right: 20),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('data'),
+            Text('Fill Form',
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 18,
+              color: Colors.black
+            ),
+            ),
           ],
         ),
       ),
