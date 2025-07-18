@@ -75,10 +75,16 @@ class MedproView extends StatelessWidget {
                       icon: Icons.remove_red_eye_outlined,
                     ),
                   ),
-                  MedproCard(
-                    tittle: 'Immunization',
-                    color: Color(0xffEF4444),
-                    icon: FontAwesomeIcons.syringe,
+                  GestureDetector(
+                     onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => MedproDetailsAlertDialouge()
+                    ),
+                    child: MedproCard(
+                      tittle: 'Immunization',
+                      color: Color(0xffEF4444),
+                      icon: FontAwesomeIcons.syringe,
+                    ),
                   ),
                 ],
               ),
@@ -86,15 +92,27 @@ class MedproView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  MedproCard(
-                    tittle: 'Hearing',
-                    color: Color(0xff6642F5),
-                    icon: Icons.hearing,
+                  GestureDetector(
+                     onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => MedproDetailsAlertDialouge()
+                    ),
+                    child: MedproCard(
+                      tittle: 'Hearing',
+                      color: Color(0xff6642F5),
+                      icon: Icons.hearing,
+                    ),
                   ),
-                  MedproCard(
-                    tittle: 'Dental',
-                    color: Color(0xff22C55E),
-                    icon: FontAwesomeIcons.tooth,
+                  GestureDetector(
+                     onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => MedproDetailsAlertDialouge()
+                    ),
+                    child: MedproCard(
+                      tittle: 'Dental',
+                      color: Color(0xff22C55E),
+                      icon: FontAwesomeIcons.tooth,
+                    ),
                   ),
                 ],
               ),
@@ -102,16 +120,36 @@ class MedproView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  MedproCard(tittle: 'DLC', color: Color(0xffE58B2F), icon: Icons.cookie),
-                  MedproCard(tittle: 'HIV', color: Color(0xffEF44B9), icon: FontAwesomeIcons.ribbon)
+                  GestureDetector(
+                     onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => MedproDetailsAlertDialouge()
+                    ),
+                    child: MedproCard(tittle: 'DLC', color: Color(0xffE58B2F), icon: Icons.cookie)),
+                  GestureDetector(
+                   onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => MedproDetailsAlertDialouge()
+                    ),
+                    child: MedproCard(tittle: 'HIV', color: Color(0xffEF44B9), icon: FontAwesomeIcons.ribbon))
                 ],
               ),
               SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  MedproCard(tittle: 'PHA', color: Color(0xff6642F5), icon: Icons.water_drop_outlined),
-                  MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna)
+                  GestureDetector(
+                     onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => MedproDetailsAlertDialouge()
+                    ),
+                    child: MedproCard(tittle: 'PHA', color: Color(0xff6642F5), icon: Icons.water_drop_outlined)),
+                  GestureDetector(
+                     onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => MedproDetailsAlertDialouge()
+                    ),
+                    child: MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna))
                 ],
               ),
              SizedBox(height: 20,),
