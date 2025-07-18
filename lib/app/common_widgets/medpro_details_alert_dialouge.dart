@@ -91,7 +91,7 @@ class MedproDetailsAlertDialouge extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                    onTap: () => Navigator.pop,
+                    onTap: () => Navigator.pop(context),
                     child: Container(
                       height: 35,
                       width: Get.width*0.30,
@@ -102,7 +102,7 @@ class MedproDetailsAlertDialouge extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pop,
+                    onTap: () => Navigator.pop(context),
                     child: Container(
                       height: 35,
                       width: Get.width*0.30,
