@@ -11,6 +11,7 @@ class MedproView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text(
           'Medpro Status',
           style: TextStyle(
@@ -98,6 +99,7 @@ class MedproView extends StatelessWidget {
             ),
             SizedBox(height: 20,),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 MedproCard(tittle: 'PHA', color: Color(0xff6642F5), icon: Icons.water_drop_outlined),
                 MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna)
