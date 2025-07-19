@@ -54,6 +54,15 @@ final data = medprohistorydata().medprohistory;
                 Text(data[index].tittle),
                 Text(data[index].date)
               ],
+            ),
+            Spacer(),
+            Text('View Details',style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 12,
+              color: Color(0xff1893F8)
+            ),),
+            Icon(Icons.arrow_forward,
+            color: Color(0xff1893F8),
             )
             
           ],
