@@ -25,11 +25,11 @@ class MedproHistoryView extends StatelessWidget {
           height: 70,
           width: double.infinity,
         decoration: BoxDecoration(
-          border: Border.all(),
+         // border: Border.all(),
           boxShadow: [
           BoxShadow(
             color: Color(0xff2C78DC).withOpacity(.08),
-            offset: const Offset(0, 2),
+            offset: const Offset(0, 3),
             blurRadius: 12,
           ),
         ],
