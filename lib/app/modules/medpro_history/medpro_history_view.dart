@@ -1,10 +1,17 @@
+import 'package:ameriajproducts/app/modules/medpro_history/medpro_history_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// Ensure MedproHistoryData is defined in medpro_history_model.dart or import its correct file.
 
 class MedproHistoryView extends StatelessWidget {
   const MedproHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+final data = medprohistorydata().medprohistory;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -17,15 +24,17 @@ class MedproHistoryView extends StatelessWidget {
         ),
         ),
       ),
-      body:ListView.builder(itemBuilder: (context, index) => Padding(
+      body:ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.only(left: 20,right: 20,
-        bottom: 10
+        bottom: 20
         ),
         child: Container(
           height: 70,
           width: double.infinity,
         decoration: BoxDecoration(
-         // border: Border.all(),
+        
           boxShadow: [
           BoxShadow(
             color: Color(0xff2C78DC).withOpacity(.08),
@@ -34,7 +43,21 @@ class MedproHistoryView extends StatelessWidget {
           ),
         ],
         ),
-        
+        child: Row(
+          children: [
+            Icon(Icons.medical_services,
+            color: Color(0xff1893F8),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(data[index].tittle),
+                Text(data[index].date)
+              ],
+            )
+            
+          ],
+        ),
         ),
       ),),
       
