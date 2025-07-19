@@ -23,7 +23,19 @@ class MedproHistoryDetailsView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 20,right: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              height: 30,
+              width: 150,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 1,
+                  color: Color(0xffE5E7EB)
+                )
+              ),
+            ),
+            SizedBox(height: 10,),
             Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
