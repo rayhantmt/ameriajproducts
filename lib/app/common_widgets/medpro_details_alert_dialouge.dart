@@ -109,7 +109,13 @@ class MedproDetailsAlertDialouge extends StatelessWidget {
                       decoration: BoxDecoration(
                        color: Color(0xff08692C)
                       ),
-                      child: Center(child: Text("Save")),
+                      child: Center(child: Text("Save",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Colors.white
+                      ),
+                      )),
                     ),
                   )
                 ],
