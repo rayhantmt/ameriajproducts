@@ -7,6 +7,16 @@ class MedproHistoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('Medpro History',
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 18,
+          color: Color(0xff131123)
+        ),
+        ),
+      ),
       body: Center(
         child: Text('Medpro history'),
       ),
