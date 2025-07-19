@@ -34,7 +34,7 @@ final data = medprohistorydata().medprohistory;
           height: 70,
           width: double.infinity,
         decoration: BoxDecoration(
-        
+        color: Colors.white,
           boxShadow: [
           BoxShadow(
             color: Color(0xff2C78DC).withOpacity(.08),
