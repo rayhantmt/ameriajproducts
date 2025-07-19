@@ -11,6 +11,7 @@ import 'package:ameriajproducts/app/modules/main_screen/main_screen_binding.dart
 import 'package:ameriajproducts/app/modules/main_screen/main_screen_view.dart';
 import 'package:ameriajproducts/app/modules/medpro_details/medpro_view.dart';
 import 'package:ameriajproducts/app/modules/medpro_history/medpro_history_view.dart';
+import 'package:ameriajproducts/app/modules/medpro_history_details/medpro_history_details_view.dart';
 import 'package:ameriajproducts/app/modules/onboarding/onboarding_view.dart';
 import 'package:ameriajproducts/app/modules/otp_successful/otp_successful_view.dart';
 import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_binding.dart';
@@ -51,6 +52,7 @@ class AppPages {
     GetPage(name: Approutes.fitnessdetails, page: ()=> FitnessDetailsView()),
     GetPage(name: Approutes.counseling, page: ()=>CounselingDetailsView()),
     GetPage(name: Approutes.admindetails, page: ()=>AdminDetailsView()),
-    GetPage(name: Approutes.medprohistory, page: ()=>MedproHistoryView())
+    GetPage(name: Approutes.medprohistory, page: ()=>MedproHistoryView()),
+    GetPage(name: Approutes.medprohistorydetails, page: ()=> MedproHistoryDetailsView())
   ];
 }

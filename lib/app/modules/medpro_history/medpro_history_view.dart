@@ -1,6 +1,8 @@
 import 'package:ameriajproducts/app/modules/medpro_history/medpro_history_model.dart';
+import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // Ensure MedproHistoryData is defined in medpro_history_model.dart or import its correct file.
 
@@ -56,11 +58,14 @@ final data = medprohistorydata().medprohistory;
               ],
             ),
             Spacer(),
-            Text('View Details',style: TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 12,
-              color: Color(0xff1893F8)
-            ),),
+            GestureDetector(
+              onTap: () => Get.toNamed(Approutes.medprohistorydetails),
+              child: Text('View Details',style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+                color: Color(0xff1893F8)
+              ),),
+            ),
             Icon(Icons.arrow_forward,
             color: Color(0xff1893F8),
             )

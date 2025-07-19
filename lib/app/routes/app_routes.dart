@@ -19,4 +19,5 @@ abstract class Approutes {
   static const counseling='/counseling';
   static const admindetails='/admindetails';
   static const medprohistory='/medprohistory';
+  static const medprohistorydetails='/medprohistorydetails';
 }
