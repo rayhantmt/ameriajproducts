@@ -53,6 +53,23 @@ class MedproHistoryDetailsAlertDialouge extends StatelessWidget {
                 color: Color(0xffADAEBC)
               ),
               ),
+              SizedBox(height: 20,),
+              Container(
+                height: 35,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
+                  color: Color(0xff08692C),
+                ),
+                child: Center(
+                  child: Text('Okey',
+                  style: TextStyle(fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                  color: Colors.white
+                  ),
+                  ),
+                ),
+              )
             ],
 
           ),
