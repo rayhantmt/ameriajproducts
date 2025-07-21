@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/modules/schedule/schedule_model.dart';
 import 'package:flutter/material.dart';
 
 class ScheduleView extends StatelessWidget {
@@ -5,6 +6,7 @@ class ScheduleView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final data=scheduledata().sdata;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -32,7 +34,14 @@ class ScheduleView extends StatelessWidget {
               color: Color(0xff1E293B)
             ),
             ),
-            
+SizedBox(height: 20,),
+ListView.builder(
+  itemCount: data.length,
+  itemBuilder: (context, index) => Container(
+  decoration: BoxDecoration(
+    
+  ),
+),)
           ],
         ),
       )
