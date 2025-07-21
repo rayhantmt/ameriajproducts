@@ -36,13 +36,15 @@ class ScheduleView extends StatelessWidget {
             ),
             Text('data'),
 SizedBox(height: 20,),
-ListView.builder(
-  itemCount: data.length,
-  itemBuilder: (context, index) => Container(
-  decoration: BoxDecoration(
-
-  ),
-),)
+Expanded(
+  child: ListView.builder(
+    itemCount: data.length,
+    itemBuilder: (context, index) => Container(
+    decoration: BoxDecoration(
+  
+    ),
+  ),),
+)
           ],
         ),
       )
