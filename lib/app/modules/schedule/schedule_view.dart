@@ -125,7 +125,18 @@ class ScheduleView extends StatelessWidget {
            shape: MaterialStateProperty.all(const CircleBorder()),
           backgroundColor:  MaterialStateProperty.all(Color(0xff08692C))
         ),
-        onPressed: (){}, child: Icon(Icons.add,
+        onPressed: (){
+         showDialog(
+                        context: context,
+                        builder: (context) =>Dialog(
+                          child: Column(
+                            children: [
+                              Text('data')
+                            ],
+                          ),
+                        )
+                      );
+        }, child: Icon(Icons.add,
         color: Colors.white,
         )),
     );
