@@ -55,7 +55,7 @@ class MedproHistoryDetailsView extends StatelessWidget {
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge()
                       ),
                       child: MedproCard(
                         tittle: 'Immunization',
@@ -72,7 +72,7 @@ class MedproHistoryDetailsView extends StatelessWidget {
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge()
                       ),
                       child: MedproCard(
                         tittle: 'Hearing',
@@ -83,7 +83,7 @@ class MedproHistoryDetailsView extends StatelessWidget {
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge()
                       ),
                       child: MedproCard(
                         tittle: 'Dental',
@@ -100,13 +100,13 @@ class MedproHistoryDetailsView extends StatelessWidget {
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge()
                       ),
                       child: MedproCard(tittle: 'DLC', color: Color(0xffE58B2F), icon: Icons.cookie)),
                     GestureDetector(
                      onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge()
                       ),
                       child: MedproCard(tittle: 'HIV', color: Color(0xffEF44B9), icon: FontAwesomeIcons.ribbon))
                   ],
@@ -118,13 +118,13 @@ class MedproHistoryDetailsView extends StatelessWidget {
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge()
                       ),
                       child: MedproCard(tittle: 'PHA', color: Color(0xff6642F5), icon: Icons.water_drop_outlined)),
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge()
                       ),
                       child: MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna))
                   ],
