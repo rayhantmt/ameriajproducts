@@ -1,5 +1,6 @@
 import 'package:ameriajproducts/app/modules/schedule/schedule_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ScheduleView extends StatelessWidget {
   const ScheduleView({super.key});
@@ -122,23 +123,32 @@ class ScheduleView extends StatelessWidget {
       ),
       floatingActionButton: OutlinedButton(
         style: ButtonStyle(
-           shape: MaterialStateProperty.all(const CircleBorder()),
-          backgroundColor:  MaterialStateProperty.all(Color(0xff08692C))
+          shape: MaterialStateProperty.all(const CircleBorder()),
+          backgroundColor: MaterialStateProperty.all(Color(0xff08692C)),
         ),
-        onPressed: (){
-         showDialog(
-                        context: context,
-                        builder: (context) =>Dialog(
-                          child: Column(
-                            children: [
-                              Text('data')
-                            ],
-                          ),
-                        )
-                      );
-        }, child: Icon(Icons.add,
-        color: Colors.white,
-        )),
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) =>
+                Dialog(child: Container(
+                  height: Get.height*0.5,
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 10,),
+                      Text('Add New Appointment',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
+                    color: Colors.black
+                  ),
+                  )]),
+                )),
+          );
+        },
+        child: Icon(Icons.add, color: Colors.white),
+      ),
     );
   }
 }
