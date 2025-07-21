@@ -95,6 +95,13 @@ width: double.infinity,
               children: [
                 Icon(Icons.access_time,
                 color: Color(0xff667085),
+                ),
+                Text(data[index].time,
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff667085)
+                ),
                 )
               ],
             )
