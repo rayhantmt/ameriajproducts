@@ -7,9 +7,21 @@ class ScheduleView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Text('Schedule'),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('Schedule Appointment',
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 16,
+          color: Color(0xff1E293B)
+        ),
+        ),
       ),
+      body: Column(
+        children: [
+          
+        ],
+      )
     );
   }
 }
