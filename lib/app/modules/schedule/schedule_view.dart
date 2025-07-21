@@ -17,10 +17,24 @@ class ScheduleView extends StatelessWidget {
         ),
         ),
       ),
-      body: Column(
-        children: [
-          
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(left: 20,right: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 80,
+            ),
+            Text('Schedule Today',
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 16,
+              color: Color(0xff1E293B)
+            ),
+            ),
+            
+          ],
+        ),
       )
     );
   }
