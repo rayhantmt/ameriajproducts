@@ -34,6 +34,7 @@ class MedproHistoryDetailsView extends StatelessWidget {
                   color: Color(0xffE5E7EB)
                 )
               ),
+              child: Text('dfgdf'),
             ),
             SizedBox(height: 10,),
             Row(
