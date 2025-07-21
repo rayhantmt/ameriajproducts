@@ -129,22 +129,49 @@ class ScheduleView extends StatelessWidget {
         onPressed: () {
           showDialog(
             context: context,
-            builder: (context) =>
-                Dialog(child: Container(
-                  height: Get.height*0.5,
-                  width: double.infinity,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 10,),
-                      Text('Add New Appointment',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 18,
-                    color: Colors.black
-                  ),
-                  )]),
-                )),
+            builder: (context) => Dialog(
+              child: Container(
+                height: Get.height * 0.5,
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 10),
+                    Text(
+                      'Add New Appointment',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Date',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563),
+                      ),
+                    ),
+                    Container(
+                     
+                      height: 45,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           );
         },
         child: Icon(Icons.add, color: Colors.white),
