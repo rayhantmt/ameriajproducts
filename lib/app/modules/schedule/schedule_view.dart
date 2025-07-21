@@ -84,6 +84,22 @@ width: double.infinity,
               ],
             )
           ],
+        ),
+        Spacer(),
+        Column(
+         // mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Icon(Icons.delete_outline_outlined,color: Color(0xffDE2626),),
+            Row(
+              children: [
+                Icon(Icons.access_time,
+                color: Color(0xff667085),
+                )
+              ],
+            )
+            
+          ],
         )
       ],
     ),
