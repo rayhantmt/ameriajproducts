@@ -34,14 +34,58 @@ class ScheduleView extends StatelessWidget {
               color: Color(0xff1E293B)
             ),
             ),
-            Text('data'),
+        
 SizedBox(height: 20,),
 Expanded(
   child: ListView.builder(
     itemCount: data.length,
     itemBuilder: (context, index) => Container(
+      height: 90,
+width: double.infinity,
     decoration: BoxDecoration(
-  
+      color: Colors.white,
+  boxShadow: [
+          BoxShadow(
+            color: Color(0xff2C78DC).withOpacity(.08),
+            offset: const Offset(0, 3),
+            blurRadius: 12,
+          ),
+        ],
+    ),
+    child: Row(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(data[index].tittle,
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 16,
+              color: Color(0xff111827)
+            ),
+            ),
+            Text(data[index].details,
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 14,
+              color: Color(0xff4B5563)
+            ),
+            ),
+            Row(
+              children: [
+                Icon(Icons.location_on,color: Color(0xff08692C),),
+                Text(data[index].location,
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff6B7280)
+                ),
+                )
+              ],
+            )
+          ],
+        )
+      ],
     ),
   ),),
 )
