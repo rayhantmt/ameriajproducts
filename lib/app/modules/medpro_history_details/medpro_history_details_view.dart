@@ -34,7 +34,13 @@ class MedproHistoryDetailsView extends StatelessWidget {
                   color: Color(0xffE5E7EB)
                 )
               ),
-              child: Text('dfgdf'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text('04 April,2025'),
+                  Icon(Icons.calendar_month_outlined)
+                ],
+              )
             ),
             SizedBox(height: 10,),
             Row(
