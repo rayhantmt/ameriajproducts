@@ -1,5 +1,4 @@
 import 'package:ameriajproducts/app/common_widgets/medpro_card.dart';
-import 'package:ameriajproducts/app/common_widgets/medpro_details_alert_dialouge.dart';
 import 'package:ameriajproducts/app/common_widgets/medpro_history_details_alert_dialouge.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
