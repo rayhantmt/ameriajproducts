@@ -296,37 +296,43 @@ class ScheduleView extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 35,
-                            width: Get.width*0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4),
-                              color: Color(0xffF3F4F6)
-                            ),
-                            child: Center(
-                              child: Text('Cancel',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 14,
-                                color: Color(0xff787B81)
+                          GestureDetector(
+                            onTap: () => Navigator.pop(context),
+                            child: Container(
+                              height: 35,
+                              width: Get.width*0.3,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: Color(0xffF3F4F6)
                               ),
+                              child: Center(
+                                child: Text('Cancel',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
+                                  color: Color(0xff787B81)
+                                ),
+                                ),
                               ),
                             ),
                           ),
-                          Container(
-                            height: 35,
-                            width: Get.width*0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4),
-                              color: Color(0xff08692C)
-                            ),
-                            child: Center(
-                              child: Text('Save',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 14,
-                                color: Colors.white
+                          GestureDetector(
+                            onTap: () => Navigator.pop(context),
+                            child: Container(
+                              height: 35,
+                              width: Get.width*0.3,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: Color(0xff08692C)
                               ),
+                              child: Center(
+                                child: Text('Save',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
+                                  color: Colors.white
+                                ),
+                                ),
                               ),
                             ),
                           ),
