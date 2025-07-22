@@ -31,7 +31,7 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                     Expanded(child: SizedBox()),
-                    Icon(Icons.notifications_none_outlined),
+                  
                   ],
                 ),
               ),
