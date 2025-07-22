@@ -133,9 +133,9 @@ class ScheduleView extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                   color: Colors.white,
+                  color: Colors.white,
                 ),
-               
+
                 height: Get.height * 0.5,
                 width: double.infinity,
                 child: Column(
@@ -159,9 +159,8 @@ class ScheduleView extends StatelessWidget {
                         color: Color(0xff4B5563),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 10),
                     Container(
-                     
                       height: 45,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -174,16 +173,17 @@ class ScheduleView extends StatelessWidget {
                           hint: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('select',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                                color: Color(0xff6B7280)
+                              Text(
+                                'select',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: Color(0xff6B7280),
+                                ),
                               ),
-                              ),
-                              Icon(Icons.calendar_month)
+                              Icon(Icons.calendar_month),
                             ],
-                          )
+                          ),
                         ),
                       ),
                     ),
