@@ -1,6 +1,7 @@
+import 'package:ameriajproducts/app/common_widgets/profile_container.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:get/get.dart';
 
 class ProfileView extends StatelessWidget {
@@ -88,32 +89,7 @@ class ProfileView extends StatelessWidget {
                padding: const EdgeInsets.only(left: 20,right: 20),
                child: Column(
                 children: [
-                  Container(
-                    height: 45,
-                    child: Row(
-                      children: [
-                        Icon(Icons.person),
-                        Column(
-                          children: [
-                            Text('Edit profile',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14,
-                              color: Color(0xff063749)
-                            ),
-                            ),
-                            Text('Change profile picture,number,email',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: Color(0xff989898)
-                            ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  )
+                  ProfileContainer(tittle: 'Edit Profile', details: 'Change profile picture,number,email', ic: Icon(Icons.person))
                 ],
                ),
              ),
