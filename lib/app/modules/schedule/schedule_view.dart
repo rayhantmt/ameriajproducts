@@ -136,7 +136,7 @@ class ScheduleView extends StatelessWidget {
                   color: Colors.white,
                 ),
 
-                height: Get.height * 0.5,
+                height: Get.height * 0.55,
                 width: double.infinity,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20,right: 20),
@@ -163,6 +163,7 @@ class ScheduleView extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Container(
+                         padding: EdgeInsets.only(left: 10),
                         height: 45,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -201,6 +202,7 @@ class ScheduleView extends StatelessWidget {
                       ),
                       SizedBox(height: 10,),
                       Container(
+                         padding: EdgeInsets.only(left: 10),
                         height: 45,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -259,7 +261,37 @@ class ScheduleView extends StatelessWidget {
                             )
                           ),
                         ),
-                      )
+                      ),
+                      SizedBox(height: 20,),
+                      Text('Location',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 10),
+                        height: 45,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: TextFormField(
+                          
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hint: Text('Enter',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                              color: Color(0xff6B7280)
+                            ),
+                            )
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
