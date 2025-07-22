@@ -294,6 +294,7 @@ class ScheduleView extends StatelessWidget {
                       ),
                       SizedBox(height: 10,),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                             height: 35,
@@ -311,7 +312,24 @@ class ScheduleView extends StatelessWidget {
                               ),
                               ),
                             ),
-                          )
+                          ),
+                          Container(
+                            height: 35,
+                            width: Get.width*0.3,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(4),
+                              color: Color(0xff08692C)
+                            ),
+                            child: Center(
+                              child: Text('Save',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                                color: Colors.white
+                              ),
+                              ),
+                            ),
+                          ),
                         ],
                       )
                     ],
