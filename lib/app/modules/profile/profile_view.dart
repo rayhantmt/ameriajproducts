@@ -74,8 +74,9 @@ class ProfileView extends StatelessWidget {
             ),
             SizedBox(height: 30,),
             Container(
-              height: Get.height*0.6,
+              height: Get.height*0.4,
              decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
               color: Colors.white,
                boxShadow: [
                   BoxShadow(
@@ -91,15 +92,15 @@ class ProfileView extends StatelessWidget {
                 children: [
                   ProfileContainer(tittle: 'Edit Profile', details: 'Change profile picture,number,email',icon: Appimages.profileicon,
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: Get.height*0.015,),
                   ProfileContainer(tittle: 'Change Password ', details: 'Update and strengthen account security',icon: Appimages.password,),
-                  SizedBox(height: 20,),
+                  SizedBox(height: Get.height*0.015,),
                   ProfileContainer(tittle: 'Subscription', details: 'Manage your plan, renew or upgrade ', icon: Appimages.subscription,),
-                  SizedBox(height: 20,),
+                   SizedBox(height: Get.height*0.015,),
                   ProfileContainer(tittle: 'Terms and conditions', details: 'Understand the rules and responsibilities ', icon: Appimages.terms),
-                  SizedBox(height: 20,),
+              SizedBox(height: Get.height*0.015,),
                   ProfileContainer(tittle: 'Privacy and Policy', details: 'Learn how your data is collected', icon: Appimages.privacy),
-                  SizedBox(height: 20,),
+                  SizedBox(height: Get.height*0.015,),
                   ProfileContainer(tittle: 'Log Out', details: 'Securely log out Account', icon: Appimages.logout)
                 ],
                ),
