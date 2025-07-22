@@ -89,7 +89,9 @@ class ProfileView extends StatelessWidget {
                padding: const EdgeInsets.only(left: 20,right: 20),
                child: Column(
                 children: [
-                  ProfileContainer(tittle: 'Edit Profile', details: 'Change profile picture,number,email', ic: Icon(Icons.person))
+                  ProfileContainer(tittle: 'Edit Profile', details: 'Change profile picture,number,email', ic: Icons.person,
+                  iconcolor: Color(0xff0501FF),
+                  )
                 ],
                ),
              ),
