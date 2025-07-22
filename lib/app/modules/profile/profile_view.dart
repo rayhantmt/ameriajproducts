@@ -18,14 +18,28 @@ class ProfileView extends StatelessWidget {
         ),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 20,),
-          Container(
-            height: 70,
-            color: Colors.blue,
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(left: 20,right: 20),
+        child: Column(
+          children: [
+            SizedBox(height: 20,),
+            Container(
+          
+              height: 70,
+             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+                  color: Colors.white,
+               boxShadow: [
+            BoxShadow(
+              color: Color(0xff2C78DC).withOpacity(.08),
+              offset: const Offset(0, 3),
+              blurRadius: 12,
+            ),
+          ],
+             ),
+            )
+          ],
+        ),
       )
       
     );
