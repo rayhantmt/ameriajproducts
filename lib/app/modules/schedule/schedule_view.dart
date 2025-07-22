@@ -26,12 +26,12 @@ class ScheduleView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(height: 80),
+            Container(height: 40),
             Text(
-              'Schedule Today',
+              'Schedules',
               style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 24,
                 color: Color(0xff1E293B),
               ),
             ),
