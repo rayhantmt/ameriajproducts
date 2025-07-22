@@ -91,10 +91,16 @@ class ProfileView extends StatelessWidget {
                 children: [
                   ProfileContainer(tittle: 'Edit Profile', details: 'Change profile picture,number,email',icon: Appimages.profileicon,
                   ),
-                  SizedBox(height: 10,),
-                  ProfileContainer(tittle: 'Change Password ', details: 'Update and strengthen account security',icon: Appimages.logout,),
-                  SizedBox(height: 10,),
-                  ProfileContainer(tittle: 'Subscription', details: 'Manage your plan, renew or upgrade ', icon: Appimages.subscription,)
+                  SizedBox(height: 20,),
+                  ProfileContainer(tittle: 'Change Password ', details: 'Update and strengthen account security',icon: Appimages.password,),
+                  SizedBox(height: 20,),
+                  ProfileContainer(tittle: 'Subscription', details: 'Manage your plan, renew or upgrade ', icon: Appimages.subscription,),
+                  SizedBox(height: 20,),
+                  ProfileContainer(tittle: 'Terms and conditions', details: 'Understand the rules and responsibilities ', icon: Appimages.terms),
+                  SizedBox(height: 20,),
+                  ProfileContainer(tittle: 'Privacy and Policy', details: 'Learn how your data is collected', icon: Appimages.privacy),
+                  SizedBox(height: 20,),
+                  ProfileContainer(tittle: 'Log Out', details: 'Securely log out Account', icon: Appimages.logout)
                 ],
                ),
              ),
