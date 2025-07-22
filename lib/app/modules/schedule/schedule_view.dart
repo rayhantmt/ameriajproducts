@@ -292,6 +292,28 @@ class ScheduleView extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(height: 10,),
+                      Row(
+                        children: [
+                          Container(
+                            height: 35,
+                            width: Get.width*0.3,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(4),
+                              color: Color(0xffF3F4F6)
+                            ),
+                            child: Center(
+                              child: Text('Cancel',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                                color: Color(0xff787B81)
+                              ),
+                              ),
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
