@@ -29,6 +29,7 @@ final mainscreencontroller= Get.find<MainScreenController>();
         selectedItemColor: Color(0xff08692C),
         unselectedItemColor:Color(0xff010101),
         backgroundColor: Colors.white,
+      
         
         items:[ BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.folder_outlined),label: 'Task'),
