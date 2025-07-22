@@ -10,4 +10,5 @@ class Appimages {
   static const String counseling = 'lib/assets/svgs/counseling.svg';
   static const String admin = 'lib/assets/svgs/admin.svg';
   static const String range = 'lib/assets/svgs/range.svg';
+  static const String profile='lib/assets/profile.png';
 }
