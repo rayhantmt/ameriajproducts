@@ -89,9 +89,12 @@ class ProfileView extends StatelessWidget {
                padding: const EdgeInsets.only(left: 20,right: 20),
                child: Column(
                 children: [
-                  ProfileContainer(tittle: 'Edit Profile', details: 'Change profile picture,number,email', ic: Icons.person,
-                  iconcolor: Color(0xff0501FF),
-                  )
+                  ProfileContainer(tittle: 'Edit Profile', details: 'Change profile picture,number,email',icon: Appimages.profileicon,
+                  ),
+                  SizedBox(height: 10,),
+                  ProfileContainer(tittle: 'Change Password ', details: 'Update and strengthen account security',icon: Appimages.logout,),
+                  SizedBox(height: 10,),
+                  ProfileContainer(tittle: 'Subscription', details: 'Manage your plan, renew or upgrade ', icon: Appimages.subscription,)
                 ],
                ),
              ),

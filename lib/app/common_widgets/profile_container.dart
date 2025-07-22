@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ProfileContainer extends StatelessWidget {
   final String tittle;
   final String details;
-  final IconData ic;
-  final Color iconcolor;
-  const ProfileContainer({super.key, required this.tittle, required this.details, required this.ic,required this.iconcolor});
+  //final IconData ic;
+ // final Color iconcolor;
+ final String icon;
+  const ProfileContainer({super.key, required this.tittle, required this.details, required this.icon,});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+    
                     height: 45,
                     child: Row(
                       children: [
-                        Icon(ic,
-                        color: iconcolor,
-                        ),
+                        SvgPicture.asset(icon),
+                        SizedBox(width: 10,),
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(tittle,
                             style: TextStyle(
@@ -34,7 +37,9 @@ class ProfileContainer extends StatelessWidget {
                             ),
 
                           ],
-                        )
+                        ),
+                        Spacer(),
+                        Icon(Icons.arrow_forward_ios_outlined)
                       ],
                     ),
                   );

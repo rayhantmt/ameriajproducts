@@ -11,4 +11,11 @@ class Appimages {
   static const String admin = 'lib/assets/svgs/admin.svg';
   static const String range = 'lib/assets/svgs/range.svg';
   static const String profile='lib/assets/profile.png';
+   static const String profileicon = 'lib/assets/svgs/Profile.svg';
+    static const String logout = 'lib/assets/svgs/logout.svg';
+     static const String password = 'lib/assets/svgs/Password.svg';
+      static const String privacy = 'lib/assets/svgs/privacy.svg';
+       static const String subscription = 'lib/assets/svgs/subscription.svg';
+        static const String terms = 'lib/assets/svgs/terms.svg';
+  
 }
