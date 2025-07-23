@@ -25,9 +25,19 @@ class ChangePasswordProfileView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 20,right: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: Get.height*0.1,),
-            SvgPicture.asset(Appimages.editprofilechangepass),
+            Center(child: SvgPicture.asset(Appimages.editprofilechangepass)),
+            SizedBox(height: Get.height*0.02,),
+            Text('Password',
+           
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 12,
+              color: Color(0xff2A2A2A)
+            ),
+            ),
             CommonButton(tittle: 'Save Changes')
           ],
         ),
