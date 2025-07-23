@@ -23,4 +23,5 @@ abstract class Approutes {
   static const editprofile='/editprofile';
   static const changepasswordprofile='/changepasswordprofile';
   static const termsandconditions='/termsandconditions';
+  static const subscription='/subscription';
 }

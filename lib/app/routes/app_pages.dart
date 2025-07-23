@@ -25,6 +25,7 @@ import 'package:ameriajproducts/app/modules/schedule/schedule_view.dart';
 import 'package:ameriajproducts/app/modules/sign_up/sign_up_binding.dart';
 import 'package:ameriajproducts/app/modules/sign_up/sign_up_view.dart';
 import 'package:ameriajproducts/app/modules/splash_screen/splash_screen.dart';
+import 'package:ameriajproducts/app/modules/subscription/subscription_view.dart';
 import 'package:ameriajproducts/app/modules/task/task_view.dart';
 import 'package:ameriajproducts/app/modules/terms_and_conditions/terms_and_conditions_view.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon.dart';
@@ -60,6 +61,7 @@ class AppPages {
     GetPage(name: Approutes.medprohistorydetails, page: ()=> MedproHistoryDetailsView()),
     GetPage(name: Approutes.editprofile, page: () => EditProfileView(),),
     GetPage(name: Approutes.changepasswordprofile, page: () => ChangePasswordProfileView(),binding:ChangePasswordProfileBinding() ),
-    GetPage(name: Approutes.termsandconditions, page: ()=> TermsAndConditionsView())
+    GetPage(name: Approutes.termsandconditions, page: ()=> TermsAndConditionsView()),
+    GetPage(name: Approutes.subscription, page: () => SubscriptionView(),)
   ];
 }

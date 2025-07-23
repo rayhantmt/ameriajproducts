@@ -104,7 +104,9 @@ class ProfileView extends StatelessWidget {
                     onTap: () => Get.toNamed(Approutes.changepasswordprofile),
                     child: ProfileContainer(tittle: 'Change Password ', details: 'Update and strengthen account security',icon: Appimages.password,)),
                   SizedBox(height: Get.height*0.015,),
-                  ProfileContainer(tittle: 'Subscription', details: 'Manage your plan, renew or upgrade ', icon: Appimages.subscription,),
+                  GestureDetector(
+                    onTap: () => Get.toNamed(Approutes.subscription),
+                    child: ProfileContainer(tittle: 'Subscription', details: 'Manage your plan, renew or upgrade ', icon: Appimages.subscription,)),
                    SizedBox(height: Get.height*0.015,),
                   GestureDetector(
                     onTap: () => Get.toNamed(Approutes.termsandconditions),
