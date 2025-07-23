@@ -1,4 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/profile_container.dart';
+import 'package:ameriajproducts/app/routes/app_pages.dart';
+import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +69,9 @@ class ProfileView extends StatelessWidget {
                 ],
                ),
                Spacer(),
-               Icon(Icons.edit_square),
+               GestureDetector(
+                onTap: () => Get.toNamed(Approutes.editprofile),
+                child: Icon(Icons.edit_square)),
                SizedBox(width: 10,)
               ],
               ),

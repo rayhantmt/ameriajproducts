@@ -64,7 +64,7 @@ class MedproHistoryDetailsAlertDialouge extends StatelessWidget {
                     color: Color(0xff08692C),
                   ),
                   child: Center(
-                    child: Text('Okey',
+                    child: Text('Okay',
                     style: TextStyle(fontWeight: FontWeight.w500,
                     fontSize: 14,
                     color: Colors.white

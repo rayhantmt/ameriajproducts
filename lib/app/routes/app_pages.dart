@@ -2,6 +2,7 @@ import 'package:ameriajproducts/app/modules/admin_details/admin_details_view.dar
 import 'package:ameriajproducts/app/modules/change_password/change_password_binding.dart';
 import 'package:ameriajproducts/app/modules/change_password/change_password_view.dart';
 import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_view.dart';
+import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_view.dart';
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_details_view.dart';
 import 'package:ameriajproducts/app/modules/forgot_password/forgot_password_view.dart';
 import 'package:ameriajproducts/app/modules/home/home_view.dart';
@@ -53,6 +54,7 @@ class AppPages {
     GetPage(name: Approutes.counseling, page: ()=>CounselingDetailsView()),
     GetPage(name: Approutes.admindetails, page: ()=>AdminDetailsView()),
     GetPage(name: Approutes.medprohistory, page: ()=>MedproHistoryView()),
-    GetPage(name: Approutes.medprohistorydetails, page: ()=> MedproHistoryDetailsView())
+    GetPage(name: Approutes.medprohistorydetails, page: ()=> MedproHistoryDetailsView()),
+    GetPage(name: Approutes.editprofile, page: () => EditProfileView(),)
   ];
 }
