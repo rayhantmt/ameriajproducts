@@ -106,7 +106,9 @@ class ProfileView extends StatelessWidget {
                   SizedBox(height: Get.height*0.015,),
                   ProfileContainer(tittle: 'Subscription', details: 'Manage your plan, renew or upgrade ', icon: Appimages.subscription,),
                    SizedBox(height: Get.height*0.015,),
-                  ProfileContainer(tittle: 'Terms and conditions', details: 'Understand the rules and responsibilities ', icon: Appimages.terms),
+                  GestureDetector(
+                    onTap: () => Get.toNamed(Approutes.termsandconditions),
+                    child: ProfileContainer(tittle: 'Terms and conditions', details: 'Understand the rules and responsibilities ', icon: Appimages.terms)),
               SizedBox(height: Get.height*0.015,),
                   ProfileContainer(tittle: 'Privacy and Policy', details: 'Learn how your data is collected', icon: Appimages.privacy),
                   SizedBox(height: Get.height*0.015,),

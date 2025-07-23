@@ -22,4 +22,5 @@ abstract class Approutes {
   static const medprohistorydetails='/medprohistorydetails';
   static const editprofile='/editprofile';
   static const changepasswordprofile='/changepasswordprofile';
+  static const termsandconditions='/termsandconditions';
 }
