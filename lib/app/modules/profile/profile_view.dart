@@ -77,38 +77,41 @@ class ProfileView extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30,),
-            Container(
-              height: Get.height*0.4,
-             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.white,
-               boxShadow: [
-                  BoxShadow(
-                    color: Color(0xff2C78DC).withOpacity(.08),
-                    offset: const Offset(0, 3),
-                    blurRadius: 12,
-                  ),
-                ],
-             ),
-             child: Padding(
-               padding: const EdgeInsets.only(left: 20,right: 20),
-               child: Column(
-                children: [
-                  ProfileContainer(tittle: 'Edit Profile', details: 'Change profile picture,number,email',icon: Appimages.profileicon,
-                  ),
-                  SizedBox(height: Get.height*0.015,),
-                  ProfileContainer(tittle: 'Change Password ', details: 'Update and strengthen account security',icon: Appimages.password,),
-                  SizedBox(height: Get.height*0.015,),
-                  ProfileContainer(tittle: 'Subscription', details: 'Manage your plan, renew or upgrade ', icon: Appimages.subscription,),
-                   SizedBox(height: Get.height*0.015,),
-                  ProfileContainer(tittle: 'Terms and conditions', details: 'Understand the rules and responsibilities ', icon: Appimages.terms),
-              SizedBox(height: Get.height*0.015,),
-                  ProfileContainer(tittle: 'Privacy and Policy', details: 'Learn how your data is collected', icon: Appimages.privacy),
-                  SizedBox(height: Get.height*0.015,),
-                  ProfileContainer(tittle: 'Log Out', details: 'Securely log out Account', icon: Appimages.logout)
-                ],
+            GestureDetector(
+              onTap: () => Get.toNamed(Approutes.editprofile),
+              child: Container(
+                height: Get.height*0.4,
+               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+                 boxShadow: [
+                    BoxShadow(
+                      color: Color(0xff2C78DC).withOpacity(.08),
+                      offset: const Offset(0, 3),
+                      blurRadius: 12,
+                    ),
+                  ],
                ),
-             ),
+               child: Padding(
+                 padding: const EdgeInsets.only(left: 20,right: 20),
+                 child: Column(
+                  children: [
+                    ProfileContainer(tittle: 'Edit Profile', details: 'Change profile picture,number,email',icon: Appimages.profileicon,
+                    ),
+                    SizedBox(height: Get.height*0.015,),
+                    ProfileContainer(tittle: 'Change Password ', details: 'Update and strengthen account security',icon: Appimages.password,),
+                    SizedBox(height: Get.height*0.015,),
+                    ProfileContainer(tittle: 'Subscription', details: 'Manage your plan, renew or upgrade ', icon: Appimages.subscription,),
+                     SizedBox(height: Get.height*0.015,),
+                    ProfileContainer(tittle: 'Terms and conditions', details: 'Understand the rules and responsibilities ', icon: Appimages.terms),
+                SizedBox(height: Get.height*0.015,),
+                    ProfileContainer(tittle: 'Privacy and Policy', details: 'Learn how your data is collected', icon: Appimages.privacy),
+                    SizedBox(height: Get.height*0.015,),
+                    ProfileContainer(tittle: 'Log Out', details: 'Securely log out Account', icon: Appimages.logout)
+                  ],
+                 ),
+               ),
+              ),
             )
           ],
         ),
