@@ -18,4 +18,5 @@ class Appimages {
   static const String subscription = 'lib/assets/svgs/subscription.svg';
   static const String terms = 'lib/assets/svgs/terms.svg';
    static const String editprofilechangepass = 'lib/assets/svgs/change_password_profile.svg';
+   static const String profilelougout = 'lib/assets/svgs/profilelogout.svg';
 }
