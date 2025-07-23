@@ -19,6 +19,7 @@ import 'package:ameriajproducts/app/modules/onboarding/onboarding_view.dart';
 import 'package:ameriajproducts/app/modules/otp_successful/otp_successful_view.dart';
 import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_binding.dart';
 import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_view.dart';
+import 'package:ameriajproducts/app/modules/privacy_policy/privacy_policy_view.dart';
 import 'package:ameriajproducts/app/modules/profile/profile_view.dart';
 import 'package:ameriajproducts/app/modules/range_detailss/range_details_view.dart';
 import 'package:ameriajproducts/app/modules/schedule/schedule_view.dart';
@@ -62,6 +63,7 @@ class AppPages {
     GetPage(name: Approutes.editprofile, page: () => EditProfileView(),),
     GetPage(name: Approutes.changepasswordprofile, page: () => ChangePasswordProfileView(),binding:ChangePasswordProfileBinding() ),
     GetPage(name: Approutes.termsandconditions, page: ()=> TermsAndConditionsView()),
-    GetPage(name: Approutes.subscription, page: () => SubscriptionView(),)
+    GetPage(name: Approutes.subscription, page: () => SubscriptionView(),),
+    GetPage(name: Approutes.privacypolicy, page: () => PrivacyPolicyView(),)
   ];
 }
