@@ -84,7 +84,10 @@ class ChangePasswordProfileView extends StatelessWidget {
               ),
             ),
              SizedBox(height: Get.height*0.04,),
-            CommonButton(tittle: 'Save Changes'),
+            GestureDetector(
+              
+              onTap: () => Get.back(),
+              child: CommonButton(tittle: 'Save Changes')),
           ],
         ),
       ),
