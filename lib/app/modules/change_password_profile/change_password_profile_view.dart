@@ -6,7 +6,9 @@ class ChangePasswordProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text('Change Password',
         style: TextStyle(
           fontWeight: FontWeight.w700,
