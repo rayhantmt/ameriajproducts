@@ -207,7 +207,11 @@ class Weapon extends StatelessWidget {
               SizedBox(height: 20),
               Obx(() => Column(
                 children: [
-                  SelectableTile(controller.someData.value) // Replace 'someData' with your actual observable/data
+                 ListView(
+                  children: [
+                    
+                  ],
+                 )
                 ],
               ))
             ],
