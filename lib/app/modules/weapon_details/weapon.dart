@@ -142,7 +142,7 @@ class Weapon extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: Get.height*0.01,),
+              SizedBox(height: Get.height * 0.01),
               Obx(
                 () => Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -169,7 +169,7 @@ class Weapon extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 children: [
                   Icon(Icons.speed, color: Color(0xff22C55E)),
@@ -204,10 +204,12 @@ class Weapon extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
-              Obx(() => Container(
-                
-              ),)
+              SizedBox(height: 20),
+              Obx(() => Column(
+                children: [
+                  SelectableTile(controller.someData.value) // Replace 'someData' with your actual observable/data
+                ],
+              ))
             ],
           ),
         ),
