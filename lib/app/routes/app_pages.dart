@@ -30,6 +30,7 @@ import 'package:ameriajproducts/app/modules/subscription/subscription_view.dart'
 import 'package:ameriajproducts/app/modules/task/task_view.dart';
 import 'package:ameriajproducts/app/modules/terms_and_conditions/terms_and_conditions_view.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon.dart';
+import 'package:ameriajproducts/app/modules/weapon_details/weapon_binding.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
@@ -53,7 +54,7 @@ class AppPages {
     GetPage(name: Approutes.schedule, page: ()=>ScheduleView()),
     GetPage(name: Approutes.profile, page: ()=>ProfileView()),
     GetPage(name: Approutes.medpro, page: ()=>MedproView()),
-    GetPage(name: Approutes.weapon, page: ()=> Weapon()),
+    GetPage(name: Approutes.weapon, page: ()=> Weapon(),binding: WeaponBinding()),
     GetPage(name: Approutes.range, page: ()=>RangeDetailsView()),
     GetPage(name: Approutes.fitnessdetails, page: ()=> FitnessDetailsView()),
     GetPage(name: Approutes.counseling, page: ()=>CounselingDetailsView()),

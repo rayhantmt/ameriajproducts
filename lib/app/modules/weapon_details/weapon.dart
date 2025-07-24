@@ -1,10 +1,13 @@
+import 'package:ameriajproducts/app/modules/weapon_details/weapon_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Weapon extends StatelessWidget {
   const Weapon({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<WeaponController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -90,24 +93,21 @@ class Weapon extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 children: [
-                  Icon(Icons.group,
-                  color: Color(0xff22C55E),
+                  Icon(Icons.group, color: Color(0xff22C55E)),
+                  Text(
+                    'Name',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      color: Color(0xff4B5563),
+                    ),
                   ),
-                  Text('Name',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 14,
-                    color: Color(0xff4B5563)
-                  ),
-                  )
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10),
               Container(
                 height: 45,
                 decoration: BoxDecoration(
@@ -128,21 +128,47 @@ class Weapon extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 children: [
-                  Icon(Icons.insert_drive_file,
-                  color: Color(0xff6642F5),
+                  Icon(Icons.insert_drive_file, color: Color(0xff6642F5)),
+                  Text(
+                    "Pass/Fail",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      color: Color(0xff4B5563),
+                    ),
                   ),
-                  Text("Pass/Fail",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 14,
-                    color: Color(0xff4B5563)
-                  ),
-                  )
                 ],
-              )
+              ),
+              SizedBox(height: Get.height*0.01,),
+              Obx(
+                () => Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Transform.scale(
+                      scale: 1.2,
+                      child: ChoiceChip(
+                        label: const Text("Pass"),
+                        selected: controller.isPassed.value,
+                        onSelected: (_) => controller.togglePass(true),
+                        selectedColor: Colors.green,
+                      ),
+                    ),
+                    SizedBox(width: Get.width * 0.1),
+                    Transform.scale(
+                      scale: 1.2,
+                      child: ChoiceChip(
+                        label: const Text("Fail"),
+                        selected: !controller.isPassed.value,
+                        onSelected: (_) => controller.togglePass(false),
+                        selectedColor: Colors.red,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
