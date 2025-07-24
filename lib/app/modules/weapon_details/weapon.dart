@@ -169,6 +169,41 @@ class Weapon extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 20,),
+              Row(
+                children: [
+                  Icon(Icons.speed, color: Color(0xff22C55E)),
+                  Text(
+                    'Score',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      color: Color(0xff4B5563),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Container(
+                height: 45,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hint: Text(
+                      'Enter your score',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff6B7280),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
