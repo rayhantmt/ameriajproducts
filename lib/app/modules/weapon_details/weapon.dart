@@ -204,6 +204,10 @@ class Weapon extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 20,),
+              Obx(() => Container(
+                
+              ),)
             ],
           ),
         ),
