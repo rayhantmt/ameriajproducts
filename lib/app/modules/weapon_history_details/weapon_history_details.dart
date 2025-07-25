@@ -34,6 +34,7 @@ class WeaponHistoryDetails extends StatelessWidget {
           ],
               ),
               child: Column(
+                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
                     children: [
@@ -76,8 +77,53 @@ class WeaponHistoryDetails extends StatelessWidget {
                       ),
                       )
                     ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.insert_drive_file,
+                      color: Color(0xff6642F5),),
+                      Text('Pass/Fail :',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      ),
+                      Icon(Icons.check,
+                      color: Color(0xff22C55E),
+                      ),
+                      Text('Pass',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.speed_rounded,
+                      color: Color(0xffEF8E44),
+                      ),
+                      Text('Score :',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      ),
+                      Text('12',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff6B7280)
+                      ),
+                      )
+                    ],
                   )
                 ],
+               
               ),
             )
           ],
