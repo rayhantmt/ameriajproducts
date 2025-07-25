@@ -33,7 +33,14 @@ class QualificationContainer extends StatelessWidget {
         children: [
           SvgPicture.asset(img),
           const SizedBox(width: 10),
-          Text(title),
+          Text(title,
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+            color: Color(0xff2A2A2A)
+          ),
+          ),
+          Spacer(),
           Checkbox(
             value: controller.isChecked.value,
             onChanged: controller.toggleCheck,
