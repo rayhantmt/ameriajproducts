@@ -42,6 +42,8 @@ class QualificationContainer extends StatelessWidget {
           ),
           Spacer(),
           Checkbox(
+            checkColor: Colors.white,activeColor: Color(0xff22C55E),
+             
             value: controller.qualifications[title] ?? false,
             onChanged: (value) => controller.toggleQualification(title, value),
           ),
