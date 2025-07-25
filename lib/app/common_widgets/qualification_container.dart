@@ -42,8 +42,8 @@ class QualificationContainer extends StatelessWidget {
           ),
           Spacer(),
           Checkbox(
-            value: controller.isChecked.value,
-            onChanged: controller.toggleCheck,
+            value: controller.qualifications[title] ?? false,
+            onChanged: (value) => controller.toggleQualification(title, value),
           ),
         ],
       )),

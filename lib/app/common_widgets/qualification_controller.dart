@@ -1,9 +1,13 @@
 import 'package:get/get.dart';
 
 class QualificationController extends GetxController {
-  RxBool isChecked = false.obs;
+  final RxMap<String, bool> qualifications = {
+    'Marksman': false,
+    'Sharpshooter': false,
+    'Expert': false,
+  }.obs;
 
-  void toggleCheck(bool? value) {
-    isChecked.value = value ?? !isChecked.value;
+  void toggleQualification(String title, bool? value) {
+    qualifications[title] = value ?? !(qualifications[title] ?? false);
   }
 }
