@@ -6,6 +6,7 @@ class QualificationContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 60,
       decoration: BoxDecoration(
         color: Colors.white,
           boxShadow: [
