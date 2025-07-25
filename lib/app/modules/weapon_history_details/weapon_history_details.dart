@@ -1,4 +1,6 @@
+import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class WeaponHistoryDetails extends StatelessWidget {
   const WeaponHistoryDetails({super.key});
@@ -161,6 +163,20 @@ class WeaponHistoryDetails extends StatelessWidget {
                           offset: const Offset(0, 3),
                           blurRadius: 12,
                         ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        SizedBox(width: 10,),
+                        SvgPicture.asset(Appimages.marksman),
+                         SizedBox(width: 10,),
+                        Text('Marksman',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff2A2A2A)
+                        ),
+                        )
                       ],
                     ),
                   ),
