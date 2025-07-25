@@ -129,6 +129,7 @@ class WeaponHistoryDetails extends StatelessWidget {
             SizedBox(height: 30,),
             Container(
               height: 135,
+              width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
                  boxShadow: [
@@ -138,6 +139,31 @@ class WeaponHistoryDetails extends StatelessWidget {
               blurRadius: 12,
             ),
           ],
+              ),
+              child: Column(
+                children: [
+                  Text('Qualification Level',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
+                    color: Color(0xff1F2937)
+                  ),
+                  ),
+                  Container(
+                    height: 60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                        boxShadow: [
+            BoxShadow(
+              color: Color(0xff2C78DC).withOpacity(.08),
+              offset: const Offset(0, 3),
+              blurRadius: 12,
+            ),
+          ],
+                    ),
+                  )
+                ],
               ),
             )
           ],
