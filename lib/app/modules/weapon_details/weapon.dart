@@ -1,5 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/qualification_container.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_controller.dart';
+import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -217,7 +218,7 @@ class Weapon extends StatelessWidget {
               SizedBox(height: 10,),
               Column(
                 children: [
-                  QualificationContainer()
+                  QualificationContainer(title: 'Marksman', img: Appimages.marksman)
                 ],
               )
             ],
