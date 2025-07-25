@@ -1,15 +1,18 @@
-import 'package:ameriajproducts/app/modules/medpro_history/medpro_history_model.dart';
+
+import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_model.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
+import 'package:ameriajproducts/app/utils/appimages.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class MedproHistoryView extends StatelessWidget {
-  const MedproHistoryView({super.key});
+class WeaponHistoryView extends StatelessWidget {
+  const WeaponHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final data = medprohistorydata().medprohistory;
+    final data = weaponhistorydata().weaponhistory;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -43,7 +46,7 @@ class MedproHistoryView extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Icon(Icons.medical_services, color: Color(0xff1893F8)),
+                SvgPicture.asset(Appimages.weapon),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [Text(data[index].tittle), Text(data[index].date)],

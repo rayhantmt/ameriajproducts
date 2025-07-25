@@ -1,3 +1,5 @@
+import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_model.dart';
+
 abstract class Approutes {
   static const splash = '/splash';
   static const onboarding = '/onboarding';
@@ -25,4 +27,5 @@ abstract class Approutes {
   static const termsandconditions='/termsandconditions';
   static const subscription='/subscription';
   static const privacypolicy='/privacypolicy';
+  static const weaponhistory='/weaponhistory';
 }

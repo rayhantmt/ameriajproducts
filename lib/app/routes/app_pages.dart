@@ -31,6 +31,7 @@ import 'package:ameriajproducts/app/modules/task/task_view.dart';
 import 'package:ameriajproducts/app/modules/terms_and_conditions/terms_and_conditions_view.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_binding.dart';
+import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_view.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
@@ -65,6 +66,7 @@ class AppPages {
     GetPage(name: Approutes.changepasswordprofile, page: () => ChangePasswordProfileView(),binding:ChangePasswordProfileBinding() ),
     GetPage(name: Approutes.termsandconditions, page: ()=> TermsAndConditionsView()),
     GetPage(name: Approutes.subscription, page: () => SubscriptionView(),),
-    GetPage(name: Approutes.privacypolicy, page: () => PrivacyPolicyView(),)
+    GetPage(name: Approutes.privacypolicy, page: () => PrivacyPolicyView(),),
+    GetPage(name: Approutes.weaponhistory, page: () => WeaponHistoryView(),)
   ];
 }
