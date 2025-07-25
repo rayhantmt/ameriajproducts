@@ -19,4 +19,7 @@ class Appimages {
   static const String terms = 'lib/assets/svgs/terms.svg';
    static const String editprofilechangepass = 'lib/assets/svgs/change_password_profile.svg';
    static const String profilelougout = 'lib/assets/svgs/profilelogout.svg';
+    static const String marksman = 'lib/assets/svgs/marksman.svg';
+     static const String sharpshooter = 'lib/assets/svgs/sharpshooter.svg';
+      static const String expert = 'lib/assets/svgs/expert.svg';
 }

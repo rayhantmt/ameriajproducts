@@ -207,7 +207,11 @@ class Weapon extends StatelessWidget {
               SizedBox(height: 20),
               Column(
                 children: [
-                  
+                  Container(
+                    decoration: BoxDecoration(
+                      
+                    ),
+                  )
                 ],
               )
             ],
