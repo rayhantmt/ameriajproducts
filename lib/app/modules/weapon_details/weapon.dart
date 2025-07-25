@@ -205,15 +205,11 @@ class Weapon extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              Obx(() => Column(
+              Column(
                 children: [
-                 ListView(
-                  children: [
-                    
-                  ],
-                 )
+                  
                 ],
-              ))
+              )
             ],
           ),
         ),
