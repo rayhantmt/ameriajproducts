@@ -218,7 +218,11 @@ class Weapon extends StatelessWidget {
               SizedBox(height: 10,),
               Column(
                 children: [
-                  QualificationContainer(title: 'Marksman', img: Appimages.marksman)
+                  QualificationContainer(title: 'Marksman', img: Appimages.marksman),
+                  SizedBox(height: 10,),
+                  QualificationContainer(title: 'Sharpshooter', img: Appimages.sharpshooter),
+                  SizedBox(height: 10,),
+                  QualificationContainer(title: 'Expert', img: Appimages.expert)
                 ],
               )
             ],
