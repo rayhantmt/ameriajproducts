@@ -205,11 +205,19 @@ class Weapon extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              Text('Qualification Level',
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 18,
+                color: Color(0xff1F2937)
+              ),
+              ),
               Column(
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      
+
                     ),
                   )
                 ],
