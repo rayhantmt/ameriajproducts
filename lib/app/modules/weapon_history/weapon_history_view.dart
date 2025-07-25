@@ -53,7 +53,7 @@ class WeaponHistoryView extends StatelessWidget {
                 ),
                 Spacer(),
                 GestureDetector(
-                  onTap: () => Get.toNamed(Approutes.medprohistorydetails),
+                  onTap: () => Get.toNamed(Approutes.weaponhistorydetails),
                   child: Text(
                     'View Details',
                     style: TextStyle(
