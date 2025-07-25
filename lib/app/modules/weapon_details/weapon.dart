@@ -224,6 +224,46 @@ class Weapon extends StatelessWidget {
                   SizedBox(height: 10,),
                   QualificationContainer(title: 'Expert', img: Appimages.expert)
                 ],
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    height: 45,
+                    width: Get.width*0.4,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Color(0xffF3F4F6)
+                    ),
+                    child: Center(
+                      child: Text('Cancel',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                        color: Color(0xff727272)
+                      ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 45,
+                    width: Get.width*0.4,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Color(0xff08692C)
+                    ),
+                    child: Center(
+                      child: Text('Submit',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                        color: Color(0xffFDFDFD)
+                      ),
+                      ),
+                    ),
+                  )
+                ],
               )
             ],
           ),
