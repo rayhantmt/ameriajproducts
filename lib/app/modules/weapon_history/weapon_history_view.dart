@@ -19,7 +19,7 @@ class WeaponHistoryView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Medpro History',
+          'Weapon Qualification History',
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 18,
