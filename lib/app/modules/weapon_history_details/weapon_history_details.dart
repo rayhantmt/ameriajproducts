@@ -125,6 +125,20 @@ class WeaponHistoryDetails extends StatelessWidget {
                 ],
                
               ),
+            ),
+            SizedBox(height: 30,),
+            Container(
+              height: 135,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                 boxShadow: [
+            BoxShadow(
+              color: Color(0xff2C78DC).withOpacity(.08),
+              offset: const Offset(0, 3),
+              blurRadius: 12,
+            ),
+          ],
+              ),
             )
           ],
         ),
