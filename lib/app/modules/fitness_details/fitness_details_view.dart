@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -170,7 +171,31 @@ class FitnessDetailsView extends StatelessWidget {
               ),
               SizedBox(height: 20),
 
-
+GestureDetector(
+  onTap: () => Get.back(),
+  child: CommonButton(tittle: 'Submit')),
+SizedBox(height: 10,),
+GestureDetector(
+  onTap: () => Get.back(),
+  child: Container(
+    height: 45,
+    width: double.infinity,
+    decoration: BoxDecoration(
+      color: Color(0xffF3F4F6),
+      borderRadius: BorderRadius.circular(12),
+  
+    ),
+    child: Center(
+      child: Text('Cancel',
+      style: TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 16,
+        color: Color(0xff727272)
+      ),
+      ),
+    ),
+  ),
+)
             ],
           ),
         ),
