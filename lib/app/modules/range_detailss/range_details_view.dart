@@ -5,8 +5,18 @@ class RangeDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Range details'),
+    return Scaffold(
+      backgroundColor: Colors.white,
+appBar: AppBar(
+  backgroundColor: Colors.white,
+  title: Text('Range Qualification',
+  style: TextStyle(
+    fontWeight: FontWeight.w700,
+    fontSize: 18,
+    color: Color(0xff131123)
+  ),
+  ),
+),
     );
   }
 }
