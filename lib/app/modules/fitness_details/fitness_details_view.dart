@@ -5,8 +5,19 @@ class FitnessDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('fitness details'),
-    );
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('Physical Fitness Test',
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 18,
+          color: Color(0xff131123)
+        ),
+        ),
+      ),
+    )
+    ;
   }
 }
