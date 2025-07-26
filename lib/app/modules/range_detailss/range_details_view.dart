@@ -49,6 +49,120 @@ body: Padding(
                   ),
                 ],
               ),
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Icon(Icons.calendar_month_outlined, color: Color(0xff1893F8)),
+                  Text(
+                    'Date',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      color: Color(0xff4B5563),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Container(
+                height: 45,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hint: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '23-06-2015',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            color: Color(0xff6B7280),
+                          ),
+                        ),
+                        Icon(Icons.calendar_month_outlined),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Icon(Icons.group, color: Color(0xff22C55E)),
+                  Text(
+                    'Name',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      color: Color(0xff4B5563),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Container(
+                height: 45,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hint: Text(
+                      'Enter Name',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff6B7280),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+           
+             
+             
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Icon(Icons.speed, color: Color(0xff22C55E)),
+                  Text(
+                    'Score',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      color: Color(0xff4B5563),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Container(
+                height: 45,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hint: Text(
+                      'Enter your score',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff6B7280),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
       ],
     ),
   ),
