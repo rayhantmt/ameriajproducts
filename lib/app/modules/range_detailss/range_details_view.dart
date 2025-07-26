@@ -1,5 +1,8 @@
+import 'package:ameriajproducts/app/common_widgets/qualification_container.dart';
+import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class RangeDetailsView extends StatelessWidget {
   const RangeDetailsView({super.key});
@@ -166,6 +169,71 @@ body: Padding(
                   ),
                 ),
               ),
+              SizedBox(height: 20),
+              Text('Qualification Level',
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 18,
+                color: Color(0xff1F2937)
+              ),
+              ),
+              SizedBox(height: 10,),
+              Column(
+                children: [
+                  QualificationContainer(title: 'Marksman', img: Appimages.marksman),
+                  SizedBox(height: 10,),
+                  QualificationContainer(title: 'Sharpshooter', img: Appimages.sharpshooter),
+                  SizedBox(height: 10,),
+                  QualificationContainer(title: 'Expert', img: Appimages.expert)
+                ],
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  GestureDetector(
+                    onTap: () => Get.back(),
+                    child: Container(
+                      height: 45,
+                      width: Get.width*0.4,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Color(0xffF3F4F6)
+                      ),
+                      child: Center(
+                        child: Text('Cancel',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          color: Color(0xff727272)
+                        ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () => Get.back(),
+                    child: Container(
+                      height: 45,
+                      width: Get.width*0.4,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Color(0xff08692C)
+                      ),
+                      child: Center(
+                        child: Text('Submit',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          color: Color(0xffFDFDFD)
+                        ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              )
       ],
     ),
   ),
