@@ -17,6 +17,42 @@ appBar: AppBar(
   ),
   ),
 ),
+body: Padding(
+  padding: const EdgeInsets.only(left: 20,right: 20),
+  child: SingleChildScrollView(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+         Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    height: 30,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: Color(0xff08692C)),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.history, color: Color(0xff08692C)),
+                        Text(
+                          'View History',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: Color(0xff08692C),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+      ],
+    ),
+  ),
+),
     );
   }
 }
