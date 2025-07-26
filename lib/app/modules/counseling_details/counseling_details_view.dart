@@ -212,7 +212,38 @@ class CounselingDetailsView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-             
+             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+               children: [
+                 Text('Notes',
+                 style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  color: Color(0xff4B5563)
+                 ),
+                 ),
+               ],
+             ),
+             SizedBox(height: 10,),
+             Container(
+              height: 85,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  width: 1,
+                  color: Color(0xff1893F8)
+                )
+              ),
+              child: Text('Discussed PFT results from June 20, 2025. Soldier passed with a score of 85 but needs improvement in push-ups. Agreed to focus on upper body strength training.',
+              style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 14,
+                color: Color(0xff4B5563)
+              ),
+              ),
+             )
+             ,
               
               SizedBox(height: 20,),
               Row(
