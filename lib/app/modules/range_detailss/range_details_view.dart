@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RangeDetailsView extends StatelessWidget {
   const RangeDetailsView({super.key});
@@ -93,9 +94,11 @@ body: Padding(
               SizedBox(height: 20),
               Row(
                 children: [
-                  Icon(Icons.group, color: Color(0xff22C55E)),
+                  Icon(FontAwesomeIcons.gun, 
+                  size: 20,
+                  color: Color(0xff22C55E)),
                   Text(
-                    'Name',
+                    'Weapon',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 14,
@@ -131,7 +134,7 @@ body: Padding(
               SizedBox(height: 20),
               Row(
                 children: [
-                  Icon(Icons.speed, color: Color(0xff22C55E)),
+                  Icon(Icons.speed, color: Color(0xffEF8E44)),
                   Text(
                     'Score',
                     style: TextStyle(
