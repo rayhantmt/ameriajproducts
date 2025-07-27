@@ -32,4 +32,5 @@ abstract class Approutes {
   static const rangehistory='/rangehistory';
   static const rangehistorydetails='/rangehistorydetails';
   static const fitnesshistory='/fitnesshistory';
+ static const fitnesshistorydetails='/fitnesshistorydetails';
 }

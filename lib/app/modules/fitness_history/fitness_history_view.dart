@@ -55,7 +55,7 @@ class FitnessHistoryView extends StatelessWidget {
                 ),
                 Spacer(),
                 GestureDetector(
-                  onTap: () => Get.toNamed(Approutes.rangehistorydetails),
+                  onTap: () => Get.toNamed(Approutes.fitnesshistorydetails),
                   child: Text(
                     'View Details',
                     style: TextStyle(
