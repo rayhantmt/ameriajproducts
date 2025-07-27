@@ -29,4 +29,5 @@ abstract class Approutes {
   static const privacypolicy='/privacypolicy';
   static const weaponhistory='/weaponhistory';
   static const weaponhistorydetails='/weaponhistorydetails';
+  static const rangehistory='/rangehistory';
 }
