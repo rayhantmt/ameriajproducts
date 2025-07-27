@@ -4,6 +4,7 @@ import 'package:ameriajproducts/app/modules/change_password/change_password_view
 import 'package:ameriajproducts/app/modules/change_password_profile/change_password_profile_binding.dart';
 import 'package:ameriajproducts/app/modules/change_password_profile/change_password_profile_view.dart';
 import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_view.dart';
+import 'package:ameriajproducts/app/modules/counseling_history/counseling_history_view.dart';
 import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_view.dart';
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_binding.dart';
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_details_view.dart';
@@ -78,6 +79,7 @@ class AppPages {
     GetPage(name: Approutes.rangehistory, page: () => RangeHistoryView(),),
     GetPage(name: Approutes.rangehistorydetails, page: () => RangeHistoryDetails(),),
     GetPage(name: Approutes.fitnesshistory, page: () => FitnessHistoryView(),),
-    GetPage(name: Approutes.fitnesshistorydetails, page: () => FitnessHistoryDetails(),)
+    GetPage(name: Approutes.fitnesshistorydetails, page: () => FitnessHistoryDetails(),),
+    GetPage(name: Approutes.counselinghistory, page: () => CounselingHistoryView(),)
   ];
 }

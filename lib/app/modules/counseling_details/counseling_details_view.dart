@@ -32,7 +32,7 @@ class CounselingDetailsView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () => Get.toNamed(Approutes.weaponhistory),
+                    onTap: () => Get.toNamed(Approutes.counselinghistory),
                     child: Container(
                       height: 30,
                       width: 100,
