@@ -1,5 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_controller.dart';
+import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -29,25 +30,28 @@ class FitnessDetailsView extends StatelessWidget {
                Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    height: 30,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Color(0xff08692C)),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.history, color: Color(0xff08692C)),
-                        Text(
-                          'View History',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: Color(0xff08692C),
+                  GestureDetector(
+                    onTap: () => Get.toNamed(Approutes.fitnesshistory),
+                    child: Container(
+                      height: 30,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: Color(0xff08692C)),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.history, color: Color(0xff08692C)),
+                          Text(
+                            'View History',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: Color(0xff08692C),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],

@@ -31,4 +31,5 @@ abstract class Approutes {
   static const weaponhistorydetails='/weaponhistorydetails';
   static const rangehistory='/rangehistory';
   static const rangehistorydetails='/rangehistorydetails';
+  static const fitnesshistory='/fitnesshistory';
 }
