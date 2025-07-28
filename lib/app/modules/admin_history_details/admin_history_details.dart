@@ -37,6 +37,7 @@ class AdminHistoryDetails extends StatelessWidget {
             ],
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
                     children: [
@@ -89,6 +90,28 @@ class AdminHistoryDetails extends StatelessWidget {
                         fontSize: 14,
                         color: Color(0xff6B7280)
                       ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text('Education Military :',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      ),
+                      Expanded(
+                        child: Text('Completed Basic Leadership Course (BLC)',
+                        
+                        maxLines: 4,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff6B7280)
+                        ),
+                        ),
                       )
                     ],
                   )
