@@ -1,19 +1,19 @@
-class WeaponHistoryModel {
+class AdminHistoryModel {
   final String tittle;
   final String date;
 
-  WeaponHistoryModel({required this.tittle, required this.date});
+  AdminHistoryModel({required this.tittle, required this.date});
   
 }
-class weaponhistorydata{
-  List<WeaponHistoryModel> weaponhistory=[
+class adminhistorydata{
+  List<AdminHistoryModel> adminhistory=[
 
-    WeaponHistoryModel(tittle: 'Weapon Qualification', date: 'Oct 19, 2024'),
-    WeaponHistoryModel(tittle: 'Weapon Qualification', date: 'Oct 19, 2024'),
-    WeaponHistoryModel(tittle: 'Weapon Qualification', date: 'Oct 19, 2024'),
-    WeaponHistoryModel(tittle: 'Weapon Qualification', date: 'Oct 19, 2024'),
-    WeaponHistoryModel(tittle: 'Weapon Qualification', date: 'Oct 19, 2024'),
-    WeaponHistoryModel(tittle: 'Weapon Qualification', date: 'Oct 19, 2024'),
-    WeaponHistoryModel(tittle: 'Weapon Qualification', date: 'Oct 19, 2024'),
+    AdminHistoryModel(tittle: 'Admin', date: 'Oct 19, 2024'),
+    AdminHistoryModel(tittle: 'Admin', date: 'Oct 19, 2024'),
+    AdminHistoryModel(tittle: 'Admin', date: 'Oct 19, 2024'),
+    AdminHistoryModel(tittle: 'Admin', date: 'Oct 19, 2024'),
+    AdminHistoryModel(tittle: 'Admin', date: 'Oct 19, 2024'),
+    AdminHistoryModel(tittle: 'Admin', date: 'Oct 19, 2024'),
+    AdminHistoryModel(tittle: 'Admin', date: 'Oct 19, 2024'),
   ];
 }
