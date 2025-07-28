@@ -38,4 +38,5 @@ abstract class Approutes {
  static const counselinghistory='/counselinghistory';
  static const counselinghistorydetails='/counselinghistorydetails';
  static const adminhistory='/adminhistory';
+ static const adminhistorydetails='/adminhistorydetails';
 }

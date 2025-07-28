@@ -1,6 +1,6 @@
 
 import 'package:ameriajproducts/app/modules/admin_history/admin_history_model.dart';
-import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_model.dart';
+
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 
@@ -54,7 +54,7 @@ class AdminHistoryView extends StatelessWidget {
                 ),
                 Spacer(),
                 GestureDetector(
-                  onTap: () => Get.toNamed(Approutes.weaponhistorydetails),
+                  onTap: () => Get.toNamed(Approutes.adminhistorydetails),
                   child: Text(
                     'View Details',
                     style: TextStyle(

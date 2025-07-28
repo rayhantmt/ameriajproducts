@@ -1,5 +1,6 @@
 import 'package:ameriajproducts/app/modules/admin_details/admin_details_view.dart';
 import 'package:ameriajproducts/app/modules/admin_history/admin_history_view.dart';
+import 'package:ameriajproducts/app/modules/admin_history_details/admin_history_details.dart';
 import 'package:ameriajproducts/app/modules/change_password/change_password_binding.dart';
 import 'package:ameriajproducts/app/modules/change_password/change_password_view.dart';
 import 'package:ameriajproducts/app/modules/change_password_profile/change_password_profile_binding.dart';
@@ -84,6 +85,7 @@ class AppPages {
     GetPage(name: Approutes.fitnesshistorydetails, page: () => FitnessHistoryDetails(),),
     GetPage(name: Approutes.counselinghistory, page: () => CounselingHistoryView(),),
     GetPage(name: Approutes.counselinghistorydetails, page: () => CounselingHistoryDetails(),),
-    GetPage(name: Approutes.adminhistory, page: () => AdminHistoryView(),)
+    GetPage(name: Approutes.adminhistory, page: () => AdminHistoryView(),),
+    GetPage(name: Approutes.adminhistorydetails, page: () => AdminHistoryDetails(),)
   ];
 }
