@@ -114,7 +114,51 @@ class AdminHistoryDetails extends StatelessWidget {
                         ),
                       )
                     ],
-                  )
+                  ),
+                   Row(
+                    children: [
+                      Text('Education Civilian :',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      ),
+                      Expanded(
+                        child: Text('Bachelor of Science in Engineering',
+                        
+                        maxLines: 4,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff6B7280)
+                        ),
+                        ),
+                      )
+                    ],
+                  ),
+                   Row(
+                    children: [
+                      Text('Volunteer Hour :',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      ),
+                      Expanded(
+                        child: Text('15 hours ',
+                        
+                        maxLines: 4,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff6B7280)
+                        ),
+                        ),
+                      )
+                    ],
+                  ),
                 ],
               ),
             ),
