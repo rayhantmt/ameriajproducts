@@ -40,11 +40,54 @@ class AdminHistoryDetails extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text('LES Correct',
+                      Text('LES Correct :',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 14,
                         color: Color(0xff4B5563)
+                      ),
+                      ),
+                      Text('Yes',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff6B7280)
+                      ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text('Vehicle Registration :',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      ),
+                      Text('23-06-2015',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff6B7280)
+                      ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text('Vehicle Insurance :',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      ),
+                      Text('23-06-2015',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff6B7280)
                       ),
                       )
                     ],
