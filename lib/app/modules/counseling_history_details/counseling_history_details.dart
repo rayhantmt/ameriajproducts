@@ -24,9 +24,10 @@ class CounselingHistoryDetails extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
         child: Column(
+       
           children: [
             Container(
-              height: 170,
+              height: 310,
               decoration: BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
@@ -39,7 +40,30 @@ class CounselingHistoryDetails extends StatelessWidget {
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    children: [
+                      Icon(Icons.group, color: Color(0xff22C55E)),
+                      Text(
+                        'Name :',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                          color: Color(0xff4B5563),
+                        ),
+                      ),
+                      Text(
+                        'Name',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff6B7280),
+                        ),
+                      ),
+                    ],
+                  ),
+                 
                   Row(
                     children: [
                       Icon(Icons.calendar_month, color: Color(0xff1893F8)),
@@ -61,11 +85,11 @@ class CounselingHistoryDetails extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Row(
+                   Row(
                     children: [
-                      Icon(Icons.group, color: Color(0xff22C55E)),
+                      Icon(Icons.calendar_month, color: Color(0xff1893F8)),
                       Text(
-                        'Name :',
+                        'Next Date :',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
@@ -73,7 +97,7 @@ class CounselingHistoryDetails extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Height Test',
+                        '23-06-2015',
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -84,26 +108,41 @@ class CounselingHistoryDetails extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(Icons.insert_drive_file, color: Color(0xff6642F5)),
+                      Icon(Icons.group, color: Color(0xff22C55E)),
                       Text(
-                        'Pass/Fail :',
+                        'Counseled by :',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
                           color: Color(0xff4B5563),
                         ),
                       ),
-                      Icon(Icons.check, color: Color(0xff22C55E)),
                       Text(
-                        'Pass',
+                        'Name',
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
-                          color: Color(0xff4B5563),
+                          color: Color(0xff6B7280),
                         ),
                       ),
                     ],
                   ),
+                  Text('Notes',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: Color(0xff4B5563)
+                  ),
+                  ),
+                  Text('Discussed PFT results from June 20, 2025. Soldier passed with a score of 85 but needs improvement in push-ups. Agreed to focus on upper body strength training.',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    color: Color(0xff4B5563)
+
+                  ),
+                  )
+                 
                   
                 ],
               ),
