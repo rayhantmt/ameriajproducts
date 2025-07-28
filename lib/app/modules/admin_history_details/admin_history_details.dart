@@ -7,6 +7,17 @@ class AdminHistoryDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('Admin',
+        
+        style: TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: 18,
+          color: Color(0xff131123)
+        ),
+        ),
+      ),
     );
   }
 }
