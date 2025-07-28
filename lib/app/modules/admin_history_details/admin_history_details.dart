@@ -18,6 +18,43 @@ class AdminHistoryDetails extends StatelessWidget {
         ),
         ),
       ),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 20,right: 20),
+        child: Column(
+          children: [
+            SizedBox(height: 30,),
+            Container(
+              height: 330,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                 boxShadow: [
+              BoxShadow(
+                color: Color(0xff2C78DC).withOpacity(.08),
+                offset: const Offset(0, 3),
+                blurRadius: 12,
+              ),
+            ],
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text('LES Correct',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563)
+                      ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
