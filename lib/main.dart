@@ -16,6 +16,6 @@ class MyApp extends StatelessWidget {
       initialRoute: Approutes.splash,
       getPages: AppPages.pages,
       debugShowCheckedModeBanner: false,
-    );
+    );                    
   }
 }

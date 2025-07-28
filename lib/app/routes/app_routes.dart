@@ -1,5 +1,7 @@
 
 
+
+
 abstract class Approutes {
   static const splash = '/splash';
   static const onboarding = '/onboarding';
@@ -34,4 +36,5 @@ abstract class Approutes {
   static const fitnesshistory='/fitnesshistory';
  static const fitnesshistorydetails='/fitnesshistorydetails';
  static const counselinghistory='/counselinghistory';
+ static const counselinghistorydetails='/counselinghistorydetails';
 }

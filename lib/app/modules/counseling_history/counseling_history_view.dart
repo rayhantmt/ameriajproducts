@@ -56,7 +56,7 @@ class CounselingHistoryView extends StatelessWidget {
                 ),
                 Spacer(),
                 GestureDetector(
-                  onTap: () => Get.toNamed(Approutes.fitnesshistorydetails),
+                  onTap: () => Get.toNamed(Approutes.counselinghistorydetails),
                   child: Text(
                     'View Details',
                     style: TextStyle(
