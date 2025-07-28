@@ -32,7 +32,7 @@ class AdminDetailsView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () => Get.toNamed(Approutes.weaponhistory),
+                    onTap: () => Get.toNamed(Approutes.adminhistory),
                     child: Container(
                       height: 30,
                       width: 100,
