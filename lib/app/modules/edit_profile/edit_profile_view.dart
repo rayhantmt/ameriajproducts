@@ -23,218 +23,236 @@ class EditProfileView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-
-          children: [
-            SizedBox(height: Get.height * 0.02),
-            Center(
-              child: Stack(
-                children: [
-                  // Profile image
-                  CircleAvatar(
-                    radius: 50, // adjust size as needed
-                    backgroundImage: AssetImage(Appimages.profile),
-                  ),
-
-                  // Camera icon overlay
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        color: Colors.black87,
-                        shape: BoxShape.circle,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+          
+            children: [
+              SizedBox(height: Get.height * 0.02),
+              Center(
+                child: Stack(
+                  children: [
+                    // Profile image
+                    CircleAvatar(
+                      radius: 50, // adjust size as needed
+                      backgroundImage: AssetImage(Appimages.profile),
+                    ),
+          
+                    // Camera icon overlay
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.black87,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.camera_alt,
+                          color: Colors.white,
+                          size: 16,
+                        ),
                       ),
-                      child: Icon(
-                        Icons.camera_alt,
-                        color: Colors.white,
-                        size: 16,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: Get.height * 0.02),
+              Text(
+                'Full Name',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff2A2A2A),
+                ),
+                textAlign: TextAlign.start,
+              ),
+              SizedBox(height: Get.height * 0.01),
+              Container(
+                height: 45,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffEFEFEF)),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TextFormField(
+                    
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hint: Text(
+                        'Enter your First Name',
+                            
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff75838D),
+                        ),
                       ),
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-            SizedBox(height: Get.height * 0.02),
-            Text(
-              'Full Name',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 12,
-                color: Color(0xff2A2A2A),
+              SizedBox(height: Get.height * 0.02),
+               Text(
+                'UIC',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff2A2A2A),
+                ),
+                textAlign: TextAlign.start,
               ),
-              textAlign: TextAlign.start,
-            ),
-            SizedBox(height: Get.height * 0.01),
-            Container(
-              height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Color(0xffEFEFEF)),
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.white,
-              ),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hint: Text(
-                    'Enter your First Name',
-
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      color: Color(0xff75838D),
+              SizedBox(height: Get.height * 0.01),
+              Container(
+                height: 45,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffEFEFEF)),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hint: Text(
+                        'Enter',
+                            
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff75838D),
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: Get.height * 0.02),
-             Text(
-              'UIC',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 12,
-                color: Color(0xff2A2A2A),
+              SizedBox(height: Get.height * 0.02),
+               Text(
+                'Rank',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff2A2A2A),
+                ),
+                textAlign: TextAlign.start,
               ),
-              textAlign: TextAlign.start,
-            ),
-            SizedBox(height: Get.height * 0.01),
-            Container(
-              height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Color(0xffEFEFEF)),
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.white,
-              ),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hint: Text(
-                    'Enter',
-
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      color: Color(0xff75838D),
+              SizedBox(height: Get.height * 0.01),
+              Container(
+                height: 45,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffEFEFEF)),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hint: Text(
+                        'Enter',
+                            
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff75838D),
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: Get.height * 0.02),
-             Text(
-              'Rank',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 12,
-                color: Color(0xff2A2A2A),
+              SizedBox(height: Get.height * 0.02),
+               Text(
+                'Email',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff2A2A2A),
+                ),
+                textAlign: TextAlign.start,
               ),
-              textAlign: TextAlign.start,
-            ),
-            SizedBox(height: Get.height * 0.01),
-            Container(
-              height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Color(0xffEFEFEF)),
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.white,
-              ),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hint: Text(
-                    'Enter',
-
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      color: Color(0xff75838D),
+              SizedBox(height: Get.height * 0.01),
+              Container(
+                height: 45,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffEFEFEF)),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hint: Text(
+                        'Enter email',
+                            
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff75838D),
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: Get.height * 0.02),
-             Text(
-              'Email',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 12,
-                color: Color(0xff2A2A2A),
+              SizedBox(height: Get.height * 0.02),
+               Text(
+                'Phone Number',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff2A2A2A),
+                ),
+                textAlign: TextAlign.start,
               ),
-              textAlign: TextAlign.start,
-            ),
-            SizedBox(height: Get.height * 0.01),
-            Container(
-              height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Color(0xffEFEFEF)),
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.white,
-              ),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hint: Text(
-                    'Enter email',
-
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      color: Color(0xff75838D),
+              SizedBox(height: Get.height * 0.01),
+              Container(
+                height: 45,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffEFEFEF)),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hint: Text(
+                        'Enter your Phone Number',
+                            
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff75838D),
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: Get.height * 0.02),
-             Text(
-              'Phone Number',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 12,
-                color: Color(0xff2A2A2A),
-              ),
-              textAlign: TextAlign.start,
-            ),
-            SizedBox(height: Get.height * 0.01),
-            Container(
-              height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Color(0xffEFEFEF)),
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.white,
-              ),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hint: Text(
-                    'Enter your Phone Number',
-
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      color: Color(0xff75838D),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: Get.height * 0.02),
-
-            GestureDetector(
-              
-              onTap: () => Get.back(),
-              child: CommonButton(tittle: 'Save Changes')),
-          ],
+              SizedBox(height: Get.height * 0.02),
+          
+              GestureDetector(
+                
+                onTap: () => Get.back(),
+                child: CommonButton(tittle: 'Save Changes')),
+            ],
+          ),
         ),
       ),
     );
