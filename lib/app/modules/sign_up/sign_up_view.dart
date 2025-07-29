@@ -41,6 +41,7 @@ class SignUpView extends StatelessWidget {
               ),
               SizedBox(height: Get.height * 0.02),
               Formfield(
+              
                 tittle: 'Enter your First Name',
                 obsecuretext: false,
                 keyboardtype: TextInputType.text,
@@ -82,6 +83,7 @@ class SignUpView extends StatelessWidget {
 SizedBox(height: Get.height * 0.02),
               Obx(
                 () => Formfield(
+                
                   tittle: 'Confirmed Password',
                   obsecuretext: fieldviewcontrorller.isObscured1.value,
                   keyboardtype: TextInputType.text,
