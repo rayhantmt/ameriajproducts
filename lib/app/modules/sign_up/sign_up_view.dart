@@ -120,8 +120,8 @@ SizedBox(height: Get.height * 0.02),
               ),
               SizedBox(height: Get.height * 0.02),
              GestureDetector(
- // onTap:fieldviewcontrorller.signUp,
-onTap: () => print('${fieldviewcontrorller.countryCode.value} ${fieldviewcontrorller.mobileController.text} ${fieldviewcontrorller.emailController.text}'),
+  onTap:fieldviewcontrorller.signUp,
+
   child: Obx(() => fieldviewcontrorller.isLoading.value
       ? const Center(child: CircularProgressIndicator())
       : CommonButton(tittle: 'Create Account')),

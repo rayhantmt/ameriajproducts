@@ -1,3 +1,6 @@
+import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
+import 'package:ameriajproducts/data/api_services/api_services.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PasswordFieldController extends GetxController {
@@ -5,5 +8,41 @@ class PasswordFieldController extends GetxController {
 
   void toggleObscureText() {
     isObscured.value = !isObscured.value;
+  }
+   final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  RxBool isLoading = false.obs;
+
+  Future<void> login() async {
+    isLoading.value = true;
+
+    final body = {
+      "email": emailController.text.trim(),
+      "password": passwordController.text.trim(),
+    };
+
+    try {
+      final response = await ApiService.post(
+        endpoint: '/login', // Change if your endpoint differs
+        body: body,
+      );
+
+      // Handle success (e.g., token saving, navigating)
+      print("Login success: $response");
+      // Get.offAllNamed('/home'); // example
+
+    } on AppException catch (e) {
+      Get.snackbar("Login Failed", e.message);
+    } finally {
+      isLoading.value = false;
+    }
+  }
+
+  @override
+  void onClose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.onClose();
   }
 }

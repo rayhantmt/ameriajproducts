@@ -51,6 +51,7 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 Formfield(
+                  controller: fieldviewcontrorller.emailController,
                   tittle: 'Enter your email address',
                   keyboardtype: TextInputType.emailAddress,
                   obsecuretext: false,
@@ -58,6 +59,7 @@ class LoginView extends StatelessWidget {
                 SizedBox(height: 20),
                 Obx(
                   () => Formfield(
+                    controller: fieldviewcontrorller.passwordController,
                     tittle: 'Enter Password',
                     keyboardtype: TextInputType.text,
                     obsecuretext: fieldviewcontrorller.isObscured.value,
