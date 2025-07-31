@@ -115,9 +115,13 @@ SizedBox(height: Get.height * 0.02),
                 ),
               ),
               SizedBox(height: Get.height * 0.02),
-              GestureDetector(
-                onTap: () => Get.offAllNamed('/onboarding'),
-                child: CommonButton(tittle: 'Create Account'))
+             GestureDetector(
+  onTap: fieldviewcontrorller.signUp,
+  child: Obx(() => fieldviewcontrorller.isLoading.value
+      ? const Center(child: CircularProgressIndicator())
+      : CommonButton(tittle: 'Create Account')),
+),
+
             ],
           ),
         ),
