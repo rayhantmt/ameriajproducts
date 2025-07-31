@@ -95,7 +95,8 @@ class OtpVerificationView extends StatelessWidget {
                 )),
             const SizedBox(height: 32),
            GestureDetector(
-           onTap: () => Get.toNamed('/changepassword'),
+           onTap: () => //print(controller.otp.value),
+           Get.toNamed('/changepassword'),
             child: CommonButton(tittle: 'Verify '))
           ],
         ),
