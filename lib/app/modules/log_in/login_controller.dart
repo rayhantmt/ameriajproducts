@@ -27,10 +27,10 @@ class PasswordFieldController extends GetxController {
         endpoint: '/login', // Change if your endpoint differs
         body: body,
       );
-
+ Get.offAllNamed('/mainscreen');
       // Handle success (e.g., token saving, navigating)
       print("Login success: $response");
-      // Get.offAllNamed('/home'); // example
+   
 
     } on AppException catch (e) {
       Get.snackbar("Login Failed", e.message);

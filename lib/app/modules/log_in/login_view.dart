@@ -105,7 +105,7 @@ class LoginView extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 GestureDetector(
-                  onTap: () => Get.offAllNamed('/mainscreen'),
+                  onTap: () => fieldviewcontrorller.login(),
                   child: CommonButton(tittle: 'Login')),
               ],
             ),
