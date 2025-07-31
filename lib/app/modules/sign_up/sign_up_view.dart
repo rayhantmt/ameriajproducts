@@ -42,7 +42,7 @@ class SignUpView extends StatelessWidget {
               ),
               SizedBox(height: Get.height * 0.02),
               Formfield(
-              
+              controller: fieldviewcontrorller.firstNameController,
                 tittle: 'Enter your First Name',
                 obsecuretext: false,
                 keyboardtype: TextInputType.text,
@@ -50,6 +50,7 @@ class SignUpView extends StatelessWidget {
               SizedBox(height: Get.height * 0.02),
               Formfield(
                 tittle: 'Enter your last name',
+                controller: fieldviewcontrorller.lastNameController,
                 obsecuretext: false,
                 keyboardtype: TextInputType.text,
               ),
@@ -68,6 +69,7 @@ class SignUpView extends StatelessWidget {
 
                   Expanded(
                     child: Formfield(
+                      controller: fieldviewcontrorller.mobileController,
                       tittle: 'Enter you phone number',
                       obsecuretext: false,
                       keyboardtype: TextInputType.number,
@@ -77,6 +79,7 @@ class SignUpView extends StatelessWidget {
               ),
               SizedBox(height: Get.height * 0.02),
               Formfield(
+                controller: fieldviewcontrorller.emailController,
                 tittle: 'Enter your email address',
                 obsecuretext: false,
                 keyboardtype: TextInputType.emailAddress,
@@ -84,6 +87,7 @@ class SignUpView extends StatelessWidget {
               SizedBox(height: Get.height * 0.02),
               Obx(
                 () => Formfield(
+                  controller: fieldviewcontrorller.passwordController,
                   tittle: 'Enter Password',
                   obsecuretext: fieldviewcontrorller.isObscured.value,
                   keyboardtype: TextInputType.text,
@@ -100,7 +104,7 @@ class SignUpView extends StatelessWidget {
 SizedBox(height: Get.height * 0.02),
               Obx(
                 () => Formfield(
-                
+                controller: fieldviewcontrorller.confirmPasswordController,
                   tittle: 'Confirmed Password',
                   obsecuretext: fieldviewcontrorller.isObscured1.value,
                   keyboardtype: TextInputType.text,
@@ -116,7 +120,8 @@ SizedBox(height: Get.height * 0.02),
               ),
               SizedBox(height: Get.height * 0.02),
              GestureDetector(
-  onTap: fieldviewcontrorller.signUp,
+ // onTap:fieldviewcontrorller.signUp,
+onTap: () => print('${fieldviewcontrorller.countryCode.value} ${fieldviewcontrorller.mobileController.text} ${fieldviewcontrorller.emailController.text}'),
   child: Obx(() => fieldviewcontrorller.isLoading.value
       ? const Center(child: CircularProgressIndicator())
       : CommonButton(tittle: 'Create Account')),

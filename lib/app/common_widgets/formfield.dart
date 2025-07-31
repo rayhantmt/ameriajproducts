@@ -25,6 +25,7 @@ class Formfield extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: TextFormField(
+         controller: controller,
         obscureText: obsecuretext,
         decoration: InputDecoration(
           border: InputBorder.none,

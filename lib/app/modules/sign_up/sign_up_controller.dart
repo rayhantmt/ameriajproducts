@@ -68,13 +68,13 @@ print(response);
 
   @override
   void onClose() {
-    firstNameController.dispose();
-    lastNameController.dispose();
-    emailController.dispose();
-    mobileController.dispose();
-    passwordController.dispose();
-    confirmPasswordController.dispose();
-    phoneController.dispose();
-    super.onClose();
+    // firstNameController.dispose();
+    // lastNameController.dispose();
+    // emailController.dispose();
+    // mobileController.dispose();
+    // passwordController.dispose();
+    // confirmPasswordController.dispose();
+    // phoneController.dispose();
+    // super.onClose();
   }
 }
