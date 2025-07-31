@@ -1,6 +1,7 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/formfield.dart';
 import 'package:ameriajproducts/app/modules/sign_up/sign_up_controller.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -53,10 +54,26 @@ class SignUpView extends StatelessWidget {
                 keyboardtype: TextInputType.text,
               ),
               SizedBox(height: Get.height * 0.02),
-              Formfield(
-                tittle: 'Enter you phone number',
-                obsecuretext: false,
-                keyboardtype: TextInputType.number,
+              Row(
+                children: [
+                   Obx(() => CountryCodePicker(
+              onChanged: (code) => fieldviewcontrorller.countryCode.value = code.dialCode ?? '+880',
+              initialSelection: fieldviewcontrorller.countryCode.value,
+              favorite: ['+880', 'BD'],
+              showCountryOnly: false,
+              showOnlyCountryWhenClosed: false,
+              alignLeft: false,
+            )),
+           
+
+                  Expanded(
+                    child: Formfield(
+                      tittle: 'Enter you phone number',
+                      obsecuretext: false,
+                      keyboardtype: TextInputType.number,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: Get.height * 0.02),
               Formfield(

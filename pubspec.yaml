@@ -37,6 +37,7 @@ dependencies:
   get: ^4.7.2
   flutter_svg: ^2.2.0
   font_awesome_flutter: ^10.8.0
+  country_code_picker: ^3.3.0
 
 dev_dependencies:
   flutter_test:
