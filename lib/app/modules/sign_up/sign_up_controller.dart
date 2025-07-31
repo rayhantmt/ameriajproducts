@@ -55,7 +55,7 @@ final phoneController = TextEditingController();
         endpoint: '/auth/register', // Update endpoint as per your API
         body: body,
       );
-
+print(response);
       // Handle success (navigate, toast, etc.)
       Get.snackbar('Success', 'Account created successfully');
       // Get.offAllNamed('/login');
