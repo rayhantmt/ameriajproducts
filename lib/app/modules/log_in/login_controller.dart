@@ -24,7 +24,7 @@ class PasswordFieldController extends GetxController {
 
     try {
       final response = await ApiService.post(
-        endpoint: '/login', // Change if your endpoint differs
+        endpoint: '/auth/login', // Change if your endpoint differs
         body: body,
       );
  Get.offAllNamed('/mainscreen');

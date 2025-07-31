@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
+import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -58,7 +59,7 @@ final phoneController = TextEditingController();
 print(response);
       // Handle success (navigate, toast, etc.)
       Get.snackbar('Success', 'Account created successfully');
-      // Get.offAllNamed('/login');
+       Get.offAllNamed(Approutes.login);
     } on AppException catch (e) {
       Get.snackbar('Error', e.message, backgroundColor: Colors.redAccent, colorText: Colors.white);
     } finally {
@@ -68,13 +69,13 @@ print(response);
 
   @override
   void onClose() {
-    // firstNameController.dispose();
-    // lastNameController.dispose();
-    // emailController.dispose();
-    // mobileController.dispose();
-    // passwordController.dispose();
-    // confirmPasswordController.dispose();
-    // phoneController.dispose();
-    // super.onClose();
+    firstNameController.dispose();
+    lastNameController.dispose();
+    emailController.dispose();
+    mobileController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    phoneController.dispose();
+    super.onClose();
   }
 }
