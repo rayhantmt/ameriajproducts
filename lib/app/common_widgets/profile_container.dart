@@ -4,8 +4,7 @@ import 'package:flutter_svg/svg.dart';
 class ProfileContainer extends StatelessWidget {
   final String tittle;
   final String details;
-  //final IconData ic;
- // final Color iconcolor;
+
  final String icon;
   const ProfileContainer({super.key, required this.tittle, required this.details, required this.icon,});
 
