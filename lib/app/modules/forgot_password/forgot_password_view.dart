@@ -1,5 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/formfield.dart';
+import 'package:ameriajproducts/app/modules/forgot_password/forgot_password_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +9,8 @@ class ForgotPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+  final controller = Get.find<EmailOnlyController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -39,14 +42,15 @@ class ForgotPasswordView extends StatelessWidget {
               ),
               SizedBox(height: Get.height * 0.02),
               Formfield(
+                controller: controller.emailController,
                 tittle: 'rayhantmt@gmail.com',
                 obsecuretext: false,
                 keyboardtype: TextInputType.emailAddress,
               ),
               SizedBox(height: Get.height * 0.02),
               GestureDetector(
-                onTap: () => Get.toNamed('/otp'),
-                child: CommonButton(tittle: 'Send Verification Code')),
+                onTap: controller.submitEmail,
+                child: Obx(() => controller.isLoading.value? Center(child: CircularProgressIndicator(),):CommonButton(tittle: 'Send Verification Code'),)),
             ],
           ),
         ),

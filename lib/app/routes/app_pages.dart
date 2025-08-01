@@ -13,6 +13,7 @@ import 'package:ameriajproducts/app/modules/fitness_details/fitness_binding.dart
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_details_view.dart';
 import 'package:ameriajproducts/app/modules/fitness_history/fitness_history_view.dart';
 import 'package:ameriajproducts/app/modules/fitness_history_details/fitness_history_details.dart';
+import 'package:ameriajproducts/app/modules/forgot_password/forgot_password_binding.dart';
 import 'package:ameriajproducts/app/modules/forgot_password/forgot_password_view.dart';
 import 'package:ameriajproducts/app/modules/home/home_view.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_binding.dart';
@@ -55,7 +56,7 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(name: Approutes.signup, page:()=> SignUpView(),binding: SignUpBinding()),
-    GetPage(name: Approutes.forgotpassword, page: () => ForgotPasswordView(),),
+    GetPage(name: Approutes.forgotpassword, page: () => ForgotPasswordView(),binding: EmailOnlyBinding()),
     GetPage(name: Approutes.otp, page: ()=> OtpVerificationView(),binding: OtpBinding()),
     GetPage(name: Approutes.otpsuccess, page: ()=> OtpSuccessfulView()),
     GetPage(name: Approutes.mainscreen, page: ()=> MainScreenView(),binding: MainScreenBinding()),
