@@ -30,7 +30,7 @@ class ApiService {
         case 403:
           throw UnauthorizedException(response.body);
         case 404:
-          throw NotFoundException(response.body);
+          throw NotFoundException("Server offline");
         case 500:
         default:
           throw InternalServerException(response.body);
