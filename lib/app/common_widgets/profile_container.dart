@@ -17,7 +17,7 @@ class ProfileContainer extends StatelessWidget {
                     child: Row(
                       children: [
                         SvgPicture.asset(icon),
-                        SizedBox(width: 10,),
+                        SizedBox(width: 8,),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -29,7 +29,10 @@ class ProfileContainer extends StatelessWidget {
                             ),
                             ),
                             Text(details,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                             style: TextStyle(
+                              
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
                               color: Color(0xff989898)

@@ -80,7 +80,8 @@ class ProfileView extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Container(
-              height: Get.height * 0.4,
+              height: Get.height * 0.45,
+              width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.white,
@@ -127,7 +128,7 @@ class ProfileView extends StatelessWidget {
                       onTap: () => Get.toNamed(Approutes.termsandconditions),
                       child: ProfileContainer(
                         tittle: 'Terms and conditions',
-                        details: 'Understand the rules and responsibilities ',
+                        details: 'Understand the rules and responsibilities',
                         icon: Appimages.terms,
                       ),
                     ),
