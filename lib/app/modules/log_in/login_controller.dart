@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/core/api_config/api_config.dart';
 import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
 import 'package:flutter/material.dart';
@@ -18,13 +19,14 @@ class PasswordFieldController extends GetxController {
     isLoading.value = true;
 
     final body = {
-      "email": emailController.text.trim(),
-      "password": passwordController.text.trim(),
-    };
-
+  "data": {
+    "email": emailController.text.trim(),
+    "password": passwordController.text.trim(),
+  }
+};
     try {
       final response = await ApiService.post(
-        endpoint: '/auth/login', // Change if your endpoint differs
+        endpoint: ApiConfig.loginEndpoint, // Change if your endpoint differs
         body: body,
       );
  Get.offAllNamed('/mainscreen');
