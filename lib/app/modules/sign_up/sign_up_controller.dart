@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/core/api_config/api_config.dart';
 import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
@@ -44,7 +45,7 @@ final phoneController = TextEditingController();
       "firstName": firstNameController.text.trim(),
       "lastName": lastNameController.text.trim(),
       "email": emailController.text.trim(),
-      "role": role.value,
+      "role": "User",
       "countryCode": countryCode.value,
       "mobile": mobileController.text.trim(),
       "password": passwordController.text.trim(),
@@ -53,7 +54,7 @@ final phoneController = TextEditingController();
 
     try {
       final response = await ApiService.post(
-        endpoint: '/auth/register', // Update endpoint as per your API
+        endpoint: ApiConfig.signupEndpoint, // Update endpoint as per your API
         body: body,
       );
 print(response);
@@ -61,7 +62,7 @@ print(response);
       Get.snackbar('Success', 'Account created successfully');
        Get.offAllNamed(Approutes.login);
     } on AppException catch (e) {
-      Get.snackbar('Error', e.message, backgroundColor: Colors.redAccent, colorText: Colors.white);
+      Get.snackbar("e", e.message, backgroundColor: Colors.redAccent, colorText: Colors.white);
     } finally {
       isLoading.value = false;
     }
