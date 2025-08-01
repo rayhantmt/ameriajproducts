@@ -53,11 +53,7 @@ final phoneController = TextEditingController();
     "confirmedPassword": confirmPasswordController.text.trim(),
   }
 };
-//{
-// data:
-// {"firstName":"rayhan","lastName":"mia","email":"rayhantmt@gmail.com","role":"User","countryCode":"+880","mobile":"1533135965","password":"5544","confirmedPassword":"5544"
-// }
-// }
+
     try {
       
       final response = await ApiService.post(
@@ -65,8 +61,8 @@ final phoneController = TextEditingController();
         body: body,
       
       );
-print(response);
-      // Handle success (navigate, toast, etc.)
+  print(response);
+      
       Get.snackbar('Success', 'Account created successfully');
        Get.offAllNamed(Approutes.login);
        
