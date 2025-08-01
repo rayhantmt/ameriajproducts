@@ -16,7 +16,10 @@ class ApiService {
         headers: headers ?? {'Content-Type': 'application/json'},
         body: jsonEncode(body),
       );
-
+   print('🔁 [POST] $uri');
+      print('Request Body: ${jsonEncode(body)}');
+      print('Status Code: ${response.statusCode}');
+      print('Response Body: ${response.body}');
       switch (response.statusCode) {
         case 200:
         case 201:

@@ -42,29 +42,40 @@ final phoneController = TextEditingController();
     isLoading.value = true;
 
     final body = {
-      "firstName": firstNameController.text.trim(),
-      "lastName": lastNameController.text.trim(),
-      "email": emailController.text.trim(),
-      "role": "User",
-      "countryCode": countryCode.value,
-      "mobile": mobileController.text.trim(),
-      "password": passwordController.text.trim(),
-      "confirmedPassword": confirmPasswordController.text.trim(),
-    };
-
+  "data": {
+    "firstName": firstNameController.text.trim(),
+    "lastName": lastNameController.text.trim(),
+    "email": emailController.text.trim(),
+    "role": "User",
+    "countryCode": countryCode.value,
+    "mobile": mobileController.text.trim(),
+    "password": passwordController.text.trim(),
+    "confirmedPassword": confirmPasswordController.text.trim(),
+  }
+};
+//{
+// data:
+// {"firstName":"rayhan","lastName":"mia","email":"rayhantmt@gmail.com","role":"User","countryCode":"+880","mobile":"1533135965","password":"5544","confirmedPassword":"5544"
+// }
+// }
     try {
+      
       final response = await ApiService.post(
         endpoint: ApiConfig.signupEndpoint, // Update endpoint as per your API
         body: body,
+      
       );
 print(response);
       // Handle success (navigate, toast, etc.)
       Get.snackbar('Success', 'Account created successfully');
        Get.offAllNamed(Approutes.login);
+       
     } on AppException catch (e) {
+      
       Get.snackbar("e", e.message, backgroundColor: Colors.redAccent, colorText: Colors.white);
     } finally {
       isLoading.value = false;
+     
     }
   }
 
