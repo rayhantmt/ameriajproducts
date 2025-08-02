@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
+import 'package:ameriajproducts/app/modules/counseling_history/counseling_history_model.dart';
 import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -97,7 +98,11 @@ final String email = Get.arguments;
            GestureDetector(
            onTap:  controller.verifyOtp,
           // Get.toNamed('/changepassword'),
-            child: CommonButton(tittle: 'Verify '))
+            child:Obx(() => controller.isLoading.value
+      ? const Center(child: CircularProgressIndicator(
+        color: Color(0xff08692C),
+      ))
+      : CommonButton(tittle: 'Verify')),)
           ],
         ),
       ),

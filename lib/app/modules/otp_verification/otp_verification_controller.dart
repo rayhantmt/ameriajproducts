@@ -12,13 +12,15 @@ class OtpController extends GetxController {
   RxBool isButtonEnabled = false.obs;
   RxInt secondsRemaining = 60.obs;
   Timer? timer;
-final String email=Get.arguments;
+  final String email = Get.arguments;
+  final isLoading = false.obs; 
 
   // For 6 separate OTP fields
-  final List<TextEditingController> otpControllers =
-      List.generate(6, (_) => TextEditingController());
-  final List<FocusNode> otpFocusNodes =
-      List.generate(6, (_) => FocusNode());
+  final List<TextEditingController> otpControllers = List.generate(
+    6,
+    (_) => TextEditingController(),
+  );
+  final List<FocusNode> otpFocusNodes = List.generate(6, (_) => FocusNode());
 
   @override
   void onInit() {
@@ -67,22 +69,22 @@ final String email=Get.arguments;
     otp.value = otpControllers.map((c) => c.text).join();
     isButtonEnabled.value = otp.value.length == 6;
   }
-  Future<void> verifyOtp() async {
-final body = {
-  "data": {
-    "email": email,
-    "otp": otp.value,
-  }
-};
+
+ Future<void> verifyOtp() async {
+  final body = {
+    "data": {"email": email, "otp": otp.value},
+  };
+
+  isLoading.value = true; // Start loading
   try {
     final response = await ApiService.post(
-      endpoint: ApiConfig.otpendpoint, // Update this to your actual endpoint
+      endpoint: ApiConfig.otpendpoint,
       body: body,
     );
-
+ final userId = response['data']['user']['id'];
+ 
     print("OTP Verification Success: $response");
-    // Optional: Navigate to next screen
-    Get.toNamed(Approutes.changepassword); 
+    Get.toNamed(Approutes.changepassword, arguments: {'userId': userId});
   } on AppException catch (e) {
     Get.snackbar(
       'Verification Failed',
@@ -90,9 +92,10 @@ final body = {
       backgroundColor: Colors.redAccent,
       colorText: Colors.white,
     );
+  } finally {
+    isLoading.value = false; // Stop loading
   }
 }
-
 
   @override
   void onClose() {
