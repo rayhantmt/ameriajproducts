@@ -50,7 +50,9 @@ class ForgotPasswordView extends StatelessWidget {
               SizedBox(height: Get.height * 0.02),
               GestureDetector(
                 onTap: controller.submitEmail,
-                child: Obx(() => controller.isLoading.value? Center(child: CircularProgressIndicator(),):CommonButton(tittle: 'Send Verification Code'),)),
+                child: Obx(() => controller.isLoading.value? Center(child: CircularProgressIndicator(
+                  color: Color(0xff02411B),
+                ),):CommonButton(tittle: 'Send Verification Code'),)),
             ],
           ),
         ),

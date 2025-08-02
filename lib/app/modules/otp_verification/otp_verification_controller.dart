@@ -8,6 +8,7 @@ class OtpController extends GetxController {
   RxBool isButtonEnabled = false.obs;
   RxInt secondsRemaining = 60.obs;
   Timer? timer;
+final String email=Get.arguments;
 
   // For 6 separate OTP fields
   final List<TextEditingController> otpControllers =
