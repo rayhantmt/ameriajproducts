@@ -1,7 +1,7 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/formfield.dart';
 import 'package:ameriajproducts/app/modules/change_password/change_password_controller.dart';
-import 'package:ameriajproducts/app/routes/app_routes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -63,6 +63,7 @@ class ChangePasswordView extends StatelessWidget {
               SizedBox(height: 10),
               Obx(
                 () => Formfield(
+                  controller: controller.passwordController,
                   tittle: 'Confirmed Password',
                   obsecuretext: controller.isObscured1.value,
                   keyboardtype: TextInputType.text,
@@ -78,7 +79,7 @@ class ChangePasswordView extends StatelessWidget {
               ),
               SizedBox(height: 20,),
               GestureDetector(
-                onTap: () => Get.toNamed(Approutes.otpsuccess),
+                onTap: controller.resetPassword,
                 child: CommonButton(tittle: 'Reset Password'),
               ),
             ],

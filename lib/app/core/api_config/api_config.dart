@@ -10,6 +10,7 @@ class ApiConfig {
   // User Endpoints
   static const String forgetpassword = '/auth/forgot_password';
   static const String otpendpoint = '/auth/verify_otp';
+  static const String restpasswordendpoint='/auth/reset_password';
 
   // Other modules...
 }

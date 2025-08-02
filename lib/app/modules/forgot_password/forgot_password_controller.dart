@@ -25,8 +25,8 @@ class EmailOnlyController extends GetxController {
 
       // ✅ Handle success
       print("Response: $response");
-      Get.snackbar('Success', 'Otp sent to your eamil successfully',
-        backgroundColor: Color(0xff02411B), colorText: Colors.white);
+      Get.snackbar('Success', 'Email submitted successfully',
+        backgroundColor: Colors.green, colorText: Colors.white);
 
        Get.toNamed('/otp',arguments: emailController.text.trim());
       
