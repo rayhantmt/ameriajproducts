@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Formfield extends StatelessWidget {
   const Formfield({
+    this.validator,
     super.key,
     this.controller,
     required this.tittle,
@@ -14,6 +15,7 @@ class Formfield extends StatelessWidget {
   final Widget? icon;
   final bool obsecuretext;
   final TextInputType keyboardtype;
+   final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,6 +28,7 @@ class Formfield extends StatelessWidget {
       ),
       child: TextFormField(
          controller: controller,
+         validator: validator,
         obscureText: obsecuretext,
         decoration: InputDecoration(
           border: InputBorder.none,
