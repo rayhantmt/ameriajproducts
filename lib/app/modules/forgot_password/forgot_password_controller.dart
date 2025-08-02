@@ -28,7 +28,7 @@ class EmailOnlyController extends GetxController {
       Get.snackbar('Success', 'Email submitted successfully',
         backgroundColor: Colors.green, colorText: Colors.white);
 
-       Get.toNamed('/otp');
+       Get.toNamed('/otp',arguments: emailController.text.trim());
       
     } on AppException catch (e) {
       // ❌ Error from API

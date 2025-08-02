@@ -6,8 +6,8 @@ import 'package:flutter/services.dart';
 
 
 class OtpVerificationView extends StatelessWidget {
-  const OtpVerificationView({super.key});
-
+   OtpVerificationView({super.key});
+final String email = Get.arguments;
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<OtpController>();
@@ -42,8 +42,8 @@ class OtpVerificationView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 4),
-            const Text(
-              "Your code was sent to +1111499350",
+             Text(
+              "Your code was sent to $email ",
               style: TextStyle(
                 fontSize: 14,
                 color: Color(0xFF7D848D),
