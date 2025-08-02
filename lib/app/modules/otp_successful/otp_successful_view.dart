@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
+import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -39,7 +40,7 @@ class OtpSuccessfulView extends StatelessWidget {
             ),
             SizedBox(height: 10,),
             GestureDetector(
-              onTap: () => Get.offAllNamed('/login'),
+              onTap: () => Get.offAllNamed(Approutes.login),
               child: CommonButton(tittle: 'Back to Log in'))
           ],
         ),
