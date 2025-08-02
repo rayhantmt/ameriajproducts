@@ -95,8 +95,8 @@ final String email = Get.arguments;
                 )),
             const SizedBox(height: 32),
            GestureDetector(
-           onTap: () => 
-           Get.toNamed('/changepassword'),
+           onTap:  controller.verifyOtp,
+          // Get.toNamed('/changepassword'),
             child: CommonButton(tittle: 'Verify '))
           ],
         ),

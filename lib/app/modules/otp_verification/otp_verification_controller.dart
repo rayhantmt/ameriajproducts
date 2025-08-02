@@ -1,3 +1,7 @@
+import 'package:ameriajproducts/app/core/api_config/api_config.dart';
+import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
+import 'package:ameriajproducts/app/routes/app_routes.dart';
+import 'package:ameriajproducts/data/api_services/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:async';
@@ -47,12 +51,12 @@ final String email=Get.arguments;
     }
   }
 
-  void verifyOtp() {
-    if (otp.value.length == 6) {
-      // Simulate API call
-      Get.snackbar("OTP Verified", "Proceeding to next step...");
-    }
-  }
+  // void verifyOtp() {
+  //   if (otp.value.length == 6) {
+  //     // Simulate API call
+  //     Get.snackbar("OTP Verified", "Proceeding to next step...");
+  //   }
+  // }
 
   void onOtpFieldChanged(String value, int index) {
     if (value.isNotEmpty && index < 5) {
@@ -63,6 +67,32 @@ final String email=Get.arguments;
     otp.value = otpControllers.map((c) => c.text).join();
     isButtonEnabled.value = otp.value.length == 6;
   }
+  Future<void> verifyOtp() async {
+final body = {
+  "data": {
+    "email": email,
+    "otp": otp.value,
+  }
+};
+  try {
+    final response = await ApiService.post(
+      endpoint: ApiConfig.otpendpoint, // Update this to your actual endpoint
+      body: body,
+    );
+
+    print("OTP Verification Success: $response");
+    // Optional: Navigate to next screen
+    Get.toNamed(Approutes.changepassword); 
+  } on AppException catch (e) {
+    Get.snackbar(
+      'Verification Failed',
+      e.message,
+      backgroundColor: Colors.redAccent,
+      colorText: Colors.white,
+    );
+  }
+}
+
 
   @override
   void onClose() {
