@@ -63,7 +63,7 @@ class ChangePasswordView extends StatelessWidget {
               SizedBox(height: 10),
               Obx(
                 () => Formfield(
-                  controller: controller.passwordController,
+                  controller: controller.passwordController1,
                   tittle: 'Confirmed Password',
                   obsecuretext: controller.isObscured1.value,
                   keyboardtype: TextInputType.text,

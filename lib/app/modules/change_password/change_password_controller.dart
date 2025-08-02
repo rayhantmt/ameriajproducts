@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 class ChangePasswordController extends GetxController {
   RxBool isObscured = true.obs;
   final String userId = Get.arguments['userId'];
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordController1 = TextEditingController();
 
   void toggleObscureText() {
     isObscured.value = !isObscured.value;
@@ -24,7 +24,7 @@ class ChangePasswordController extends GetxController {
     final body = {
       "data": {
         "userId": userId, // Already available in your controller
-        "newPassword": passwordController.text.trim(), // From form field
+        "newPassword": passwordController1.text.trim(), // From form field
       },
     };
 
@@ -35,7 +35,7 @@ class ChangePasswordController extends GetxController {
         body: body,
       );
 
-      // print("Password Reset Success: $response");
+       print("Password Reset Success: $response");
 
       Get.toNamed(Approutes.otpsuccess);
     } on AppException catch (e) {
@@ -50,7 +50,7 @@ class ChangePasswordController extends GetxController {
 
   @override
   void onClose() {
-    passwordController.dispose();
+    passwordController1.dispose();
     super.onClose();
   }
 }
