@@ -11,8 +11,8 @@ class ChangePasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<ChangePasswordController>();
-    final String userId = Get.arguments['userId'];
-print(userId);
+   
+
     return Scaffold(
       
       appBar: AppBar(
