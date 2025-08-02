@@ -1,6 +1,7 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/formfield.dart';
 import 'package:ameriajproducts/app/modules/change_password/change_password_controller.dart';
+import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,7 +11,10 @@ class ChangePasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<ChangePasswordController>();
+    final String userId = Get.arguments['userId'];
+print(userId);
     return Scaffold(
+      
       appBar: AppBar(
         title: Text(''),
         backgroundColor: Colors.white,
@@ -74,7 +78,7 @@ class ChangePasswordView extends StatelessWidget {
               ),
               SizedBox(height: 20,),
               GestureDetector(
-                onTap: () => Get.toNamed('/otpsuccess'),
+                onTap: () => Get.toNamed(Approutes.otpsuccess),
                 child: CommonButton(tittle: 'Reset Password'),
               ),
             ],
