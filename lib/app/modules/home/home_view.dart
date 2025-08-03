@@ -3,12 +3,18 @@ import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final storage = GetStorage();
+final storedToken = storage.read('token');
+
+print('📦 This is from home screen confirming the Stored Token: $storedToken');
+
     final data = HomeData().homedata;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -35,6 +41,7 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
               ),
+
 
               SizedBox(height: Get.height * 0.006),
               Container(

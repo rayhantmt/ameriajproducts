@@ -3,6 +3,7 @@ import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class PasswordFieldController extends GetxController {
   RxBool isObscured = false.obs;
@@ -29,6 +30,10 @@ class PasswordFieldController extends GetxController {
         endpoint: ApiConfig.loginEndpoint, // Change if your endpoint differs
         body: body,
       );
+      final storage = GetStorage();
+final accessToken = response['data']['accessToken']; // <- from your response
+
+storage.write('token', accessToken);
  Get.offAllNamed('/mainscreen');
       // Handle success (e.g., token saving, navigating)
       print("Login success: $response");
