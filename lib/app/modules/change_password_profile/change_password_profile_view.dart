@@ -27,68 +27,72 @@ class ChangePasswordProfileView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: Get.height * 0.1),
-            Center(child: SvgPicture.asset(Appimages.editprofilechangepass)),
-            SizedBox(height: Get.height * 0.02),
-            Text(
-              'Password',
-
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: Get.height * 0.1),
+              Center(child: SvgPicture.asset(Appimages.editprofilechangepass)),
+              SizedBox(height: Get.height * 0.02),
+              Text(
+                'Password',
+          
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff2A2A2A),
+                ),
+              ),
+               SizedBox(height: Get.height*0.01,),
+              Obx(
+                () => Formfield(
+                  controller: controller.oldPasswordController,
+                  tittle: 'Enter Password',
+                  obsecuretext: controller.isObscured.value,
+                  keyboardtype: TextInputType.text,
+                  icon: GestureDetector(
+                    onTap: controller.toggleObscureText,
+                    child: Icon(
+                      controller.isObscured.value
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: Get.height*0.02,),
+              Text('Confirm Password'
+              ,
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 12,
-                color: Color(0xff2A2A2A),
+                color: Color(0xff2A2A2A)
               ),
-            ),
-             SizedBox(height: Get.height*0.01,),
-            Obx(
-              () => Formfield(
-                tittle: 'Enter Password',
-                obsecuretext: controller.isObscured.value,
-                keyboardtype: TextInputType.text,
-                icon: GestureDetector(
-                  onTap: controller.toggleObscureText,
-                  child: Icon(
-                    controller.isObscured.value
-                        ? Icons.visibility_outlined
-                        : Icons.visibility_off_outlined,
+              ),
+               SizedBox(height: Get.height*0.01,),
+              Obx(
+                () => Formfield(
+                  controller: controller.newPasswordController,
+                  tittle: 'Password',
+                  obsecuretext: controller.isObscured1.value,
+                  keyboardtype: TextInputType.text,
+                  icon: GestureDetector(
+                    onTap: controller.toggleObscureText1,
+                    child: Icon(
+                      controller.isObscured1.value
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: Get.height*0.02,),
-            Text('Confirm Password'
-            ,
-            style: TextStyle(
-              fontWeight: FontWeight.w400,
-              fontSize: 12,
-              color: Color(0xff2A2A2A)
-            ),
-            ),
-             SizedBox(height: Get.height*0.01,),
-            Obx(
-              () => Formfield(
-                tittle: 'Password',
-                obsecuretext: controller.isObscured1.value,
-                keyboardtype: TextInputType.text,
-                icon: GestureDetector(
-                  onTap: controller.toggleObscureText1,
-                  child: Icon(
-                    controller.isObscured1.value
-                        ? Icons.visibility_outlined
-                        : Icons.visibility_off_outlined,
-                  ),
-                ),
-              ),
-            ),
-             SizedBox(height: Get.height*0.04,),
-            GestureDetector(
-              
-              onTap: () => Get.back(),
-              child: CommonButton(tittle: 'Save Changes')),
-          ],
+               SizedBox(height: Get.height*0.04,),
+              GestureDetector(
+                
+                onTap: controller.changePassword ,
+                child: CommonButton(tittle: 'Save Changes')),
+            ],
+          ),
         ),
       ),
     );

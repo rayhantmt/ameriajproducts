@@ -79,4 +79,42 @@ class ApiService {
       throw FetchDataException(e.toString());
     }
   }
+
+  /// PATCH Request
+  static Future<dynamic> patch({
+    required String endpoint,
+    Map<String, dynamic>? body,
+    Map<String, String>? headers,
+  }) async {
+    final uri = Uri.parse('${ApiConfig.baseUrl}$endpoint');
+
+    try {
+      final response = await http.patch(
+        uri,
+        headers: headers ?? {'Content-Type': 'application/json'},
+        body: jsonEncode(body),
+      );
+      print('🔁 [PATCH] $uri');
+      print('Request Body: ${jsonEncode(body)}');
+      print('Status Code: ${response.statusCode}');
+      print('Response Body: ${response.body}');
+      switch (response.statusCode) {
+        case 200:
+        case 204:
+          return response.body.isNotEmpty ? jsonDecode(response.body) : {};
+        case 400:
+          throw BadRequestException(response.body);
+        case 401:
+        case 403:
+          throw UnauthorizedException(response.body);
+        case 404:
+          throw NotFoundException("Server offline");
+        case 500:
+        default:
+          throw InternalServerException(response.body);
+      }
+    } catch (e) {
+      throw FetchDataException(e.toString());
+    }
+  }
 }
