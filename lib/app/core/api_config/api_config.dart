@@ -12,6 +12,7 @@ class ApiConfig {
   static const String otpendpoint = '/auth/verify_otp';
   static const String restpasswordendpoint='/auth/reset_password';
   static const String changepasswordendpoint='/auth/update_password';
+  static const String getappointment='/Appointment?_id=68814ce1247ee934ae7d3ca6&details=This is short description two';
 
   // Other modules...
 }
