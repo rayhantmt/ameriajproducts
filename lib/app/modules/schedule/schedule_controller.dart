@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/modules/schedule/schedule_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -64,5 +65,39 @@ class AppointmentController extends GetxController {
     detailsController.dispose();
     locationController.dispose();
     super.onClose();
+  }
+  final isLoadinggetappointment = false.obs;
+  final appointments = <ScheduleModel>[].obs;
+
+  Future<void> fetchAppointments() async {
+    isLoading.value = true;
+
+    final token = GetStorage().read('token');
+    if (token == null) {
+      Get.snackbar("Error", "No auth token found");
+      return;
+    }
+
+    try {
+      final response = await ApiService.get(
+        endpoint: ApiConfig.getAppointmentEndpoint, // <-- your endpoint
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $token',
+        },
+      );
+
+      final List<dynamic> data = response['data']['appointment'];
+      appointments.value = data.map((e) => ScheduleModel.fromJson(e)).toList();
+    } on AppException catch (e) {
+      Get.snackbar(
+        'Fetch Failed',
+        e.message,
+        backgroundColor: Colors.redAccent,
+        colorText: Colors.white,
+      );
+    } finally {
+      isLoading.value = false;
+    }
   }
 }

@@ -27,15 +27,15 @@ class ApiService {
         case 201:
           return jsonDecode(response.body);
         case 400:
-           final error = jsonDecode(response.body)['message'] ?? 'Bad Request';
-    throw BadRequestException(error);
+          final error = jsonDecode(response.body)['message'] ?? 'Bad Request';
+          throw BadRequestException(error);
         case 401:
         case 403:
-           final error = jsonDecode(response.body)['message'] ?? 'Unauthorized';
-    throw UnauthorizedException(error);
+          final error = jsonDecode(response.body)['message'] ?? 'Unauthorized';
+          throw UnauthorizedException(error);
         case 404:
-         final error = jsonDecode(response.body)['message'] ?? 'Not Found';
-    throw NotFoundException(error);
+          final error = jsonDecode(response.body)['message'] ?? 'Not Found';
+          throw NotFoundException(error);
         case 500:
         default:
           throw InternalServerException(response.body);
@@ -112,6 +112,44 @@ class ApiService {
           throw UnauthorizedException(response.body);
         case 404:
           throw NotFoundException(response.body);
+        case 500:
+        default:
+          throw InternalServerException(response.body);
+      }
+    } catch (e) {
+      throw FetchDataException(e.toString());
+    }
+  }
+
+  /// GET Request
+  static Future<dynamic> get({
+    required String endpoint,
+    Map<String, String>? headers,
+  }) async {
+    final uri = Uri.parse('${ApiConfig.baseUrl}$endpoint');
+
+    try {
+      final response = await http.get(
+        uri,
+        headers: headers ?? {'Content-Type': 'application/json'},
+      );
+      print('🔁 [GET] $uri');
+      print('Status Code: ${response.statusCode}');
+      print('Response Body: ${response.body}');
+      switch (response.statusCode) {
+        case 200:
+        case 201:
+          return jsonDecode(response.body);
+        case 400:
+          final error = jsonDecode(response.body)['message'] ?? 'Bad Request';
+          throw BadRequestException(error);
+        case 401:
+        case 403:
+          final error = jsonDecode(response.body)['message'] ?? 'Unauthorized';
+          throw UnauthorizedException(error);
+        case 404:
+          final error = jsonDecode(response.body)['message'] ?? 'Not Found';
+          throw NotFoundException(error);
         case 500:
         default:
           throw InternalServerException(response.body);

@@ -9,7 +9,7 @@ class ScheduleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<AppointmentController>();
-    final data = scheduledata().sdata;
+    final data = controller.appointments;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -61,7 +61,7 @@ class ScheduleView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            data[index].tittle,
+                            data[index].details,
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 16,
