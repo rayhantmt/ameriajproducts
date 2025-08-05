@@ -100,4 +100,33 @@ class AppointmentController extends GetxController {
       isLoading.value = false;
     }
   }
+
+
+  Future<void> deleteAppointment(String id) async {
+  final token = GetStorage().read('token');
+  if (token == null) {
+    Get.snackbar("Error", "Token not found");
+    return;
+  }
+
+  try {
+    final response = await ApiService.delete(
+      endpoint: '/Appointment/$id',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token',
+      },
+    );
+
+    print("Appointment deleted: $response");
+    Get.snackbar("Success", "Appointment deleted");
+
+    // Optionally refresh appointment list
+   await fetchAppointments();
+  } on AppException catch (e) {
+    Get.snackbar("Delete Failed", e.message,
+        backgroundColor: Colors.redAccent, colorText: Colors.white);
+  }
+}
+
 }

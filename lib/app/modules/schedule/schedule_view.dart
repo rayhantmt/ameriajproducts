@@ -151,7 +151,7 @@ class ScheduleView extends StatelessWidget {
                                           ),
                                           Spacer(),
                                           GestureDetector(
-                                            onTap: () => print(controller.appointments[index].id),
+                                            onTap: () => controller.deleteAppointment(controller.appointments[index].id),
                                             child: Container(
                                               height: Get.height * 0.06,
                                               width: double.infinity,

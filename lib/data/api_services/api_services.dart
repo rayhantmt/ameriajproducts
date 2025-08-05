@@ -158,4 +158,42 @@ class ApiService {
       throw FetchDataException(e.toString());
     }
   }
+
+  /// DELETE Request
+  static Future<dynamic> delete({
+    required String endpoint,
+    Map<String, String>? headers,
+  }) async {
+    final uri = Uri.parse('${ApiConfig.baseUrl}$endpoint');
+
+    try {
+      final response = await http.delete(
+        uri,
+        headers: headers ?? {'Content-Type': 'application/json'},
+      );
+      print('🗑️ [DELETE] $uri');
+      print('Status Code: ${response.statusCode}');
+      print('Response Body: ${response.body}');
+      switch (response.statusCode) {
+        case 200:
+        case 204:
+          return response.body.isNotEmpty ? jsonDecode(response.body) : {};
+        case 400:
+          final error = jsonDecode(response.body)['message'] ?? 'Bad Request';
+          throw BadRequestException(error);
+        case 401:
+        case 403:
+          final error = jsonDecode(response.body)['message'] ?? 'Unauthorized';
+          throw UnauthorizedException(error);
+        case 404:
+          final error = jsonDecode(response.body)['message'] ?? 'Not Found';
+          throw NotFoundException(error);
+        case 500:
+        default:
+          throw InternalServerException(response.body);
+      }
+    } catch (e) {
+      throw FetchDataException(e.toString());
+    }
+  }
 }
