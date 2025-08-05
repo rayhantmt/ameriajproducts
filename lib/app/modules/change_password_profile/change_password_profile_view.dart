@@ -35,7 +35,7 @@ class ChangePasswordProfileView extends StatelessWidget {
               Center(child: SvgPicture.asset(Appimages.editprofilechangepass)),
               SizedBox(height: Get.height * 0.02),
               Text(
-                'Password',
+                'Current Password',
           
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
@@ -47,7 +47,7 @@ class ChangePasswordProfileView extends StatelessWidget {
               Obx(
                 () => Formfield(
                   controller: controller.oldPasswordController,
-                  tittle: 'Enter Password',
+                  tittle: 'Enter your old password',
                   obsecuretext: controller.isObscured.value,
                   keyboardtype: TextInputType.text,
                   icon: GestureDetector(
@@ -61,7 +61,7 @@ class ChangePasswordProfileView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: Get.height*0.02,),
-              Text('Confirm Password'
+              Text('New Password'
               ,
               style: TextStyle(
                 fontWeight: FontWeight.w400,
@@ -73,7 +73,7 @@ class ChangePasswordProfileView extends StatelessWidget {
               Obx(
                 () => Formfield(
                   controller: controller.newPasswordController,
-                  tittle: 'Password',
+                  tittle: 'Enter your new password',
                   obsecuretext: controller.isObscured1.value,
                   keyboardtype: TextInputType.text,
                   icon: GestureDetector(
