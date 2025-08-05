@@ -45,6 +45,7 @@ class AppointmentController extends GetxController {
 
       print('Appointment booked: $response');
       Get.snackbar("Success", "Appointment Booked Successfully");
+      await fetchAppointments();
                         
     } on AppException catch (e) {
       Get.snackbar(
@@ -102,10 +103,15 @@ class AppointmentController extends GetxController {
   }
 
 
-  Future<void> deleteAppointment(String id) async {
+ final RxBool isDeletingAppointment = false.obs;
+
+Future<void> deleteAppointment(String id) async {
+  isDeletingAppointment.value = true;
+
   final token = GetStorage().read('token');
   if (token == null) {
     Get.snackbar("Error", "Token not found");
+    isDeletingAppointment.value = false;
     return;
   }
 
@@ -122,11 +128,14 @@ class AppointmentController extends GetxController {
     Get.snackbar("Success", "Appointment deleted");
 
     // Optionally refresh appointment list
-   await fetchAppointments();
+    await fetchAppointments();
   } on AppException catch (e) {
     Get.snackbar("Delete Failed", e.message,
         backgroundColor: Colors.redAccent, colorText: Colors.white);
+  } finally {
+    isDeletingAppointment.value = false;
   }
 }
+
 
 }

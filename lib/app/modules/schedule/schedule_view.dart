@@ -125,7 +125,7 @@ class ScheduleView extends StatelessWidget {
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
-                                       
+
                                         children: [
                                           SizedBox(height: Get.height * 0.01),
                                           SvgPicture.asset(
@@ -151,15 +151,20 @@ class ScheduleView extends StatelessWidget {
                                           ),
                                           Spacer(),
                                           GestureDetector(
-                                            onTap:   () async {
-                              await controller.deleteAppointment(controller.appointments[index].id);
+                                            onTap: () async {
+                                              await controller
+                                                  .deleteAppointment(
+                                                    controller
+                                                        .appointments[index]
+                                                        .id,
+                                                  );
 
-                              // Only close the modal if booking is successful
-                              if (!controller.isLoading.value) {
-                                Navigator.pop(context);
-                              }
-                            },
-                                            child: Container(
+                                             
+                                              if (!controller.isLoading.value) {
+                                                Navigator.pop(context);
+                                              }
+                                            },
+                                            child: Obx(() => Container(
                                               height: Get.height * 0.06,
                                               width: double.infinity,
                                               decoration: BoxDecoration(
@@ -168,9 +173,11 @@ class ScheduleView extends StatelessWidget {
                                                 color: Color(0xffDC143C),
                                               ),
                                               child: Center(
-                                                child: Text(
+                                                child: controller.isDeletingAppointment.value?CircularProgressIndicator(
+                                                  color: Colors.white,
+                                                ):Text(
                                                   'Delete',
-                                            
+
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.w600,
                                                     fontSize: 16,
@@ -178,10 +185,10 @@ class ScheduleView extends StatelessWidget {
                                                   ),
                                                 ),
                                               ),
-                                            ),
+                                            ),)
                                           ),
-                                          SizedBox(height: Get.height*0.02,),
-                                           Container(
+                                          SizedBox(height: Get.height * 0.02),
+                                          Container(
                                             height: Get.height * 0.06,
                                             width: double.infinity,
                                             decoration: BoxDecoration(
@@ -201,8 +208,7 @@ class ScheduleView extends StatelessWidget {
                                               ),
                                             ),
                                           ),
-                                          SizedBox(height: Get.height*0.02,),
-
+                                          SizedBox(height: Get.height * 0.02),
                                         ],
                                       ),
                                     ),
