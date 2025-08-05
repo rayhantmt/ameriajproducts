@@ -188,22 +188,25 @@ class ScheduleView extends StatelessWidget {
                                             ),)
                                           ),
                                           SizedBox(height: Get.height * 0.02),
-                                          Container(
-                                            height: Get.height * 0.06,
-                                            width: double.infinity,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              color: Color(0xffF3F4F6),
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                'Cancel',
-
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 16,
-                                                  color: Color(0xff727272),
+                                          GestureDetector(
+                                            onTap: () => Navigator.pop(context),
+                                            child: Container(
+                                              height: Get.height * 0.06,
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
+                                                color: Color(0xffF3F4F6),
+                                              ),
+                                              child: Center(
+                                                child: Text(
+                                                  'Cancel',
+                                            
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 16,
+                                                    color: Color(0xff727272),
+                                                  ),
                                                 ),
                                               ),
                                             ),
