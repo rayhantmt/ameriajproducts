@@ -9,7 +9,7 @@ class ScheduleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<AppointmentController>();
-    final data = controller.appointments;
+
     controller.fetchAppointments();
     return Scaffold(
       backgroundColor: Colors.white,
@@ -97,9 +97,12 @@ class ScheduleView extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Icon(
-                    Icons.delete_outline_outlined,
-                    color: Color(0xffDE2626),
+                  GestureDetector(
+                    onTap:() => print(controller.appointments[index].id) ,
+                    child: Icon(
+                      Icons.delete_outline_outlined,
+                      color: Color(0xffDE2626),
+                    ),
                   ),
                   Row(
                     children: [
