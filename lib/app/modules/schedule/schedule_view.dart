@@ -10,6 +10,7 @@ class ScheduleView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<AppointmentController>();
     final data = controller.appointments;
+    controller.fetchAppointments();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -39,87 +40,88 @@ class ScheduleView extends StatelessWidget {
             ),
 
             SizedBox(height: 20),
-            Expanded(
-              child: ListView.builder(
-                itemCount: data.length,
-                itemBuilder: (context, index) => Container(
-                  height: 90,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0xff2C78DC).withOpacity(.08),
-                        offset: const Offset(0, 3),
-                        blurRadius: 12,
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            data[index].details,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                              color: Color(0xff111827),
-                            ),
-                          ),
-                          Text(
-                            data[index].details,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                              color: Color(0xff4B5563),
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Icon(Icons.location_on, color: Color(0xff08692C)),
-                              Text(
-                                data[index].location,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12,
-                                  color: Color(0xff6B7280),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Spacer(),
-                      Column(
-                        // mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Icon(
-                            Icons.delete_outline_outlined,
-                            color: Color(0xffDE2626),
-                          ),
-                          Row(
-                            children: [
-                              Icon(Icons.access_time, color: Color(0xff667085)),
-                              Text(
-                                data[index].time,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12,
-                                  color: Color(0xff667085),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+  
+           Expanded(
+  child: Obx(() => ListView.builder(
+        itemCount: controller.appointments.length,
+        itemBuilder: (context, index) => Container(
+          height: 90,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Color(0xff2C78DC).withOpacity(.08),
+                offset: const Offset(0, 3),
+                blurRadius: 12,
               ),
-            ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    controller.appointments[index].details,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      color: Color(0xff111827),
+                    ),
+                  ),
+                  Text(
+                    controller.appointments[index].details,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      color: Color(0xff4B5563),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.location_on, color: Color(0xff08692C)),
+                      Text(
+                        controller.appointments[index].location,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                          color: Color(0xff6B7280),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Spacer(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Icon(
+                    Icons.delete_outline_outlined,
+                    color: Color(0xffDE2626),
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.access_time, color: Color(0xff667085)),
+                      Text(
+                        controller.appointments[index].time,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                          color: Color(0xff667085),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      )),
+)
+
           ],
         ),
       ),
