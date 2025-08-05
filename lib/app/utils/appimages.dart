@@ -22,4 +22,5 @@ class Appimages {
     static const String marksman = 'lib/assets/svgs/marksman.svg';
      static const String sharpshooter = 'lib/assets/svgs/sharpshooter.svg';
       static const String expert = 'lib/assets/svgs/expert.svg';
+      static const String deleteappointment = 'lib/assets/svgs/delete_appointment_icon.svg';
 }

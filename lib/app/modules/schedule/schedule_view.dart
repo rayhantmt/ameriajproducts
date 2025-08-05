@@ -113,6 +113,11 @@ class ScheduleView extends StatelessWidget {
                   color: Colors.white,
                   
                 ),
+                child: Column(
+                  children: [
+                    
+                  ],
+                ),
               ),
             )
                     ),
