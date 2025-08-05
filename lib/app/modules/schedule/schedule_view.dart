@@ -1,5 +1,5 @@
 import 'package:ameriajproducts/app/modules/schedule/schedule_controller.dart';
-import 'package:ameriajproducts/app/modules/schedule/schedule_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
