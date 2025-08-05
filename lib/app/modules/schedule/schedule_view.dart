@@ -151,7 +151,14 @@ class ScheduleView extends StatelessWidget {
                                           ),
                                           Spacer(),
                                           GestureDetector(
-                                            onTap: () => controller.deleteAppointment(controller.appointments[index].id),
+                                            onTap:   () async {
+                              await controller.deleteAppointment(controller.appointments[index].id);
+
+                              // Only close the modal if booking is successful
+                              if (!controller.isLoading.value) {
+                                Navigator.pop(context);
+                              }
+                            },
                                             child: Container(
                                               height: Get.height * 0.06,
                                               width: double.infinity,
