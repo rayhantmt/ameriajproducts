@@ -98,7 +98,24 @@ class ScheduleView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap:() => print(controller.appointments[index].id) ,
+                    onTap:() =>   showDialog(
+            context: context,
+            builder: (context) =>Dialog(
+              child: Container(
+                height: Get.height*0.4,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    
+                    width: 1,
+                    color: Color(0xffE5E7EB)
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                  
+                ),
+              ),
+            )
+                    ),
                     child: Icon(
                       Icons.delete_outline_outlined,
                       color: Color(0xffDE2626),
