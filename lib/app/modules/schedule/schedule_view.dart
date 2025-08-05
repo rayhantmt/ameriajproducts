@@ -42,153 +42,192 @@ class ScheduleView extends StatelessWidget {
             ),
 
             SizedBox(height: 20),
-  
-           Expanded(
-  child: Obx(() => ListView.builder(
-        itemCount: controller.appointments.length,
-        itemBuilder: (context, index) => Container(
-          height: 90,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Color(0xff2C78DC).withOpacity(.08),
-                offset: const Offset(0, 3),
-                blurRadius: 12,
-              ),
-            ],
-          ),
-          child: Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    controller.appointments[index].details,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                      color: Color(0xff111827),
-                    ),
-                  ),
-                  Text(
-                    controller.appointments[index].details,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      color: Color(0xff4B5563),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.location_on, color: Color(0xff08692C)),
-                      Text(
-                        controller.appointments[index].location,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                          color: Color(0xff6B7280),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Spacer(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  GestureDetector(
-                    onTap:() =>   showDialog(
-            context: context,
-            builder: (context) =>Dialog(
-              child: Container(
-                height: Get.height*0.4,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    
-                    width: 1,
-                    color: Color(0xffE5E7EB)
-                  ),
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.white,
-                  
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 5,right: 5),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    //mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(height: Get.height*0.01,),
-                      SvgPicture.asset(Appimages.deleteappointment),
-                      SizedBox(height: Get.height*0.02,),
-                      Text('Delete Appointment',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                        color: Color(0xff111827)
-                      ),
-                      ),
-                       SizedBox(height: Get.height*0.01,),
-                       Text('Are you sure you want to delete this item? This action cannot be undone.',
-                       style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Color(0xff6B7280)
-                       ),
-                       ),
-                       Container(
-                        height: Get.height*0.06,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: Color(0xffDC143C)
-                        ),
-                        child: Center(
-                          child: Text('Delete',
-                                                
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            color: Colors.white
-                          ),
-                          ),
-                        ),
-                       )
-                    ],
-                  ),
-                ),
-              ),
-            )
-                    ),
-                    child: Icon(
-                      Icons.delete_outline_outlined,
-                      color: Color(0xffDE2626),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.access_time, color: Color(0xff667085)),
-                      Text(
-                        controller.appointments[index].time,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                          color: Color(0xff667085),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      )),
-)
 
+            Expanded(
+              child: Obx(
+                () => ListView.builder(
+                  itemCount: controller.appointments.length,
+                  itemBuilder: (context, index) => Container(
+                    height: 90,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xff2C78DC).withOpacity(.08),
+                          offset: const Offset(0, 3),
+                          blurRadius: 12,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              controller.appointments[index].details,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16,
+                                color: Color(0xff111827),
+                              ),
+                            ),
+                            Text(
+                              controller.appointments[index].details,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                                color: Color(0xff4B5563),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.location_on,
+                                  color: Color(0xff08692C),
+                                ),
+                                Text(
+                                  controller.appointments[index].location,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12,
+                                    color: Color(0xff6B7280),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Spacer(),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            GestureDetector(
+                              onTap: () => showDialog(
+                                context: context,
+                                builder: (context) => Dialog(
+                                  child: Container(
+                                    height: Get.height * 0.4,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        width: 1,
+                                        color: Color(0xffE5E7EB),
+                                      ),
+                                      borderRadius: BorderRadius.circular(8),
+                                      color: Colors.white,
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 5,
+                                        right: 5,
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        //mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          SizedBox(height: Get.height * 0.01),
+                                          SvgPicture.asset(
+                                            Appimages.deleteappointment,
+                                          ),
+                                          SizedBox(height: Get.height * 0.02),
+                                          Text(
+                                            'Delete Appointment',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 16,
+                                              color: Color(0xff111827),
+                                            ),
+                                          ),
+                                          SizedBox(height: Get.height * 0.01),
+                                          Text(
+                                            'Are you sure you want to delete this item? This action cannot be undone.',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                              color: Color(0xff6B7280),
+                                            ),
+                                          ),
+                                          Spacer(),
+                                          Container(
+                                            height: Get.height * 0.06,
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              color: Color(0xffDC143C),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Delete',
+
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 16,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: Get.height*0.02,),
+                                           Container(
+                                            height: Get.height * 0.06,
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              color: Color(0xffF3F4F6),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Cancel',
+
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 16,
+                                                  color: Color(0xff727272),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: Get.height*0.02,),
+
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              child: Icon(
+                                Icons.delete_outline_outlined,
+                                color: Color(0xffDE2626),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.access_time,
+                                  color: Color(0xff667085),
+                                ),
+                                Text(
+                                  controller.appointments[index].time,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12,
+                                    color: Color(0xff667085),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -210,7 +249,7 @@ class ScheduleView extends StatelessWidget {
                 height: Get.height * 0.55,
                 width: double.infinity,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20,right: 20),
+                  padding: const EdgeInsets.only(left: 20, right: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -234,11 +273,14 @@ class ScheduleView extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Container(
-                         padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 10),
                         height: 45,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                          border: Border.all(
+                            width: 1,
+                            color: Color(0xffE5E7EB),
+                          ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: TextFormField(
@@ -256,29 +298,34 @@ class ScheduleView extends StatelessWidget {
                                     color: Color(0xff6B7280),
                                   ),
                                 ),
-                                Icon(Icons.calendar_month,
-                                color: Color(0xff6B7280),
+                                Icon(
+                                  Icons.calendar_month,
+                                  color: Color(0xff6B7280),
                                 ),
                               ],
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 20,),
-                      Text('Time',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 14,
-                        color: Color(0xff4B5563)
+                      SizedBox(height: 20),
+                      Text(
+                        'Time',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                          color: Color(0xff4B5563),
+                        ),
                       ),
-                      ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: 10),
                       Container(
-                         padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 10),
                         height: 45,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                          border: Border.all(
+                            width: 1,
+                            color: Color(0xffE5E7EB),
+                          ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: TextFormField(
@@ -296,76 +343,87 @@ class ScheduleView extends StatelessWidget {
                                     color: Color(0xff6B7280),
                                   ),
                                 ),
-                                Icon(Icons.access_time,
-                                color: Color(0xff6B7280),
+                                Icon(
+                                  Icons.access_time,
+                                  color: Color(0xff6B7280),
                                 ),
                               ],
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 20,),
-                      Text('Details',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 14,
-                        color: Color(0xff4B5563)
+                      SizedBox(height: 20),
+                      Text(
+                        'Details',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                          color: Color(0xff4B5563),
+                        ),
                       ),
-                      ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: 10),
                       Container(
                         padding: EdgeInsets.only(left: 10),
                         height: 45,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                          border: Border.all(
+                            width: 1,
+                            color: Color(0xffE5E7EB),
+                          ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: TextFormField(
                           controller: controller.detailsController,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hint: Text('Enter',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                              color: Color(0xff6B7280)
+                            hint: Text(
+                              'Enter',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                                color: Color(0xff6B7280),
+                              ),
                             ),
-                            )
                           ),
                         ),
                       ),
-                      SizedBox(height: 20,),
-                      Text('Location',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 14,
-                        color: Color(0xff4B5563)
-                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'Location',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                          color: Color(0xff4B5563),
+                        ),
                       ),
                       Container(
                         padding: EdgeInsets.only(left: 10),
                         height: 45,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                          border: Border.all(
+                            width: 1,
+                            color: Color(0xffE5E7EB),
+                          ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: TextFormField(
                           controller: controller.locationController,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hint: Text('Enter',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                              color: Color(0xff6B7280)
+                            hint: Text(
+                              'Enter',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                                color: Color(0xff6B7280),
+                              ),
                             ),
-                            )
                           ),
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -373,61 +431,64 @@ class ScheduleView extends StatelessWidget {
                             onTap: () => Navigator.pop(context),
                             child: Container(
                               height: 35,
-                              width: Get.width*0.3,
+                              width: Get.width * 0.3,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4),
-                                color: Color(0xffF3F4F6)
+                                color: Color(0xffF3F4F6),
                               ),
                               child: Center(
-                                child: Text('Cancel',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 14,
-                                  color: Color(0xff787B81)
-                                ),
+                                child: Text(
+                                  'Cancel',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                    color: Color(0xff787B81),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                           GestureDetector(
-  onTap: () async {
-    await controller.bookAppointment();
+                            onTap: () async {
+                              await controller.bookAppointment();
 
-    // Only close the modal if booking is successful
-    if (!controller.isLoading.value) {
-      Navigator.pop(context);
-    }
-  },
-  child: Obx(() => Container(
-        height: 35,
-        width: Get.width * 0.3,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
-          color: const Color(0xff08692C),
-        ),
-        child: Center(
-          child: controller.isLoading.value
-              ? const SizedBox(
-                  height: 18,
-                  width: 18,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    color: Colors.white,
-                  ),
-                )
-              : const Text(
-                  'Save',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                    color: Colors.white,
-                  ),
-                ),
-        ),
-      )),
-)
+                              // Only close the modal if booking is successful
+                              if (!controller.isLoading.value) {
+                                Navigator.pop(context);
+                              }
+                            },
+                            child: Obx(
+                              () => Container(
+                                height: 35,
+                                width: Get.width * 0.3,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(4),
+                                  color: const Color(0xff08692C),
+                                ),
+                                child: Center(
+                                  child: controller.isLoading.value
+                                      ? const SizedBox(
+                                          height: 18,
+                                          width: 18,
+                                          child: CircularProgressIndicator(
+                                            strokeWidth: 2,
+                                            color: Colors.white,
+                                          ),
+                                        )
+                                      : const Text(
+                                          'Save',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
