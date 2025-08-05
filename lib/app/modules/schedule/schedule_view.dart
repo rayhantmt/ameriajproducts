@@ -1,6 +1,8 @@
 import 'package:ameriajproducts/app/modules/schedule/schedule_controller.dart';
+import 'package:ameriajproducts/app/utils/appimages.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class ScheduleView extends StatelessWidget {
@@ -115,7 +117,8 @@ class ScheduleView extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    
+                    SizedBox(height: Get.height*0.5,),
+                    SvgPicture.asset(Appimages.deleteappointment)
                   ],
                 ),
               ),
