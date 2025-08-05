@@ -115,11 +115,50 @@ class ScheduleView extends StatelessWidget {
                   color: Colors.white,
                   
                 ),
-                child: Column(
-                  children: [
-                    SizedBox(height: Get.height*0.5,),
-                    SvgPicture.asset(Appimages.deleteappointment)
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 5,right: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    //mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: Get.height*0.01,),
+                      SvgPicture.asset(Appimages.deleteappointment),
+                      SizedBox(height: Get.height*0.02,),
+                      Text('Delete Appointment',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                        color: Color(0xff111827)
+                      ),
+                      ),
+                       SizedBox(height: Get.height*0.01,),
+                       Text('Are you sure you want to delete this item? This action cannot be undone.',
+                       style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff6B7280)
+                       ),
+                       ),
+                       Container(
+                        height: Get.height*0.06,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Color(0xffDC143C)
+                        ),
+                        child: Center(
+                          child: Text('Delete',
+                                                
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                            color: Colors.white
+                          ),
+                          ),
+                        ),
+                       )
+                    ],
+                  ),
                 ),
               ),
             )
