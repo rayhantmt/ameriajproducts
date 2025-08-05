@@ -31,7 +31,7 @@ class ScheduleView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(height: 40),
+            Container(height: 20),
             Text(
               'Schedules',
               style: TextStyle(
@@ -125,7 +125,7 @@ class ScheduleView extends StatelessWidget {
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
-                                        //mainAxisAlignment: MainAxisAlignment.center,
+                                       
                                         children: [
                                           SizedBox(height: Get.height * 0.01),
                                           SvgPicture.asset(
@@ -150,22 +150,25 @@ class ScheduleView extends StatelessWidget {
                                             ),
                                           ),
                                           Spacer(),
-                                          Container(
-                                            height: Get.height * 0.06,
-                                            width: double.infinity,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              color: Color(0xffDC143C),
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                'Delete',
-
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 16,
-                                                  color: Colors.white,
+                                          GestureDetector(
+                                            onTap: () => print(controller.appointments[index].id),
+                                            child: Container(
+                                              height: Get.height * 0.06,
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
+                                                color: Color(0xffDC143C),
+                                              ),
+                                              child: Center(
+                                                child: Text(
+                                                  'Delete',
+                                            
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 16,
+                                                    color: Colors.white,
+                                                  ),
                                                 ),
                                               ),
                                             ),
