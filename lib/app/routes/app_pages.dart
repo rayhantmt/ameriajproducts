@@ -32,6 +32,7 @@ import 'package:ameriajproducts/app/modules/profile/profile_view.dart';
 import 'package:ameriajproducts/app/modules/range_detailss/range_details_view.dart';
 import 'package:ameriajproducts/app/modules/range_history/range_history_view.dart';
 import 'package:ameriajproducts/app/modules/range_history_details/range_history_details.dart';
+import 'package:ameriajproducts/app/modules/schedule/schedule_binding.dart';
 import 'package:ameriajproducts/app/modules/schedule/schedule_view.dart';
 import 'package:ameriajproducts/app/modules/sign_up/sign_up_binding.dart';
 import 'package:ameriajproducts/app/modules/sign_up/sign_up_view.dart';
@@ -63,7 +64,7 @@ class AppPages {
     GetPage(name: Approutes.changepassword, page:()=> ChangePasswordView(),binding: ChangePasswordBinding()),
     GetPage(name: Approutes.home, page: ()=>HomeView()),
     GetPage(name: Approutes.task, page: ()=>TaskView()),
-    GetPage(name: Approutes.schedule, page: ()=>ScheduleView()),
+    GetPage(name: Approutes.schedule, page: ()=>ScheduleView(),binding: AppointmentBinding()),
     GetPage(name: Approutes.profile, page: ()=>ProfileView()),
     GetPage(name: Approutes.medpro, page: ()=>MedproView()),
     GetPage(name: Approutes.weapon, page: ()=> Weapon(),binding: WeaponBinding()),

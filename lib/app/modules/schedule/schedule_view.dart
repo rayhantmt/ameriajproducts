@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/modules/schedule/schedule_controller.dart';
 import 'package:ameriajproducts/app/modules/schedule/schedule_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,6 +8,7 @@ class ScheduleView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<AppointmentController>();
     final data = scheduledata().sdata;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -171,6 +173,7 @@ class ScheduleView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: TextFormField(
+                          controller: controller.dateController,
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hint: Row(
@@ -210,6 +213,7 @@ class ScheduleView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: TextFormField(
+                          controller: controller.timeController,
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hint: Row(
@@ -249,7 +253,7 @@ class ScheduleView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: TextFormField(
-                          
+                          controller: controller.detailsController,
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hint: Text('Enter',
@@ -279,7 +283,7 @@ class ScheduleView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: TextFormField(
-                          
+                          controller: controller.locationController,
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hint: Text('Enter',
@@ -317,25 +321,42 @@ class ScheduleView extends StatelessWidget {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () => Navigator.pop(context),
-                            child: Container(
-                              height: 35,
-                              width: Get.width*0.3,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                color: Color(0xff08692C)
-                              ),
-                              child: Center(
-                                child: Text('Save',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 14,
-                                  color: Colors.white
-                                ),
-                                ),
-                              ),
-                            ),
-                          ),
+  onTap: () async {
+    await controller.bookAppointment();
+
+    // Only close the modal if booking is successful
+    if (!controller.isLoading.value) {
+      Navigator.pop(context);
+    }
+  },
+  child: Obx(() => Container(
+        height: 35,
+        width: Get.width * 0.3,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          color: const Color(0xff08692C),
+        ),
+        child: Center(
+          child: controller.isLoading.value
+              ? const SizedBox(
+                  height: 18,
+                  width: 18,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    color: Colors.white,
+                  ),
+                )
+              : const Text(
+                  'Save',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                    color: Colors.white,
+                  ),
+                ),
+        ),
+      )),
+)
                         ],
                       )
                     ],

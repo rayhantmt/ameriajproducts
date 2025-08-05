@@ -27,12 +27,15 @@ class ApiService {
         case 201:
           return jsonDecode(response.body);
         case 400:
-          throw BadRequestException(response.body);
+           final error = jsonDecode(response.body)['message'] ?? 'Bad Request';
+    throw BadRequestException(error);
         case 401:
         case 403:
-          throw UnauthorizedException(response.body);
+           final error = jsonDecode(response.body)['message'] ?? 'Unauthorized';
+    throw UnauthorizedException(error);
         case 404:
-          throw NotFoundException("Server offline");
+         final error = jsonDecode(response.body)['message'] ?? 'Not Found';
+    throw NotFoundException(error);
         case 500:
         default:
           throw InternalServerException(response.body);
@@ -108,7 +111,7 @@ class ApiService {
         case 403:
           throw UnauthorizedException(response.body);
         case 404:
-          throw NotFoundException("Server offline");
+          throw NotFoundException(response.body);
         case 500:
         default:
           throw InternalServerException(response.body);
