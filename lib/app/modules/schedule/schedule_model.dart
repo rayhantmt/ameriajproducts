@@ -4,6 +4,7 @@ class ScheduleModel {
   final String time;    // e.g. 12:24 AM
   final String details;
   final String location;
+  final String type;
 
   ScheduleModel({
     required this.id,
@@ -11,6 +12,7 @@ class ScheduleModel {
     required this.time,
     required this.details,
     required this.location,
+    required this.type
   });
 
   factory ScheduleModel.fromJson(Map<String, dynamic> json) {
@@ -37,6 +39,7 @@ class ScheduleModel {
       time: formattedTime,
       details: json['details'] ?? '',
       location: json['location'] ?? '',
+      type: json['type']?? ''
     );
   }
 

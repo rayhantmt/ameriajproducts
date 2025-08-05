@@ -74,7 +74,7 @@ class ScheduleView extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              controller.appointments[index].details,
+                              controller.appointments[index].type,
                               style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 14,
@@ -258,292 +258,294 @@ class ScheduleView extends StatelessWidget {
         onPressed: () {
           showDialog(
             context: context,
-            builder: (context) => Dialog(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.white,
-                ),
-
-                height: Get.height * 0.65,
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 10),
-                      Text(
-                        'Add New Appointment',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Date',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                          color: Color(0xff4B5563),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Container(
-                        padding: EdgeInsets.only(left: 10),
-                        height: 45,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            width: 1,
-                            color: Color(0xffE5E7EB),
+            builder: (context) => SingleChildScrollView(
+              child: Dialog(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.white,
+                  ),
+              
+                  height: Get.height * 0.65,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 10),
+                        Text(
+                          'Add New Appointment',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                            color: Colors.black,
                           ),
-                          borderRadius: BorderRadius.circular(8),
                         ),
-                        child: TextFormField(
-                          controller: controller.dateController,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hint: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'select',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
+                        SizedBox(height: 10),
+                        Text(
+                          'Date',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                            color: Color(0xff4B5563),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          padding: EdgeInsets.only(left: 10),
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xffE5E7EB),
+                            ),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: TextFormField(
+                            controller: controller.dateController,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hint: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'select',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: Color(0xff6B7280),
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.calendar_month,
                                     color: Color(0xff6B7280),
                                   ),
-                                ),
-                                Icon(
-                                  Icons.calendar_month,
-                                  color: Color(0xff6B7280),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                      Text(
-                        'Time',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                          color: Color(0xff4B5563),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Container(
-                        padding: EdgeInsets.only(left: 10),
-                        height: 45,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            width: 1,
-                            color: Color(0xffE5E7EB),
+                        SizedBox(height: 20),
+                        Text(
+                          'Time',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                            color: Color(0xff4B5563),
                           ),
-                          borderRadius: BorderRadius.circular(8),
                         ),
-                        child: TextFormField(
-                          controller: controller.timeController,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hint: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'select',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
+                        SizedBox(height: 10),
+                        Container(
+                          padding: EdgeInsets.only(left: 10),
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xffE5E7EB),
+                            ),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: TextFormField(
+                            controller: controller.timeController,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hint: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'select',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: Color(0xff6B7280),
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.access_time,
                                     color: Color(0xff6B7280),
                                   ),
-                                ),
-                                Icon(
-                                  Icons.access_time,
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          'Details',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                            color: Color(0xff4B5563),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          padding: EdgeInsets.only(left: 10),
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xffE5E7EB),
+                            ),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: TextFormField(
+                            controller: controller.detailsController,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hint: Text(
+                                'Enter',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
                                   color: Color(0xff6B7280),
                                 ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      Text(
-                        'Details',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                          color: Color(0xff4B5563),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Container(
-                        padding: EdgeInsets.only(left: 10),
-                        height: 45,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            width: 1,
-                            color: Color(0xffE5E7EB),
-                          ),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: TextFormField(
-                          controller: controller.detailsController,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hint: Text(
-                              'Enter',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                                color: Color(0xff6B7280),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                      Text(
-                        'Location',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                          color: Color(0xff4B5563),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(left: 10),
-                        height: 45,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            width: 1,
-                            color: Color(0xffE5E7EB),
+                        SizedBox(height: 20),
+                        Text(
+                          'Location',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                            color: Color(0xff4B5563),
                           ),
-                          borderRadius: BorderRadius.circular(8),
                         ),
-                        child: TextFormField(
-                          controller: controller.locationController,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hint: Text(
-                              'Enter',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                                color: Color(0xff6B7280),
-                              ),
+                        Container(
+                          padding: EdgeInsets.only(left: 10),
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xffE5E7EB),
                             ),
+                            borderRadius: BorderRadius.circular(8),
                           ),
-                        ),
-                      ),
-                       SizedBox(height: 20),
-                      Text(
-                        'Type',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                          color: Color(0xff4B5563),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(left: 10),
-                        height: 45,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            width: 1,
-                            color: Color(0xffE5E7EB),
-                          ),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: TextFormField(
-                          controller: controller.locationController,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hint: Text(
-                              'Enter',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                                color: Color(0xff6B7280),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          GestureDetector(
-                            onTap: () => Navigator.pop(context),
-                            child: Container(
-                              height: 35,
-                              width: Get.width * 0.3,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                color: Color(0xffF3F4F6),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Cancel',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 14,
-                                    color: Color(0xff787B81),
-                                  ),
+                          child: TextFormField(
+                            controller: controller.locationController,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hint: Text(
+                                'Enter',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: Color(0xff6B7280),
                                 ),
                               ),
                             ),
                           ),
-                          GestureDetector(
-                            onTap: () async {
-                              await controller.bookAppointment();
-
-                              // Only close the modal if booking is successful
-                              if (!controller.isLoading.value) {
-                                Navigator.pop(context);
-                              }
-                            },
-                            child: Obx(
-                              () => Container(
+                        ),
+                         SizedBox(height: 20),
+                        Text(
+                          'Type',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                            color: Color(0xff4B5563),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 10),
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xffE5E7EB),
+                            ),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: TextFormField(
+                            controller: controller.typecontroller,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hint: Text(
+                                'Enter',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: Color(0xff6B7280),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                              onTap: () => Navigator.pop(context),
+                              child: Container(
                                 height: 35,
                                 width: Get.width * 0.3,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(4),
-                                  color: const Color(0xff08692C),
+                                  color: Color(0xffF3F4F6),
                                 ),
                                 child: Center(
-                                  child: controller.isLoading.value
-                                      ? const SizedBox(
-                                          height: 18,
-                                          width: 18,
-                                          child: CircularProgressIndicator(
-                                            strokeWidth: 2,
-                                            color: Colors.white,
-                                          ),
-                                        )
-                                      : const Text(
-                                          'Save',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                          ),
-                                        ),
+                                  child: Text(
+                                    'Cancel',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14,
+                                      color: Color(0xff787B81),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                            GestureDetector(
+                              onTap: () async {
+                                await controller.bookAppointment();
+              
+                                // Only close the modal if booking is successful
+                                if (!controller.isLoading.value) {
+                                  Navigator.pop(context);
+                                }
+                              },
+                              child: Obx(
+                                () => Container(
+                                  height: 35,
+                                  width: Get.width * 0.3,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(4),
+                                    color: const Color(0xff08692C),
+                                  ),
+                                  child: Center(
+                                    child: controller.isLoading.value
+                                        ? const SizedBox(
+                                            height: 18,
+                                            width: 18,
+                                            child: CircularProgressIndicator(
+                                              strokeWidth: 2,
+                                              color: Colors.white,
+                                            ),
+                                          )
+                                        : const Text(
+                                            'Save',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 14,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

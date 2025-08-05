@@ -14,6 +14,7 @@ class AppointmentController extends GetxController {
   final timeController = TextEditingController();
   final detailsController = TextEditingController();
   final locationController = TextEditingController();
+  final typecontroller=TextEditingController();
 
   Future<void> bookAppointment() async {
     isLoading.value = true;
@@ -29,7 +30,8 @@ class AppointmentController extends GetxController {
         "date": dateController.text.trim(), // e.g. '21/07/2025'
         "time": timeController.text.trim(), // e.g. '12:30 PM'
         "details": detailsController.text.trim(), // Short description
-        "location": locationController.text.trim(), // Location info
+        "location": locationController.text.trim(),
+        "type":typecontroller.text.trim()
       }
     };
 
