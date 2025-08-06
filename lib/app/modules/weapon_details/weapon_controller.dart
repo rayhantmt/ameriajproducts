@@ -78,7 +78,7 @@ late final selectedLevel;
     nameController.dispose();
     scoreController.dispose();
     dateController.dispose();
-    levelController.dispose();
+    
     super.onClose();
   }
 }
