@@ -266,15 +266,15 @@ class Weapon extends StatelessWidget {
                         color: Color(0xff08692C)
                       ),
                       child: Center(
-                        child: controller.isLoading.value?CircularProgressIndicator(
-                          color: Color(0xff08692C),
+                        child: Obx(() => controller.isLoading.value?CircularProgressIndicator(
+                          color: Colors.white,
                         ): Text('Submit',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
                           color: Color(0xffFDFDFD)
                         ),
-                        ),
+                        ),)
                       ),
                     ),
                   )

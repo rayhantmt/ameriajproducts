@@ -106,7 +106,9 @@ class LoginView extends StatelessWidget {
                 SizedBox(height: 20),
                 GestureDetector(
                   onTap: () => fieldviewcontrorller.login(),
-                  child: Obx(() => fieldviewcontrorller.isLoading.value?Center(child: const CircularProgressIndicator()):CommonButton(tittle: 'Login'),)),
+                  child: Obx(() => fieldviewcontrorller.isLoading.value?Center(child: const CircularProgressIndicator(
+                    color: Colors.white,
+                  )):CommonButton(tittle: 'Login'),)),
               ],
             ),
           ),
