@@ -254,7 +254,7 @@ class Weapon extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () => Get.back(),
+                    onTap: controller.submitQualification,
                     child: Container(
                       height: 45,
                       width: Get.width*0.4,

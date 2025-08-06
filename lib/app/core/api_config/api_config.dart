@@ -15,6 +15,7 @@ class ApiConfig {
   static const String getappointment='/Appointment?_id=68814ce1247ee934ae7d3ca6&details=This is short description two';
   static const String psotappointment='/Appointment';
   static const String getAppointmentEndpoint='/Appointment';
+  static const String track='/track';
 
   // Other modules...
 }
