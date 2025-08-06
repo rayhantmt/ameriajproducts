@@ -80,6 +80,7 @@ class Weapon extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.dateController,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Row(
@@ -121,6 +122,7 @@ class Weapon extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.nameController,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
@@ -197,6 +199,7 @@ class Weapon extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.scoreController,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(

@@ -10,6 +10,7 @@ class QualificationController extends GetxController {
   void toggleQualification(String title, bool? value) {
     qualifications.updateAll((key, _) => false);
     qualifications[title] = value ?? true;
+    
   }
 
   /// ✅ Method to get selected qualification

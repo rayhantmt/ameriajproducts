@@ -12,6 +12,11 @@ final qualificationController = Get.find<QualificationController>();
 late final selectedLevel;
   void togglePass(bool value) {
     isPassed.value = value;
+    @override
+  void onInit() {
+    super.onInit();
+    selectedLevel = qualificationController.selectedQualification;
+  }
   }
 
 
@@ -26,6 +31,11 @@ late final selectedLevel;
 
   Future<void> submitQualification() async {
     isLoading.value = true;
+ @override
+  void onInit() {
+    super.onInit();
+    selectedLevel = qualificationController.selectedQualification;
+  }
 
     final token = GetStorage().read('token');
     if (token == null) {
@@ -33,15 +43,16 @@ late final selectedLevel;
       isLoading.value = false;
       return;
     }
-
+    print('sfosfgdfsfgasdfadsfdfsgdfsgdfsfgadsfgowefhdsfhgwieudffdshkjf');
+print(selectedLevel);
     final body = {
       "data": {
         "trackType": "weaponQualification",
         "weaponQualification": {
           "name": nameController.text.trim(),
           "pass": isPassed.value,
-          "score": int.tryParse(scoreController.text.trim()) ?? 0,
-          "date": DateTime.parse(dateController.text.trim()).toIso8601String(),
+          "score": scoreController.text.trim(),
+          "date":dateController.text.trim(),
           "qualificationLevel": selectedLevel.toString(),
         }
       }
