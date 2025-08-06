@@ -9,14 +9,11 @@ import 'package:get_storage/get_storage.dart';
 class WeaponController extends GetxController {
   var isPassed = true.obs;
 final qualificationController = Get.find<QualificationController>();
-late final selectedLevel;
+//late final selectedLevel;
   void togglePass(bool value) {
     isPassed.value = value;
-    @override
-  void onInit() {
-    super.onInit();
-    selectedLevel = qualificationController.selectedQualification;
-  }
+  
+  
   }
 
 
@@ -31,11 +28,6 @@ late final selectedLevel;
 
   Future<void> submitQualification() async {
     isLoading.value = true;
- @override
-  void onInit() {
-    super.onInit();
-    selectedLevel = qualificationController.selectedQualification;
-  }
 
     final token = GetStorage().read('token');
     if (token == null) {
@@ -43,8 +35,7 @@ late final selectedLevel;
       isLoading.value = false;
       return;
     }
-    print('sfosfgdfsfgasdfadsfdfsgdfsgdfsfgadsfgowefhdsfhgwieudffdshkjf');
-print(selectedLevel);
+   
     final body = {
       "data": {
         "trackType": "weaponQualification",
@@ -53,7 +44,7 @@ print(selectedLevel);
           "pass": isPassed.value,
           "score": scoreController.text.trim(),
           "date":dateController.text.trim(),
-          "qualificationLevel": selectedLevel.toString(),
+          "qualificationLevel": qualificationController.selectedQualification.value.toLowerCase(),
         }
       }
     };
@@ -67,7 +58,7 @@ print(selectedLevel);
           'Authorization': 'Bearer $token',
         },
       );
-
+Get.back();
       print("Submitted successfully: $response");
       Get.snackbar("Success", "Qualification data submitted");
     } on AppException catch (e) {
@@ -78,11 +69,7 @@ print(selectedLevel);
     }
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-    selectedLevel = qualificationController.selectedQualification;
-  }
+
 
   @override
   void onClose() {
