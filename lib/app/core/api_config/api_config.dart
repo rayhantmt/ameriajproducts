@@ -1,7 +1,7 @@
 // core/config/api_config.dart
 
 class ApiConfig {
-  static const String baseUrl = 'https://9d7dff317238.ngrok-free.app/api/v1';
+  static const String baseUrl = 'https://0161e2f63e72.ngrok-free.app/api/v1';
 
   // Auth Endpoints
   static const String loginEndpoint = '/auth/login';
