@@ -1,5 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SubscriptionView extends StatelessWidget {
   const SubscriptionView({super.key});
@@ -16,7 +17,9 @@ class SubscriptionView extends StatelessWidget {
         padding: const EdgeInsets.only(left: 20,right: 20),
         child: Column(
           children: [
-            CommonButton(tittle: 'Go to Payment')
+            SizedBox(height: Get.height*0.1,),
+            CommonButton(tittle: 'Go to Payment'),
+
           ],
         ),
       ),
