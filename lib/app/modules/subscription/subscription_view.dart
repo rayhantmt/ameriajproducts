@@ -8,16 +8,19 @@ class SubscriptionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffFFFDF6),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xffFFFDF6),
         title: Text('Subscription'),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20,right: 20),
         child: Column(
           children: [
-            SizedBox(height: Get.height*0.1,),
+            SizedBox(height: Get.height*0.05,),
+            Container(
+              height:100 ,
+            ),
             CommonButton(tittle: 'Go to Payment'),
 
           ],
