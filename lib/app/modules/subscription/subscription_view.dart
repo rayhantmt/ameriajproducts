@@ -20,6 +20,25 @@ class SubscriptionView extends StatelessWidget {
             SizedBox(height: Get.height*0.05,),
             Container(
               height:100 ,
+              decoration: BoxDecoration(
+                color: Color(0xffFEFDFB),
+                border: Border.all(
+                  width: 1,
+                  color: Color(0xffE6E6E6)
+                ),
+                borderRadius: BorderRadius.circular(8)
+              ),
+              child: Column(
+                children: [
+                  Text('Current plan',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
+                    color: Color(0xff2C3E50)
+                  ),
+                  )
+                ],
+              ),
             ),
             CommonButton(tittle: 'Go to Payment'),
 
