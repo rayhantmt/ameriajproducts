@@ -29,6 +29,7 @@ import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_bi
 import 'package:ameriajproducts/app/modules/otp_verification/otp_verification_view.dart';
 import 'package:ameriajproducts/app/modules/privacy_policy/privacy_policy_view.dart';
 import 'package:ameriajproducts/app/modules/profile/profile_view.dart';
+import 'package:ameriajproducts/app/modules/range_detailss/range_binding.dart';
 import 'package:ameriajproducts/app/modules/range_detailss/range_details_view.dart';
 import 'package:ameriajproducts/app/modules/range_history/range_history_view.dart';
 import 'package:ameriajproducts/app/modules/range_history_details/range_history_details.dart';
@@ -68,7 +69,7 @@ class AppPages {
     GetPage(name: Approutes.profile, page: ()=>ProfileView()),
     GetPage(name: Approutes.medpro, page: ()=>MedproView()),
     GetPage(name: Approutes.weapon, page: ()=> Weapon(),binding: WeaponBinding()),
-    GetPage(name: Approutes.range, page: ()=>RangeDetailsView()),
+    GetPage(name: Approutes.range, page: ()=>RangeDetailsView(),binding: RangeBinding()),
     GetPage(name: Approutes.fitnessdetails, page: ()=> FitnessDetailsView(),binding: FitnessBinding()),
     GetPage(name: Approutes.counseling, page: ()=>CounselingDetailsView()),
     GetPage(name: Approutes.admindetails, page: ()=>AdminDetailsView()),
