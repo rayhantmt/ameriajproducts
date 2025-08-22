@@ -1,6 +1,5 @@
 
 import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_controller.dart';
-import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_model.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 
