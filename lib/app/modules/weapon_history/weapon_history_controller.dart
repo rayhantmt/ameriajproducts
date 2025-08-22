@@ -10,7 +10,8 @@ class WeaponHistoryController extends GetxController {
   var weaponHistoryList = <WeaponHistoryModel>[].obs;
 
   // API endpoint
-  final String endpoint = ApiConfig.trackhistory;
+final String endpoint = "${ApiConfig.trackhistory}weaponQualification";
+
 
   @override
   void onInit() {
