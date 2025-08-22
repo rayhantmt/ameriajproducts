@@ -16,6 +16,7 @@ class ApiConfig {
   static const String psotappointment='/Appointment';
   static const String getAppointmentEndpoint='/Appointment';
   static const String track='/track';
+  static const String tackhistory='/track?trackType=';
 
   // Other modules...
 }
