@@ -43,6 +43,7 @@ import 'package:ameriajproducts/app/modules/task/task_view.dart';
 import 'package:ameriajproducts/app/modules/terms_and_conditions/terms_and_conditions_view.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_binding.dart';
+import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_binding.dart';
 import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_view.dart';
 import 'package:ameriajproducts/app/modules/weapon_history_details/weapon_history_details.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
@@ -80,7 +81,7 @@ class AppPages {
     GetPage(name: Approutes.termsandconditions, page: ()=> TermsAndConditionsView()),
     GetPage(name: Approutes.subscription, page: () => SubscriptionView(),),
     GetPage(name: Approutes.privacypolicy, page: () => PrivacyPolicyView(),),
-    GetPage(name: Approutes.weaponhistory, page: () => WeaponHistoryView(),),
+    GetPage(name: Approutes.weaponhistory, page: () => WeaponHistoryView(),binding: WeaponHistoryBinding()),
     GetPage(name: Approutes.weaponhistorydetails, page: () => WeaponHistoryDetails(),),
     GetPage(name: Approutes.rangehistory, page: () => RangeHistoryView(),),
     GetPage(name: Approutes.rangehistorydetails, page: () => RangeHistoryDetails(),),
