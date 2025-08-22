@@ -1,4 +1,5 @@
 
+import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_controller.dart';
 import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_model.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
@@ -12,7 +13,7 @@ class WeaponHistoryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = weaponhistorydata().weaponhistory;
+final controller=Get.find<WeaponHistoryController>();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -28,8 +29,10 @@ class WeaponHistoryView extends StatelessWidget {
         ),
       ),
       body: ListView.builder(
-        itemCount: data.length,
-        itemBuilder: (context, index) => Padding(
+        itemCount: controller.weaponHistoryList.length,
+        itemBuilder: (context, index)
+        
+         => Padding(
           padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
           child: Container(
             height: 70,
@@ -49,7 +52,7 @@ class WeaponHistoryView extends StatelessWidget {
                 SvgPicture.asset(Appimages.weapon),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text(data[index].tittle), Text(data[index].date)],
+                  children: [Text(controller.weaponHistoryList[index].title), Text(controller.weaponHistoryList[index].date)],
                 ),
                 Spacer(),
                 GestureDetector(
