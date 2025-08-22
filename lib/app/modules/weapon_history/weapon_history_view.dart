@@ -27,7 +27,13 @@ final controller=Get.find<WeaponHistoryController>();
           ),
         ),
       ),
-      body: ListView.builder(
+      body: Obx(() {
+  if (controller.weaponHistoryList.isEmpty) {
+    return const Center(
+      child: Text("No history found"),
+    );
+  } else {
+    return ListView.builder(
         itemCount: controller.weaponHistoryList.length,
         itemBuilder: (context, index)
         
@@ -70,7 +76,10 @@ final controller=Get.find<WeaponHistoryController>();
             ),
           ),
         ),
-      ),
+      ); // Leave empty for now; you can fill it with ListView later
+  }
+})
+
     );
   }
 }
