@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       initialRoute: Approutes.splash,
+      
       getPages: AppPages.pages,
       debugShowCheckedModeBanner: false,
     );                    
