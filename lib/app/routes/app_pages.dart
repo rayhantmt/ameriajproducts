@@ -59,7 +59,7 @@ class AppPages {
       binding: LoginBinding(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)
     ),
     GetPage(name: Approutes.signup, page:()=> SignUpView(),binding: SignUpBinding(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)),
-    GetPage(name: Approutes.forgotpassword, page: () => ForgotPasswordView(),binding: EmailOnlyBinding()),
+    GetPage(name: Approutes.forgotpassword, page: () => ForgotPasswordView(),binding: EmailOnlyBinding(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)),
     GetPage(name: Approutes.otp, page: ()=> OtpVerificationView(),binding: OtpBinding()),
     GetPage(name: Approutes.otpsuccess, page: ()=> OtpSuccessfulView()),
     GetPage(name: Approutes.mainscreen, page: ()=> MainScreenView(),binding: MainScreenBinding()),
