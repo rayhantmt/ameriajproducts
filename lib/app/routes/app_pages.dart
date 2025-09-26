@@ -51,8 +51,8 @@ import 'package:get/get_navigation/get_navigation.dart';
 
 class AppPages {
   static final pages = [
-    GetPage(name: Approutes.splash, page: () => SplashScreen()),
-    GetPage(name: Approutes.onboarding, page: () => OnboardingView()),
+    GetPage(name: Approutes.splash, page: () => SplashScreen(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)),
+    GetPage(name: Approutes.onboarding, page: () => OnboardingView(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)),
     GetPage(
       name: Approutes.login,
       page: () => LoginView(),
