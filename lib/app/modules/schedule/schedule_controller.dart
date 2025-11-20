@@ -14,7 +14,7 @@ class AppointmentController extends GetxController {
   final timeController = TextEditingController();
   final detailsController = TextEditingController();
   final locationController = TextEditingController();
-  final typecontroller=TextEditingController();
+  final typecontroller = TextEditingController();
 
   Future<void> bookAppointment() async {
     isLoading.value = true;
@@ -31,13 +31,14 @@ class AppointmentController extends GetxController {
         "time": timeController.text.trim(), // e.g. '12:30 PM'
         "details": detailsController.text.trim(), // Short description
         "location": locationController.text.trim(),
-        "type":typecontroller.text.trim()
-      }
+        "type": typecontroller.text.trim(),
+      },
     };
 
     try {
       final response = await ApiService.post(
-        endpoint: ApiConfig.psotappointment, // Replace with your actual endpoint
+        endpoint:
+            ApiConfig.psotappointment, // Replace with your actual endpoint
         body: body,
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +49,6 @@ class AppointmentController extends GetxController {
       print('Appointment booked: $response');
       Get.snackbar("Success", "Appointment Booked Successfully");
       await fetchAppointments();
-                        
     } on AppException catch (e) {
       Get.snackbar(
         "Failed",
@@ -69,15 +69,16 @@ class AppointmentController extends GetxController {
     locationController.dispose();
     super.onClose();
   }
+
   final isLoadinggetappointment = false.obs;
   final appointments = <ScheduleModel>[].obs;
 
   Future<void> fetchAppointments() async {
-    isLoading.value = true;
+    isLoadinggetappointment.value = true;
 
     final token = GetStorage().read('token');
     if (token == null) {
-      Get.snackbar("Error", "No auth token found");
+      // Get.snackbar("Error", "No auth token found");
       return;
     }
 
@@ -100,44 +101,45 @@ class AppointmentController extends GetxController {
         colorText: Colors.white,
       );
     } finally {
-      isLoading.value = false;
+     // isLoadinggetappointment.value = false;
     }
   }
 
+  final RxBool isDeletingAppointment = false.obs;
 
- final RxBool isDeletingAppointment = false.obs;
+  Future<void> deleteAppointment(String id) async {
+    isDeletingAppointment.value = true;
 
-Future<void> deleteAppointment(String id) async {
-  isDeletingAppointment.value = true;
+    final token = GetStorage().read('token');
+    if (token == null) {
+      Get.snackbar("Error", "Token not found");
+      isDeletingAppointment.value = false;
+      return;
+    }
 
-  final token = GetStorage().read('token');
-  if (token == null) {
-    Get.snackbar("Error", "Token not found");
-    isDeletingAppointment.value = false;
-    return;
+    try {
+      final response = await ApiService.delete(
+        endpoint: '/Appointment/$id',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $token',
+        },
+      );
+
+      print("Appointment deleted: $response");
+      Get.snackbar("Success", "Appointment deleted");
+
+      // Optionally refresh appointment list
+      await fetchAppointments();
+    } on AppException catch (e) {
+      Get.snackbar(
+        "Delete Failed",
+        e.message,
+        backgroundColor: Colors.redAccent,
+        colorText: Colors.white,
+      );
+    } finally {
+      isDeletingAppointment.value = false;
+    }
   }
-
-  try {
-    final response = await ApiService.delete(
-      endpoint: '/Appointment/$id',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer $token',
-      },
-    );
-
-    print("Appointment deleted: $response");
-    Get.snackbar("Success", "Appointment deleted");
-
-    // Optionally refresh appointment list
-    await fetchAppointments();
-  } on AppException catch (e) {
-    Get.snackbar("Delete Failed", e.message,
-        backgroundColor: Colors.redAccent, colorText: Colors.white);
-  } finally {
-    isDeletingAppointment.value = false;
-  }
-}
-
-
 }

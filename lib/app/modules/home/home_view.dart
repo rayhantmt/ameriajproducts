@@ -170,7 +170,7 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
               ),
               SizedBox(height: Get.height * 0.006),
               Container(
-                height: Get.height * 0.40,
+                height: Get.height * 0.38,
                 child: ListView.builder(
                   itemCount: data.length,
                   itemBuilder: (context, index) => Column(

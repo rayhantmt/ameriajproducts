@@ -159,33 +159,40 @@ class ScheduleView extends StatelessWidget {
                                                         .id,
                                                   );
 
-                                             
                                               if (!controller.isLoading.value) {
                                                 Navigator.pop(context);
                                               }
                                             },
-                                            child: Obx(() => Container(
-                                              height: Get.height * 0.06,
-                                              width: double.infinity,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                color: Color(0xffDC143C),
-                                              ),
-                                              child: Center(
-                                                child: controller.isDeletingAppointment.value?CircularProgressIndicator(
-                                                  color: Colors.white,
-                                                ):Text(
-                                                  'Delete',
+                                            child: Obx(
+                                              () => Container(
+                                                height: Get.height * 0.06,
+                                                width: double.infinity,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(12),
+                                                  color: Color(0xffDC143C),
+                                                ),
+                                                child: Center(
+                                                  child:
+                                                      controller
+                                                          .isDeletingAppointment
+                                                          .value
+                                                      ? CircularProgressIndicator(
+                                                          color: Colors.white,
+                                                        )
+                                                      : Text(
+                                                          'Delete',
 
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 16,
-                                                    color: Colors.white,
-                                                  ),
+                                                          style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontSize: 16,
+                                                            color: Colors.white,
+                                                          ),
+                                                        ),
                                                 ),
                                               ),
-                                            ),)
+                                            ),
                                           ),
                                           SizedBox(height: Get.height * 0.02),
                                           GestureDetector(
@@ -201,7 +208,7 @@ class ScheduleView extends StatelessWidget {
                                               child: Center(
                                                 child: Text(
                                                   'Cancel',
-                                            
+
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.w600,
                                                     fontSize: 16,
@@ -265,8 +272,8 @@ class ScheduleView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     color: Colors.white,
                   ),
-              
-                  height: Get.height * 0.65,
+
+                  height: Get.height * 0.63,
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
@@ -308,7 +315,8 @@ class ScheduleView extends StatelessWidget {
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               hint: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'select',
@@ -353,7 +361,8 @@ class ScheduleView extends StatelessWidget {
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               hint: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'select',
@@ -443,9 +452,9 @@ class ScheduleView extends StatelessWidget {
                             ),
                           ),
                         ),
-                         SizedBox(height: 20),
+                        SizedBox(height: 20),
                         Text(
-                          'Type',
+                          'Department',
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 14,
@@ -506,7 +515,7 @@ class ScheduleView extends StatelessWidget {
                             GestureDetector(
                               onTap: () async {
                                 await controller.bookAppointment();
-              
+
                                 // Only close the modal if booking is successful
                                 if (!controller.isLoading.value) {
                                   Navigator.pop(context);

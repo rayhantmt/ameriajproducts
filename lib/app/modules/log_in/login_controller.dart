@@ -11,7 +11,8 @@ class PasswordFieldController extends GetxController {
   void toggleObscureText() {
     isObscured.value = !isObscured.value;
   }
-   final emailController = TextEditingController();
+
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
   RxBool isLoading = false.obs;
@@ -20,25 +21,24 @@ class PasswordFieldController extends GetxController {
     isLoading.value = true;
 
     final body = {
-  "data": {
-    "email": emailController.text.trim(),
-    "password": passwordController.text.trim(),
-  }
-};
+      "data": {
+        "email": emailController.text.trim(),
+        "password": passwordController.text.trim(),
+      },
+    };
     try {
       final response = await ApiService.post(
         endpoint: ApiConfig.loginEndpoint, // Change if your endpoint differs
         body: body,
       );
       final storage = GetStorage();
-final accessToken = response['data']['accessToken']; // <- from your response
+      final accessToken =
+          response['data']['token']['accessToken']; // <- from your response
 
-storage.write('token', accessToken);
- Get.offAllNamed('/mainscreen');
+      storage.write('token', accessToken);
+      Get.offAllNamed('/mainscreen');
       // Handle success (e.g., token saving, navigating)
       print("Login success: $response");
-   
-
     } on AppException catch (e) {
       Get.snackbar("Login Failed", e.message);
     } finally {
