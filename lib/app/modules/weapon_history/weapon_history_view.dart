@@ -76,7 +76,7 @@ final controller=Get.find<WeaponHistoryController>();
             ),
           ),
         ),
-      ); // Leave empty for now; you can fill it with ListView later
+      ); 
   }
 })
 
