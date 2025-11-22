@@ -100,7 +100,7 @@ final score = arguments['score'];
                         ),
                       ),
                       Text(
-                        '12',
+                        score.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
