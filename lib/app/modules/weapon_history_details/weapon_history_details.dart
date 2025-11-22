@@ -1,12 +1,19 @@
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class WeaponHistoryDetails extends StatelessWidget {
   const WeaponHistoryDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final arguments=Get.arguments;
+    final date=arguments['date'];
+    final name=arguments['name'];
+    final pass=arguments['pass'];
+    final score=arguments['score'];
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
