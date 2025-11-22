@@ -1,6 +1,7 @@
 import 'package:ameriajproducts/app/core/api_config/api_config.dart';
 import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
 import 'package:ameriajproducts/app/modules/range_history/range_history_model.dart';
+import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,6 +53,8 @@ class RangeHistoryController extends GetxController {
             .map((e) => RangeHistoryModel.fromJson(e))
             .toList();
       }
+     // Get.toNamed(Approutes.rangehistorydetails);
+     Get.toNamed(Approutes.rangehistory);
       
     } on AppException catch (e) {
       Get.snackbar(

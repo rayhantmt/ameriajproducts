@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/common_widgets/qualification_container.dart';
+import 'package:ameriajproducts/app/modules/range_history/range_history_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class RangeDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   final controller=Get.find<RangeHistoryController>();
     return Scaffold(
       backgroundColor: Colors.white,
 appBar: AppBar(
@@ -32,7 +34,8 @@ body: Padding(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () => Get.toNamed(Approutes.rangehistory),
+                  //  onTap: () => Get.toNamed(Approutes.rangehistory),
+                  onTap: () => controller.fetchRangeQualifications(),
                     child: Container(
                       height: 30,
                       width: 100,
