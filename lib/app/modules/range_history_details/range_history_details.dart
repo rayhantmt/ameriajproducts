@@ -50,7 +50,7 @@ final qualification=arguments['qualification'];
                     children: [
                       Icon(Icons.calendar_month, color: Color(0xff1893F8)),
                       Text(
-                        'Date :',
+                        'Date: ',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
@@ -71,7 +71,7 @@ final qualification=arguments['qualification'];
                     children: [
                       Icon(Icons.group, color: Color(0xff22C55E)),
                       Text(
-                        'Name :',
+                        'Name : ',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
@@ -79,7 +79,7 @@ final qualification=arguments['qualification'];
                         ),
                       ),
                       Text(
-                        weapon,
+                        weapon.toString().toUpperCase(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -93,7 +93,7 @@ final qualification=arguments['qualification'];
                     children: [
                       Icon(Icons.speed_rounded, color: Color(0xffEF8E44)),
                       Text(
-                        'Score :',
+                        'Score: ',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
