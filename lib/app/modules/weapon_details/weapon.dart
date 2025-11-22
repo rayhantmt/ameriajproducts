@@ -1,7 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/qualification_container.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_controller.dart';
 import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_controller.dart';
-import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,7 +11,7 @@ class Weapon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<WeaponController>();
-    final secondcontroller=Get.find<WeaponHistoryController>();
+    final secondcontroller = Get.find<WeaponHistoryController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -217,25 +216,35 @@ class Weapon extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              Text('Qualification Level',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-                color: Color(0xff1F2937)
+              Text(
+                'Qualification Level',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
+                  color: Color(0xff1F2937),
+                ),
               ),
-              ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               Column(
                 children: [
-                  QualificationContainer(title: 'Marksman', img: Appimages.marksman),
-                  SizedBox(height: 10,),
-                  QualificationContainer(title: 'Sharpshooter', img: Appimages.sharpshooter),
-                  SizedBox(height: 10,),
-                  QualificationContainer(title: 'Expert', img: Appimages.expert)
+                  QualificationContainer(
+                    title: 'Marksman',
+                    img: Appimages.marksman,
+                  ),
+                  SizedBox(height: 10),
+                  QualificationContainer(
+                    title: 'Sharpshooter',
+                    img: Appimages.sharpshooter,
+                  ),
+                  SizedBox(height: 10),
+                  QualificationContainer(
+                    title: 'Expert',
+                    img: Appimages.expert,
+                  ),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -243,18 +252,19 @@ class Weapon extends StatelessWidget {
                     onTap: () => Get.back(),
                     child: Container(
                       height: 45,
-                      width: Get.width*0.4,
+                      width: Get.width * 0.4,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xffF3F4F6)
+                        color: Color(0xffF3F4F6),
                       ),
                       child: Center(
-                        child: Text('Cancel',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: Color(0xff727272)
-                        ),
+                        child: Text(
+                          'Cancel',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
+                            color: Color(0xff727272),
+                          ),
                         ),
                       ),
                     ),
@@ -263,26 +273,29 @@ class Weapon extends StatelessWidget {
                     onTap: controller.submitQualification,
                     child: Container(
                       height: 45,
-                      width: Get.width*0.4,
+                      width: Get.width * 0.4,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xff08692C)
+                        color: Color(0xff08692C),
                       ),
                       child: Center(
-                        child: Obx(() => controller.isLoading.value?CircularProgressIndicator(
-                          color: Colors.white,
-                        ): Text('Submit',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: Color(0xffFDFDFD)
+                        child: Obx(
+                          () => controller.isLoading.value
+                              ? CircularProgressIndicator(color: Colors.white)
+                              : Text(
+                                  'Submit',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16,
+                                    color: Color(0xffFDFDFD),
+                                  ),
+                                ),
                         ),
-                        ),)
                       ),
                     ),
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
