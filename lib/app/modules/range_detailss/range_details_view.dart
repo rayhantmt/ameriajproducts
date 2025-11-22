@@ -1,6 +1,5 @@
 import 'package:ameriajproducts/app/common_widgets/qualification_container.dart';
 import 'package:ameriajproducts/app/modules/range_history/range_history_controller.dart';
-import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
