@@ -31,6 +31,7 @@ import 'package:ameriajproducts/app/modules/privacy_policy/privacy_policy_view.d
 import 'package:ameriajproducts/app/modules/profile/profile_view.dart';
 import 'package:ameriajproducts/app/modules/range_detailss/range_binding.dart';
 import 'package:ameriajproducts/app/modules/range_detailss/range_details_view.dart';
+import 'package:ameriajproducts/app/modules/range_history/range_history_binding.dart';
 import 'package:ameriajproducts/app/modules/range_history/range_history_view.dart';
 import 'package:ameriajproducts/app/modules/range_history_details/range_history_details.dart';
 import 'package:ameriajproducts/app/modules/schedule/schedule_binding.dart';
@@ -83,7 +84,7 @@ class AppPages {
     GetPage(name: Approutes.privacypolicy, page: () => PrivacyPolicyView(),),
     GetPage(name: Approutes.weaponhistory, page: () => WeaponHistoryView(),binding: WeaponHistoryBinding()),
     GetPage(name: Approutes.weaponhistorydetails, page: () => WeaponHistoryDetails(),),
-    GetPage(name: Approutes.rangehistory, page: () => RangeHistoryView(),),
+    GetPage(name: Approutes.rangehistory, page: () => RangeHistoryView(),binding: RangeHistoryBinding()),
     GetPage(name: Approutes.rangehistorydetails, page: () => RangeHistoryDetails(),),
     GetPage(name: Approutes.fitnesshistory, page: () => FitnessHistoryView(),),
     GetPage(name: Approutes.fitnesshistorydetails, page: () => FitnessHistoryDetails(),),

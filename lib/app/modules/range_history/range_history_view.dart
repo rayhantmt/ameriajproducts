@@ -1,4 +1,5 @@
 
+import 'package:ameriajproducts/app/modules/range_history/range_history_controller.dart';
 import 'package:ameriajproducts/app/modules/range_history/range_history_model.dart';
 
 import 'package:ameriajproducts/app/routes/app_routes.dart';
@@ -8,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class RangeHistoryView extends StatelessWidget {
+class RangeHistoryView extends GetView<RangeHistoryController> {
   const RangeHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final data = rangehistorydata().rangehistory;
+    final data = controller.rangeQualifications;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -50,7 +51,7 @@ class RangeHistoryView extends StatelessWidget {
                 SvgPicture.asset(Appimages.range),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text(data[index].tittle), Text(data[index].date)],
+                  children: [Text(data[index].title), Text(data[index].displayDate)],
                 ),
                 Spacer(),
                 GestureDetector(
