@@ -2,18 +2,23 @@
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class RangeHistoryDetails extends StatelessWidget {
   const RangeHistoryDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final arguments=Get.arguments;
+    final date = arguments['date'];   
+final weapon = arguments['weapon']; 
+final score = arguments['score']; 
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Range Qualification - June 21, 2025',
+          'Range Qualification - $date',
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 18,

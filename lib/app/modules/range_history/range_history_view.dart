@@ -60,6 +60,7 @@ class RangeHistoryView extends GetView<RangeHistoryController> {
                       'date': data[index].displayDate,
                       'weapon': data[index].weaponName,
                       'score': data[index].score,
+                      'qualification':data[index].qualificationLevel
                     },
                   ),
 
