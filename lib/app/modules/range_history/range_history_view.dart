@@ -1,10 +1,6 @@
-
 import 'package:ameriajproducts/app/modules/range_history/range_history_controller.dart';
-import 'package:ameriajproducts/app/modules/range_history/range_history_model.dart';
-
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -51,7 +47,10 @@ class RangeHistoryView extends GetView<RangeHistoryController> {
                 SvgPicture.asset(Appimages.range),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text(data[index].title), Text(data[index].displayDate)],
+                  children: [
+                    Text(data[index].title),
+                    Text(data[index].displayDate),
+                  ],
                 ),
                 Spacer(),
                 GestureDetector(
