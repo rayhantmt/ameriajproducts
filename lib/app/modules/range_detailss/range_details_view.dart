@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/common_widgets/qualification_container.dart';
+import 'package:ameriajproducts/app/modules/range_detailss/range_controller.dart';
 import 'package:ameriajproducts/app/modules/range_history/range_history_controller.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class RangeDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<RangeHistoryController>();
+    final maincontroller=Get.find<RangeController>();;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -81,6 +83,7 @@ class RangeDetailsView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: maincontroller.dateController,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Row(
@@ -126,6 +129,7 @@ class RangeDetailsView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: maincontroller.nameController,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
@@ -162,6 +166,7 @@ class RangeDetailsView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: maincontroller.scoreController,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
