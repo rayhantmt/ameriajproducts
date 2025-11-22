@@ -13,13 +13,15 @@ class WeaponHistoryDetails extends StatelessWidget {
     final name=arguments['name'];
     final pass=arguments['pass'];
     final score=arguments['score'];
+    final qualification=arguments['qualification'];
+    
 
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Weapon Qualification - June 21, 2025',
+          'Weapon Qualification - $date',
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 18,
@@ -58,7 +60,7 @@ class WeaponHistoryDetails extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '23-06-2015',
+                        date,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -71,7 +73,7 @@ class WeaponHistoryDetails extends StatelessWidget {
                     children: [
                       Icon(Icons.group, color: Color(0xff22C55E)),
                       Text(
-                        'Name :',
+                        'Name: ',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
@@ -79,7 +81,7 @@ class WeaponHistoryDetails extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Weapon Name',
+                        name,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -101,7 +103,7 @@ class WeaponHistoryDetails extends StatelessWidget {
                       ),
                       Icon(Icons.check, color: Color(0xff22C55E)),
                       Text(
-                        'Pass',
+                        pass.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -114,7 +116,7 @@ class WeaponHistoryDetails extends StatelessWidget {
                     children: [
                       Icon(Icons.speed_rounded, color: Color(0xffEF8E44)),
                       Text(
-                        'Score :',
+                        'Score: ',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
@@ -122,7 +124,7 @@ class WeaponHistoryDetails extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '12',
+                        score.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -177,7 +179,7 @@ class WeaponHistoryDetails extends StatelessWidget {
                         SizedBox(width: 10,),
                         SvgPicture.asset(Appimages.marksman),
                          SizedBox(width: 10,),
-                        Text('Marksman',
+                        Text(qualification,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
