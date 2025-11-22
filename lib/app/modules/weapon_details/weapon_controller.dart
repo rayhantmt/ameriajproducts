@@ -51,7 +51,7 @@ final qualificationController = Get.find<QualificationController>();
 
     try {
       final response = await ApiService.post(
-        endpoint: ApiConfig.track, // Replace with actual endpoint
+        endpoint: ApiConfig.weaponqualification, // Replace with actual endpoint
         body: body,
         headers: {
           'Content-Type': 'application/json',
