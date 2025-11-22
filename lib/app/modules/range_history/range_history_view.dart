@@ -54,8 +54,15 @@ class RangeHistoryView extends GetView<RangeHistoryController> {
                 ),
                 Spacer(),
                 GestureDetector(
-                  onTap: () => Get.toNamed(Approutes.rangehistorydetails,arguments: ['date',data[index].displayDate,'weapon',data[index].weaponName,'score']),
-               
+                  onTap: () => Get.toNamed(
+                    Approutes.rangehistorydetails,
+                    arguments: {
+                      'date': data[index].displayDate,
+                      'weapon': data[index].weaponName,
+                      'score': data[index].score,
+                    },
+                  ),
+
                   child: Text(
                     'View Details',
                     style: TextStyle(
