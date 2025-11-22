@@ -28,13 +28,13 @@ final controller=Get.find<WeaponHistoryController>();
         ),
       ),
       body: Obx(() {
-  if (controller.weaponHistoryList.isEmpty) {
+  if (controller.weaponQualifications.isEmpty) {
     return const Center(
       child: Text("No history found"),
     );
   } else {
     return ListView.builder(
-        itemCount: controller.weaponHistoryList.length,
+        itemCount: controller.weaponQualifications.length,
         itemBuilder: (context, index)
         
          => Padding(
@@ -57,7 +57,7 @@ final controller=Get.find<WeaponHistoryController>();
                 SvgPicture.asset(Appimages.weapon),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text(controller.weaponHistoryList[index].title), Text(controller.weaponHistoryList[index].date)],
+                  children: [Text(controller.weaponQualifications[index].title), Text(controller.weaponQualifications[index].displayDate)],
                 ),
                 Spacer(),
                 GestureDetector(
