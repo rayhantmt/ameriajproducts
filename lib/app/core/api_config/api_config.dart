@@ -1,7 +1,7 @@
 // core/config/api_config.dart
 
 class ApiConfig {
-  static const String baseUrl = 'https://ed2111b9f057.ngrok-free.app/api/v1';
+  static const String baseUrl = 'https://readiness-track-server.onrender.com/api/v1';
 
   // Auth Endpoints
   static const String loginEndpoint = '/auth/login';
