@@ -11,7 +11,7 @@ class WeaponHistoryDetails extends StatelessWidget {
     final arguments=Get.arguments;
     final date=arguments['date'];
     final name=arguments['name'];
-    final pass=arguments['pass'];
+    final bool pass=arguments['pass'];
     final score=arguments['score'];
     final qualification=arguments['qualification'];
     
@@ -101,9 +101,9 @@ class WeaponHistoryDetails extends StatelessWidget {
                           color: Color(0xff4B5563),
                         ),
                       ),
-                      Icon(Icons.check, color: Color(0xff22C55E)),
+                      pass?Icon(Icons.check, color: Color(0xff22C55E)):Icon(Icons.close,color: Colors.red,),
                       Text(
-                        pass.toString(),
+                        pass?"Pass":"Fail",
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -179,7 +179,7 @@ class WeaponHistoryDetails extends StatelessWidget {
                         SizedBox(width: 10,),
                         SvgPicture.asset(Appimages.marksman),
                          SizedBox(width: 10,),
-                        Text(qualification,
+                        Text(qualification.toString().toUpperCase(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
