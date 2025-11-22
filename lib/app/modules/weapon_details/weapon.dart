@@ -1,5 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/qualification_container.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_controller.dart';
+import 'package:ameriajproducts/app/modules/weapon_history/weapon_history_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class Weapon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<WeaponController>();
+    final secondcontroller=Get.find<WeaponHistoryController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -33,7 +35,8 @@ class Weapon extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () => Get.toNamed(Approutes.weaponhistory),
+                    //onTap: () => Get.toNamed(Approutes.weaponhistory),
+                    onTap: () => secondcontroller.fetchWeaponQualifications(),
                     child: Container(
                       height: 30,
                       width: 120,
