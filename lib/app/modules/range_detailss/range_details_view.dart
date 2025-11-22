@@ -37,7 +37,7 @@ class RangeDetailsView extends StatelessWidget {
                     onTap: () => controller.fetchRangeQualifications(),
                     child: Container(
                       height: 30,
-                      width: 100,
+                      width: 110,
                       decoration: BoxDecoration(
                         border: Border.all(width: 1, color: Color(0xff08692C)),
                         borderRadius: BorderRadius.circular(4),
