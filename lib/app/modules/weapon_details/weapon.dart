@@ -34,7 +34,6 @@ class Weapon extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    //onTap: () => Get.toNamed(Approutes.weaponhistory),
                     onTap: () => secondcontroller.fetchWeaponQualifications(),
                     child: Obx(() => secondcontroller.isLoadingRangeQual.value?Center(child: CircularProgressIndicator(
                       color: Colors.green,
