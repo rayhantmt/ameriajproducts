@@ -36,18 +36,27 @@ final qualificationController = Get.find<QualificationController>();
       return;
     }
    
-    final body = {
-      "data": {
-        "trackType": "weaponQualification",
-        "weaponQualification": {
-          "name": nameController.text.trim(),
-          "pass": isPassed.value,
-          "score": scoreController.text.trim(),
-          "date":dateController.text.trim(),
-          "qualificationLevel": qualificationController.selectedQualification.value.toLowerCase(),
-        }
-      }
-    };
+    // final body = {
+    //   "data": {
+    //     "trackType": "weaponQualification",
+    //     "weaponQualification": {
+    //       "name": nameController.text.trim(),
+    //       "pass": isPassed.value,
+    //       "score": scoreController.text.trim(),
+    //       "date":dateController.text.trim(),
+    //       "qualificationLevel": qualificationController.selectedQualification.value.toLowerCase(),
+    //     }
+    //   }
+    // };
+    final body={
+    "data": {
+        "pass":isPassed.value,
+        "date": dateController.text.trim(),
+        "weaponName": nameController.text.trim(),
+        "score": scoreController.text.trim(),
+        "qualificationLevel": qualificationController.selectedQualification.value.toLowerCase()
+    }
+};
 
     try {
       final response = await ApiService.post(
