@@ -36,7 +36,9 @@ class Weapon extends StatelessWidget {
                   GestureDetector(
                     //onTap: () => Get.toNamed(Approutes.weaponhistory),
                     onTap: () => secondcontroller.fetchWeaponQualifications(),
-                    child: Container(
+                    child: Obx(() => secondcontroller.isLoadingRangeQual.value?Center(child: CircularProgressIndicator(
+                      color: Colors.green,
+                    ),):Container(
                       height: 30,
                       width: 120,
                       decoration: BoxDecoration(
@@ -56,7 +58,7 @@ class Weapon extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
+                    ),)
                   ),
                 ],
               ),
