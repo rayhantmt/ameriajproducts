@@ -235,7 +235,8 @@ class RangeDetailsView extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () => Get.back(),
+                    //onTap: () => Get.back(),
+                    onTap: () => maincontroller.submitQualification(),
                     child: Container(
                       height: 45,
                       width: Get.width * 0.4,

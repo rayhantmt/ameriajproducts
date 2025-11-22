@@ -24,7 +24,7 @@ class RangeHistoryModel {
   final String? id;
   final String? weaponName;
   final int? score;
-  final List<String>? qualificationLevel;
+  final String? qualificationLevel; // Changed to a single string
   final String? userId;
   final String? rawDate; // Keep the original ISO date string
   final bool? isDeleted;
@@ -35,7 +35,7 @@ class RangeHistoryModel {
     this.id,
     this.weaponName,
     this.score,
-    this.qualificationLevel,
+    this.qualificationLevel, // Updated
     this.userId,
     this.rawDate,
     this.isDeleted,
@@ -49,9 +49,7 @@ class RangeHistoryModel {
       id: json['id'],
       weaponName: json['weaponName'],
       score: json['score'],
-      qualificationLevel: json['qualificationLevel'] != null
-          ? List<String>.from(json['qualificationLevel'])
-          : [],
+      qualificationLevel: json['qualificationLevel'], // Updated
       userId: json['userId'],
       rawDate: json['date'], // Map API 'date' to rawDate
       isDeleted: json['isDeleted'],
@@ -62,7 +60,7 @@ class RangeHistoryModel {
 
   // --- 3. UI Helpers (For your ListView) ---
 
-  // This replaces your old 'tittle'. 
+  // This replaces your old 'title'. 
   // It returns the Weapon Name (e.g., "AK47") or a default string.
   String get title {
     if (weaponName == null) return "Range Qualification";
