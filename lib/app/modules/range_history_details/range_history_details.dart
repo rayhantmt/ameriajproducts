@@ -13,6 +13,7 @@ class RangeHistoryDetails extends StatelessWidget {
     final date = arguments['date'];   
 final weapon = arguments['weapon']; 
 final score = arguments['score']; 
+final qualification=arguments['qualification'];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -57,7 +58,7 @@ final score = arguments['score'];
                         ),
                       ),
                       Text(
-                        '23-06-2015',
+                        date,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -78,7 +79,7 @@ final score = arguments['score'];
                         ),
                       ),
                       Text(
-                        'Weapon Name',
+                        weapon,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -148,7 +149,7 @@ final score = arguments['score'];
                         SizedBox(width: 10,),
                         SvgPicture.asset(Appimages.marksman),
                          SizedBox(width: 10,),
-                        Text('Marksman',
+                        Text(qualification.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
