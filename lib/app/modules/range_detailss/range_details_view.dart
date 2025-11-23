@@ -44,7 +44,9 @@ class RangeDetailsView extends StatelessWidget {
                         border: Border.all(width: 1, color: Color(0xff08692C)),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Row(
+                      child: Obx(() => controller.isLoadingRangeQual.value?Center(child: CircularProgressIndicator(
+                        color: Colors.green,
+                      ),):Row(
                         children: [
                           Icon(Icons.history, color: Color(0xff08692C)),
                           Text(
@@ -56,7 +58,7 @@ class RangeDetailsView extends StatelessWidget {
                             ),
                           ),
                         ],
-                      ),
+                      ),)
                     ),
                   ),
                 ],
@@ -235,7 +237,7 @@ class RangeDetailsView extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    //onTap: () => Get.back(),
+                 
                     onTap: () => maincontroller.submitQualification(),
                     child: Container(
                       height: 45,
@@ -244,7 +246,10 @@ class RangeDetailsView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         color: Color(0xff08692C),
                       ),
-                      child: Center(
+                      child: Obx(() => maincontroller.isLoading.value? Center(child: CircularProgressIndicator(
+
+                        color: Colors.green,
+                      ),):Center(
                         child: Text(
                           'Submit',
                           style: TextStyle(
@@ -253,7 +258,7 @@ class RangeDetailsView extends StatelessWidget {
                             color: Color(0xffFDFDFD),
                           ),
                         ),
-                      ),
+                      ),)
                     ),
                   ),
                 ],
