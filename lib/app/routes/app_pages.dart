@@ -9,6 +9,7 @@ import 'package:ameriajproducts/app/modules/counseling_details/counseling_detail
 import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_view.dart';
 import 'package:ameriajproducts/app/modules/counseling_history/counseling_history_view.dart';
 import 'package:ameriajproducts/app/modules/counseling_history_details/counseling_history_details.dart';
+import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_binding.dart';
 import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_view.dart';
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_binding.dart';
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_details_view.dart';
@@ -53,46 +54,137 @@ import 'package:get/get_navigation/get_navigation.dart';
 
 class AppPages {
   static final pages = [
-    GetPage(name: Approutes.splash, page: () => SplashScreen(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)),
-    GetPage(name: Approutes.onboarding, page: () => OnboardingView(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)),
+    GetPage(
+      name: Approutes.splash,
+      page: () => SplashScreen(),
+      transition: Transition.zoom,
+      transitionDuration: Duration(milliseconds: 500),
+    ),
+    GetPage(
+      name: Approutes.onboarding,
+      page: () => OnboardingView(),
+      transition: Transition.zoom,
+      transitionDuration: Duration(milliseconds: 500),
+    ),
     GetPage(
       name: Approutes.login,
       page: () => LoginView(),
-      binding: LoginBinding(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)
+      binding: LoginBinding(),
+      transition: Transition.zoom,
+      transitionDuration: Duration(milliseconds: 500),
     ),
-    GetPage(name: Approutes.signup, page:()=> SignUpView(),binding: SignUpBinding(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)),
-    GetPage(name: Approutes.forgotpassword, page: () => ForgotPasswordView(),binding: EmailOnlyBinding(),transition: Transition.zoom,transitionDuration: Duration(milliseconds: 500)),
-    GetPage(name: Approutes.otp, page: ()=> OtpVerificationView(),binding: OtpBinding()),
-    GetPage(name: Approutes.otpsuccess, page: ()=> OtpSuccessfulView()),
-    GetPage(name: Approutes.mainscreen, page: ()=> MainScreenView(),binding: MainScreenBinding()),
-    GetPage(name: Approutes.changepassword, page:()=> ChangePasswordView(),binding: ChangePasswordBinding()),
-    GetPage(name: Approutes.home, page: ()=>HomeView()),
-    GetPage(name: Approutes.task, page: ()=>TaskView()),
-    GetPage(name: Approutes.schedule, page: ()=>ScheduleView(),binding: AppointmentBinding()),
-    GetPage(name: Approutes.profile, page: ()=>ProfileView()),
-    GetPage(name: Approutes.medpro, page: ()=>MedproView()),
-    GetPage(name: Approutes.weapon, page: ()=> Weapon(),binding: WeaponBinding()),
-    GetPage(name: Approutes.range, page: ()=>RangeDetailsView(),binding: RangeBinding()),
-    GetPage(name: Approutes.fitnessdetails, page: ()=> FitnessDetailsView(),binding: FitnessBinding()),
-    GetPage(name: Approutes.counseling, page: ()=>CounselingDetailsView(),
-    binding: CounselingDetailsBinding()),
-    GetPage(name: Approutes.admindetails, page: ()=>AdminDetailsView()),
-    GetPage(name: Approutes.medprohistory, page: ()=>MedproHistoryView()),
-    GetPage(name: Approutes.medprohistorydetails, page: ()=> MedproHistoryDetailsView()),
-    GetPage(name: Approutes.editprofile, page: () => EditProfileView(),),
-    GetPage(name: Approutes.changepasswordprofile, page: () => ChangePasswordProfileView(),binding:ChangePasswordProfileBinding() ),
-    GetPage(name: Approutes.termsandconditions, page: ()=> TermsAndConditionsView()),
-    GetPage(name: Approutes.subscription, page: () => SubscriptionView(),),
-    GetPage(name: Approutes.privacypolicy, page: () => PrivacyPolicyView(),),
-    GetPage(name: Approutes.weaponhistory, page: () => WeaponHistoryView(),binding: WeaponHistoryBinding()),
-    GetPage(name: Approutes.weaponhistorydetails, page: () => WeaponHistoryDetails(),),
-    GetPage(name: Approutes.rangehistory, page: () => RangeHistoryView(),binding: RangeHistoryBinding()),
-    GetPage(name: Approutes.rangehistorydetails, page: () => RangeHistoryDetails(),),
-    GetPage(name: Approutes.fitnesshistory, page: () => FitnessHistoryView(),),
-    GetPage(name: Approutes.fitnesshistorydetails, page: () => FitnessHistoryDetails(),),
-    GetPage(name: Approutes.counselinghistory, page: () => CounselingHistoryView(),),
-    GetPage(name: Approutes.counselinghistorydetails, page: () => CounselingHistoryDetails(),),
-    GetPage(name: Approutes.adminhistory, page: () => AdminHistoryView(),),
-    GetPage(name: Approutes.adminhistorydetails, page: () => AdminHistoryDetails(),)
+    GetPage(
+      name: Approutes.signup,
+      page: () => SignUpView(),
+      binding: SignUpBinding(),
+      transition: Transition.zoom,
+      transitionDuration: Duration(milliseconds: 500),
+    ),
+    GetPage(
+      name: Approutes.forgotpassword,
+      page: () => ForgotPasswordView(),
+      binding: EmailOnlyBinding(),
+      transition: Transition.zoom,
+      transitionDuration: Duration(milliseconds: 500),
+    ),
+    GetPage(
+      name: Approutes.otp,
+      page: () => OtpVerificationView(),
+      binding: OtpBinding(),
+    ),
+    GetPage(name: Approutes.otpsuccess, page: () => OtpSuccessfulView()),
+    GetPage(
+      name: Approutes.mainscreen,
+      page: () => MainScreenView(),
+      binding: MainScreenBinding(),
+    ),
+    GetPage(
+      name: Approutes.changepassword,
+      page: () => ChangePasswordView(),
+      binding: ChangePasswordBinding(),
+    ),
+    GetPage(name: Approutes.home, page: () => HomeView()),
+    GetPage(name: Approutes.task, page: () => TaskView()),
+    GetPage(
+      name: Approutes.schedule,
+      page: () => ScheduleView(),
+      binding: AppointmentBinding(),
+    ),
+    GetPage(name: Approutes.profile, page: () => ProfileView()),
+    GetPage(name: Approutes.medpro, page: () => MedproView()),
+    GetPage(
+      name: Approutes.weapon,
+      page: () => Weapon(),
+      binding: WeaponBinding(),
+    ),
+    GetPage(
+      name: Approutes.range,
+      page: () => RangeDetailsView(),
+      binding: RangeBinding(),
+    ),
+    GetPage(
+      name: Approutes.fitnessdetails,
+      page: () => FitnessDetailsView(),
+      binding: FitnessBinding(),
+    ),
+    GetPage(
+      name: Approutes.counseling,
+      page: () => CounselingDetailsView(),
+      binding: CounselingDetailsBinding(),
+    ),
+    GetPage(name: Approutes.admindetails, page: () => AdminDetailsView()),
+    GetPage(name: Approutes.medprohistory, page: () => MedproHistoryView()),
+    GetPage(
+      name: Approutes.medprohistorydetails,
+      page: () => MedproHistoryDetailsView(),
+    ),
+    GetPage(name: Approutes.editprofile, page: () => EditProfileView(),binding: EditProfileBinding()),
+    GetPage(
+      name: Approutes.changepasswordprofile,
+      page: () => ChangePasswordProfileView(),
+      binding: ChangePasswordProfileBinding(),
+    ),
+    GetPage(
+      name: Approutes.termsandconditions,
+      page: () => TermsAndConditionsView(),
+    ),
+    GetPage(name: Approutes.subscription, page: () => SubscriptionView()),
+    GetPage(name: Approutes.privacypolicy, page: () => PrivacyPolicyView()),
+    GetPage(
+      name: Approutes.weaponhistory,
+      page: () => WeaponHistoryView(),
+      binding: WeaponHistoryBinding(),
+    ),
+    GetPage(
+      name: Approutes.weaponhistorydetails,
+      page: () => WeaponHistoryDetails(),
+    ),
+    GetPage(
+      name: Approutes.rangehistory,
+      page: () => RangeHistoryView(),
+      binding: RangeHistoryBinding(),
+    ),
+    GetPage(
+      name: Approutes.rangehistorydetails,
+      page: () => RangeHistoryDetails(),
+    ),
+    GetPage(name: Approutes.fitnesshistory, page: () => FitnessHistoryView()),
+    GetPage(
+      name: Approutes.fitnesshistorydetails,
+      page: () => FitnessHistoryDetails(),
+    ),
+    GetPage(
+      name: Approutes.counselinghistory,
+      page: () => CounselingHistoryView(),
+    ),
+    GetPage(
+      name: Approutes.counselinghistorydetails,
+      page: () => CounselingHistoryDetails(),
+    ),
+    GetPage(name: Approutes.adminhistory, page: () => AdminHistoryView()),
+    GetPage(
+      name: Approutes.adminhistorydetails,
+      page: () => AdminHistoryDetails(),
+    ),
   ];
 }
