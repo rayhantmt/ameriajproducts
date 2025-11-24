@@ -1,6 +1,8 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/formfield.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_controller.dart';
+import 'package:ameriajproducts/app/routes/app_pages.dart';
+import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -105,8 +107,8 @@ class LoginView extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 GestureDetector(
-                  
-                   onTap: () => fieldviewcontrorller.login(),
+                  onTap: () =>  Get.toNamed(Approutes.mainscreen),
+                  // onTap: () => fieldviewcontrorller.login(),
                   child: Obx(() => fieldviewcontrorller.isLoading.value?Center(child: const CircularProgressIndicator(
                     color: Color(0xff08692C),
                   )):CommonButton(tittle: 'Login'),)),
