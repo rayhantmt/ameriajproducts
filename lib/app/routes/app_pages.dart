@@ -5,6 +5,7 @@ import 'package:ameriajproducts/app/modules/change_password/change_password_bind
 import 'package:ameriajproducts/app/modules/change_password/change_password_view.dart';
 import 'package:ameriajproducts/app/modules/change_password_profile/change_password_profile_binding.dart';
 import 'package:ameriajproducts/app/modules/change_password_profile/change_password_profile_view.dart';
+import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_binding.dart';
 import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_view.dart';
 import 'package:ameriajproducts/app/modules/counseling_history/counseling_history_view.dart';
 import 'package:ameriajproducts/app/modules/counseling_history_details/counseling_history_details.dart';
@@ -73,7 +74,8 @@ class AppPages {
     GetPage(name: Approutes.weapon, page: ()=> Weapon(),binding: WeaponBinding()),
     GetPage(name: Approutes.range, page: ()=>RangeDetailsView(),binding: RangeBinding()),
     GetPage(name: Approutes.fitnessdetails, page: ()=> FitnessDetailsView(),binding: FitnessBinding()),
-    GetPage(name: Approutes.counseling, page: ()=>CounselingDetailsView()),
+    GetPage(name: Approutes.counseling, page: ()=>CounselingDetailsView(),
+    binding: CounselingDetailsBinding()),
     GetPage(name: Approutes.admindetails, page: ()=>AdminDetailsView()),
     GetPage(name: Approutes.medprohistory, page: ()=>MedproHistoryView()),
     GetPage(name: Approutes.medprohistorydetails, page: ()=> MedproHistoryDetailsView()),
