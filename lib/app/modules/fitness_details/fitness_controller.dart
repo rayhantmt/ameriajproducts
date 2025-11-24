@@ -28,9 +28,9 @@ Future<void> submitQualification() async {
     
     final body={
     "data": {
-        "name": namecontroller,
+        "name": namecontroller.text,
         "pass": isPassed.value,
-        "date": datecontroller
+        "date": datecontroller.text,
     }
 };
 

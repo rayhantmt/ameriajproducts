@@ -10,26 +10,27 @@ class FitnessDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        final controller = Get.find<WeaponController>();
-        final maincontroller=Get.find<FitnessController>();
+    final controller = Get.find<WeaponController>();
+    final maincontroller = Get.find<FitnessController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text('Physical Fitness Test',
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 18,
-          color: Color(0xff131123)
-        ),
+        title: Text(
+          'Physical Fitness Test',
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 18,
+            color: Color(0xff131123),
+          ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20,right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [
-               Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
@@ -178,6 +179,7 @@ class FitnessDetailsView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceAround,
               //   children: [
@@ -196,37 +198,40 @@ class FitnessDetailsView extends StatelessWidget {
               //     )
               //   ],
               // ),
+              GestureDetector(
+                 onTap: () => maincontroller.submitQualification(),
+                child: Obx(() => maincontroller.isLoading.value?CircularProgressIndicator(
+color: Colors.green,
 
-GestureDetector(
-  onTap: () => Get.back(),
-  child: CommonButton(tittle: 'Submit')),
-SizedBox(height: 10,),
-GestureDetector(
-  onTap: () => Get.back(),
-  child: Container(
-    height: 45,
-    width: double.infinity,
-    decoration: BoxDecoration(
-      color: Color(0xffF3F4F6),
-      borderRadius: BorderRadius.circular(12),
-  
-    ),
-    child: Center(
-      child: Text('Cancel',
-      style: TextStyle(
-        fontWeight: FontWeight.w700,
-        fontSize: 16,
-        color: Color(0xff727272)
-      ),
-      ),
-    ),
-  ),
-)
+                ):CommonButton(tittle: 'Submit')),
+              ),
+              SizedBox(height: 10),
+              GestureDetector(
+                onTap: () => Get.back(),
+               
+                child: Container(
+                  height: 45,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xffF3F4F6),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Cancel',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                        color: Color(0xff727272),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
-    )
-    ;
+    );
   }
 }
