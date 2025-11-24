@@ -8,6 +8,7 @@ import 'package:ameriajproducts/app/modules/change_password_profile/change_passw
 import 'package:ameriajproducts/app/modules/change_password_profile/change_password_profile_view.dart';
 import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_binding.dart';
 import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_view.dart';
+import 'package:ameriajproducts/app/modules/counseling_history/counselig_history_binding.dart';
 import 'package:ameriajproducts/app/modules/counseling_history/counseling_history_view.dart';
 import 'package:ameriajproducts/app/modules/counseling_history_details/counseling_history_details.dart';
 import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_binding.dart';
@@ -177,6 +178,7 @@ class AppPages {
     GetPage(
       name: Approutes.counselinghistory,
       page: () => CounselingHistoryView(),
+      binding: CounseligHistoryBinding()
     ),
     GetPage(
       name: Approutes.counselinghistorydetails,

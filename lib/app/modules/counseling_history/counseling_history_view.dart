@@ -1,4 +1,5 @@
 
+import 'package:ameriajproducts/app/modules/counseling_history/counselig_history_controller.dart';
 import 'package:ameriajproducts/app/modules/counseling_history/counseling_history_model.dart';
 
 
@@ -10,12 +11,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class CounselingHistoryView extends StatelessWidget {
+class CounselingHistoryView extends GetView<CounseligHistoryController> {
   const CounselingHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final data = counselinghistorydata().counselinghistory;
+    final data = controller.counselinghistorydata;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -52,7 +53,7 @@ class CounselingHistoryView extends StatelessWidget {
                 SvgPicture.asset(Appimages.counseling),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text(data[index].tittle), Text(data[index].date)],
+                  children: [Text(data[index].name.toString()), Text(data[index].rawNextDate.toString())],
                 ),
                 Spacer(),
                 GestureDetector(
