@@ -18,6 +18,7 @@ class ApiConfig {
   static const String trackhistory='/track?trackType=';
   static const String weaponqualification='/weapon-qualification';
   static const String getRangeQualificationEndpoint='/range-qualification';
+  static const String counseling='/counseling';
 
   // Other modules...
 }

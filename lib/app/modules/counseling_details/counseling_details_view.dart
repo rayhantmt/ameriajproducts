@@ -280,8 +280,10 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () => Get.back(),
-                    child: Container(
+                    onTap: controller.submitQualification,
+                    child: Obx(() => controller.isLoading.value?Center(child: CircularProgressIndicator(
+                      color: Colors.green,
+                    )):Container(
                       height: 45,
                       width: Get.width*0.4,
                       decoration: BoxDecoration(
@@ -297,7 +299,7 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                         ),
                         ),
                       ),
-                    ),
+                    ),)
                   )
                 ],
               )
