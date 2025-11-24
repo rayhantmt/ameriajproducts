@@ -19,6 +19,7 @@ class ApiConfig {
   static const String weaponqualification='/weapon-qualification';
   static const String getRangeQualificationEndpoint='/range-qualification';
   static const String counseling='/counseling';
+  static const String physical_fitness='/physical-fitness';
 
   // Other modules...
 }

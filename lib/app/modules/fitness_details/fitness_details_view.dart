@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
+import 'package:ameriajproducts/app/modules/fitness_details/fitness_controller.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class FitnessDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
         final controller = Get.find<WeaponController>();
+        final maincontroller=Get.find<FitnessController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -78,6 +80,7 @@ class FitnessDetailsView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: maincontroller.datecontroller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Row(
@@ -119,6 +122,7 @@ class FitnessDetailsView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: maincontroller.namecontroller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
