@@ -143,6 +143,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.vehicleregistrationcontroller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Row(
@@ -184,6 +185,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.vehicleinsurancecontroller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Row(
@@ -225,6 +227,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.edicationmilitarycontroller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
@@ -263,6 +266,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.educationcivilian,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
@@ -298,6 +302,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.volunteerhourcontroller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
@@ -336,7 +341,8 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () => Get.back(),
+                    //onTap: () => Get.back(),
+                    onTap: controller.submitadmininfo,
                     child: Container(
                       height: 45,
                       width: Get.width*0.4,
@@ -344,7 +350,10 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                         borderRadius: BorderRadius.circular(12),
                         color: Color(0xff08692C)
                       ),
-                      child: Center(
+                      child: Obx(() => controller.isLoading.value? CircularProgressIndicator(
+color: Colors.white,
+
+                      ):Center(
                         child: Text('Submit',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
@@ -352,7 +361,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                           color: Color(0xffFDFDFD)
                         ),
                         ),
-                      ),
+                      ),)
                     ),
                   )
                 ],

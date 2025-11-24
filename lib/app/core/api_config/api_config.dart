@@ -20,6 +20,7 @@ class ApiConfig {
   static const String getRangeQualificationEndpoint='/range-qualification';
   static const String counseling='/counseling';
   static const String physical_fitness='/physical-fitness';
+  static const String admin='/adminUser';
 
   // Other modules...
 }
