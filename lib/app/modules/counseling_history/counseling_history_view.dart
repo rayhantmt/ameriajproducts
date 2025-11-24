@@ -1,12 +1,6 @@
-
 import 'package:ameriajproducts/app/modules/counseling_history/counselig_history_controller.dart';
-import 'package:ameriajproducts/app/modules/counseling_history/counseling_history_model.dart';
-
-
-
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -53,7 +47,10 @@ class CounselingHistoryView extends GetView<CounseligHistoryController> {
                 SvgPicture.asset(Appimages.counseling),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text(data[index].name.toString()), Text(data[index].rawNextDate.toString())],
+                  children: [
+                    Text(data[index].name.toString()),
+                    Text(data[index].rawNextDate.toString()),
+                  ],
                 ),
                 Spacer(),
                 GestureDetector(
