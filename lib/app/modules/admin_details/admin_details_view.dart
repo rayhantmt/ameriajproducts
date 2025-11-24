@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/modules/admin_details/admin_details_controller.dart';
+import 'package:ameriajproducts/app/modules/admin_history/admin_history_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
 
   @override
   Widget build(BuildContext context) {
+    final secondcontroller=Get.find<AdminHistoryController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -31,7 +33,8 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () => Get.toNamed(Approutes.adminhistory),
+                    //onTap: () => Get.toNamed(Approutes.adminhistory),
+                    onTap: secondcontroller.fetchCounseling,
                     child: Container(
                       height: 30,
                       width: 110,
@@ -39,7 +42,9 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                         border: Border.all(width: 1, color: Color(0xff08692C)),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Row(
+                      child: Obx(() => secondcontroller.isfeatching.value?Center(child: CircularProgressIndicator(
+                        color: Colors.green,
+                      )):Row(
                         children: [
                           Icon(Icons.history, color: Color(0xff08692C)),
                           Text(
@@ -51,7 +56,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                             ),
                           ),
                         ],
-                      ),
+                      ),)
                     ),
                   ),
                 ],

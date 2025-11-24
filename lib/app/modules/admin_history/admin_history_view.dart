@@ -1,6 +1,5 @@
 
-import 'package:ameriajproducts/app/modules/admin_history/admin_history_model.dart';
-
+import 'package:ameriajproducts/app/modules/admin_history/admin_history_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 
@@ -8,12 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class AdminHistoryView extends StatelessWidget {
+class AdminHistoryView extends GetView<AdminHistoryController> {
   const AdminHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final data = adminhistorydata().adminhistory;
+    final data = controller.adminhistorydata;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -50,7 +49,7 @@ class AdminHistoryView extends StatelessWidget {
                 SvgPicture.asset(Appimages.admin),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text(data[index].tittle), Text(data[index].date)],
+                  children: [Text('Admin'), Text(data[index].createdAt.toString())],
                 ),
                 Spacer(),
                 GestureDetector(

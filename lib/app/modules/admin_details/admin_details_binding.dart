@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/modules/admin_details/admin_details_controller.dart';
+import 'package:ameriajproducts/app/modules/admin_history/admin_history_controller.dart';
 import 'package:get/get.dart';
 
 class AdminDetailsBinding extends Bindings{
@@ -7,5 +8,6 @@ class AdminDetailsBinding extends Bindings{
     Get.lazyPut<AdminDetailsController>(
       () => AdminDetailsController(),
     );
+    Get.lazyPut<AdminHistoryController>(() => AdminHistoryController(),);
   }
 }
