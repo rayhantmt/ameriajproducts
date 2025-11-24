@@ -82,7 +82,7 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
-                  //controller: ,
+                  controller: controller.namecontroller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
@@ -118,6 +118,7 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.datecontroller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Row(
@@ -159,6 +160,7 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.nextdatecontroller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Row(
@@ -200,7 +202,9 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  controller: controller.counseledbycontroller,
                   decoration: InputDecoration(
+                    
                     border: InputBorder.none,
                     hint: Text(
                       'Enter your score',
