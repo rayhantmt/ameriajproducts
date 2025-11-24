@@ -37,7 +37,7 @@ class MedproView extends StatelessWidget {
                     onTap: () => Get.toNamed(Approutes.medprohistory),
                     child: Container(
                       height: 28,
-                      width: 100,
+                      width: 110,
                       decoration: BoxDecoration(
                         border: Border.all(width: 1, color: Color(0xff08692C)),
                         borderRadius: BorderRadius.circular(4),
