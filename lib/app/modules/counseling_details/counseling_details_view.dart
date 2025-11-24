@@ -1,7 +1,5 @@
-
 import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_controller.dart';
-import 'package:ameriajproducts/app/routes/app_routes.dart';
-
+import 'package:ameriajproducts/app/modules/counseling_history/counselig_history_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,7 +8,7 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
 
   @override
   Widget build(BuildContext context) {
-
+    final secondcontroller = Get.find<CounseligHistoryController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -33,7 +31,8 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () => Get.toNamed(Approutes.counselinghistory),
+                    // onTap: () => Get.toNamed(Approutes.counselinghistory),
+                    onTap: secondcontroller.fetchCounseling,
                     child: Container(
                       height: 30,
                       width: 110,
@@ -41,25 +40,33 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                         border: Border.all(width: 1, color: Color(0xff08692C)),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Row(
-                        children: [
-                          Icon(Icons.history, color: Color(0xff08692C)),
-                          Text(
-                            'View History',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: Color(0xff08692C),
-                            ),
-                          ),
-                        ],
+                      child: Obx(
+                        () => secondcontroller.isfeatching.value
+                            ? Center(
+                                child: CircularProgressIndicator(
+                                  color: Colors.green,
+                                ),
+                              )
+                            : Row(
+                                children: [
+                                  Icon(Icons.history, color: Color(0xff08692C)),
+                                  Text(
+                                    'View History',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12,
+                                      color: Color(0xff08692C),
+                                    ),
+                                  ),
+                                ],
+                              ),
                       ),
                     ),
                   ),
                 ],
               ),
               SizedBox(height: 20),
-              
+
               SizedBox(height: 20),
               Row(
                 children: [
@@ -180,7 +187,7 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 children: [
                   Icon(Icons.group, color: Color(0xff22C55E)),
@@ -204,7 +211,6 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                 child: TextFormField(
                   controller: controller.counseledbycontroller,
                   decoration: InputDecoration(
-                    
                     border: InputBorder.none,
                     hint: Text(
                       'Enter your score',
@@ -218,48 +224,46 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                 ),
               ),
               SizedBox(height: 20),
-             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-               children: [
-                 Text('Notes',
-                 style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16,
-                  color: Color(0xff4B5563)
-                 ),
-                 ),
-               ],
-             ),
-             SizedBox(height: 10,),
-             Container(
-              height: 85,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  width: 1,
-                  color: Color(0xff1893F8)
-                )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Notes',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      color: Color(0xff4B5563),
+                    ),
+                  ),
+                ],
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hint: Text('Discussed PFT results from June 20, 2025. Soldier passed with a score of 85 but needs improvement in push-ups. Agreed to focus on upper body strength training.',
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14,
-                  color: Color(0xff4B5563)
+              SizedBox(height: 10),
+              Container(
+                height: 85,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(width: 1, color: Color(0xff1893F8)),
                 ),
-                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hint: Text(
+                        'Discussed PFT results from June 20, 2025. Soldier passed with a score of 85 but needs improvement in push-ups. Agreed to focus on upper body strength training.',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xff4B5563),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              )
-             )
-             ,
-              
-              SizedBox(height: 20,),
+              ),
+
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -267,46 +271,54 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                     onTap: () => Get.back(),
                     child: Container(
                       height: 45,
-                      width: Get.width*0.4,
+                      width: Get.width * 0.4,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xffF3F4F6)
+                        color: Color(0xffF3F4F6),
                       ),
                       child: Center(
-                        child: Text('Cancel',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: Color(0xff727272)
-                        ),
+                        child: Text(
+                          'Cancel',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
+                            color: Color(0xff727272),
+                          ),
                         ),
                       ),
                     ),
                   ),
                   GestureDetector(
                     onTap: controller.submitQualification,
-                    child: Obx(() => controller.isLoading.value?Center(child: CircularProgressIndicator(
-                      color: Colors.green,
-                    )):Container(
-                      height: 45,
-                      width: Get.width*0.4,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Color(0xff08692C)
-                      ),
-                      child: Center(
-                        child: Text('Submit',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: Color(0xffFDFDFD)
-                        ),
-                        ),
-                      ),
-                    ),)
-                  )
+                    child: Obx(
+                      () => controller.isLoading.value
+                          ? Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.green,
+                              ),
+                            )
+                          : Container(
+                              height: 45,
+                              width: Get.width * 0.4,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                color: Color(0xff08692C),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16,
+                                    color: Color(0xffFDFDFD),
+                                  ),
+                                ),
+                              ),
+                            ),
+                    ),
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
