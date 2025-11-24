@@ -1,4 +1,3 @@
-
 import 'package:ameriajproducts/app/modules/admin_details/admin_details_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 
@@ -10,7 +9,6 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -59,11 +57,10 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                 ],
               ),
               SizedBox(height: 20),
-              
+
               SizedBox(height: 20),
               Row(
                 children: [
-              
                   Text(
                     'LES Correct',
                     style: TextStyle(
@@ -124,7 +121,6 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
               SizedBox(height: 20),
               Row(
                 children: [
-              
                   Text(
                     'Vehicle Registration',
                     style: TextStyle(
@@ -166,7 +162,6 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
               SizedBox(height: 20),
               Row(
                 children: [
-                 
                   Text(
                     'Vehicle Insurance',
                     style: TextStyle(
@@ -205,10 +200,9 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 children: [
-                  
                   Text(
                     'Education Military',
                     style: TextStyle(
@@ -241,13 +235,11 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                   ),
                 ),
               ),
-            
-            
-             SizedBox(height: 10,),
-            
+
+              SizedBox(height: 10),
+
               Row(
                 children: [
-                  
                   Text(
                     'Education Civilian',
                     style: TextStyle(
@@ -280,10 +272,9 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
-               Row(
+              SizedBox(height: 20),
+              Row(
                 children: [
-                  
                   Text(
                     'Volunteer Hour',
                     style: TextStyle(
@@ -316,7 +307,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -324,18 +315,19 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                     onTap: () => Get.back(),
                     child: Container(
                       height: 45,
-                      width: Get.width*0.4,
+                      width: Get.width * 0.4,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xffF3F4F6)
+                        color: Color(0xffF3F4F6),
                       ),
                       child: Center(
-                        child: Text('Cancel',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: Color(0xff727272)
-                        ),
+                        child: Text(
+                          'Cancel',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
+                            color: Color(0xff727272),
+                          ),
                         ),
                       ),
                     ),
@@ -345,27 +337,33 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                     onTap: controller.submitadmininfo,
                     child: Container(
                       height: 45,
-                      width: Get.width*0.4,
+                      width: Get.width * 0.4,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xff08692C)
+                        color: Color(0xff08692C),
                       ),
-                      child: Obx(() => controller.isLoading.value? CircularProgressIndicator(
-color: Colors.white,
-
-                      ):Center(
-                        child: Text('Submit',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: Color(0xffFDFDFD)
-                        ),
-                        ),
-                      ),)
+                      child: Obx(
+                        () => controller.isLoading.value
+                            ? Center(
+                                child: CircularProgressIndicator(
+                                  color: Colors.white,
+                                ),
+                              )
+                            : Center(
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16,
+                                    color: Color(0xffFDFDFD),
+                                  ),
+                                ),
+                              ),
+                      ),
                     ),
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
