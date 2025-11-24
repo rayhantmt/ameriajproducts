@@ -174,6 +174,24 @@ class FitnessDetailsView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    height: 50,
+                    width: Get.width*0.3,
+                    decoration: BoxDecoration(
+                      
+                    ),
+                  ),
+                  SizedBox(width: Get.width*0.2,),
+                  Container(
+                    width: Get.width*0.3,
+                    height: 50,
+                    color: Colors.blue,
+                  )
+                ],
+              ),
 
 GestureDetector(
   onTap: () => Get.back(),
