@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/modules/admin_details/admin_details_binding.dart';
 import 'package:ameriajproducts/app/modules/admin_details/admin_details_view.dart';
 import 'package:ameriajproducts/app/modules/admin_history/admin_history_view.dart';
 import 'package:ameriajproducts/app/modules/admin_history_details/admin_history_details.dart';
@@ -132,7 +133,7 @@ class AppPages {
       page: () => CounselingDetailsView(),
       binding: CounselingDetailsBinding(),
     ),
-    GetPage(name: Approutes.admindetails, page: () => AdminDetailsView()),
+    GetPage(name: Approutes.admindetails, page: () => AdminDetailsView(),binding: AdminDetailsBinding()),
     GetPage(name: Approutes.medprohistory, page: () => MedproHistoryView()),
     GetPage(
       name: Approutes.medprohistorydetails,

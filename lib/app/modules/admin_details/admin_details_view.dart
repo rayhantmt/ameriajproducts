@@ -1,10 +1,11 @@
 
+import 'package:ameriajproducts/app/modules/admin_details/admin_details_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AdminDetailsView extends StatelessWidget {
+class AdminDetailsView extends GetView<AdminDetailsController> {
   const AdminDetailsView({super.key});
 
   @override
@@ -74,24 +75,50 @@ class AdminDetailsView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
-              Container(
-                height: 45,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hint: Text(
-                      'Yes',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Color(0xff6B7280),
+              // Container(
+              //   height: 45,
+              //   decoration: BoxDecoration(
+              //     border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+              //     borderRadius: BorderRadius.circular(8),
+              //   ),
+              //   child: TextFormField(
+              //     decoration: InputDecoration(
+              //       border: InputBorder.none,
+              //       hint: Text(
+              //         'Yes',
+              //         style: TextStyle(
+              //           fontWeight: FontWeight.w400,
+              //           fontSize: 14,
+              //           color: Color(0xff6B7280),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              Obx(
+                () => Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Transform.scale(
+                      scale: 1.2,
+                      child: ChoiceChip(
+                        label: const Text("Yes"),
+                        selected: controller.isPassed.value,
+                        onSelected: (_) => controller.togglePass(true),
+                        selectedColor: Colors.green,
                       ),
                     ),
-                  ),
+                    SizedBox(width: Get.width * 0.1),
+                    Transform.scale(
+                      scale: 1.2,
+                      child: ChoiceChip(
+                        label: const Text("No"),
+                        selected: !controller.isPassed.value,
+                        onSelected: (_) => controller.togglePass(false),
+                        selectedColor: Colors.red,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(height: 20),
