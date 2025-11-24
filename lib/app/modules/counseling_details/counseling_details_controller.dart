@@ -24,18 +24,7 @@ class CounselingDetailsController extends GetxController{
       return;
     }
    
-    // final body = {
-    //   "data": {
-    //     "trackType": "weaponQualification",
-    //     "weaponQualification": {
-    //       "name": nameController.text.trim(),
-    //       "pass": isPassed.value,
-    //       "score": scoreController.text.trim(),
-    //       "date":dateController.text.trim(),
-    //       "qualificationLevel": qualificationController.selectedQualification.value.toLowerCase(),
-    //     }
-    //   }
-    // };
+   
     final body={
     "data": {
         "name": namecontroller.text,
@@ -57,7 +46,7 @@ class CounselingDetailsController extends GetxController{
       );
 
       print("Submitted successfully: $response");
-      Get.snackbar("Success", "Qualification data submitted");
+      Get.snackbar("Success", "Counseling data submitted");
       Get.back();
     } on AppException catch (e) {
       Get.snackbar("Submission Failed", e.message,
