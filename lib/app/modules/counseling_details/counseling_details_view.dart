@@ -1,10 +1,11 @@
 
+import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CounselingDetailsView extends StatelessWidget {
+class CounselingDetailsView extends GetView<CounselingDetailsController> {
   const CounselingDetailsView({super.key});
 
   @override
@@ -81,6 +82,7 @@ class CounselingDetailsView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
+                  //controller: ,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
