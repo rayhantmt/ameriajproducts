@@ -35,19 +35,6 @@ final qualificationController = Get.find<QualificationController>();
       isLoading.value = false;
       return;
     }
-   
-    // final body = {
-    //   "data": {
-    //     "trackType": "weaponQualification",
-    //     "weaponQualification": {
-    //       "name": nameController.text.trim(),
-    //       "pass": isPassed.value,
-    //       "score": scoreController.text.trim(),
-    //       "date":dateController.text.trim(),
-    //       "qualificationLevel": qualificationController.selectedQualification.value.toLowerCase(),
-    //     }
-    //   }
-    // };
     final body={
     "data": {
         "pass":isPassed.value,
