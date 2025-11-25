@@ -74,7 +74,7 @@ class AdminHistoryDetails extends StatelessWidget {
                         color: Color(0xff4B5563)
                       ),
                       ),
-                      Text(vehiclereg,
+                      Text(vehiclereg.toString(),
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
