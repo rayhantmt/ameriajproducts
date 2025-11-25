@@ -156,8 +156,9 @@ class MedproView extends GetView<MedproDetailsController> {
              SizedBox(height: 20,),
               GestureDetector(
                 //onTap: () => Get.toNamed(Approutes.mainscreen),
-                onTap: () =>  print(controller.items.map((e) => e.toJson()).toList()),
-                child: CommonButton(tittle: 'Save')),
+               // onTap: () =>  print(controller.items.map((e) => e.toJson()).toList()),
+               onTap: controller.submitAll,
+                child: Obx(() => controller.isLoading.value?CircularProgressIndicator(color: Colors.white,):CommonButton(tittle: 'Save'),)),
               SizedBox(height: 10,)
             ],
           ),
