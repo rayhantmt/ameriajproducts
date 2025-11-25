@@ -1,16 +1,17 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 
 class CounselingHistoryDetails extends StatelessWidget {
   const CounselingHistoryDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final arguments=Get.arguments;
-    final name=arguments['name'];
+    final arguments = Get.arguments;
+    final name = arguments['name'];
+    final date = arguments['date'];
+    final nextdate = arguments['nextdate'];
+    final counseledby = arguments['counseledby'];
+    final notes = arguments['notes'];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -27,7 +28,6 @@ class CounselingHistoryDetails extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
         child: Column(
-       
           children: [
             Container(
               height: 310,
@@ -66,7 +66,7 @@ class CounselingHistoryDetails extends StatelessWidget {
                       ),
                     ],
                   ),
-                 
+
                   Row(
                     children: [
                       Icon(Icons.calendar_month, color: Color(0xff1893F8)),
@@ -79,7 +79,7 @@ class CounselingHistoryDetails extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '23-06-2015',
+                        date.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -88,7 +88,7 @@ class CounselingHistoryDetails extends StatelessWidget {
                       ),
                     ],
                   ),
-                   Row(
+                  Row(
                     children: [
                       Icon(Icons.calendar_month, color: Color(0xff1893F8)),
                       Text(
@@ -100,7 +100,7 @@ class CounselingHistoryDetails extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '23-06-2015',
+                        nextdate.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -121,7 +121,7 @@ class CounselingHistoryDetails extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Name',
+                        counseledby.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -130,28 +130,26 @@ class CounselingHistoryDetails extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text('Notes',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    color: Color(0xff4B5563)
+                  Text(
+                    'Notes',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      color: Color(0xff4B5563),
+                    ),
                   ),
+                  Text(
+                    notes.toString(),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      color: Color(0xff4B5563),
+                    ),
                   ),
-                  Text('Discussed PFT results from June 20, 2025. Soldier passed with a score of 85 but needs improvement in push-ups. Agreed to focus on upper body strength training.',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    color: Color(0xff4B5563)
-
-                  ),
-                  )
-                 
-                  
                 ],
               ),
             ),
             SizedBox(height: 30),
-           
           ],
         ),
       ),
