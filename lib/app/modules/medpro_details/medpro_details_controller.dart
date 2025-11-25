@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/core/api_config/api_config.dart';
+import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
 import 'package:ameriajproducts/app/modules/medpro_details/medpo_item.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
 import 'package:get/get.dart';
@@ -32,8 +33,10 @@ class MedproDetailsController extends GetxController {
         },
       );
       print('Medpro Status Sbumitted successfully $response');
-    } catch (e) {
+      Get.snackbar('Successful', 'Successfully submitted the medpro status data');
+    } on AppException catch (e) {
       print("Error: $e");
+      Get.snackbar('Error', e.toString());
     } finally {
       isLoading.value = false;
     }
