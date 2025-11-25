@@ -62,4 +62,13 @@ class MedProModel {
       updatedAt: json['updatedAt'] ?? '',
     );
   }
+  String get createdDate {
+    if (createdAt.isEmpty) return "N/A";
+    try {
+      final parsed = DateTime.parse(createdAt);
+      return DateFormat('MMM dd, yyyy').format(parsed); // Format to: Mar 22, 4025
+    } catch (_) {
+      return createdAt; // Return the raw string if parsing fails
+    }
+  }
 }
