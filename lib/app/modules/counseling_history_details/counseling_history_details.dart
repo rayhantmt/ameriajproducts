@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class CounselingHistoryDetails extends StatelessWidget {
@@ -8,6 +9,8 @@ class CounselingHistoryDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arguments=Get.arguments;
+    final name=arguments['name'];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -54,7 +57,7 @@ class CounselingHistoryDetails extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Name',
+                        name,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
