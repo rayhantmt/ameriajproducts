@@ -1,6 +1,6 @@
 
 import 'package:ameriajproducts/app/modules/fitness_history/fitness_historry_controller.dart';
-import 'package:ameriajproducts/app/modules/fitness_history/fitness_history_model.dart';
+
 
 
 import 'package:ameriajproducts/app/routes/app_routes.dart';
