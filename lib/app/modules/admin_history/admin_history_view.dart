@@ -50,7 +50,7 @@ class AdminHistoryView extends GetView<AdminHistoryController> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text('Admin'),
-                    Text(data[index].createdAt.toString()),
+                    Text(data[index].displayDate.toString()),
                   ],
                 ),
                 Spacer(),

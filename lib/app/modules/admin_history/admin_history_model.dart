@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class AdminUserModel {
   // --- API Fields (all nullable) ---
   final String? id;
@@ -41,5 +43,16 @@ class AdminUserModel {
       createdAt: json['createdAt'],
       updatedAt: json['updatedAt'],
     );
+  }
+
+   String get displayDate {
+    if (createdAt.toString().isEmpty) return "N/A";
+    try {
+      final DateTime parsed = DateTime.parse(createdAt.toString());
+      // formats to: Mar 22, 4025
+      return DateFormat('MMM dd, yyyy').format(parsed);
+    } catch (e) {
+      return createdAt.toString(); // Return raw string if parsing fails
+    }
   }
 }
