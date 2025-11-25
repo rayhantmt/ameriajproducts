@@ -35,7 +35,8 @@ class MedproView extends GetView<MedproDetailsController> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () => Get.toNamed(Approutes.medprohistory),
+                    //onTap: () => Get.toNamed(Approutes.medprohistory),
+                    onTap: controller.fetchMedProData,
                     child: Container(
                       height: 28,
                       width: 110,
@@ -43,7 +44,7 @@ class MedproView extends GetView<MedproDetailsController> {
                         border: Border.all(width: 1, color: Color(0xff08692C)),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Row(
+                      child: Obx(() => controller.feteching.value?CircularProgressIndicator(color: Colors.white,):Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Icon(Icons.history, color: Color(0xff08692C)),
@@ -56,7 +57,7 @@ class MedproView extends GetView<MedproDetailsController> {
                             ),
                           ),
                         ],
-                      ),
+                      ),)
                     ),
                   ),
                 ],

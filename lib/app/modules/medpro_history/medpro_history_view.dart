@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/modules/medpro_details/medpro_details_controller.dart';
 import 'package:ameriajproducts/app/modules/medpro_history/medpro_history_model.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 
@@ -9,8 +10,9 @@ class MedproHistoryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = medprohistorydata().medprohistory;
-
+    final controller=Get.find<MedproDetailsController>();
+    //final data = medprohistorydata().medprohistory;
+final data=controller.medProList;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -46,7 +48,7 @@ class MedproHistoryView extends StatelessWidget {
                 Icon(Icons.medical_services, color: Color(0xff1893F8)),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text(data[index].tittle), Text(data[index].date)],
+                  children: [Text(data[index].id), Text(data[index].createdAt)],
                 ),
                 Spacer(),
                 GestureDetector(
