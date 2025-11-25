@@ -24,6 +24,7 @@ import 'package:ameriajproducts/app/modules/log_in/login_binding.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_view.dart';
 import 'package:ameriajproducts/app/modules/main_screen/main_screen_binding.dart';
 import 'package:ameriajproducts/app/modules/main_screen/main_screen_view.dart';
+import 'package:ameriajproducts/app/modules/medpro_details/medpro_details_binding.dart';
 import 'package:ameriajproducts/app/modules/medpro_details/medpro_view.dart';
 import 'package:ameriajproducts/app/modules/medpro_history/medpro_history_view.dart';
 import 'package:ameriajproducts/app/modules/medpro_history_details/medpro_history_details_view.dart';
@@ -113,7 +114,7 @@ class AppPages {
       binding: AppointmentBinding(),
     ),
     GetPage(name: Approutes.profile, page: () => ProfileView()),
-    GetPage(name: Approutes.medpro, page: () => MedproView()),
+    GetPage(name: Approutes.medpro, page: () => MedproView(),binding: MedproDetailsBinding()),
     GetPage(
       name: Approutes.weapon,
       page: () => Weapon(),
