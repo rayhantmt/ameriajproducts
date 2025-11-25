@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class CounselingHistoryModel {
   // --- 1. API Fields (all optional) ---
   final String? id;
@@ -38,5 +40,15 @@ class CounselingHistoryModel {
       createdAt: json['createdAt'],
       updatedAt: json['updatedAt'],
     );
+  }
+   String get displayDate {
+    
+    try {
+      final DateTime parsed = DateTime.parse(createdAt.toString());
+      // formats to: Mar 22, 4025
+      return DateFormat('MMM dd, yyyy').format(parsed);
+    } catch (e) {
+      return createdAt.toString(); // Return raw string if parsing fails
+    }
   }
 }

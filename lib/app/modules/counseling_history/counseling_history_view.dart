@@ -49,7 +49,7 @@ class CounselingHistoryView extends GetView<CounseligHistoryController> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(data[index].name.toString()),
-                    Text(data[index].rawNextDate.toString()),
+                    Text(data[index].displayDate),
                   ],
                 ),
                 Spacer(),
