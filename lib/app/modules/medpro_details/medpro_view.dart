@@ -68,7 +68,8 @@ class MedproView extends GetView<MedproDetailsController> {
                   GestureDetector(
                     onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge(type: 'vision',)
+                      builder: (context) =>
+                          MedproDetailsAlertDialouge(type: 'vision'),
                     ),
                     child: MedproCard(
                       tittle: 'Vision',
@@ -77,9 +78,10 @@ class MedproView extends GetView<MedproDetailsController> {
                     ),
                   ),
                   GestureDetector(
-                     onTap: () => showDialog(
+                    onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge(type: 'immunization',)
+                      builder: (context) =>
+                          MedproDetailsAlertDialouge(type: 'immunization'),
                     ),
                     child: MedproCard(
                       tittle: 'Immunization',
@@ -94,9 +96,10 @@ class MedproView extends GetView<MedproDetailsController> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                     onTap: () => showDialog(
+                    onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge(type: 'hearing',)
+                      builder: (context) =>
+                          MedproDetailsAlertDialouge(type: 'hearing'),
                     ),
                     child: MedproCard(
                       tittle: 'Hearing',
@@ -105,9 +108,10 @@ class MedproView extends GetView<MedproDetailsController> {
                     ),
                   ),
                   GestureDetector(
-                     onTap: () => showDialog(
+                    onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge(type: 'dental',)
+                      builder: (context) =>
+                          MedproDetailsAlertDialouge(type: 'dental'),
                     ),
                     child: MedproCard(
                       tittle: 'Dental',
@@ -117,49 +121,76 @@ class MedproView extends GetView<MedproDetailsController> {
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                     onTap: () => showDialog(
+                    onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge(type: 'dlc',)
+                      builder: (context) =>
+                          MedproDetailsAlertDialouge(type: 'dlc'),
                     ),
-                    child: MedproCard(tittle: 'DLC', color: Color(0xffE58B2F), icon: Icons.cookie)),
+                    child: MedproCard(
+                      tittle: 'DLC',
+                      color: Color(0xffE58B2F),
+                      icon: Icons.cookie,
+                    ),
+                  ),
                   GestureDetector(
-                   onTap: () => showDialog(
+                    onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge(type: 'hiv',)
+                      builder: (context) =>
+                          MedproDetailsAlertDialouge(type: 'hiv'),
                     ),
-                    child: MedproCard(tittle: 'HIV', color: Color(0xffEF44B9), icon: FontAwesomeIcons.ribbon))
+                    child: MedproCard(
+                      tittle: 'HIV',
+                      color: Color(0xffEF44B9),
+                      icon: FontAwesomeIcons.ribbon,
+                    ),
+                  ),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                     onTap: () => showDialog(
+                    onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge(type: 'pha',)
+                      builder: (context) =>
+                          MedproDetailsAlertDialouge(type: 'pha'),
                     ),
-                    child: MedproCard(tittle: 'PHA', color: Color(0xff6642F5), icon: Icons.water_drop_outlined)),
+                    child: MedproCard(
+                      tittle: 'PHA',
+                      color: Color(0xff6642F5),
+                      icon: Icons.water_drop_outlined,
+                    ),
+                  ),
                   GestureDetector(
-                     onTap: () => showDialog(
+                    onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge(type: 'dna',)
+                      builder: (context) =>
+                          MedproDetailsAlertDialouge(type: 'dna'),
                     ),
-                    child: MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna))
+                    child: MedproCard(
+                      tittle: 'DNA',
+                      color: Color(0xff22C5A4),
+                      icon: FontAwesomeIcons.dna,
+                    ),
+                  ),
                 ],
               ),
-             SizedBox(height: 20,),
+              SizedBox(height: 20),
               GestureDetector(
-                //onTap: () => Get.toNamed(Approutes.mainscreen),
-               // onTap: () =>  print(controller.items.map((e) => e.toJson()).toList()),
-               onTap: controller.submitAll,
-                child: Obx(() => controller.isLoading.value?CircularProgressIndicator(color: Colors.white,):CommonButton(tittle: 'Save'),)),
-              SizedBox(height: 10,)
+                onTap: controller.submitAll,
+                child: Obx(
+                  () => controller.isLoading.value
+                      ? CircularProgressIndicator(color: Colors.green)
+                      : CommonButton(tittle: 'Save'),
+                ),
+              ),
+              SizedBox(height: 10),
             ],
           ),
         ),
