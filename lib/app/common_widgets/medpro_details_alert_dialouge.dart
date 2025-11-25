@@ -121,7 +121,7 @@ class _MedproDetailsAlertDialougeState
                     ),
                   ),
                   GestureDetector(
-                    //onTap: () => Navigator.pop(context),
+                   
                     onTap: () {
                       final controller = Get.find<MedproDetailsController>();
                       controller.addItem(
@@ -130,6 +130,7 @@ class _MedproDetailsAlertDialougeState
                         dateController.text.trim(),
                       );
                       Navigator.pop(context);
+                      Get.snackbar('Info Added', '${widget.type} ${nameController.text} ${dateController.text}');
                     },
 
                     child: Container(
