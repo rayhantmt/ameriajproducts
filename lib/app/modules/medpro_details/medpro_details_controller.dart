@@ -41,43 +41,4 @@ class MedproDetailsController extends GetxController {
       isLoading.value = false;
     }
   }
-
-  //    Future<void> submitQualification() async {
-  //     isLoading.value = true;
-
-  //     final token = GetStorage().read('token');
-  //     if (token == null) {
-  //       Get.snackbar("Error", "Token not found");
-  //       isLoading.value = false;
-  //       return;
-  //     }
-  //     final body={
-  //     "data": {
-  //         "pass":isPassed.value,
-  //         "date": dateController.text.trim(),
-  //         "weaponName": nameController.text.trim(),
-  //         "score": scoreController.text.trim(),
-  //         "qualificationLevel": qualificationController.selectedQualification.value.toLowerCase()
-  //     }
-  // };
-
-  //     try {
-  //       final response = await ApiService.post(
-  //         endpoint: ApiConfig.weaponqualification, // Replace with actual endpoint
-  //         body: body,
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //           'Authorization': 'Bearer $token',
-  //         },
-  //       );
-  // Get.back();
-  //       print("Submitted successfully: $response");
-  //       Get.snackbar("Success", "Qualification data submitted");
-  //     } on AppException catch (e) {
-  //       Get.snackbar("Submission Failed", e.message,
-  //           backgroundColor: Colors.redAccent, colorText: Colors.white);
-  //     } finally {
-  //       isLoading.value = false;
-  //     }
-  //   }
 }
