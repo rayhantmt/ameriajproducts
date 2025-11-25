@@ -15,6 +15,7 @@ import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_binding.da
 import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_view.dart';
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_binding.dart';
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_details_view.dart';
+import 'package:ameriajproducts/app/modules/fitness_history/fitness_history_binding.dart';
 import 'package:ameriajproducts/app/modules/fitness_history/fitness_history_view.dart';
 import 'package:ameriajproducts/app/modules/fitness_history_details/fitness_history_details.dart';
 import 'package:ameriajproducts/app/modules/forgot_password/forgot_password_binding.dart';
@@ -171,7 +172,7 @@ class AppPages {
       name: Approutes.rangehistorydetails,
       page: () => RangeHistoryDetails(),
     ),
-    GetPage(name: Approutes.fitnesshistory, page: () => FitnessHistoryView()),
+    GetPage(name: Approutes.fitnesshistory, page: () => FitnessHistoryView(),binding: FitnessHistoryBinding()),
     GetPage(
       name: Approutes.fitnesshistorydetails,
       page: () => FitnessHistoryDetails(),
