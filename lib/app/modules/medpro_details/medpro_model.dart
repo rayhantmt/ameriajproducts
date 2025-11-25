@@ -33,3 +33,33 @@ class MedProTestModel {
     }
   }
 }
+class MedProModel {
+  final String id;           // MedPro entry ID
+  final String userId;       // User ID
+  final List<MedProTestModel> tests;  // List of tests (MedProTestModel)
+  final bool isDeleted;      // Whether the entry is deleted
+  final String createdAt;    // Date when the entry was created
+  final String updatedAt;    // Date when the entry was last updated
+
+  MedProModel({
+    required this.id,
+    required this.userId,
+    required this.tests,
+    required this.isDeleted,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+
+  factory MedProModel.fromJson(Map<String, dynamic> json) {
+    // Extract the tests array
+    final testsData = json['tests'] as List<dynamic>? ?? [];
+    return MedProModel(
+      id: json['id'] ?? '',
+      userId: json['userId'] ?? '',
+      tests: testsData.map((e) => MedProTestModel.fromJson(e)).toList(),
+      isDeleted: json['isDeleted'] ?? false,
+      createdAt: json['createdAt'] ?? '',
+      updatedAt: json['updatedAt'] ?? '',
+    );
+  }
+}
