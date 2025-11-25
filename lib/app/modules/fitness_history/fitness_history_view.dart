@@ -1,4 +1,5 @@
 
+import 'package:ameriajproducts/app/modules/fitness_history/fitness_historry_controller.dart';
 import 'package:ameriajproducts/app/modules/fitness_history/fitness_history_model.dart';
 
 
@@ -9,12 +10,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class FitnessHistoryView extends StatelessWidget {
+class FitnessHistoryView extends GetView<FitnessHistorryController> {
   const FitnessHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final data = fitnesshistorydata().fitnesshistory;
+    final data = controller.fitnesshistorydata;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -51,7 +52,7 @@ class FitnessHistoryView extends StatelessWidget {
                 SvgPicture.asset(Appimages.fitness),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text(data[index].tittle), Text(data[index].date)],
+                  children: [Text(data[index].title), Text(data[index].date)],
                 ),
                 Spacer(),
                 GestureDetector(
