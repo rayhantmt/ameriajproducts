@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class AdminHistoryDetails extends StatelessWidget {
   const AdminHistoryDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final arguments=Get.arguments;
+    final bool les=arguments['les'];
+    final vehiclereg=arguments['vehicleerg'];
+    final vehicleinsurance=arguments['vehicleinsurance'];
+    final educationMilitary=arguments['edumilitary'];
+    final educationcivilian=arguments['educivilian'];
+    final volunteerhour=arguments['voluenteerhour'];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -48,7 +56,7 @@ class AdminHistoryDetails extends StatelessWidget {
                         color: Color(0xff4B5563)
                       ),
                       ),
-                      Text('Yes',
+                      Text(les?"Yes":"No",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
@@ -66,7 +74,7 @@ class AdminHistoryDetails extends StatelessWidget {
                         color: Color(0xff4B5563)
                       ),
                       ),
-                      Text('23-06-2015',
+                      Text(vehiclereg,
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
@@ -84,7 +92,7 @@ class AdminHistoryDetails extends StatelessWidget {
                         color: Color(0xff4B5563)
                       ),
                       ),
-                      Text('23-06-2015',
+                      Text(vehicleinsurance.toString(),
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
@@ -103,7 +111,7 @@ class AdminHistoryDetails extends StatelessWidget {
                       ),
                       ),
                       Expanded(
-                        child: Text('Completed Basic Leadership Course (BLC)',
+                        child: Text(educationMilitary.toString(),
                         
                         maxLines: 4,
                         style: TextStyle(
@@ -125,7 +133,7 @@ class AdminHistoryDetails extends StatelessWidget {
                       ),
                       ),
                       Expanded(
-                        child: Text('Bachelor of Science in Engineering',
+                        child: Text(educationcivilian.toString(),
                         
                         maxLines: 4,
                         style: TextStyle(
@@ -147,7 +155,7 @@ class AdminHistoryDetails extends StatelessWidget {
                       ),
                       ),
                       Expanded(
-                        child: Text('15 hours ',
+                        child: Text(volunteerhour.toString(),
                         
                         maxLines: 4,
                         style: TextStyle(
