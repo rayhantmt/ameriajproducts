@@ -59,6 +59,7 @@ Future<void> fetchfitness() async {
       }
     } catch (e) {
       // Handle any error that occurs (bad request, server error, etc.)
+      print(e);
       Get.snackbar(
         "Error",
         e.toString(),

@@ -1,7 +1,7 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_controller.dart';
+import 'package:ameriajproducts/app/modules/fitness_history/fitness_historry_controller.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_controller.dart';
-import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +12,7 @@ class FitnessDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<WeaponController>();
     final maincontroller = Get.find<FitnessController>();
+    final secondcontroller=Get.find<FitnessHistorryController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -34,7 +35,8 @@ class FitnessDetailsView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () => Get.toNamed(Approutes.fitnesshistory),
+                    //onTap: () => Get.toNamed(Approutes.fitnesshistory),
+                    onTap: secondcontroller.fetchfitness,
                     child: Container(
                       height: 30,
                       width: 110,
@@ -42,7 +44,7 @@ class FitnessDetailsView extends StatelessWidget {
                         border: Border.all(width: 1, color: Color(0xff08692C)),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Row(
+                      child: Obx(() => secondcontroller.isfeatching.value?CircularProgressIndicator(color: Colors.red,):Row(
                         children: [
                           Icon(Icons.history, color: Color(0xff08692C)),
                           Text(
@@ -54,7 +56,7 @@ class FitnessDetailsView extends StatelessWidget {
                             ),
                           ),
                         ],
-                      ),
+                      ),)
                     ),
                   ),
                 ],
