@@ -1,8 +1,31 @@
+import 'package:ameriajproducts/app/modules/medpro_details/medpro_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MedproDetailsAlertDialouge extends StatelessWidget {
-  const MedproDetailsAlertDialouge({super.key});
+class MedproDetailsAlertDialouge extends StatefulWidget {
+  final String type;
+   MedproDetailsAlertDialouge({super.key,required this.type});
+
+  @override
+  State<MedproDetailsAlertDialouge> createState() => _MedproDetailsAlertDialougeState();
+}
+
+class _MedproDetailsAlertDialougeState extends State<MedproDetailsAlertDialouge> {
+ late TextEditingController nameController;
+  late TextEditingController dateController;
+@override
+  void initState() {
+    super.initState();
+    nameController = TextEditingController();
+    dateController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    dateController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +67,7 @@ class MedproDetailsAlertDialouge extends StatelessWidget {
                   )
                 ),
                 child:TextFormField(
-                  
+                  controller: nameController,
                   decoration: const InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Enter'
@@ -73,7 +96,7 @@ class MedproDetailsAlertDialouge extends StatelessWidget {
                   )
                 ),
                 child: TextFormField(
-                  
+                  controller: dateController,
                   decoration: InputDecoration(
                    hint: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,7 +125,17 @@ class MedproDetailsAlertDialouge extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pop(context),
+                    //onTap: () => Navigator.pop(context),
+                    onTap: () {
+  final controller = Get.find<MedproDetailsController>();
+  controller.addItem(
+    widget.type,
+    nameController.text.trim(),
+    dateController.text.trim(),
+  );
+  Navigator.pop(context);
+},
+
                     child: Container(
                       height: 35,
                       width: Get.width*0.30,

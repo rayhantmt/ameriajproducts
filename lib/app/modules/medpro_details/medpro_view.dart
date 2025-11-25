@@ -1,12 +1,13 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/medpro_card.dart';
 import 'package:ameriajproducts/app/common_widgets/medpro_details_alert_dialouge.dart';
+import 'package:ameriajproducts/app/modules/medpro_details/medpro_details_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class MedproView extends StatelessWidget {
+class MedproView extends GetView<MedproDetailsController> {
   const MedproView({super.key});
 
   @override
@@ -67,7 +68,7 @@ class MedproView extends StatelessWidget {
                   GestureDetector(
                     onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge()
+                      builder: (context) => MedproDetailsAlertDialouge(type: 'vision',)
                     ),
                     child: MedproCard(
                       tittle: 'Vision',
@@ -78,7 +79,7 @@ class MedproView extends StatelessWidget {
                   GestureDetector(
                      onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge()
+                      builder: (context) => MedproDetailsAlertDialouge(type: 'immunization',)
                     ),
                     child: MedproCard(
                       tittle: 'Immunization',
@@ -95,7 +96,7 @@ class MedproView extends StatelessWidget {
                   GestureDetector(
                      onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge()
+                      builder: (context) => MedproDetailsAlertDialouge(type: 'hearing',)
                     ),
                     child: MedproCard(
                       tittle: 'Hearing',
@@ -106,7 +107,7 @@ class MedproView extends StatelessWidget {
                   GestureDetector(
                      onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge()
+                      builder: (context) => MedproDetailsAlertDialouge(type: 'dental',)
                     ),
                     child: MedproCard(
                       tittle: 'Dental',
@@ -123,13 +124,13 @@ class MedproView extends StatelessWidget {
                   GestureDetector(
                      onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge()
+                      builder: (context) => MedproDetailsAlertDialouge(type: 'dlc',)
                     ),
                     child: MedproCard(tittle: 'DLC', color: Color(0xffE58B2F), icon: Icons.cookie)),
                   GestureDetector(
                    onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge()
+                      builder: (context) => MedproDetailsAlertDialouge(type: 'hiv',)
                     ),
                     child: MedproCard(tittle: 'HIV', color: Color(0xffEF44B9), icon: FontAwesomeIcons.ribbon))
                 ],
@@ -141,20 +142,21 @@ class MedproView extends StatelessWidget {
                   GestureDetector(
                      onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge()
+                      builder: (context) => MedproDetailsAlertDialouge(type: 'pha',)
                     ),
                     child: MedproCard(tittle: 'PHA', color: Color(0xff6642F5), icon: Icons.water_drop_outlined)),
                   GestureDetector(
                      onTap: () => showDialog(
                       context: context,
-                      builder: (context) => MedproDetailsAlertDialouge()
+                      builder: (context) => MedproDetailsAlertDialouge(type: 'dna',)
                     ),
                     child: MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna))
                 ],
               ),
              SizedBox(height: 20,),
               GestureDetector(
-                onTap: () => Get.toNamed(Approutes.mainscreen),
+                //onTap: () => Get.toNamed(Approutes.mainscreen),
+                onTap: () =>  print(controller.items.map((e) => e.toJson()).toList()),
                 child: CommonButton(tittle: 'Save')),
               SizedBox(height: 10,)
             ],
