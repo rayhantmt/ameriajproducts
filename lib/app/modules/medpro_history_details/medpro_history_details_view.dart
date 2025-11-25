@@ -69,7 +69,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                     GestureDetector(
                       onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproHistoryDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge(date: visionTests[0].displayDate,name: visionTests[0].name,)
                       ),
                       child: MedproCard(
                         tittle: 'Vision',
@@ -80,7 +80,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproHistoryDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge(date: immunization[0].displayDate,name: immunization[0].name,)
                       ),
                       child: MedproCard(
                         tittle: 'Immunization',
@@ -97,7 +97,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproHistoryDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge(date: hearingTests[0].displayDate,name: hearingTests[0].name,)
                       ),
                       child: MedproCard(
                         tittle: 'Hearing',
@@ -108,7 +108,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproHistoryDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge(date: dentalTests[0].displayDate,name: dentalTests[0].name,)
                       ),
                       child: MedproCard(
                         tittle: 'Dental',
@@ -125,13 +125,13 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproHistoryDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge(date: dlcTests[0].displayDate,name: dlcTests[0].name,)
                       ),
                       child: MedproCard(tittle: 'DLC', color: Color(0xffE58B2F), icon: Icons.cookie)),
                     GestureDetector(
                      onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproHistoryDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge(date: hivTests[0].displayDate,name: hivTests[0].name,)
                       ),
                       child: MedproCard(tittle: 'HIV', color: Color(0xffEF44B9), icon: FontAwesomeIcons.ribbon))
                   ],
@@ -143,13 +143,13 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproHistoryDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge(date: phaTests[0].displayDate,name: phaTests[0].name,)
                       ),
                       child: MedproCard(tittle: 'PHA', color: Color(0xff6642F5), icon: Icons.water_drop_outlined)),
                     GestureDetector(
                        onTap: () => showDialog(
                         context: context,
-                        builder: (context) => MedproHistoryDetailsAlertDialouge()
+                        builder: (context) => MedproHistoryDetailsAlertDialouge(date: dnaTests[0].displayDate,name: dnaTests[0].name,)
                       ),
                       child: MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna))
                   ],
