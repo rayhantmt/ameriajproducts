@@ -180,35 +180,19 @@ class FitnessDetailsView extends StatelessWidget {
               ),
               SizedBox(height: 20),
 
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //   children: [
-              //     Container(
-              //       height: 50,
-              //       width: Get.width*0.3,
-              //       decoration: BoxDecoration(
-
-              //       ),
-              //     ),
-              //     SizedBox(width: Get.width*0.2,),
-              //     Container(
-              //       width: Get.width*0.3,
-              //       height: 50,
-              //       color: Colors.blue,
-              //     )
-              //   ],
-              // ),
+        
               GestureDetector(
-                 onTap: () => maincontroller.submitQualification(),
-                child: Obx(() => maincontroller.isLoading.value?CircularProgressIndicator(
-color: Colors.green,
-
-                ):CommonButton(tittle: 'Submit')),
+                onTap: () => maincontroller.submitQualification(),
+                child: Obx(
+                  () => maincontroller.isLoading.value
+                      ? CircularProgressIndicator(color: Colors.green)
+                      : CommonButton(tittle: 'Submit'),
+                ),
               ),
               SizedBox(height: 10),
               GestureDetector(
                 onTap: () => Get.back(),
-               
+
                 child: Container(
                   height: 45,
                   width: double.infinity,
