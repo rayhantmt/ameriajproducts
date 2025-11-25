@@ -1,13 +1,33 @@
 import 'package:ameriajproducts/app/common_widgets/medpro_card.dart';
 import 'package:ameriajproducts/app/common_widgets/medpro_history_details_alert_dialouge.dart';
+import 'package:ameriajproducts/app/modules/medpro_details/medpro_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/route_manager.dart';
 
 class MedproHistoryDetailsView extends StatelessWidget {
   const MedproHistoryDetailsView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final arguments = Get.arguments;
+
+// Initialize your list with the received data
+var tests = <MedProTestModel>[];
+tests = arguments['data'];
+
+// Now you can filter the data for 'vision' and other sets
+var visionTests = tests.where((test) => test.type == 'vision').toList();
+var immunization = tests.where((test) => test.type == 'immunization').toList();
+var hearingTests = tests.where((test) => test.type == 'hearing').toList();
+var dentalTests = tests.where((test) => test.type == 'dental').toList();
+var dlcTests = tests.where((test) => test.type == 'dlc').toList();
+var hivTests = tests.where((test) => test.type == 'hiv').toList();
+var phaTests = tests.where((test) => test.type == 'pha').toList();
+var dnaTests = tests.where((test) => test.type == 'dna').toList();
+
+
+   print(visionTests[0].displayDate);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

@@ -50,7 +50,9 @@ class MedproHistoryView extends StatelessWidget {
                 ),
                 Spacer(),
                 GestureDetector(
-                  onTap: () => Get.toNamed(Approutes.medprohistorydetails),
+                  onTap: () => Get.toNamed(Approutes.medprohistorydetails,arguments: {
+                    'data':data[index].tests
+                  }),
                   child: Text(
                     'View Details',
                     style: TextStyle(

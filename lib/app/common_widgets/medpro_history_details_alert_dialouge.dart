@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MedproHistoryDetailsAlertDialouge extends StatelessWidget {
-  const MedproHistoryDetailsAlertDialouge({super.key});
+  // final String name;
+  // final String date;
+  const MedproHistoryDetailsAlertDialouge({super.key, });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class MedproHistoryDetailsAlertDialouge extends StatelessWidget {
               ),
               ),
               SizedBox(height: 10,),
-              Text('Enter',
+              Text('',
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 16,
@@ -46,7 +48,7 @@ class MedproHistoryDetailsAlertDialouge extends StatelessWidget {
             ),
               ),
                SizedBox(height: 10,),
-              Text('Enter',
+              Text('',
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 16,
