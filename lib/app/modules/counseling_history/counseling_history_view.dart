@@ -54,7 +54,7 @@ class CounselingHistoryView extends GetView<CounseligHistoryController> {
                 ),
                 Spacer(),
                 GestureDetector(
-                  onTap: () => Get.toNamed(Approutes.counselinghistorydetails),
+                  onTap: () => Get.toNamed(Approutes.counselinghistorydetails,arguments: {'name':data[index].name,'date':data[index].displayDate,'nextdate':data[index].displaynextDate,'counseledby':data[index].counseledBy,'notes':data[index].notes}),
                   child: Text(
                     'View Details',
                     style: TextStyle(

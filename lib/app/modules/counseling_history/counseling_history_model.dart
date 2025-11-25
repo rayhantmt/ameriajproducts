@@ -44,11 +44,21 @@ class CounselingHistoryModel {
    String get displayDate {
     
     try {
-      final DateTime parsed = DateTime.parse(createdAt.toString());
+      final DateTime parsed = DateTime.parse(rawDate.toString());
       // formats to: Mar 22, 4025
       return DateFormat('MMM dd, yyyy').format(parsed);
     } catch (e) {
-      return createdAt.toString(); // Return raw string if parsing fails
+      return rawDate.toString(); // Return raw string if parsing fails
+    }
+  }
+  String get displaynextDate {
+    
+    try {
+      final DateTime parsed = DateTime.parse(rawNextDate.toString());
+      // formats to: Mar 22, 4025
+      return DateFormat('MMM dd, yyyy').format(parsed);
+    } catch (e) {
+      return rawNextDate.toString(); // Return raw string if parsing fails
     }
   }
 }
