@@ -1,7 +1,5 @@
 import 'package:ameriajproducts/app/modules/admin_details/admin_details_controller.dart';
 import 'package:ameriajproducts/app/modules/admin_history/admin_history_controller.dart';
-import 'package:ameriajproducts/app/routes/app_routes.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
