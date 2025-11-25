@@ -15,6 +15,7 @@ class MedproHistoryDetailsView extends StatelessWidget {
 // Initialize your list with the received data
 var tests = <MedProTestModel>[];
 tests = arguments['data'];
+final String date=arguments['date'];
 
 // Now you can filter the data for 'vision' and other sets
 var visionTests = tests.where((test) => test.type == 'vision').toList();
@@ -31,7 +32,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text('Medpro Status - June 21, 2025',
+        title: Text('Medpro Status - $date',
         style: TextStyle(
           fontWeight: FontWeight.w700,
           fontSize: 18,
@@ -57,7 +58,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text('04 April,2025'),
+                  Text(date.toString()),
                   Icon(Icons.calendar_month_outlined)
                 ],
               )
