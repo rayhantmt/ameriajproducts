@@ -1,4 +1,3 @@
-
 import 'package:ameriajproducts/app/modules/admin_history/admin_history_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
@@ -49,11 +48,24 @@ class AdminHistoryView extends GetView<AdminHistoryController> {
                 SvgPicture.asset(Appimages.admin),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [Text('Admin'), Text(data[index].createdAt.toString())],
+                  children: [
+                    Text('Admin'),
+                    Text(data[index].createdAt.toString()),
+                  ],
                 ),
                 Spacer(),
                 GestureDetector(
-                  onTap: () => Get.toNamed(Approutes.adminhistorydetails),
+                  onTap: () => Get.toNamed(
+                    Approutes.adminhistorydetails,
+                    arguments: {
+                      'les': data[index].lesCorrect,
+                      'vehicleerg': data[index].vehicleRegistration,
+                      'vehicleinsurance': data[index].vehicleInsurance,
+                      'edumilitary': data[index].educationMilitary,
+                      'educivilian': data[index].educationCivilian,
+                      'voluenteerhour': data[index].volunteerHour,
+                    },
+                  ),
                   child: Text(
                     'View Details',
                     style: TextStyle(
