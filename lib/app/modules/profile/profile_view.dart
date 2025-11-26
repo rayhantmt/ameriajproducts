@@ -222,6 +222,7 @@ class ProfileView extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: Get.height * 0.02),
+                                
                               ],
                             ),
                           ),
@@ -233,6 +234,99 @@ class ProfileView extends StatelessWidget {
                         icon: Appimages.logout,
                       ),
                     ),
+                     GestureDetector(
+                      onTap: () => showDialog(
+                        context: context,
+                        builder: (context) => Dialog(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            height: Get.height * 0.4,
+                            width: double.infinity,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(height: Get.height * 0.02),
+                                SvgPicture.asset(Appimages.profilelougout),
+                                SizedBox(height: Get.height * 0.02),
+                                Text(
+                                  'Are you sure you want to log out of your account?',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                    color: Color(0xff6B7280),
+                                  ),
+                                ),
+                                SizedBox(height: Get.height * 0.03),
+                                GestureDetector(
+                                  onTap: () => Get.offAllNamed(Approutes.login),
+                                  child: Container(
+                                    margin: EdgeInsets.only(
+                                      left: 10,
+                                      right: 10,
+                                    ),
+                                    height: 45,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: Color(0xffDC143C),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'Confirm Log Out',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: Get.height * 0.02),
+                                GestureDetector(
+                                  onTap: () => Navigator.pop(context),
+
+                                  child: Container(
+                                    margin: EdgeInsets.only(
+                                      left: 10,
+                                      right: 10,
+                                    ),
+                                    height: 45,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: Color(0xffF3F4F6),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'Cancel',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16,
+                                          color: Color(0xff727272),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: Get.height * 0.02),
+                                
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      child: ProfileContainer(
+                        tittle: 'Delete Account',
+                        details: 'Permanently Delete your account',
+                        icon: Appimages.logout,
+                      ),
+                    ),
+                   
                   ],
                 ),
               ),
