@@ -276,7 +276,7 @@ class ProfileView extends StatelessWidget {
                                     ),
                                     child: Center(
                                       child: Text(
-                                        'Confirm Log Out',
+                                        'Permanently delete your account',
                                         style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 16,
@@ -323,7 +323,7 @@ class ProfileView extends StatelessWidget {
                       child: ProfileContainer(
                         tittle: 'Delete Account',
                         details: 'Permanently Delete your account',
-                        icon: Appimages.logout,
+                        icon: Appimages.delete_icon,
                       ),
                     ),
                    
