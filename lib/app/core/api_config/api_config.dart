@@ -21,6 +21,7 @@ class ApiConfig {
   static const String physical_fitness = '/physical-fitness';
   static const String admin = '/adminUser';
   static const String medpro = '/medpro';
+  static const String user='/user';
 
   // Other modules...
 }

@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/common_widgets/profile_container.dart';
+import 'package:ameriajproducts/app/modules/main_screen/main_screen_controller.dart';
 
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
@@ -12,6 +13,7 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller=Get.find<MainScreenController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -262,7 +264,7 @@ class ProfileView extends StatelessWidget {
                                 ),
                                 SizedBox(height: Get.height * 0.03),
                                 GestureDetector(
-                                  onTap: () => Get.offAllNamed(Approutes.login),
+                                  onTap: controller.deleteaccount,
                                   child: Container(
                                     margin: EdgeInsets.only(
                                       left: 10,
