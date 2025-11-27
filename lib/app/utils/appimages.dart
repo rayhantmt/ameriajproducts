@@ -23,5 +23,5 @@ class Appimages {
      static const String sharpshooter = 'lib/assets/svgs/sharpshooter.svg';
       static const String expert = 'lib/assets/svgs/expert.svg';
       static const String deleteappointment = 'lib/assets/svgs/delete_appointment_icon.svg';
-     static const String delete_icon='lib/assets/deleteicon.webp';
+     static const String delete_icon='lib/assets/deleteicon.png';
 }
