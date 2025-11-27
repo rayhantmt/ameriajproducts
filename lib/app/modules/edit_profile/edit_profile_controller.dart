@@ -1,7 +1,10 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class EditProfileController extends GetxController {
+  final countryCode = '+880'.obs;
+  final phonecontroller=TextEditingController();
   Rxn<XFile> profileImage = Rxn<XFile>();
   Rxn<XFile> pickedImage = Rxn<XFile>();
   final ImagePicker _picker = ImagePicker();

@@ -1,6 +1,8 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
+import 'package:ameriajproducts/app/common_widgets/formfield.dart';
 import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_controller.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -178,41 +180,27 @@ class EditProfileView extends GetView<EditProfileController> {
               
             
               SizedBox(height: Get.height * 0.02),
-               Text(
-                'Phone Number',
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12,
-                  color: Color(0xff2A2A2A),
-                ),
-                textAlign: TextAlign.start,
-              ),
-              SizedBox(height: Get.height * 0.01),
-              Container(
-                height: 45,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Color(0xffEFEFEF)),
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.white,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hint: Text(
-                        'Enter your Phone Number',
-                            
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Color(0xff75838D),
-                        ),
-                      ),
+              Row(
+                children: [
+                   Obx(() => CountryCodePicker(
+              onChanged: (code) => controller.countryCode.value = code.dialCode ?? '+880',
+              initialSelection: controller.countryCode.value,
+              favorite: ['+880', 'BD'],
+              showCountryOnly: false,
+              showOnlyCountryWhenClosed: false,
+              alignLeft: false,
+            )),
+           
+
+                  Expanded(
+                    child: Formfield(
+                      controller: controller.phonecontroller,
+                      tittle: 'Enter you phone number',
+                      obsecuretext: false,
+                      keyboardtype: TextInputType.number,
                     ),
                   ),
-                ),
+                ],
               ),
               SizedBox(height: Get.height * 0.02),
           
