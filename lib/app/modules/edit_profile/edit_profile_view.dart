@@ -1,9 +1,10 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
+import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_controller.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class EditProfileView extends StatelessWidget {
+class EditProfileView extends GetView<EditProfileController> {
   const EditProfileView({super.key});
 
   @override
@@ -29,34 +30,37 @@ class EditProfileView extends StatelessWidget {
           
             children: [
               SizedBox(height: Get.height * 0.02),
-              Center(
-                child: Stack(
-                  children: [
-                    // Profile image
-                    CircleAvatar(
-                      radius: 50, // adjust size as needed
-                      backgroundImage: AssetImage(Appimages.profile),
-                    ),
-          
-                    // Camera icon overlay
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                          color: Colors.black87,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.camera_alt,
-                          color: Colors.white,
-                          size: 16,
+              GestureDetector(
+                onTap: controller.pickProfileImage,
+                child: Center(
+                  child: Stack(
+                    children: [
+                      // Profile image
+                      CircleAvatar(
+                        radius: 50, // adjust size as needed
+                        backgroundImage: AssetImage(Appimages.profile),
+                      ),
+                          
+                      // Camera icon overlay
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            color: Colors.black87,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.camera_alt,
+                            color: Colors.white,
+                            size: 16,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: Get.height * 0.02),
