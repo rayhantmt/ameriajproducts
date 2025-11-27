@@ -175,43 +175,8 @@ class EditProfileView extends GetView<EditProfileController> {
                   ),
                 ),
               ),
-              SizedBox(height: Get.height * 0.02),
-               Text(
-                'Email',
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12,
-                  color: Color(0xff2A2A2A),
-                ),
-                textAlign: TextAlign.start,
-              ),
-              SizedBox(height: Get.height * 0.01),
-              Container(
-                height: 45,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Color(0xffEFEFEF)),
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.white,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hint: Text(
-                        'Enter email',
-                            
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Color(0xff75838D),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              
+            
               SizedBox(height: Get.height * 0.02),
                Text(
                 'Phone Number',
