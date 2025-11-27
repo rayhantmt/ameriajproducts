@@ -29,7 +29,7 @@ class EditProfileView extends GetView<EditProfileController> {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-          
+
             children: [
               SizedBox(height: Get.height * 0.02),
               GestureDetector(
@@ -42,7 +42,7 @@ class EditProfileView extends GetView<EditProfileController> {
                         radius: 50, // adjust size as needed
                         backgroundImage: AssetImage(Appimages.profile),
                       ),
-                          
+
                       // Camera icon overlay
                       Positioned(
                         bottom: 0,
@@ -87,12 +87,11 @@ class EditProfileView extends GetView<EditProfileController> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextFormField(
-                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hint: Text(
                         'Enter your First Name',
-                            
+
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -104,7 +103,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 ),
               ),
               SizedBox(height: Get.height * 0.02),
-               Text(
+              Text(
                 'UIC',
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
@@ -129,7 +128,7 @@ class EditProfileView extends GetView<EditProfileController> {
                       border: InputBorder.none,
                       hint: Text(
                         'Enter',
-                            
+
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -141,7 +140,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 ),
               ),
               SizedBox(height: Get.height * 0.02),
-               Text(
+              Text(
                 'Rank',
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
@@ -166,7 +165,7 @@ class EditProfileView extends GetView<EditProfileController> {
                       border: InputBorder.none,
                       hint: Text(
                         'Enter',
-                            
+
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -177,20 +176,21 @@ class EditProfileView extends GetView<EditProfileController> {
                   ),
                 ),
               ),
-              
-            
+
               SizedBox(height: Get.height * 0.02),
               Row(
                 children: [
-                   Obx(() => CountryCodePicker(
-              onChanged: (code) => controller.countryCode.value = code.dialCode ?? '+880',
-              initialSelection: controller.countryCode.value,
-              favorite: ['+880', 'BD'],
-              showCountryOnly: false,
-              showOnlyCountryWhenClosed: false,
-              alignLeft: false,
-            )),
-           
+                  Obx(
+                    () => CountryCodePicker(
+                      onChanged: (code) => controller.countryCode.value =
+                          code.dialCode ?? '+880',
+                      initialSelection: controller.countryCode.value,
+                      favorite: ['+880', 'BD'],
+                      showCountryOnly: false,
+                      showOnlyCountryWhenClosed: false,
+                      alignLeft: false,
+                    ),
+                  ),
 
                   Expanded(
                     child: Formfield(
@@ -203,11 +203,11 @@ class EditProfileView extends GetView<EditProfileController> {
                 ],
               ),
               SizedBox(height: Get.height * 0.02),
-          
+
               GestureDetector(
-                
                 onTap: () => Get.back(),
-                child: CommonButton(tittle: 'Save Changes')),
+                child: CommonButton(tittle: 'Save Changes'),
+              ),
             ],
           ),
         ),
