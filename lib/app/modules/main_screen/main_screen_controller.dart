@@ -34,10 +34,10 @@ Future<void> deleteaccount() async {
           'Authorization': 'Bearer $token',
         },
       );
-
+  Get.offAllNamed(Approutes.login);
       print('Account deleted $response');
-      Get.snackbar("Success", "Account deleted Successfully");
-      Get.offAllNamed(Approutes.login);
+      Get.snackbar("Success", "Account deleted Successfully",backgroundColor: Colors.white38);
+    
       
     } on AppException catch (e) {
       Get.snackbar(
