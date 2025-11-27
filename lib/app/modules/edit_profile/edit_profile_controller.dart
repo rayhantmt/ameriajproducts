@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:dio/dio.dart';
 
 class EditProfileController extends GetxController {
   final countryCode = '+880'.obs;
@@ -8,6 +9,7 @@ class EditProfileController extends GetxController {
   Rxn<XFile> profileImage = Rxn<XFile>();
   Rxn<XFile> pickedImage = Rxn<XFile>();
   final ImagePicker _picker = ImagePicker();
+  final Dio _client=Dio();
   Future<void> pickProfileImage() async {
     try {
       final XFile? picked = await _picker.pickImage(
