@@ -13,9 +13,13 @@ class DioClient {
   Future<Response> postFormData({
     required String url,
     required FormData data,
+    required String token,
   }) async {
     try {
-      final response = await _dio.post(url, data: data);
+      final response = await _dio.patch(url, data: data,options: Options(
+        headers: {
+          'Authorization': 'Bearer $token', // Set the bearer token
+        },));
       return response;
     } on DioError catch (e) {
       if (e.response != null) {

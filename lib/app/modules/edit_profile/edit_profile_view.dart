@@ -87,6 +87,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextFormField(
+                    controller: controller.namecontroller,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hint: Text(
@@ -124,6 +125,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextFormField(
+                    controller: controller.uiccontroller,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hint: Text(
@@ -161,6 +163,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextFormField(
+                    controller: controller.rankcontroller,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hint: Text(
@@ -205,7 +208,8 @@ class EditProfileView extends GetView<EditProfileController> {
               SizedBox(height: Get.height * 0.02),
 
               GestureDetector(
-                onTap: () => Get.back(),
+               // onTap: () => Get.back(),
+               onTap: controller.updateprofile,
                 child: CommonButton(tittle: 'Save Changes'),
               ),
             ],
