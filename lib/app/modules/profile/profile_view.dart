@@ -1,11 +1,9 @@
 import 'package:ameriajproducts/app/common_widgets/profile_container.dart';
 import 'package:ameriajproducts/app/modules/main_screen/main_screen_controller.dart';
-
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:get/get.dart';
 
 class ProfileView extends StatelessWidget {
@@ -13,7 +11,7 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller=Get.find<MainScreenController>();
+    final controller = Get.find<MainScreenController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -224,7 +222,6 @@ class ProfileView extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: Get.height * 0.02),
-                                
                               ],
                             ),
                           ),
@@ -236,7 +233,7 @@ class ProfileView extends StatelessWidget {
                         icon: Appimages.logout,
                       ),
                     ),
-                     GestureDetector(
+                    GestureDetector(
                       onTap: () => showDialog(
                         context: context,
                         builder: (context) => Dialog(
@@ -264,7 +261,10 @@ class ProfileView extends StatelessWidget {
                                 ),
                                 SizedBox(height: Get.height * 0.03),
                                 GestureDetector(
-                                  onTap: controller.deleteaccount,
+                                  onTap: () {
+                                    controller.deleteaccount;
+                                    Get.offAllNamed(Approutes.login);
+                                  },
                                   child: Container(
                                     margin: EdgeInsets.only(
                                       left: 10,
@@ -316,7 +316,6 @@ class ProfileView extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: Get.height * 0.02),
-                                
                               ],
                             ),
                           ),
@@ -328,7 +327,6 @@ class ProfileView extends StatelessWidget {
                         icon: Appimages.delete_icon,
                       ),
                     ),
-                   
                   ],
                 ),
               ),
