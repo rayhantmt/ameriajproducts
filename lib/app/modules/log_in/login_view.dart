@@ -12,10 +12,8 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     final fieldviewcontrorller = Get.find<PasswordFieldController>();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('')),
-      
+      appBar: AppBar(backgroundColor: Colors.white, title: Text('')),
+
       backgroundColor: Colors.white,
       body: Stack(
         children: [
@@ -105,11 +103,17 @@ class LoginView extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 GestureDetector(
-                 
                   onTap: () => fieldviewcontrorller.login(),
-                  child: Obx(() => fieldviewcontrorller.isLoading.value?Center(child: const CircularProgressIndicator(
-                    color: Color(0xff08692C),
-                  )):CommonButton(tittle: 'Login'),)),
+                  child: Obx(
+                    () => fieldviewcontrorller.isLoading.value
+                        ? Center(
+                            child: const CircularProgressIndicator(
+                              color: Color(0xff08692C),
+                            ),
+                          )
+                        : CommonButton(tittle: 'Login'),
+                  ),
+                ),
               ],
             ),
           ),
