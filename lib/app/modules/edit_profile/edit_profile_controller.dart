@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:ameriajproducts/app/core/api_config/api_config.dart';
 import 'package:ameriajproducts/data/api_services/dio_client.dart';
 import 'package:flutter/widgets.dart';
@@ -49,25 +51,24 @@ class EditProfileController extends GetxController {
     }
     try {
       final formData = FormData.fromMap({
-        "data": {
-          "userName": namecontroller,
-          "countryCode": countryCode.value,
-          "mobile": phonecontroller.text,
-          "uic": uiccontroller,
-          "rank": rankcontroller,
-        },
+  "data": jsonEncode({
+    "userName": namecontroller.text,
+    "countryCode": countryCode.value,
+    "mobile": phonecontroller.text,
+    "uic": uiccontroller.text,
+    "rank": rankcontroller.text,
+  }),
 
-        // photo is optional, add only if selected
-        if (profileImage.value != null)
-          "photo": await MultipartFile.fromFile(
-            profileImage.value!.path,
-            filename: profileImage.value!.name,
-            contentType: MediaType("image", "jpeg"),
-          ),
-      });
+  if (profileImage.value != null)
+    "photo": await MultipartFile.fromFile(
+      profileImage.value!.path,
+      filename: profileImage.value!.name,
+      contentType: MediaType("image", "png"),
+    ),
+});
 
       final response = await _client.postFormData(
-        url: ApiConfig.user,
+        url: 'https://readiness-track-server.onrender.com/api/v1/user',
         data: formData,
         token: token
         
