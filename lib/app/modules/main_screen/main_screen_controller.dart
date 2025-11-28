@@ -12,8 +12,9 @@ class MainScreenController extends GetxController {
   void changeTab(int index) {
     currentIndex.value = index;
   }
-  RxBool isLoading=false.obs;
-Future<void> deleteaccount() async {
+
+  RxBool isLoading = false.obs;
+  Future<void> deleteaccount() async {
     isLoading.value = true;
 
     final token = GetStorage().read('token');
@@ -22,23 +23,22 @@ Future<void> deleteaccount() async {
       return;
     }
 
-   
-
     try {
       final response = await ApiService.delete(
-        endpoint:
-            ApiConfig.user, // Replace with your actual endpoint
-       
+        endpoint: ApiConfig.user, // Replace with your actual endpoint
+
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
         },
       );
-  Get.offAllNamed(Approutes.login);
+      Get.offAllNamed(Approutes.login);
       print('Account deleted $response');
-      Get.snackbar("Success", "Account deleted Successfully",backgroundColor: Colors.white38);
-    
-      
+      Get.snackbar(
+        "Success",
+        "Account deleted Successfully",
+        backgroundColor: Colors.white38,
+      );
     } on AppException catch (e) {
       Get.snackbar(
         "Failed",
@@ -46,15 +46,9 @@ Future<void> deleteaccount() async {
         backgroundColor: Colors.redAccent,
         colorText: Colors.white,
       );
-
-      
     } finally {
       isLoading.value = false;
       Get.offAllNamed(Approutes.login);
     }
   }
-
-  
-
-
 }
