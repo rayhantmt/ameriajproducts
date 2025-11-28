@@ -210,7 +210,7 @@ class EditProfileView extends GetView<EditProfileController> {
               GestureDetector(
                // onTap: () => Get.back(),
                onTap: controller.updateprofile,
-                child: CommonButton(tittle: 'Save Changes'),
+                child: Obx(() => controller.isLoading.value?Center(child: CircularProgressIndicator(color: Colors.green,)):CommonButton(tittle: 'Save Changes')),
               ),
             ],
           ),

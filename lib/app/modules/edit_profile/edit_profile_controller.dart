@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:ameriajproducts/app/core/api_config/api_config.dart';
 import 'package:ameriajproducts/data/api_services/dio_client.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart' hide FormData, MultipartFile;
@@ -41,8 +39,9 @@ class EditProfileController extends GetxController {
       Get.snackbar('Error', 'Failed to pick profile image: $e');
     }
   }
-
+var isLoading=false.obs;
   Future<void> updateprofile() async {
+    isLoading.value=true;
     final token = GetStorage().read('token');
     if (token == null) {
       Get.snackbar("Error", "Token not found");
@@ -92,6 +91,9 @@ class EditProfileController extends GetxController {
     } catch (e) {
       print('❌ Unexpected Error: $e');
       Get.snackbar('Error', '❌ Unexpected Error: $e');
+    }
+    finally{
+      isLoading.value=false;
     }
   }
 }
