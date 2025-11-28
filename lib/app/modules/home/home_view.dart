@@ -144,7 +144,7 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                       ),
                     ),
                     Text(
-                      'Congratulation your information is filled',
+                      "Congratulations you're on track",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 16,
