@@ -15,7 +15,7 @@ class MedproView extends GetView<MedproDetailsController> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Medpro Status',
+          'Medpros Status',
           style: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 18,

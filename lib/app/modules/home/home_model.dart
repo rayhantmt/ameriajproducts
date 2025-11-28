@@ -8,7 +8,7 @@ class HomeModel {
 
 class HomeData {
   final List<HomeModel> homedata = [
-    HomeModel(img: Appimages.medpro, name: 'Medpro'),
+    HomeModel(img: Appimages.medpro, name: 'Medpros'),
     HomeModel(name: 'Weapon Qualification', img: Appimages.weapon),
     HomeModel(name: 'Physical fitness', img: Appimages.fitness),
     HomeModel(name: 'Counseling', img: Appimages.counseling),
