@@ -35,7 +35,7 @@ class FitnessDetailsView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    //onTap: () => Get.toNamed(Approutes.fitnesshistory),
+                    
                     onTap: secondcontroller.fetchfitness,
                     child: Container(
                       height: 30,
@@ -108,7 +108,7 @@ class FitnessDetailsView extends StatelessWidget {
                 children: [
                   Icon(Icons.group, color: Color(0xff22C55E)),
                   Text(
-                    'Name',
+                    'Score',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 14,
@@ -129,7 +129,7 @@ class FitnessDetailsView extends StatelessWidget {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hint: Text(
-                      'Enter Name',
+                      'Enter Score',
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
