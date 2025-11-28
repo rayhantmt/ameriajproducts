@@ -261,10 +261,7 @@ class ProfileView extends StatelessWidget {
                                 ),
                                 SizedBox(height: Get.height * 0.03),
                                 GestureDetector(
-                                  onTap: () {
-                                    controller.deleteaccount;
-                                    Get.offAllNamed(Approutes.login);
-                                  },
+                                  onTap: controller.deleteaccount,
                                   child: Container(
                                     margin: EdgeInsets.only(
                                       left: 10,

@@ -46,9 +46,11 @@ Future<void> deleteaccount() async {
         backgroundColor: Colors.redAccent,
         colorText: Colors.white,
       );
+
       
     } finally {
       isLoading.value = false;
+      Get.offAllNamed(Approutes.login);
     }
   }
 
