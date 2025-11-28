@@ -279,7 +279,7 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
               Row(
                 children: [
                   Text(
-                    'Volunteer Hour',
+                    'Volunteer Hours',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 14,
