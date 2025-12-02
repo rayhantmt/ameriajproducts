@@ -34,6 +34,12 @@ class PasswordFieldController extends GetxController {
       final storage = GetStorage();
       final accessToken =
           response['data']['token']['accessToken']; // <- from your response
+          final userdata= response['data']['detailss'];
+          storage.write('name', userdata['userName']);
+          storage.write('uic', userdata['uic']);
+          storage.write('rank', userdata['rank']);
+          storage.write('email', userdata['email']);
+
 
       storage.write('token', accessToken);
       Get.offAllNamed('/mainscreen');
