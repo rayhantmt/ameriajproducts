@@ -36,7 +36,10 @@ class MedproDetailsController extends GetxController {
         },
       );
       print('Medpro Status Sbumitted successfully $response');
-      Get.snackbar('Successful', 'Successfully submitted the medpro status data');
+      Get.snackbar(
+        'Successful',
+        'Successfully submitted the medpro status data',
+      );
     } on AppException catch (e) {
       print("Error: $e");
       Get.snackbar('Error', e.toString());
@@ -44,8 +47,9 @@ class MedproDetailsController extends GetxController {
       isLoading.value = false;
     }
   }
-var feteching=false.obs;
-var medProList = <MedProModel>[].obs;
+
+  var feteching = false.obs;
+  var medProList = <MedProModel>[].obs;
   Future<void> fetchMedProData() async {
     feteching.value = true;
 
@@ -81,10 +85,10 @@ var medProList = <MedProModel>[].obs;
         for (var medPro in medProList) {
           allTests.addAll(medPro.tests); // Flatten tests into a single list
         }
-Get.snackbar('Success', 'Successfully got data');
+        Get.snackbar('Success', 'Successfully got data');
         // You can now use medProList to pass the whole dataset to the next screen
         // Example: Get.toNamed("/nextScreen", arguments: allTests);
-Get.toNamed(Approutes.medprohistory);
+        Get.toNamed(Approutes.medprohistory);
       } else {
         Get.snackbar(
           'No Data',
