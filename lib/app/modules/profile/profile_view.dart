@@ -5,6 +5,7 @@ import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -12,6 +13,9 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<MainScreenController>();
+    final storage=GetStorage();
+    final name=storage.read('name');
+    final email=storage.read('email');
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -52,7 +56,7 @@ class ProfileView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                        'Alex Richards',
+                        (name?? "Fill up your info from edit profile section").toString().toUpperCase(),
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
@@ -60,7 +64,7 @@ class ProfileView extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'alex.Richards@**90.com',
+                        (email?? "Fill up your info from edit profile section").toString().toLowerCase(),
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 12,
