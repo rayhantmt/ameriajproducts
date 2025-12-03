@@ -12,6 +12,8 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final storage = GetStorage();
 final storedToken = storage.read('token');
+final name=storage.read('name');
+final uic =storage.read('uic');
 
 print('📦 This is from home screen confirming the Stored Token: $storedToken');
 
@@ -68,7 +70,7 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Welcome, Pvt. Alex Rivera',
+                          ('Welcome, ${name??"kindly fill your name on edit profile section"}.').toUpperCase(),
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
@@ -90,7 +92,7 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'UIC: W12345',
+                          'UIC: ${ uic ??"Plz update ifno from edit profile section"}',
                           style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
