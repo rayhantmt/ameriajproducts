@@ -30,6 +30,9 @@ class HomeContorller extends GetxController {
     medprostatus.value=data['medproCompleted'];
     physicalstatus.value=data['fitnessCompleted'];
     rangestatus.value=data['rangeCompleted'];
+    counselingstatus.value=data['counselingCompleted'];
+    adminstatus.value=data['adminCompleted'];
+    totalcompleted.value=data['totalCompleted'];
     completedpercentage.value=data['completionPercentage'];
     
     }
