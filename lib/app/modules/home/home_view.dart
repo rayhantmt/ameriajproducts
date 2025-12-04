@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/modules/home/home_contorller.dart';
 import 'package:ameriajproducts/app/modules/home/home_model.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends GetView<HomeContorller> {
   const HomeView({super.key});
 
   @override
@@ -14,7 +15,8 @@ class HomeView extends StatelessWidget {
 final storedToken = storage.read('token');
 final name=storage.read('name');
 final uic =storage.read('uic');
-
+controller.getstatus();
+print(controller.completedpercentage);
 print('📦 This is from home screen confirming the Stored Token: $storedToken');
 
     final data = HomeData().homedata;
@@ -129,7 +131,7 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                       radius: 48,
                       backgroundColor: Color(0xff22C55E),
                       child: Text(
-                        '100%',
+                        controller.completedpercentage.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 24,
