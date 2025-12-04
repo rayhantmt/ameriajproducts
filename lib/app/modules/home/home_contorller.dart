@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/core/api_config/api_config.dart';
+import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -17,9 +18,17 @@ class HomeContorller extends GetxController {
     final storage = GetStorage();
     final token = storage.read('token');
     isLoading.value = true;
-    final response = await ApiService.get(
+    try 
+    {
+      final response = await ApiService.get(
       endpoint: ApiConfig.status,
       headers: {'Authorization': 'Bearer $token'},
     );
+    final data=response['data'];
+    medprostatus.value=data['medproCompleted'];
+    }
+    on AppException catch(e){
+      Get.snackbar('Error', e.toString());
+    }
   }
 }
