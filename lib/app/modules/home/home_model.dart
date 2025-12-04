@@ -10,6 +10,7 @@ class HomeData {
   final List<HomeModel> homedata = [
     HomeModel(img: Appimages.medpro, name: 'Medpros'),
     HomeModel(name: 'Weapon Qualification', img: Appimages.weapon),
+    HomeModel(img: Appimages.range, name: "Range Qualification"),
     HomeModel(name: 'Physical fitness', img: Appimages.fitness),
     HomeModel(name: 'Counseling', img: Appimages.counseling),
     HomeModel(name: 'Admin', img: Appimages.admin),
