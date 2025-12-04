@@ -12,12 +12,14 @@ class HomeView extends GetView<HomeContorller> {
   @override
   Widget build(BuildContext context) {
     final storage = GetStorage();
-final storedToken = storage.read('token');
-final name=storage.read('name');
-final uic =storage.read('uic');
-controller.getstatus();
-final double percent= controller.completedpercentage.value;
-print('📦 This is from home screen confirming the Stored Token: $storedToken');
+    final storedToken = storage.read('token');
+    final name = storage.read('name');
+    final uic = storage.read('uic');
+    controller.getstatus();
+    final double percent = controller.completedpercentage.value;
+    print(
+      '📦 This is from home screen confirming the Stored Token: $storedToken',
+    );
 
     final data = HomeData().homedata;
     return Scaffold(
@@ -41,11 +43,9 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                       ),
                     ),
                     Expanded(child: SizedBox()),
-                  
                   ],
                 ),
               ),
-
 
               SizedBox(height: Get.height * 0.006),
               Container(
@@ -72,7 +72,8 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          ('Welcome, ${name??"kindly fill your name on edit profile section"}.').toUpperCase(),
+                          ('Welcome, ${name ?? "kindly fill your name on edit profile section"}.')
+                              .toUpperCase(),
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
@@ -94,7 +95,7 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'UIC: ${ uic ??"Plz update ifno from edit profile section"}',
+                          'UIC: ${uic ?? "Plz update ifno from edit profile section"}',
                           style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
@@ -131,7 +132,7 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                       radius: 48,
                       backgroundColor: Color(0xff22C55E),
                       child: Text(
-                       percent.toString() ,
+                        percent.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 24,
@@ -208,12 +209,15 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                               ),
                             ),
                             Expanded(child: SizedBox()),
-                            Text('Done',style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                              color: Color(0xff4B5563)
-                            )),
-                            Icon(Icons.check,color: Color(0xff22C55E),)
+                            Text(
+                              data[index].status?"Done":'Not Completed',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                                color: Color(0xff4B5563),
+                              ),
+                            ),
+                            Icon(data[index].status?Icons.check:Icons.close, color: data[index].status? Color(0xff22C55E): Colors.red),
                           ],
                         ),
                       ),
