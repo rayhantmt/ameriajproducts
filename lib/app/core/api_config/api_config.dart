@@ -22,6 +22,7 @@ class ApiConfig {
   static const String admin = '/adminUser';
   static const String medpro = '/medpro';
   static const String user='/user';
+  static const String status='/track/status';
 
   // Other modules...
 }
