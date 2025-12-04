@@ -20,6 +20,7 @@ import 'package:ameriajproducts/app/modules/fitness_history/fitness_history_view
 import 'package:ameriajproducts/app/modules/fitness_history_details/fitness_history_details.dart';
 import 'package:ameriajproducts/app/modules/forgot_password/forgot_password_binding.dart';
 import 'package:ameriajproducts/app/modules/forgot_password/forgot_password_view.dart';
+import 'package:ameriajproducts/app/modules/home/home_binding.dart';
 import 'package:ameriajproducts/app/modules/home/home_view.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_binding.dart';
 import 'package:ameriajproducts/app/modules/log_in/login_view.dart';
@@ -107,7 +108,7 @@ class AppPages {
       page: () => ChangePasswordView(),
       binding: ChangePasswordBinding(),
     ),
-    GetPage(name: Approutes.home, page: () => HomeView()),
+    GetPage(name: Approutes.home, page: () => HomeView(),binding: HomeBinding()),
     GetPage(name: Approutes.task, page: () => TaskView()),
     GetPage(
       name: Approutes.schedule,
