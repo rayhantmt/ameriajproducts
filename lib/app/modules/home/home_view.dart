@@ -16,7 +16,7 @@ final storedToken = storage.read('token');
 final name=storage.read('name');
 final uic =storage.read('uic');
 controller.getstatus();
-print(controller.completedpercentage);
+final percent= controller.completedpercentage.toString();
 print('📦 This is from home screen confirming the Stored Token: $storedToken');
 
     final data = HomeData().homedata;
@@ -131,7 +131,7 @@ print('📦 This is from home screen confirming the Stored Token: $storedToken')
                       radius: 48,
                       backgroundColor: Color(0xff22C55E),
                       child: Text(
-                        controller.completedpercentage.toString(),
+                       percent,
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 24,
