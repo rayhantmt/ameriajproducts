@@ -8,6 +8,7 @@ class HomeContorller extends GetxController {
   var isLoading = false.obs;
   var medprostatus = false.obs;
   var weaponstatus = false.obs;
+  var rangestatus=false.obs;
   var physicalstatus = false.obs;
   var counselingstatus = false.obs;
   var adminstatus = false.obs;
@@ -27,6 +28,8 @@ class HomeContorller extends GetxController {
     print(response);
     final data=response['data'];
     medprostatus.value=data['medproCompleted'];
+    physicalstatus.value=data['fitnessCompleted'];
+    rangestatus.value=data['rangeCompleted'];
     completedpercentage.value=data['completionPercentage'];
     
     }
