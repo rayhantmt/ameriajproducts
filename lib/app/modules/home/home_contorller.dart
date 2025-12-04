@@ -24,8 +24,11 @@ class HomeContorller extends GetxController {
       endpoint: ApiConfig.status,
       headers: {'Authorization': 'Bearer $token'},
     );
+    print(response);
     final data=response['data'];
     medprostatus.value=data['medproCompleted'];
+    completedpercentage.value=data['completionPercentage'];
+    
     }
     on AppException catch(e){
       Get.snackbar('Error', e.toString());
