@@ -115,7 +115,11 @@ class AppPages {
       binding: AppointmentBinding(),
     ),
     GetPage(name: Approutes.profile, page: () => ProfileView()),
-    GetPage(name: Approutes.medpro, page: () => MedproView(),binding: MedproDetailsBinding()),
+    GetPage(
+      name: Approutes.medpro,
+      page: () => MedproView(),
+      binding: MedproDetailsBinding(),
+    ),
     GetPage(
       name: Approutes.weapon,
       page: () => Weapon(),
@@ -136,13 +140,21 @@ class AppPages {
       page: () => CounselingDetailsView(),
       binding: CounselingDetailsBinding(),
     ),
-    GetPage(name: Approutes.admindetails, page: () => AdminDetailsView(),binding: AdminDetailsBinding()),
+    GetPage(
+      name: Approutes.admindetails,
+      page: () => AdminDetailsView(),
+      binding: AdminDetailsBinding(),
+    ),
     GetPage(name: Approutes.medprohistory, page: () => MedproHistoryView()),
     GetPage(
       name: Approutes.medprohistorydetails,
       page: () => MedproHistoryDetailsView(),
     ),
-    GetPage(name: Approutes.editprofile, page: () => EditProfileView(),binding: EditProfileBinding()),
+    GetPage(
+      name: Approutes.editprofile,
+      page: () => EditProfileView(),
+      binding: EditProfileBinding(),
+    ),
     GetPage(
       name: Approutes.changepasswordprofile,
       page: () => ChangePasswordProfileView(),
@@ -172,7 +184,11 @@ class AppPages {
       name: Approutes.rangehistorydetails,
       page: () => RangeHistoryDetails(),
     ),
-    GetPage(name: Approutes.fitnesshistory, page: () => FitnessHistoryView(),binding: FitnessHistoryBinding()),
+    GetPage(
+      name: Approutes.fitnesshistory,
+      page: () => FitnessHistoryView(),
+      binding: FitnessHistoryBinding(),
+    ),
     GetPage(
       name: Approutes.fitnesshistorydetails,
       page: () => FitnessHistoryDetails(),
@@ -180,7 +196,7 @@ class AppPages {
     GetPage(
       name: Approutes.counselinghistory,
       page: () => CounselingHistoryView(),
-      binding: CounseligHistoryBinding()
+      binding: CounseligHistoryBinding(),
     ),
     GetPage(
       name: Approutes.counselinghistorydetails,
