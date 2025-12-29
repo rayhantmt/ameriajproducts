@@ -22,7 +22,7 @@ class PasswordFieldController extends GetxController {
 
     final body = {
       "data": {
-        "email": emailController.text.trim(),
+        "email": emailController.text.trim().toLowerCase(),
         "password": passwordController.text.trim(),
       },
     };

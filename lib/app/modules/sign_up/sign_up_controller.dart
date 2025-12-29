@@ -45,7 +45,7 @@ final phoneController = TextEditingController();
   "data": {
     "firstName": firstNameController.text.trim(),
     "lastName": lastNameController.text.trim(),
-    "email": emailController.text.trim(),
+    "email": emailController.text.trim().toLowerCase(),
     "role": "User",
     "countryCode": countryCode.value,
     "mobile": mobileController.text.trim(),
