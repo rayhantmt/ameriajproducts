@@ -32,39 +32,39 @@ class EditProfileView extends GetView<EditProfileController> {
 
             children: [
               SizedBox(height: Get.height * 0.02),
-              GestureDetector(
-                onTap: controller.pickProfileImage,
-                child: Center(
-                  child: Stack(
-                    children: [
-                      // Profile image
-                      CircleAvatar(
-                        radius: 50, // adjust size as needed
-                        backgroundImage: AssetImage(Appimages.profile),
-                      ),
+              // GestureDetector(
+              //   onTap: controller.pickProfileImage,
+              //   child: Center(
+              //     child: Stack(
+              //       children: [
+              //         // Profile image
+              //         CircleAvatar(
+              //           radius: 50, // adjust size as needed
+              //           backgroundImage: AssetImage(Appimages.profile),
+              //         ),
 
-                      // Camera icon overlay
-                      Positioned(
-                        bottom: 0,
-                        right: 0,
-                        child: Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            color: Colors.black87,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.camera_alt,
-                            color: Colors.white,
-                            size: 16,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              //         // Camera icon overlay
+              //         Positioned(
+              //           bottom: 0,
+              //           right: 0,
+              //           child: Container(
+              //             height: 30,
+              //             width: 30,
+              //             decoration: BoxDecoration(
+              //               color: Colors.black87,
+              //               shape: BoxShape.circle,
+              //             ),
+              //             child: Icon(
+              //               Icons.camera_alt,
+              //               color: Colors.white,
+              //               size: 16,
+              //             ),
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
               SizedBox(height: Get.height * 0.02),
               Text(
                 'Full Name',

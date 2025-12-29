@@ -50,7 +50,7 @@ class ProfileView extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Image.asset(Appimages.profile),
+                 // Image.asset(Appimages.profile),
                   SizedBox(width: 10),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
