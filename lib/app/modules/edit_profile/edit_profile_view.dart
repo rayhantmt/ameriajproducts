@@ -1,7 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/formfield.dart';
 import 'package:ameriajproducts/app/modules/edit_profile/edit_profile_controller.dart';
-import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
