@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:intl/intl.dart';
 
 class HomeView extends GetView<HomeContorller> {
   const HomeView({super.key});
@@ -20,7 +21,8 @@ class HomeView extends GetView<HomeContorller> {
     print(
       '📦 This is from home screen confirming the Stored Token: $storedToken',
     );
-
+String time12 = DateFormat('hh:mm a').format(DateTime.now());
+String formattedDate = DateFormat('MMMM d, yyyy').format(DateTime.now());
     final data = HomeData().homedata;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -81,7 +83,7 @@ class HomeView extends GetView<HomeContorller> {
                           ),
                         ),
                         Text(
-                          'June 21, 2025',
+                        time12,
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
@@ -105,7 +107,7 @@ class HomeView extends GetView<HomeContorller> {
                         Padding(
                           padding: const EdgeInsets.only(right: 12),
                           child: Text(
-                            '11:21 AM',
+                            formattedDate,
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 14,
@@ -140,14 +142,20 @@ class HomeView extends GetView<HomeContorller> {
                         ),
                       ),
                     ),
-                    Text(
-                      'Readiness Status: Green',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 18,
-                        color: Color(0xff1F2937),
-                      ),
-                    ),
+                   Text(
+  percent == 100 
+      ? 'Readiness Status Green' 
+      : percent >= 60 
+          ? 'Readiness Status Yellow' 
+          : percent >= 20 
+              ? 'Readiness Status Red' 
+              : 'Status Unknown', // Final fallback required
+  style: TextStyle(
+    fontWeight: FontWeight.w700,
+    fontSize: 18,
+    color: Color(0xff1F2937),
+  ),
+),
                     Text(
                       "Congratulations you're on track",
                       style: TextStyle(
