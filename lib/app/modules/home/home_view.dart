@@ -17,12 +17,12 @@ class HomeView extends GetView<HomeContorller> {
     final name = storage.read('name');
     final uic = storage.read('uic');
     controller.getstatus();
-    final double percent = controller.completedpercentage.value;
+    final num percent = controller.completedpercentage.value;
     print(
       '📦 This is from home screen confirming the Stored Token: $storedToken',
     );
-String time12 = DateFormat('hh:mm a').format(DateTime.now());
-String formattedDate = DateFormat('MMMM d, yyyy').format(DateTime.now());
+    String time12 = DateFormat('hh:mm a').format(DateTime.now());
+    String formattedDate = DateFormat('MMMM d, yyyy').format(DateTime.now());
     final data = HomeData().homedata;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -57,7 +57,7 @@ String formattedDate = DateFormat('MMMM d, yyyy').format(DateTime.now());
                     BoxShadow(
                       color: Color(
                         0xff2C78DC,
-                      ).withOpacity(0.08), // shadow color
+                      ).withOpacity(0.08), 
                       blurRadius: 10, // blur effect
                       offset: Offset(4, 4), // X, Y offset
                       spreadRadius: 1, // how far the shadow spreads
@@ -83,7 +83,7 @@ String formattedDate = DateFormat('MMMM d, yyyy').format(DateTime.now());
                           ),
                         ),
                         Text(
-                        time12,
+                          time12,
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
@@ -142,20 +142,20 @@ String formattedDate = DateFormat('MMMM d, yyyy').format(DateTime.now());
                         ),
                       ),
                     ),
-                   Text(
-  percent == 100 
-      ? 'Readiness Status Green' 
-      : percent >= 60 
-          ? 'Readiness Status Yellow' 
-          : percent >= 20 
-              ? 'Readiness Status Red' 
-              : 'Status Unknown', // Final fallback required
-  style: TextStyle(
-    fontWeight: FontWeight.w700,
-    fontSize: 18,
-    color: Color(0xff1F2937),
-  ),
-),
+                    Text(
+                      percent == 100.0
+                          ? 'Readiness Status Green'
+                          : percent >= 60.0
+                          ? 'Readiness Status Yellow'
+                          : percent >= 20.0
+                          ? 'Readiness Status Red'
+                          : 'Status Unknown', // Final fallback required
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
+                        color: Color(0xff1F2937),
+                      ),
+                    ),
                     Text(
                       "Congratulations you're on track",
                       style: TextStyle(
@@ -218,14 +218,19 @@ String formattedDate = DateFormat('MMMM d, yyyy').format(DateTime.now());
                             ),
                             Expanded(child: SizedBox()),
                             Text(
-                              data[index].status?"Done":'Not Completed',
+                              data[index].status ? "Done" : 'Not Completed',
                               style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 14,
                                 color: Color(0xff4B5563),
                               ),
                             ),
-                            Icon(data[index].status?Icons.check:Icons.close, color: data[index].status? Color(0xff22C55E): Colors.red),
+                            Icon(
+                              data[index].status ? Icons.check : Icons.close,
+                              color: data[index].status
+                                  ? Color(0xff22C55E)
+                                  : Colors.red,
+                            ),
                           ],
                         ),
                       ),

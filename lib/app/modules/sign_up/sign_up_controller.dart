@@ -75,15 +75,15 @@ final phoneController = TextEditingController();
     }
   }
 
-  @override
-  void onClose() {
-    firstNameController.dispose();
-    lastNameController.dispose();
-    emailController.dispose();
-    mobileController.dispose();
-    passwordController.dispose();
-    confirmPasswordController.dispose();
-    phoneController.dispose();
-    super.onClose();
-  }
+  // @override
+  // void onClose() {
+  //   firstNameController.dispose();
+  //   lastNameController.dispose();
+  //   emailController.dispose();
+  //   mobileController.dispose();
+  //   passwordController.dispose();
+  //   confirmPasswordController.dispose();
+  //   phoneController.dispose();
+  //   super.onClose();
+  // }
 }
