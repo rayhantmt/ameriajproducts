@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
+import 'package:ameriajproducts/app/common_widgets/date_picking.dart';
 import 'package:ameriajproducts/app/modules/fitness_details/fitness_controller.dart';
 import 'package:ameriajproducts/app/modules/fitness_history/fitness_historry_controller.dart';
 import 'package:ameriajproducts/app/modules/weapon_details/weapon_controller.dart';
@@ -76,33 +77,34 @@ class FitnessDetailsView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
-              Container(
-                height: 45,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: TextFormField(
-                  controller: maincontroller.datecontroller,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hint: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '23-06-2015',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: Color(0xff6B7280),
-                          ),
-                        ),
-                        Icon(Icons.calendar_month_outlined),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+              DatePickerField(tittle: '', hint: '2/2/2026',textcontroller: maincontroller.datecontroller,),
+              // Container(
+              //   height: 45,
+              //   decoration: BoxDecoration(
+              //     border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+              //     borderRadius: BorderRadius.circular(8),
+              //   ),
+              //   child: TextFormField(
+              //     controller: maincontroller.datecontroller,
+              //     decoration: InputDecoration(
+              //       border: InputBorder.none,
+              //       hint: Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //         children: [
+              //           Text(
+              //             '23-06-2015',
+              //             style: TextStyle(
+              //               fontWeight: FontWeight.w400,
+              //               fontSize: 14,
+              //               color: Color(0xff6B7280),
+              //             ),
+              //           ),
+              //           Icon(Icons.calendar_month_outlined),
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // ),
               SizedBox(height: 20),
               Row(
                 children: [
