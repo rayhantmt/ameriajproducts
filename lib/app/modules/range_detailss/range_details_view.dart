@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/common_widgets/date_picking.dart';
 import 'package:ameriajproducts/app/common_widgets/qualification_container.dart';
 import 'package:ameriajproducts/app/modules/range_detailss/range_controller.dart';
 import 'package:ameriajproducts/app/modules/range_history/range_history_controller.dart';
@@ -12,7 +13,8 @@ class RangeDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<RangeHistoryController>();
-    final maincontroller=Get.find<RangeController>();;
+    final maincontroller = Get.find<RangeController>();
+    ;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -44,21 +46,27 @@ class RangeDetailsView extends StatelessWidget {
                         border: Border.all(width: 1, color: Color(0xff08692C)),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Obx(() => controller.isLoadingRangeQual.value?Center(child: CircularProgressIndicator(
-                        color: Colors.green,
-                      ),):Row(
-                        children: [
-                          Icon(Icons.history, color: Color(0xff08692C)),
-                          Text(
-                            'View History',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: Color(0xff08692C),
-                            ),
-                          ),
-                        ],
-                      ),)
+                      child: Obx(
+                        () => controller.isLoadingRangeQual.value
+                            ? Center(
+                                child: CircularProgressIndicator(
+                                  color: Colors.green,
+                                ),
+                              )
+                            : Row(
+                                children: [
+                                  Icon(Icons.history, color: Color(0xff08692C)),
+                                  Text(
+                                    'View History',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12,
+                                      color: Color(0xff08692C),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                      ),
                     ),
                   ),
                 ],
@@ -78,33 +86,34 @@ class RangeDetailsView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
-              Container(
-                height: 45,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: TextFormField(
-                  controller: maincontroller.dateController,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hint: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '23-06-2015',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: Color(0xff6B7280),
-                          ),
-                        ),
-                        Icon(Icons.calendar_month_outlined),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+              // Container(
+              //   height: 45,
+              //   decoration: BoxDecoration(
+              //     border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+              //     borderRadius: BorderRadius.circular(8),
+              //   ),
+              //   child: TextFormField(
+              //     controller: maincontroller.dateController,
+              //     decoration: InputDecoration(
+              //       border: InputBorder.none,
+              //       hint: Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //         children: [
+              //           Text(
+              //             '23-06-2015',
+              //             style: TextStyle(
+              //               fontWeight: FontWeight.w400,
+              //               fontSize: 14,
+              //               color: Color(0xff6B7280),
+              //             ),
+              //           ),
+              //           Icon(Icons.calendar_month_outlined),
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              DatePickerField(tittle: '', hint: '2/2/2025',textcontroller: maincontroller.dateController,),
               SizedBox(height: 20),
               Row(
                 children: [
@@ -237,7 +246,6 @@ class RangeDetailsView extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                 
                     onTap: () => maincontroller.submitQualification(),
                     child: Container(
                       height: 45,
@@ -246,19 +254,24 @@ class RangeDetailsView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         color: Color(0xff08692C),
                       ),
-                      child: Obx(() => maincontroller.isLoading.value? Center(child: CircularProgressIndicator(
-
-                        color: Colors.green,
-                      ),):Center(
-                        child: Text(
-                          'Submit',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16,
-                            color: Color(0xffFDFDFD),
-                          ),
-                        ),
-                      ),)
+                      child: Obx(
+                        () => maincontroller.isLoading.value
+                            ? Center(
+                                child: CircularProgressIndicator(
+                                  color: Colors.green,
+                                ),
+                              )
+                            : Center(
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16,
+                                    color: Color(0xffFDFDFD),
+                                  ),
+                                ),
+                              ),
+                      ),
                     ),
                   ),
                 ],
