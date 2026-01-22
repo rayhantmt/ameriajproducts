@@ -47,14 +47,14 @@ class DatePickerField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          tittle,
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 16,
-            color: Colors.black,
-          ),
-        ),
+        // Text(
+        //   tittle,
+        //   style: TextStyle(
+        //     fontWeight: FontWeight.w500,
+        //     fontSize: 16,
+        //     color: Colors.black,
+        //   ),
+        // ),
         GestureDetector(
           onTap: () => _selectDate(context),
           child: Container(
@@ -62,7 +62,7 @@ class DatePickerField extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
-              border: Border.all(width: 1, color: Colors.green),
+              border: Border.all(width: 1, color: Color(0xffE5E7EB)),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Padding(
@@ -91,11 +91,7 @@ class DatePickerField extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Icon(
-                    Icons.calendar_today,
-                    color: Colors.green,
-                    size: 20,
-                  ),
+                Icon(Icons.calendar_month_outlined, color: Color(0xff1893F8)),
                 ],
               ),
             ),
