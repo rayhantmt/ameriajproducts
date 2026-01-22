@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/common_widgets/date_picking.dart';
 import 'package:ameriajproducts/app/modules/counseling_details/counseling_details_controller.dart';
 import 'package:ameriajproducts/app/modules/counseling_history/counselig_history_controller.dart';
 import 'package:flutter/material.dart';
@@ -118,33 +119,34 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                 ],
               ),
               SizedBox(height: 10),
-              Container(
-                height: 45,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: TextFormField(
-                  controller: controller.datecontroller,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hint: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '23-06-2015',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: Color(0xff6B7280),
-                          ),
-                        ),
-                        Icon(Icons.calendar_month_outlined),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+              // Container(
+              //   height: 45,
+              //   decoration: BoxDecoration(
+              //     border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+              //     borderRadius: BorderRadius.circular(8),
+              //   ),
+              //   child: TextFormField(
+              //     controller: controller.datecontroller,
+              //     decoration: InputDecoration(
+              //       border: InputBorder.none,
+              //       hint: Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //         children: [
+              //           Text(
+              //             '23-06-2015',
+              //             style: TextStyle(
+              //               fontWeight: FontWeight.w400,
+              //               fontSize: 14,
+              //               color: Color(0xff6B7280),
+              //             ),
+              //           ),
+              //           Icon(Icons.calendar_month_outlined),
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              DatePickerField(tittle: '', hint: 'Select date',textcontroller: controller.datecontroller,),
               SizedBox(height: 20),
               Row(
                 children: [
@@ -160,32 +162,35 @@ class CounselingDetailsView extends GetView<CounselingDetailsController> {
                 ],
               ),
               SizedBox(height: 10),
-              Container(
-                height: 45,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: TextFormField(
-                  controller: controller.nextdatecontroller,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hint: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '23-06-2015',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: Color(0xff6B7280),
-                          ),
-                        ),
-                        Icon(Icons.calendar_month_outlined),
-                      ],
-                    ),
-                  ),
-                ),
+              // Container(
+              //   height: 45,
+              //   decoration: BoxDecoration(
+              //     border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+              //     borderRadius: BorderRadius.circular(8),
+              //   ),
+              //   child: TextFormField(
+              //     controller: controller.nextdatecontroller,
+              //     decoration: InputDecoration(
+              //       border: InputBorder.none,
+              //       hint: Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //         children: [
+              //           Text(
+              //             '23-06-2015',
+              //             style: TextStyle(
+              //               fontWeight: FontWeight.w400,
+              //               fontSize: 14,
+              //               color: Color(0xff6B7280),
+              //             ),
+              //           ),
+              //           Icon(Icons.calendar_month_outlined),
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              DatePickerField(tittle: '', hint: 'Select next date',
+              textcontroller: controller.nextdatecontroller,
               ),
               SizedBox(height: 20),
               Row(
