@@ -13,7 +13,7 @@ class FitnessDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<WeaponController>();
     final maincontroller = Get.find<FitnessController>();
-    final secondcontroller=Get.find<FitnessHistorryController>();
+    final secondcontroller = Get.find<FitnessHistorryController>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -36,7 +36,6 @@ class FitnessDetailsView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    
                     onTap: secondcontroller.fetchfitness,
                     child: Container(
                       height: 30,
@@ -45,19 +44,23 @@ class FitnessDetailsView extends StatelessWidget {
                         border: Border.all(width: 1, color: Color(0xff08692C)),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Obx(() => secondcontroller.isfeatching.value?CircularProgressIndicator(color: Colors.red,):Row(
-                        children: [
-                          Icon(Icons.history, color: Color(0xff08692C)),
-                          Text(
-                            'View History',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: Color(0xff08692C),
-                            ),
-                          ),
-                        ],
-                      ),)
+                      child: Obx(
+                        () => secondcontroller.isfeatching.value
+                            ? Center(child: CircularProgressIndicator(color: Colors.green))
+                            : Row(
+                                children: [
+                                  Icon(Icons.history, color: Color(0xff08692C)),
+                                  Text(
+                                    'View History',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12,
+                                      color: Color(0xff08692C),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                      ),
                     ),
                   ),
                 ],
@@ -77,7 +80,11 @@ class FitnessDetailsView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
-              DatePickerField(tittle: '', hint: '2/2/2026',textcontroller: maincontroller.datecontroller,),
+              DatePickerField(
+                tittle: '',
+                hint: '2/2/2026',
+                textcontroller: maincontroller.datecontroller,
+              ),
               // Container(
               //   height: 45,
               //   decoration: BoxDecoration(
@@ -184,7 +191,6 @@ class FitnessDetailsView extends StatelessWidget {
               ),
               SizedBox(height: 20),
 
-        
               GestureDetector(
                 onTap: () => maincontroller.submitQualification(),
                 child: Obx(

@@ -17,7 +17,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     // This is where your ID belongs, NOT in the plugins block
-    namespace = "com.ameriajproducts.sparktech"
+    namespace = "com.thereadinesstrack.sparktech"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -31,7 +31,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.ameriajproducts.sparktech"
+        applicationId = "com.thereadinesstrack.sparktech"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
