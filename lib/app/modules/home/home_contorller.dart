@@ -1,6 +1,8 @@
 import 'package:ameriajproducts/app/core/api_config/api_config.dart';
 import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
+import 'package:ameriajproducts/subscriptions/subscriptions_controller.dart';
+import 'package:ameriajproducts/subscriptions/subscriptions_view.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -37,7 +39,30 @@ class HomeContorller extends GetxController {
     
     }
     on AppException catch(e){
-      Get.snackbar('Error', e.toString());
+      //Get.snackbar('Error', e.toString());
     }
+  }
+  final sub = Get.find<SubscriptionController>();
+
+  // @override
+  // void onReady() {
+  //   super.onReady();
+
+  //   if (!sub.isPremium.value) {
+  //     // Delay ensures UI is mounted
+  //     Future.delayed(Duration.zero, () {
+  //       Get.to(() => PaywallPage());
+  //     });
+  //   }
+  // }
+  @override
+  void onInit() {
+    if (!sub.isPremium.value) {
+  //    // Delay ensures UI is mounted
+      Future.delayed(Duration.zero, () {
+        Get.to(() => PaywallPage());
+     });
+    }
+    super.onInit();
   }
 }

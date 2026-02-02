@@ -24,6 +24,8 @@ class HomeView extends GetView<HomeContorller> {
     String time12 = DateFormat('hh:mm a').format(DateTime.now());
     String formattedDate = DateFormat('MMMM d, yyyy').format(DateTime.now());
     final data = HomeData().homedata;
+  
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
