@@ -148,7 +148,7 @@
 //   //     print("Purchase Error: $e");
 //   //   }
 //   // }
-// }
+// };
 import 'package:ameriajproducts/subscriptions/revenue_cat.dart';
 import 'package:get/get.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
@@ -259,7 +259,7 @@ class SubscriptionController extends GetxController {
         if (kDebugMode) {
           print('✅ Purchase successful!');
         }
-        Get.back(); // Close paywall
+       Get.toNamed('/mainscreen');// Close paywall
 
         // Show success message
         Get.snackbar(
@@ -354,7 +354,7 @@ class SubscriptionController extends GetxController {
         if (kDebugMode) {
           print('✅ Restore successful!');
         }
-        Get.back();
+       Get.offAllNamed('/mainscreen');
         Get.snackbar(
           '✅ Success',
           'Subscription restored!',

@@ -42,7 +42,7 @@ class HomeContorller extends GetxController {
       //Get.snackbar('Error', e.toString());
     }
   }
-  final sub = Get.find<SubscriptionController>();
+  //final sub = Get.find<SubscriptionController>();
 
   // @override
   // void onReady() {
@@ -55,14 +55,17 @@ class HomeContorller extends GetxController {
   //     });
   //   }
   // }
-  @override
-  void onInit() {
-    if (!sub.isPremium.value) {
-  //    // Delay ensures UI is mounted
-      Future.delayed(Duration.zero, () {
-        Get.to(() => PaywallPage());
-     });
-    }
-    super.onInit();
-  }
+  // @override
+  // void onInit() {
+  //   if (sub.isPremium.value == false) {
+  // //    // Delay ensures UI is mounted
+  //     Future.delayed(Duration.zero, () {
+  //       Get.offAll(() => PaywallPage());
+  //    });
+  //   }
+  //   else if (sub.isPremium.value==true){
+  //     Get.offAll('/home');
+  //   }
+  //   super.onInit();
+  // }
 }

@@ -5,7 +5,6 @@ class ApiConfig {
   // Auth Endpoints
   static const String loginEndpoint = '/auth/login';
   static const String signupEndpoint = '/auth/signup';
-
   // User Endpoints
   static const String forgetpassword = '/auth/forgot_password';
   static const String otpendpoint = '/auth/verify_otp';
@@ -23,6 +22,5 @@ class ApiConfig {
   static const String medpro = '/medpro';
   static const String user='/user';
   static const String status='/track/status';
-
   // Other modules...
 }

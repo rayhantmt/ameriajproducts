@@ -1,6 +1,8 @@
 import 'package:ameriajproducts/app/core/api_config/api_config.dart';
 import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
+import 'package:ameriajproducts/subscriptions/subscriptions_controller.dart';
+import 'package:ameriajproducts/subscriptions/subscriptions_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -52,10 +54,10 @@ class PasswordFieldController extends GetxController {
     }
   }
 
-  @override
-  void onClose() {
-    emailController.dispose();
-    passwordController.dispose();
-    super.onClose();
-  }
+  // @override
+  // void onClose() {
+  //   emailController.dispose();
+  //   passwordController.dispose();
+  //   super.onClose();
+  // }
 }

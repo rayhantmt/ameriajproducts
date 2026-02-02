@@ -1,4 +1,3 @@
-import 'package:ameriajproducts/.idea/revenuecat_config.dart';
 import 'package:ameriajproducts/app/routes/app_pages.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/subscriptions/revenue_cat.dart';
@@ -14,7 +13,6 @@ void main() async {
   await initializeRevenueCat();
   Get.put(SubscriptionController());
   await GetStorage.init();
-
   runApp(const MyApp());
 }
 

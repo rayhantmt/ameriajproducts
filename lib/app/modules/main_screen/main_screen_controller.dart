@@ -2,6 +2,8 @@ import 'package:ameriajproducts/app/core/api_config/api_config.dart';
 import 'package:ameriajproducts/app/core/exceptions/exceptions.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/data/api_services/api_services.dart';
+import 'package:ameriajproducts/subscriptions/subscriptions_controller.dart';
+import 'package:ameriajproducts/subscriptions/subscriptions_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -51,4 +53,19 @@ class MainScreenController extends GetxController {
       Get.offAllNamed(Approutes.login);
     }
   }
+  final sub = Get.find<SubscriptionController>();
+@override
+  void onInit() {
+    if (sub.isPremium.value == false) {
+  //    // Delay ensures UI is mounted
+      Future.delayed(Duration.zero, () {
+        Get.offAll(() => PaywallPage());
+     });
+    }
+    // else if (sub.isPremium.value==true){
+    //   Get.to(Approutes.mainscreen);
+    // }
+    super.onInit();
+  }
+
 }
