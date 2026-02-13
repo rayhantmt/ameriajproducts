@@ -39,36 +39,36 @@ class SubscriptionController extends GetxController {
     }
   }
 
-  /// ✅ FETCH OFFERINGS & CHECK TRIAL ELIGIBILITY
-  Future<void> fetchOfferings() async {
-    isLoading.value = true;
-    try {
-      final offerings = await Purchases.getOfferings();
-      currentOffering.value = offerings.current;
+  // /// ✅ FETCH OFFERINGS & CHECK TRIAL ELIGIBILITY
+  // Future<void> fetchOfferings() async {
+  //   isLoading.value = true;
+  //   try {
+  //     final offerings = await Purchases.getOfferings();
+  //     currentOffering.value = offerings.current;
 
-      // Logic for checking Free Trial eligibility
-      if (annualPackage != null) {
-        final eligibility = await Purchases.checkTrialOrIntroductoryPriceEligibility(
-          [annualPackage!.storeProduct.identifier],
-        );
+  //     // Logic for checking Free Trial eligibility
+  //     if (annualPackage != null) {
+  //       final eligibility = await Purchases.checkTrialOrIntroductoryPriceEligibility(
+  //         [annualPackage!.storeProduct.identifier],
+  //       );
         
-        // Update eligibility state
-        final status = eligibility[annualPackage!.storeProduct.identifier]?.status;
-        isEligibleForTrial.value = status == IntroEligibilityStatus.introEligibilityStatusEligible;
+  //       // Update eligibility state
+  //       final status = eligibility[annualPackage!.storeProduct.identifier]?.status;
+  //       isEligibleForTrial.value = status == IntroEligibilityStatus.introEligibilityStatusEligible;
 
-        if (kDebugMode) {
-          print('📦 Yearly Package Found: ${annualPackage!.storeProduct.priceString}');
-          print('🎁 Eligible for Free Trial: ${isEligibleForTrial.value}');
-        }
-      }
-    } catch (e) {
-      currentOffering.value = null;
-      if (kDebugMode) print('❌ Error fetching offerings: $e');
-      Get.snackbar('Error', 'Failed to load subscription plans');
-    } finally {
-      isLoading.value = false;
-    }
-  }
+  //       if (kDebugMode) {
+  //         print('📦 Yearly Package Found: ${annualPackage!.storeProduct.priceString}');
+  //         print('🎁 Eligible for Free Trial: ${isEligibleForTrial.value}');
+  //       }
+  //     }
+  //   } catch (e) {
+  //     currentOffering.value = null;
+  //     if (kDebugMode) print('❌ Error fetching offerings: $e');
+  //     Get.snackbar('Error', 'Failed to load subscription plans');
+  //   } finally {
+  //     isLoading.value = false;
+  //   }
+  // }
 
   /// ✅ PURCHASE PROCESS (Handles both Trial and Direct Purchase)
   Future<void> purchasePackage(Package package) async {
@@ -127,19 +127,88 @@ class SubscriptionController extends GetxController {
   // Since you only have one yearly plan, we target the annual package directly
   Package? get annualPackage => currentOffering.value?.annual;
 
-  // Formats the text for your Buy Button
-  String get buttonText {
-    if (annualPackage == null) return "Loading...";
-    if (isEligibleForTrial.value) {
-      return "Start 30-Day Free Trial";
-    }
-    return "Subscribe for ${annualPackage!.storeProduct.priceString}/year";
-  }
+  // // Formats the text for your Buy Button
+  // String get buttonText {
+  //   if (annualPackage == null) return "Loading...";
+  //   if (isEligibleForTrial.value) {
+  //     return "Start 30-Day Free Trial";
+  //   }
+  //   return "Subscribe for ${annualPackage!.storeProduct.priceString}/year";
+  // }
 
-  // Footer text to explain the trial terms (App Store Requirement)
-  String get trialTermsText {
-    if (annualPackage == null) return "";
-    final price = annualPackage!.storeProduct.priceString;
+  // // Footer text to explain the trial terms (App Store Requirement)
+  // String get trialTermsText {
+  //   if (annualPackage == null) return "";
+  //   final price = annualPackage!.storeProduct.priceString;
+  //   return "Try free for 30 days, then $price/year. Cancel anytime.";
+  // }
+
+
+  /// ✅ FETCH OFFERINGS & CHECK TRIAL ELIGIBILITY
+/// ✅ FETCH OFFERINGS & CHECK TRIAL ELIGIBILITY
+/// ✅ FETCH OFFERINGS & CHECK TRIAL ELIGIBILITY
+Future<void> fetchOfferings() async {
+  isLoading.value = true;
+  try {
+    final offerings = await Purchases.getOfferings();
+    currentOffering.value = offerings.current;
+
+    // Logic for checking Free Trial eligibility
+    if (annualPackage != null) {
+      final storeProduct = annualPackage!.storeProduct;
+      
+      // ✅ Check eligibility status
+      final eligibility = await Purchases.checkTrialOrIntroductoryPriceEligibility(
+        [storeProduct.identifier],
+      );
+      
+      final status = eligibility[storeProduct.identifier]?.status;
+      
+      // ✅ FIXED: Treat "Unknown" as eligible (let the store handle it)
+      // This is the recommended approach when eligibility can't be determined
+      isEligibleForTrial.value = status == IntroEligibilityStatus.introEligibilityStatusEligible ||
+                                  status == IntroEligibilityStatus.introEligibilityStatusUnknown;
+
+      if (kDebugMode) {
+        print('📦 Yearly Package Found: ${storeProduct.priceString}');
+        print('🆔 Product ID: ${storeProduct.identifier}');
+        print('✅ Eligibility Status: $status');
+        print('🎯 Final Eligible for Trial: ${isEligibleForTrial.value}');
+        print('📋 Product Title: ${storeProduct.title}');
+        print('💰 Price: ${storeProduct.priceString}');
+        print('⏰ Subscription Period: ${storeProduct.subscriptionPeriod}');
+      }
+    }
+  } catch (e) {
+    currentOffering.value = null;
+    if (kDebugMode) print('❌ Error fetching offerings: $e');
+    Get.snackbar('Error', 'Failed to load subscription plans');
+  } finally {
+    isLoading.value = false;
+  }
+}
+
+// ✅ Button text
+String get buttonText {
+  if (annualPackage == null) return "Loading...";
+  
+  if (isEligibleForTrial.value) {
+    return "Start 30-Day Free Trial";
+  }
+  
+  return "Subscribe for ${annualPackage!.storeProduct.priceString}/year";
+}
+
+// ✅ Trial terms text
+String get trialTermsText {
+  if (annualPackage == null) return "";
+  
+  final price = annualPackage!.storeProduct.priceString;
+  
+  if (isEligibleForTrial.value) {
     return "Try free for 30 days, then $price/year. Cancel anytime.";
   }
+  
+  return "Subscribe for $price/year. Cancel anytime.";
+}
 }
