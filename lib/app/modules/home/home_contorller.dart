@@ -14,6 +14,11 @@ class HomeContorller extends GetxController {
   var adminstatus = false.obs;
   var totalcompleted = 0.obs;
   var completedpercentage = 0.0.obs;
+  @override
+  void onInit() {
+   getstatus();
+    super.onInit();
+  }
 
   Future<void> getstatus() async {
     final storage = GetStorage();
@@ -29,16 +34,20 @@ class HomeContorller extends GetxController {
     final data=response['data'];
     medprostatus.value=data['medproCompleted'];
     physicalstatus.value=data['fitnessCompleted'];
+    weaponstatus.value = data['weaponCompleted'];
     rangestatus.value=data['rangeCompleted'];
     counselingstatus.value=data['counselingCompleted'];
     adminstatus.value=data['adminCompleted'];
     totalcompleted.value=data['totalCompleted'];
     completedpercentage.value=data['completionPercentage'];
-    
+    isLoading.value=false;
     }
     on AppException catch(e){
       //Get.snackbar('Error', e.toString());
       print(e.toString());
+    }
+    finally{
+      isLoading.value=false;
     }
   }
   //final sub = Get.find<SubscriptionController>();
