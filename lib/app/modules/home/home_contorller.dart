@@ -13,7 +13,7 @@ class HomeContorller extends GetxController {
   var counselingstatus = false.obs;
   var adminstatus = false.obs;
   var totalcompleted = 0.obs;
-  var completedpercentage = 0.0.obs;
+  RxDouble completedpercentage = 0.0.obs;
   @override
   void onInit() {
    getstatus();
@@ -39,7 +39,8 @@ class HomeContorller extends GetxController {
     counselingstatus.value=data['counselingCompleted'];
     adminstatus.value=data['adminCompleted'];
     totalcompleted.value=data['totalCompleted'];
-    completedpercentage.value=data['completionPercentage'];
+   // completedpercentage.value=data['completionPercentage'];
+    completedpercentage.value = (data['completionPercentage'] ?? 0.0).toDouble();
     isLoading.value=false;
     }
     on AppException catch(e){
