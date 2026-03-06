@@ -178,21 +178,7 @@ class HomeView extends GetView<HomeContorller> {
                                 ),
                               ),
                             ),
-                            // Text(
-                            //   '',
-                            //   // percent == 100
-                            //   //     ? 'Readiness Status Green'
-                            //   //     : percent >= 60
-                            //   //     ? 'Readiness Status Yellow'
-                            //   //     : percent >= 20
-                            //   //     ? 'Readiness Status Red'
-                            //   //     : 'Status Unknown', // Final fallback required
-                            //   style: TextStyle(
-                            //     fontWeight: FontWeight.w700,
-                            //     fontSize: 18,
-                            //     color: Color(0xff1F2937),
-                            //   ),
-                            // ),
+                           
                             Text(
                               () {
                                 // Convert double (e.g., 85.5) to int (85) for the logic

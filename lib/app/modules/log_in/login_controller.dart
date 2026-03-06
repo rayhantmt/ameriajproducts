@@ -28,12 +28,12 @@ class PasswordFieldController extends GetxController {
     };
     try {
       final response = await ApiService.post(
-        endpoint: ApiConfig.loginEndpoint, // Change if your endpoint differs
+        endpoint: ApiConfig.loginEndpoint, 
         body: body,
       );
       final storage = GetStorage();
       final accessToken =
-          response['data']['token']['accessToken']; // <- from your response
+          response['data']['token']['accessToken']; 
           final userdata= response['data']['detailss'];
           storage.write('name', userdata['userName']);
           storage.write('uic', userdata['uic']);
@@ -43,7 +43,7 @@ class PasswordFieldController extends GetxController {
 
       storage.write('token', accessToken);
       Get.offAllNamed('/mainscreen');
-      // Handle success (e.g., token saving, navigating)
+      
       print("Login success: $response");
     } on AppException catch (e) {
       Get.snackbar("Login Failed", e.message);
