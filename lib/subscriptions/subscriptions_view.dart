@@ -69,7 +69,7 @@ class PaywallPage extends StatelessWidget {
               leading: IconButton(
                 icon: const CircleAvatar(
                   backgroundColor: Colors.black26,
-                  child: Icon(Icons.close, color: Colors.white),
+                  child: Icon(Icons.abc, color: Colors.white),
                 ),
                 onPressed: () => Get.back(),
               ),
