@@ -181,7 +181,7 @@ class HomeView extends GetView<HomeContorller> {
                            
                             Text(
                               () {
-                                // Convert double (e.g., 85.5) to int (85) for the logic
+                              
                                 final int percentValue = controller
                                     .completedpercentage
                                     .value

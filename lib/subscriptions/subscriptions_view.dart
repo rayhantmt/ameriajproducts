@@ -9,7 +9,7 @@
 //   Widget build(BuildContext context) {
 //   controller.fetchOfferings();
 //     return Scaffold(
-      
+
 //       appBar: AppBar(title: const Text("Go Premium")),
 //       body: Obx(() {
 //         final offering = controller.currentOffering.value;
@@ -42,6 +42,7 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../subscriptions/subscriptions_controller.dart'; // Ensure correct path
 
 class PaywallPage extends StatelessWidget {
@@ -54,7 +55,8 @@ class PaywallPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Obx(() {
-        if (controller.isLoading.value && controller.currentOffering.value == null) {
+        if (controller.isLoading.value &&
+            controller.currentOffering.value == null) {
           return const Center(child: CircularProgressIndicator());
         }
 
@@ -77,13 +79,20 @@ class PaywallPage extends StatelessWidget {
                 background: Container(
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Colors.greenAccent, Colors.green], // Modern Blue/Purple
+                      colors: [
+                        Colors.greenAccent,
+                        Colors.green,
+                      ], // Modern Blue/Purple
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                   ),
                   child: const Center(
-                    child: Icon(Icons.rocket_launch, size: 80, color: Colors.white),
+                    child: Icon(
+                      Icons.rocket_launch,
+                      size: 80,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -98,7 +107,10 @@ class PaywallPage extends StatelessWidget {
                     // 2. Catchy Headline
                     const Text(
                       "Unlock Full Access",
-                      style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 8),
                     Text(
@@ -110,15 +122,25 @@ class PaywallPage extends StatelessWidget {
 
                     // 3. Feature List
                     _buildFeature(Icons.check_circle, "Unlimited Projects"),
-                    _buildFeature(Icons.check_circle, "Priority Customer Support"),
-                    _buildFeature(Icons.check_circle, "Advanced Data Analytics"),
-                    _buildFeature(Icons.check_circle, "Cloud Sync across devices"),
+                    _buildFeature(
+                      Icons.check_circle,
+                      "Priority Customer Support",
+                    ),
+                    _buildFeature(
+                      Icons.check_circle,
+                      "Advanced Data Analytics",
+                    ),
+                    _buildFeature(
+                      Icons.check_circle,
+                      "Cloud Sync across devices",
+                    ),
 
                     const SizedBox(height: 40),
 
                     // 4. The Subscription Card
-                    if (package != null) _buildSubscriptionCard(controller, package),
-                    
+                    if (package != null)
+                      _buildSubscriptionCard(controller, package),
+
                     const SizedBox(height: 24),
 
                     // 5. Restore & Legal
@@ -131,12 +153,26 @@ class PaywallPage extends StatelessWidget {
                         ),
                         const Text("|", style: TextStyle(color: Colors.grey)),
                         TextButton(
-                          onPressed: () {/* Link to Terms */},
+                          onPressed: () async {
+                            final Uri url = Uri.parse(
+                              'https://www.thereadinesstrack.com/blank-1',
+                            );
+                            if (!await launchUrl(url)) {
+                              throw Exception('Could not launch $url');
+                            }
+                          },
                           child: const Text("Terms"),
                         ),
                         const Text("|", style: TextStyle(color: Colors.grey)),
                         TextButton(
-                          onPressed: () {/* Link to Privacy */},
+                          onPressed: () async {
+                            final Uri url = Uri.parse(
+                              'https://www.thereadinesstrack.com/blank',
+                            );
+                            if (!await launchUrl(url)) {
+                              throw Exception('Could not launch $url');
+                            }
+                          },
                           child: const Text("Privacy"),
                         ),
                       ],
@@ -159,13 +195,19 @@ class PaywallPage extends StatelessWidget {
         children: [
           Icon(icon, color: Colors.green, size: 24),
           const SizedBox(width: 12),
-          Text(text, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+          Text(
+            text,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildSubscriptionCard(SubscriptionController controller, dynamic package) {
+  Widget _buildSubscriptionCard(
+    SubscriptionController controller,
+    dynamic package,
+  ) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
@@ -184,7 +226,7 @@ class PaywallPage extends StatelessWidget {
           Text(
             controller.trialTermsText,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 14, color: Colors.black87),
+            style: const TextStyle(fontSize: 18, color: Colors.black87),
           ),
           const SizedBox(height: 20),
           SizedBox(
@@ -195,14 +237,19 @@ class PaywallPage extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
                 elevation: 0,
               ),
               child: controller.isLoading.value
                   ? const CircularProgressIndicator(color: Colors.white)
                   : Text(
                       controller.buttonText,
-                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
             ),
           ),

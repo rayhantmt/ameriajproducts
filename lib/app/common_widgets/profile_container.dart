@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class ProfileContainer extends StatelessWidget {
   final String tittle;
@@ -13,6 +14,7 @@ class ProfileContainer extends StatelessWidget {
     return Container(
     
                     height: 45,
+                   // width:  Get.width*0.9,
                     child: Row(
                       children: [
                         SvgPicture.asset(icon),

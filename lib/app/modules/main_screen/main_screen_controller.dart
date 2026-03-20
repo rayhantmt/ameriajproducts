@@ -53,19 +53,19 @@ class MainScreenController extends GetxController {
       Get.offAllNamed(Approutes.login);
     }
   }
+
   final sub = Get.find<SubscriptionController>();
-@override
+  @override
   void onInit() {
     if (sub.isPremium.value == false) {
-  //    // Delay ensures UI is mounted
+      //    // Delay ensures UI is mounted
       Future.delayed(Duration.zero, () {
         Get.offAll(() => PaywallPage());
-     });
+      });
     }
     // else if (sub.isPremium.value==true){
     //   Get.to(Approutes.mainscreen);
     // }
     super.onInit();
   }
-
 }

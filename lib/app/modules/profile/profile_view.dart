@@ -2,6 +2,7 @@ import 'package:ameriajproducts/app/common_widgets/profile_container.dart';
 import 'package:ameriajproducts/app/modules/main_screen/main_screen_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
+import 'package:ameriajproducts/subscriptions/subscriptions_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -120,7 +121,7 @@ class ProfileView extends StatelessWidget {
                     ),
                     SizedBox(height: Get.height * 0.015),
                     GestureDetector(
-                      onTap: () => Get.toNamed(Approutes.subscription),
+                      onTap: () => Get.to(PaywallPage()),
                       child: ProfileContainer(
                         tittle: 'Subscription',
                         details: 'Manage your plan, renew or upgrade ',
