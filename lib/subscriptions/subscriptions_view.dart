@@ -121,7 +121,7 @@ class PaywallPage extends StatelessWidget {
                     const SizedBox(height: 32),
 
                     // 3. Feature List
-                    _buildFeature(Icons.check_circle, "Unlimited Projects"),
+                    _buildFeature(Icons.check_circle, "Unlimited Tracking of Readiness"),
                     _buildFeature(
                       Icons.check_circle,
                       "Priority Customer Support",
@@ -132,7 +132,7 @@ class PaywallPage extends StatelessWidget {
                     ),
                     _buildFeature(
                       Icons.check_circle,
-                      "Cloud Sync across devices",
+                      "Cloud Sync across devices through one account",
                     ),
 
                     const SizedBox(height: 40),
