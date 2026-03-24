@@ -1,5 +1,4 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
-import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -46,7 +45,6 @@ class OnboardingView extends StatelessWidget {
                 SizedBox(height: 20),
                 GestureDetector(
                   onTap: () => Get.toNamed('/login'),
-                 // onTap: () => Get.toNamed(Approutes.mainscreen),
                   child: Container(
                     height: 46,
                     width: double.infinity,

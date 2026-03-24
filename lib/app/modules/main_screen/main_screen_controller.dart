@@ -57,13 +57,13 @@ class MainScreenController extends GetxController {
   final sub = Get.find<SubscriptionController>();
   @override
   void onInit() {
-    // if (sub.isPremium.value == false) {
-    //   Future.delayed(Duration.zero, () {
-    //     Get.offAll(() => PaywallPage());
-    //   });
-    // } else if (sub.isPremium.value == true) {
-    //   Get.to(Approutes.mainscreen);
-    // }
-    // super.onInit();
+    if (sub.isPremium.value == false) {
+      Future.delayed(Duration.zero, () {
+        Get.offAll(() => PaywallPage());
+      });
+    } else if (sub.isPremium.value == true) {
+      Get.to(Approutes.mainscreen);
+    }
+    super.onInit();
   }
 }

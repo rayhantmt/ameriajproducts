@@ -121,7 +121,10 @@ class PaywallPage extends StatelessWidget {
                     const SizedBox(height: 32),
 
                     // 3. Feature List
-                    _buildFeature(Icons.check_circle, "Unlimited Tracking of Readiness"),
+                    _buildFeature(
+                      Icons.check_circle,
+                      "Unlimited Tracking of Readiness",
+                    ),
                     _buildFeature(
                       Icons.check_circle,
                       "Priority Customer Support",
@@ -195,9 +198,13 @@ class PaywallPage extends StatelessWidget {
         children: [
           Icon(icon, color: Colors.green, size: 24),
           const SizedBox(width: 12),
-          Text(
-            text,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          Expanded(
+            child: Text(
+              text,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
           ),
         ],
       ),
