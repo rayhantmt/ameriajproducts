@@ -65,38 +65,38 @@ class PaywallPage extends StatelessWidget {
         return CustomScrollView(
           slivers: [
             // 1. Modern Header with Close Button
-            SliverAppBar(
-              expandedHeight: 220,
-              pinned: true,
-              leading: IconButton(
-                icon: const CircleAvatar(
-                  backgroundColor: Colors.black26,
-                  child: Icon(Icons.abc, color: Colors.white),
-                ),
-                onPressed: () => Get.back(),
-              ),
-              flexibleSpace: FlexibleSpaceBar(
-                background: Container(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.greenAccent,
-                        Colors.green,
-                      ], // Modern Blue/Purple
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                  ),
-                  child: const Center(
-                    child: Icon(
-                      Icons.rocket_launch,
-                      size: 80,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            // SliverAppBar(
+            //   expandedHeight: 220,
+            //   pinned: true,
+            //   leading: IconButton(
+            //     icon: const CircleAvatar(
+            //       backgroundColor: Colors.black26,
+            //       child: Icon(Icons.abc, color: Colors.white),
+            //     ),
+            //     onPressed: () => Get.back(),
+            //   ),
+            //   flexibleSpace: FlexibleSpaceBar(
+            //     background: Container(
+            //       decoration: const BoxDecoration(
+            //         gradient: LinearGradient(
+            //           colors: [
+            //             Colors.greenAccent,
+            //             Colors.green,
+            //           ], // Modern Blue/Purple
+            //           begin: Alignment.topLeft,
+            //           end: Alignment.bottomRight,
+            //         ),
+            //       ),
+            //       child: const Center(
+            //         child: Icon(
+            //           Icons.rocket_launch,
+            //           size: 80,
+            //           color: Colors.white,
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
 
             SliverToBoxAdapter(
               child: Padding(
@@ -104,6 +104,7 @@ class PaywallPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    SizedBox(height: 30,),
                     // 2. Catchy Headline
                     const Text(
                       "Unlock Full Access",
@@ -114,7 +115,7 @@ class PaywallPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      "Try all premium features free for 30 days.",
+                      "Free for 30 days, then ${package!.storeProduct.priceString} per year.",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                     ),
@@ -158,16 +159,19 @@ class PaywallPage extends StatelessWidget {
                         TextButton(
                           onPressed: () async {
                             final Uri url = Uri.parse(
-                              'https://www.thereadinesstrack.com/blank-1',
+                              'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
                             );
                             if (!await launchUrl(url)) {
                               throw Exception('Could not launch $url');
                             }
                           },
-                          child: const Text("Terms"),
+                          child: const Text("Terms of Use"),
                         ),
                         const Text("|", style: TextStyle(color: Colors.grey)),
-                        TextButton(
+                      
+                      ],
+                    ),
+                      TextButton(
                           onPressed: () async {
                             final Uri url = Uri.parse(
                               'https://www.thereadinesstrack.com/blank',
@@ -176,10 +180,8 @@ class PaywallPage extends StatelessWidget {
                               throw Exception('Could not launch $url');
                             }
                           },
-                          child: const Text("Privacy"),
+                          child: const Text("Privacy Policy"),
                         ),
-                      ],
-                    ),
                     const SizedBox(height: 40),
                   ],
                 ),
@@ -225,8 +227,8 @@ class PaywallPage extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Text(
-            "Yearly Membership",
+          Text(
+            package.storeProduct.title,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
@@ -236,6 +238,11 @@ class PaywallPage extends StatelessWidget {
             style: const TextStyle(fontSize: 18, color: Colors.black87),
           ),
           const SizedBox(height: 20),
+          Text(
+            package.storeProduct.priceString, // e.g. $29.99/year
+            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          const Text("Billed yearly"),
           SizedBox(
             width: double.infinity,
             height: 55,
@@ -259,6 +266,12 @@ class PaywallPage extends StatelessWidget {
                       ),
                     ),
             ),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            "Subscription automatically renews unless canceled at least 24 hours before the end of the current period.",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 12, color: Colors.black),
           ),
         ],
       ),
