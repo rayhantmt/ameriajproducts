@@ -97,55 +97,62 @@ class PaywallPage extends StatelessWidget {
             //     ),
             //   ),
             // ),
-
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 30,),
+                    SizedBox(height: Get.height * 0.04),
                     // 2. Catchy Headline
-                    const Text(
-                      "Unlock Full Access",
+                    Text(
+                      "Readiness Track Premium",
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: Get.height * 0.0001),
                     Text(
                       "Free for 30 days, then ${package!.storeProduct.priceString} per year.",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                     ),
-                    const SizedBox(height: 32),
-
+                    SizedBox(height: Get.height * 0.01),
+                    Text(
+                      'Unlock Full Access to Readiness Track',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(height: Get.height * 0.01),
                     // 3. Feature List
                     _buildFeature(
                       Icons.check_circle,
-                      "Unlimited Tracking of Readiness",
+                      "MedPro Status Tracking: Stay current on medical readiness.",
                     ),
                     _buildFeature(
                       Icons.check_circle,
-                      "Priority Customer Support",
+                      "Weapons & Range Qualification: Log and monitor your scores.",
                     ),
                     _buildFeature(
                       Icons.check_circle,
-                      "Advanced Data Analytics",
+                      "Physical Fitness Monitoring: Track your ACFT/fitness progress.",
                     ),
                     _buildFeature(
                       Icons.check_circle,
-                      "Cloud Sync across devices through one account",
+                      "Counseling Management: Keep organized records in one place.",
                     ),
 
-                    const SizedBox(height: 40),
+                    SizedBox(height: Get.height * 0.01),
 
                     // 4. The Subscription Card
                     if (package != null)
                       _buildSubscriptionCard(controller, package),
 
-                    const SizedBox(height: 24),
+                    SizedBox(height: Get.height*0.01),
 
                     // 5. Restore & Legal
                     Row(
@@ -168,21 +175,20 @@ class PaywallPage extends StatelessWidget {
                           child: const Text("Terms of Use"),
                         ),
                         const Text("|", style: TextStyle(color: Colors.grey)),
-                      
                       ],
                     ),
-                      TextButton(
-                          onPressed: () async {
-                            final Uri url = Uri.parse(
-                              'https://www.thereadinesstrack.com/blank',
-                            );
-                            if (!await launchUrl(url)) {
-                              throw Exception('Could not launch $url');
-                            }
-                          },
-                          child: const Text("Privacy Policy"),
-                        ),
-                    const SizedBox(height: 40),
+                    TextButton(
+                      onPressed: () async {
+                        final Uri url = Uri.parse(
+                          'https://www.thereadinesstrack.com/blank',
+                        );
+                        if (!await launchUrl(url)) {
+                          throw Exception('Could not launch $url');
+                        }
+                      },
+                      child: const Text("Privacy Policy"),
+                    ),
+                     SizedBox(height: Get.height*0.01),
                   ],
                 ),
               ),
@@ -231,13 +237,13 @@ class PaywallPage extends StatelessWidget {
             package.storeProduct.title,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 8),
+           SizedBox(height: Get.height*0.011),
           Text(
             controller.trialTermsText,
             textAlign: TextAlign.center,
             style: const TextStyle(fontSize: 18, color: Colors.black87),
           ),
-          const SizedBox(height: 20),
+           SizedBox(height: Get.height*0.02),
           Text(
             package.storeProduct.priceString, // e.g. $29.99/year
             style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -245,7 +251,7 @@ class PaywallPage extends StatelessWidget {
           const Text("Billed yearly"),
           SizedBox(
             width: double.infinity,
-            height: 55,
+            height: Get.height*0.055,
             child: ElevatedButton(
               onPressed: () => controller.purchasePackage(package),
               style: ElevatedButton.styleFrom(
@@ -267,7 +273,7 @@ class PaywallPage extends StatelessWidget {
                     ),
             ),
           ),
-          const SizedBox(height: 16),
+           SizedBox(height: Get.height*0.01),
           Text(
             "Subscription automatically renews unless canceled at least 24 hours before the end of the current period.",
             textAlign: TextAlign.center,
