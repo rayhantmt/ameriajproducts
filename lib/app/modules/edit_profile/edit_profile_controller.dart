@@ -52,8 +52,8 @@ var isLoading=false.obs;
       final formData = FormData.fromMap({
   "data": jsonEncode({
     "userName": namecontroller.text,
-    "countryCode": countryCode.value,
-    "mobile": phonecontroller.text,
+    "countryCode": '111',
+    "mobile": '11111111',
     "uic": uiccontroller.text,
     "rank": rankcontroller.text,
   }),

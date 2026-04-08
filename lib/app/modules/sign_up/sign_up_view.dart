@@ -12,10 +12,7 @@ class SignUpView extends StatelessWidget {
   Widget build(BuildContext context) {
     final fieldviewcontrorller = Get.find<SignUpPasswordviewController>();
     return Scaffold(
-      
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('')),
+      appBar: AppBar(backgroundColor: Colors.white, title: Text('')),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
@@ -42,7 +39,7 @@ class SignUpView extends StatelessWidget {
               ),
               SizedBox(height: Get.height * 0.02),
               Formfield(
-              controller: fieldviewcontrorller.firstNameController,
+                controller: fieldviewcontrorller.firstNameController,
                 tittle: 'Enter your First Name',
                 obsecuretext: false,
                 keyboardtype: TextInputType.text,
@@ -55,28 +52,31 @@ class SignUpView extends StatelessWidget {
                 keyboardtype: TextInputType.text,
               ),
               SizedBox(height: Get.height * 0.02),
-              Row(
-                children: [
-                   Obx(() => CountryCodePicker(
-              onChanged: (code) => fieldviewcontrorller.countryCode.value = code.dialCode ?? '+880',
-              initialSelection: fieldviewcontrorller.countryCode.value,
-              favorite: ['+880', 'BD'],
-              showCountryOnly: false,
-              showOnlyCountryWhenClosed: false,
-              alignLeft: false,
-            )),
-           
+              // Row(
+              //   children: [
+              //     Obx(
+              //       () => CountryCodePicker(
+              //         onChanged: (code) =>
+              //             fieldviewcontrorller.countryCode.value =
+              //                 code.dialCode ?? '+880',
+              //         initialSelection: fieldviewcontrorller.countryCode.value,
+              //         favorite: ['+880', 'BD'],
+              //         showCountryOnly: false,
+              //         showOnlyCountryWhenClosed: false,
+              //         alignLeft: false,
+              //       ),
+              //     ),
 
-                  Expanded(
-                    child: Formfield(
-                      controller: fieldviewcontrorller.mobileController,
-                      tittle: 'Enter you phone number',
-                      obsecuretext: false,
-                      keyboardtype: TextInputType.number,
-                    ),
-                  ),
-                ],
-              ),
+              //     Expanded(
+              //       child: Formfield(
+              //         controller: fieldviewcontrorller.mobileController,
+              //         tittle: 'Enter you phone number',
+              //         obsecuretext: false,
+              //         keyboardtype: TextInputType.number,
+              //       ),
+              //     ),
+              //   ],
+              // ),
               SizedBox(height: Get.height * 0.02),
               Formfield(
                 controller: fieldviewcontrorller.emailController,
@@ -101,10 +101,10 @@ class SignUpView extends StatelessWidget {
                   ),
                 ),
               ),
-SizedBox(height: Get.height * 0.02),
+              SizedBox(height: Get.height * 0.02),
               Obx(
                 () => Formfield(
-                controller: fieldviewcontrorller.confirmPasswordController,
+                  controller: fieldviewcontrorller.confirmPasswordController,
                   tittle: 'Confirmed Password',
                   obsecuretext: fieldviewcontrorller.isObscured1.value,
                   keyboardtype: TextInputType.text,
@@ -119,14 +119,15 @@ SizedBox(height: Get.height * 0.02),
                 ),
               ),
               SizedBox(height: Get.height * 0.02),
-             GestureDetector(
-  onTap:fieldviewcontrorller.signUp,
+              GestureDetector(
+                onTap: fieldviewcontrorller.signUp,
 
-  child: Obx(() => fieldviewcontrorller.isLoading.value
-      ? const Center(child: CircularProgressIndicator())
-      : CommonButton(tittle: 'Create Account')),
-),
-
+                child: Obx(
+                  () => fieldviewcontrorller.isLoading.value
+                      ? const Center(child: CircularProgressIndicator())
+                      : CommonButton(tittle: 'Create Account'),
+                ),
+              ),
             ],
           ),
         ),

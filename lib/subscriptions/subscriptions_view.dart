@@ -114,7 +114,7 @@ class PaywallPage extends StatelessWidget {
                     ),
                     SizedBox(height: Get.height * 0.0001),
                     Text(
-                      "Free for 30 days, then ${package!.storeProduct.priceString} per year.",
+                      "Free for 1 month,then ${package!.storeProduct.priceString} per year.",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                     ),

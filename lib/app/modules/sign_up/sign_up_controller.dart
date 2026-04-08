@@ -5,23 +5,21 @@ import 'package:ameriajproducts/data/api_services/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignUpPasswordviewController extends GetxController{
-  
-RxBool isObscured = false.obs;
+class SignUpPasswordviewController extends GetxController {
+  RxBool isObscured = false.obs;
 
   void toggleObscureText() {
     isObscured.value = !isObscured.value;
   }
+
   RxBool isObscured1 = false.obs;
 
   void toggleObscureText1() {
     isObscured1.value = !isObscured1.value;
   }
 
-final phoneController = TextEditingController();
+  final phoneController = TextEditingController();
   final countryCode = '+880'.obs; // Default country code
-
- 
 
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
@@ -31,7 +29,7 @@ final phoneController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
   // Country code and role can be default or selected from dropdown
-  
+
   final role = 'User'.obs;
 
   // Loading state
@@ -42,36 +40,36 @@ final phoneController = TextEditingController();
     isLoading.value = true;
 
     final body = {
-  "data": {
-    "firstName": firstNameController.text.trim(),
-    "lastName": lastNameController.text.trim(),
-    "email": emailController.text.trim().toLowerCase(),
-    "role": "User",
-    "countryCode": countryCode.value,
-    "mobile": mobileController.text.trim(),
-    "password": passwordController.text.trim(),
-    "confirmedPassword": confirmPasswordController.text.trim(),
-  }
-};
+      "data": {
+        "firstName": firstNameController.text.trim(),
+        "lastName": lastNameController.text.trim(),
+        "email": emailController.text.trim().toLowerCase(),
+        "role": "User",
+        "countryCode": '111',
+        "mobile": '12345678',
+        "password": passwordController.text.trim(),
+        "confirmedPassword": confirmPasswordController.text.trim(),
+      },
+    };
 
     try {
-      
       final response = await ApiService.post(
         endpoint: ApiConfig.signupEndpoint, // Update endpoint as per your API
         body: body,
-      
       );
-  print(response);
-      
+      print(response);
+
       Get.snackbar('Success', 'Account created successfully');
-       Get.offAllNamed(Approutes.login);
-       
+      Get.offAllNamed(Approutes.login);
     } on AppException catch (e) {
-      
-      Get.snackbar("e", e.message, backgroundColor: Colors.redAccent, colorText: Colors.white);
+      Get.snackbar(
+        "e",
+        e.message,
+        backgroundColor: Colors.redAccent,
+        colorText: Colors.white,
+      );
     } finally {
       isLoading.value = false;
-     
     }
   }
 
