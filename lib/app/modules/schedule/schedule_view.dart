@@ -1,3 +1,6 @@
+import 'package:ameriajproducts/app/common_widgets/date_picking.dart';
+import 'package:ameriajproducts/app/common_widgets/date_picking_schedule.dart';
+import 'package:ameriajproducts/app/common_widgets/time_picker_field.dart';
 import 'package:ameriajproducts/app/modules/schedule/schedule_controller.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
 
@@ -310,30 +313,31 @@ class ScheduleView extends StatelessWidget {
                             ),
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: TextFormField(
-                            controller: controller.dateController,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hint: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'select',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14,
-                                      color: Color(0xff6B7280),
-                                    ),
-                                  ),
-                                  Icon(
-                                    Icons.calendar_month,
-                                    color: Color(0xff6B7280),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                          child: DatePickerFieldschedule(tittle: 'Select', hint: 'Select',textcontroller: controller.dateController,),
+                          // child: TextFormField(
+                          //   controller: controller.dateController,
+                          //   decoration: InputDecoration(
+                          //     border: InputBorder.none,
+                          //     hint: Row(
+                          //       mainAxisAlignment:
+                          //           MainAxisAlignment.spaceBetween,
+                          //       children: [
+                          //         Text(
+                          //           'select',
+                          //           style: TextStyle(
+                          //             fontWeight: FontWeight.w400,
+                          //             fontSize: 14,
+                          //             color: Color(0xff6B7280),
+                          //           ),
+                          //         ),
+                          //         Icon(
+                          //           Icons.calendar_month,
+                          //           color: Color(0xff6B7280),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ),
+                          // ),
                         ),
                         SizedBox(height: 20),
                         Text(
@@ -356,30 +360,31 @@ class ScheduleView extends StatelessWidget {
                             ),
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: TextFormField(
-                            controller: controller.timeController,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hint: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'select',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14,
-                                      color: Color(0xff6B7280),
-                                    ),
-                                  ),
-                                  Icon(
-                                    Icons.access_time,
-                                    color: Color(0xff6B7280),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                          child: TimePickerFieldSchedule(title: 'Select', hint: 'Select',textController: controller.timeController,),
+                          // child: TextFormField(
+                          //   controller: controller.timeController,
+                          //   decoration: InputDecoration(
+                          //     border: InputBorder.none,
+                          //     hint: Row(
+                          //       mainAxisAlignment:
+                          //           MainAxisAlignment.spaceBetween,
+                          //       children: [
+                          //         Text(
+                          //           'select',
+                          //           style: TextStyle(
+                          //             fontWeight: FontWeight.w400,
+                          //             fontSize: 14,
+                          //             color: Color(0xff6B7280),
+                          //           ),
+                          //         ),
+                          //         Icon(
+                          //           Icons.access_time,
+                          //           color: Color(0xff6B7280),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ),
+                          // ),
                         ),
                         SizedBox(height: 20),
                         Text(
