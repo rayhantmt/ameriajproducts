@@ -64,39 +64,6 @@ class PaywallPage extends StatelessWidget {
 
         return CustomScrollView(
           slivers: [
-            // 1. Modern Header with Close Button
-            // SliverAppBar(
-            //   expandedHeight: 220,
-            //   pinned: true,
-            //   leading: IconButton(
-            //     icon: const CircleAvatar(
-            //       backgroundColor: Colors.black26,
-            //       child: Icon(Icons.abc, color: Colors.white),
-            //     ),
-            //     onPressed: () => Get.back(),
-            //   ),
-            //   flexibleSpace: FlexibleSpaceBar(
-            //     background: Container(
-            //       decoration: const BoxDecoration(
-            //         gradient: LinearGradient(
-            //           colors: [
-            //             Colors.greenAccent,
-            //             Colors.green,
-            //           ], // Modern Blue/Purple
-            //           begin: Alignment.topLeft,
-            //           end: Alignment.bottomRight,
-            //         ),
-            //       ),
-            //       child: const Center(
-            //         child: Icon(
-            //           Icons.rocket_launch,
-            //           size: 80,
-            //           color: Colors.white,
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // ),
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.all(24.0),
