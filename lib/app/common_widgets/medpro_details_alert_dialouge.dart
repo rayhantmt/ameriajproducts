@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/common_widgets/date_picking.dart';
 import 'package:ameriajproducts/app/modules/medpro_details/medpro_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -92,20 +93,21 @@ class _MedproDetailsAlertDialougeState
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(width: 1, color: Color(0xff4B5563)),
                 ),
-                child: TextFormField(
-                  controller: dateController,
-                  decoration: InputDecoration(
-                    hint: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Select'),
-                        Icon(Icons.calendar_month_outlined),
-                      ],
-                    ),
+                child: DatePickerField(tittle: '', hint: 'Select date',textcontroller: dateController,),
+                // child: TextFormField(
+                //   controller: dateController,
+                //   decoration: InputDecoration(
+                //     hint: Row(
+                //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //       children: [
+                //         Text('Select'),
+                //         Icon(Icons.calendar_month_outlined),
+                //       ],
+                //     ),
 
-                    border: InputBorder.none,
-                  ),
-                ),
+                //     border: InputBorder.none,
+                //   ),
+                // ),
               ),
               SizedBox(height: 20),
               Row(
