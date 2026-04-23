@@ -1,3 +1,4 @@
+import 'package:ameriajproducts/app/common_widgets/date_picking.dart';
 import 'package:ameriajproducts/app/modules/admin_details/admin_details_controller.dart';
 import 'package:ameriajproducts/app/modules/admin_history/admin_history_controller.dart';
 import 'package:flutter/material.dart';
@@ -136,31 +137,32 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
               ),
               SizedBox(height: 10),
               Container(
-                height: 45,
+                height: 50,
                 decoration: BoxDecoration(
                   border: Border.all(width: 1, color: Color(0xffE5E7EB)),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: TextFormField(
-                  controller: controller.vehicleregistrationcontroller,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hint: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '23-06-2015',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: Color(0xff6B7280),
-                          ),
-                        ),
-                        Icon(Icons.calendar_month_outlined),
-                      ],
-                    ),
-                  ),
-                ),
+                child: DatePickerField(tittle: '', hint: 'Select Date',textcontroller: controller.vehicleregistrationcontroller,),
+                // child: TextFormField(
+                //   controller: controller.vehicleregistrationcontroller,
+                //   decoration: InputDecoration(
+                //     border: InputBorder.none,
+                //     hint: Row(
+                //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //       children: [
+                //         Text(
+                //           '23-06-2015',
+                //           style: TextStyle(
+                //             fontWeight: FontWeight.w400,
+                //             fontSize: 14,
+                //             color: Color(0xff6B7280),
+                //           ),
+                //         ),
+                //         Icon(Icons.calendar_month_outlined),
+                //       ],
+                //     ),
+                //   ),
+                // ),
               ),
               SizedBox(height: 20),
               Row(
@@ -177,31 +179,32 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
               ),
               SizedBox(height: 10),
               Container(
-                height: 45,
+                height: 50,
                 decoration: BoxDecoration(
                   border: Border.all(width: 1, color: Color(0xffE5E7EB)),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: TextFormField(
-                  controller: controller.vehicleinsurancecontroller,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hint: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '23-06-2015',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: Color(0xff6B7280),
-                          ),
-                        ),
-                        Icon(Icons.calendar_month_outlined),
-                      ],
-                    ),
-                  ),
-                ),
+                child: DatePickerField(tittle: '', hint: 'Select Date',textcontroller: controller.vehicleinsurancecontroller,),
+                // child: TextFormField(
+                //   controller: controller.vehicleinsurancecontroller,
+                //   decoration: InputDecoration(
+                //     border: InputBorder.none,
+                //     hint: Row(
+                //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //       children: [
+                //         Text(
+                //           '23-06-2015',
+                //           style: TextStyle(
+                //             fontWeight: FontWeight.w400,
+                //             fontSize: 14,
+                //             color: Color(0xff6B7280),
+                //           ),
+                //         ),
+                //         Icon(Icons.calendar_month_outlined),
+                //       ],
+                //     ),
+                //   ),
+                // ),
               ),
               SizedBox(height: 20),
               Row(
