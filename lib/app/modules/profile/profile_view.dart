@@ -2,6 +2,7 @@ import 'package:ameriajproducts/app/common_widgets/profile_container.dart';
 import 'package:ameriajproducts/app/modules/main_screen/main_screen_controller.dart';
 import 'package:ameriajproducts/app/routes/app_routes.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
+import 'package:ameriajproducts/data/global_service_controller.dart';
 import 'package:ameriajproducts/subscriptions/subscriptions_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,8 +15,9 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<MainScreenController>();
+    final globalvaribale=Get.find<GlobalServiceController>();
     final storage=GetStorage();
-    final name=storage.read('name');
+    final name=globalvaribale.fullname;
     final email=storage.read('email');
     return Scaffold(
       backgroundColor: Colors.white,

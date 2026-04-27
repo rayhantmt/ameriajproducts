@@ -1,6 +1,7 @@
 import 'package:ameriajproducts/app/modules/home/home_contorller.dart';
 import 'package:ameriajproducts/app/modules/home/home_model.dart';
 import 'package:ameriajproducts/app/utils/appimages.dart';
+import 'package:ameriajproducts/data/global_service_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -12,10 +13,11 @@ class HomeView extends GetView<HomeContorller> {
 
   @override
   Widget build(BuildContext context) {
+   final globalvariable=Get.find<GlobalServiceController>();
     final storage = GetStorage();
     final storedToken = storage.read('token');
-    final name = storage.read('name');
-    final uic = storage.read('uic');
+     final name = globalvariable.fullname.value??"Update name from profile";//storage.read('name');
+     final uic = globalvariable.uic.value??'Update uic from profile';//storage.read('uic');
     controller.getstatus();
     //final int percent = controller.completedpercentage.value.toInt();
     print(
@@ -80,7 +82,7 @@ class HomeView extends GetView<HomeContorller> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  ('Welcome, ${name ?? "kindly fill your name on edit profile section"}.')
+                                  ('Welcome, ${globalvariable.fullname?? "kindly fill your name on edit profile section"}.')
                                       .toUpperCase(),
                                   style: TextStyle(
                                     fontWeight: FontWeight.w700,
@@ -103,7 +105,7 @@ class HomeView extends GetView<HomeContorller> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'UIC: ${uic ?? "Plz update ifno from edit profile section"}',
+                                  'UIC: ${globalvariable.uic ?? "Plz update ifno from edit profile section"}',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 14,

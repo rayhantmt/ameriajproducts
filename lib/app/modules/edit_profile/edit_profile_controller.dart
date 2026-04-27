@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:ameriajproducts/data/api_services/dio_client.dart';
+import 'package:ameriajproducts/data/global_service_controller.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart' hide FormData, MultipartFile;
 import 'package:get_storage/get_storage.dart';
@@ -12,9 +13,9 @@ import 'package:http_parser/http_parser.dart';
 class EditProfileController extends GetxController {
   final countryCode = '+880'.obs;
   final phonecontroller = TextEditingController();
-  final namecontroller=TextEditingController();
-  final uiccontroller=TextEditingController();
-  final rankcontroller=TextEditingController();
+  final namecontroller = TextEditingController();
+  final uiccontroller = TextEditingController();
+  final rankcontroller = TextEditingController();
 
   Rxn<XFile> profileImage = Rxn<XFile>();
   Rxn<XFile> pickedImage = Rxn<XFile>();
@@ -39,9 +40,11 @@ class EditProfileController extends GetxController {
       Get.snackbar('Error', 'Failed to pick profile image: $e');
     }
   }
-var isLoading=false.obs;
+
+  var isLoading = false.obs;
   Future<void> updateprofile() async {
-    isLoading.value=true;
+    final globalvaribl=Get.find<GlobalServiceController>();
+    isLoading.value = true;
     final token = GetStorage().read('token');
     if (token == null) {
       Get.snackbar("Error", "Token not found");
@@ -50,50 +53,48 @@ var isLoading=false.obs;
     }
     try {
       final formData = FormData.fromMap({
-  "data": jsonEncode({
-    "userName": namecontroller.text,
-    "countryCode": '111',
-    "mobile": '11111111',
-    "uic": uiccontroller.text,
-    "rank": rankcontroller.text,
-  }),
+        "data": jsonEncode({
+          "userName": namecontroller.text,
+          "countryCode": '111',
+          "mobile": '11111111',
+          "uic": uiccontroller.text,
+          "rank": rankcontroller.text,
+        }),
 
-  if (profileImage.value != null)
-    "photo": await MultipartFile.fromFile(
-      profileImage.value!.path,
-      filename: profileImage.value!.name,
-      contentType: MediaType("image", "png"),
-    ),
-});
+        if (profileImage.value != null)
+          "photo": await MultipartFile.fromFile(
+            profileImage.value!.path,
+            filename: profileImage.value!.name,
+            contentType: MediaType("image", "png"),
+          ),
+      });
 
       final response = await _client.postFormData(
         url: 'https://readiness-track-server.onrender.com/api/v1/user',
         data: formData,
-        token: token
-        
+        token: token,
       );
-
-      print('✅ User Created: ${response.data}');
-      Get.snackbar('Success', '✅ User Created: ${response.data}');
-    } on DioError catch (e) {
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        print('✅ User Created: ${response.data}');
+        Get.snackbar('Success', '✅ User Created: ${response.data}');
+      //   globalvaribl.fullname.value=namecontroller.text;
+      //  // globalvaribl.rank.value=rankcontroller.text;
+      //   globalvaribl.uic.value=uiccontroller.text;
+      globalvaribl.updaedinfo(namecontroller.text, uiccontroller.text);
+      }
+    } on DioException catch (e) {
       if (e.response != null) {
-        print(
-          '❌ DioError Response: Status Code ${e.response?.statusCode}, Data: ${e.response?.data}',
-        );
         Get.snackbar(
           'Error',
           'Status: ${e.response?.statusCode}, ${e.response?.data}',
         );
       } else {
-        print('❌ DioError (No Response): ${e.message}');
         Get.snackbar('Error', 'Network Error: ${e.message}');
       }
     } catch (e) {
-      print('❌ Unexpected Error: $e');
       Get.snackbar('Error', '❌ Unexpected Error: $e');
-    }
-    finally{
-      isLoading.value=false;
+    } finally {
+      isLoading.value = false;
     }
   }
 }
