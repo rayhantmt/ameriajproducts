@@ -76,7 +76,7 @@ class EditProfileController extends GetxController {
       );
       if (response.statusCode == 200 || response.statusCode == 201) {
         print('✅ User Created: ${response.data}');
-        Get.snackbar('Success', '✅ User Created: ${response.data}');
+        Get.snackbar('Success', '✅ Profile Updated Successfully');
       //   globalvaribl.fullname.value=namecontroller.text;
       //  // globalvaribl.rank.value=rankcontroller.text;
       //   globalvaribl.uic.value=uiccontroller.text;
