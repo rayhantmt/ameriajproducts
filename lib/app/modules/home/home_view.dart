@@ -16,7 +16,7 @@ class HomeView extends GetView<HomeContorller> {
     final storedToken = storage.read('token');
     final name = storage.read('name');
     final uic = storage.read('uic');
-    //controller.getstatus();
+    controller.getstatus();
     //final int percent = controller.completedpercentage.value.toInt();
     print(
       '📦 This is from home screen confirming the Stored Token: $storedToken',
