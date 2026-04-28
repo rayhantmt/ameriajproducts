@@ -24,6 +24,7 @@ final qualificationController = Get.find<QualificationController>();
   final scoreController = TextEditingController();
   final dateController = TextEditingController();
   final levelController = TextEditingController();
+  final remaindercontroller=TextEditingController();
   
 
   Future<void> submitQualification() async {

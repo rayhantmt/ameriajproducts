@@ -16,8 +16,8 @@ class HomeView extends GetView<HomeContorller> {
    final globalvariable=Get.find<GlobalServiceController>();
     final storage = GetStorage();
     final storedToken = storage.read('token');
-     final name = globalvariable.fullname.value??"Update name from profile";//storage.read('name');
-     final uic = globalvariable.uic.value??'Update uic from profile';//storage.read('uic');
+     final name = globalvariable.fullname.value;//storage.read('name');
+     final uic = globalvariable.uic.value;//storage.read('uic');
     controller.getstatus();
     //final int percent = controller.completedpercentage.value.toInt();
     print(
@@ -82,7 +82,7 @@ class HomeView extends GetView<HomeContorller> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  ('Welcome, ${globalvariable.fullname?? "kindly fill your name on edit profile section"}.')
+                                  ('Welcome, ${name}.'??"Update your name form edit profile")
                                       .toUpperCase(),
                                   style: TextStyle(
                                     fontWeight: FontWeight.w700,

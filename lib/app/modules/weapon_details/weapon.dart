@@ -142,6 +142,45 @@ class Weapon extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+                   
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                          'The number of days you want a remainder for next qualification ',
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                            color: Color(0xff4B5563),
+                          ),
+                        ),
+                  ),
+                ],
+              ),
+                 Container(
+                height: 45,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Color(0xffE5E7EB)),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: TextFormField(
+                  controller: controller.remaindercontroller,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hint: Text(
+                      'Enter',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color(0xff6B7280),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20,),
               Row(
                 children: [
                   Icon(Icons.insert_drive_file, color: Color(0xff6642F5)),
