@@ -147,7 +147,7 @@ class Weapon extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                          'The number of days you want a remainder for next qualification ',
+                          'The number of days you want a remainder for next qualification',
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
                           style: TextStyle(

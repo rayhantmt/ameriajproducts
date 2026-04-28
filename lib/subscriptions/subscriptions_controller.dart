@@ -82,6 +82,7 @@ class SubscriptionController extends GetxController {
       isPremium.value = result.customerInfo.entitlements.active.containsKey(entitlementId);
 
       if (isPremium.value) {
+    
         Get.offAllNamed('/mainscreen');
         Get.snackbar(
           '🎉 Success',
