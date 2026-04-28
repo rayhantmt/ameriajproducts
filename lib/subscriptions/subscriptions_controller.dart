@@ -78,7 +78,6 @@ class SubscriptionController extends GetxController {
     try {
       final PurchaseResult result = await Purchases.purchasePackage(package);
       
-      // Update premium status based on active entitlements
       isPremium.value = result.customerInfo.entitlements.active.containsKey(entitlementId);
 
       if (isPremium.value) {
