@@ -77,7 +77,7 @@ class Weapon extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
-              DatePickerField(tittle: '', hint: '2/2/2026',textcontroller:controller.dateController,),
+              DatePickerField(tittle: '', hint: 'Select Date',textcontroller:controller.dateController,),
               // Container(
               //   height: 45,
               //   decoration: BoxDecoration(
