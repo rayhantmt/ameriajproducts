@@ -82,7 +82,7 @@ class FitnessDetailsView extends StatelessWidget {
               SizedBox(height: 10),
               DatePickerField(
                 tittle: '',
-                hint: '2/2/2026',
+                hint: 'Select Date',
                 textcontroller: maincontroller.datecontroller,
               ),
               // Container(
