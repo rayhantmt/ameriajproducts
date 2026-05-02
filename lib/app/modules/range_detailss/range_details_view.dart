@@ -113,7 +113,7 @@ class RangeDetailsView extends StatelessWidget {
               //     ),
               //   ),
               // ),
-              DatePickerField(tittle: '', hint: '2/2/2025',textcontroller: maincontroller.dateController,),
+              DatePickerField(tittle: '', hint: 'Select Date',textcontroller: maincontroller.dateController,),
               SizedBox(height: 20),
               Row(
                 children: [
