@@ -32,7 +32,6 @@ class AdminDetailsView extends GetView<AdminDetailsController> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    //onTap: () => Get.toNamed(Approutes.adminhistory),
                     onTap: secondcontroller.fetchCounseling,
                     child: Container(
                       height: 30,
