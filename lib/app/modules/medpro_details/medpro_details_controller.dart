@@ -80,14 +80,12 @@ class MedproDetailsController extends GetxController {
         // Map the data to MedProModel
         medProList.value = data.map((e) => MedProModel.fromJson(e)).toList();
 
-        // Flattening tests into a single list for easier access if needed
         var allTests = <MedProTestModel>[];
         for (var medPro in medProList) {
-          allTests.addAll(medPro.tests); // Flatten tests into a single list
+          allTests.addAll(medPro.tests); 
         }
         Get.snackbar('Success', 'Successfully got data');
-        // You can now use medProList to pass the whole dataset to the next screen
-        // Example: Get.toNamed("/nextScreen", arguments: allTests);
+
         Get.toNamed(Approutes.medprohistory);
       } else {
         Get.snackbar(

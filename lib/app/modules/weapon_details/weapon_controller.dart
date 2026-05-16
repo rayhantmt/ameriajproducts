@@ -42,7 +42,8 @@ final qualificationController = Get.find<QualificationController>();
         "date": dateController.text.trim(),
         "weaponName": nameController.text.trim(),
         "score": scoreController.text.trim(),
-        "qualificationLevel": qualificationController.selectedQualification.value.toLowerCase()
+        "qualificationLevel": qualificationController.selectedQualification.value.toLowerCase(),
+        'remainder_days':remaindercontroller.text
     }
 };
 
