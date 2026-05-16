@@ -37,17 +37,17 @@ class CounselingDetailsController extends GetxController{
 
     try {
       final response = await ApiService.post(
-        endpoint: ApiConfig.counseling, // Replace with actual endpoint
+        endpoint: ApiConfig.counseling,
         body: body,
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
         },
       );
-
-      print("Submitted successfully: $response");
       Get.snackbar("Success", "Counseling data submitted");
-      Get.back();
+      //Get.back();
+      print("Submitted successfully: $response");
+
     } on AppException catch (e) {
       Get.snackbar("Submission Failed", e.message,
           backgroundColor: Colors.redAccent, colorText: Colors.white);

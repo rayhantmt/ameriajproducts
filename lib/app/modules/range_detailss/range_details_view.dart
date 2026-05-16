@@ -14,7 +14,7 @@ class RangeDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<RangeHistoryController>();
     final maincontroller = Get.find<RangeController>();
-    ;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -113,7 +113,11 @@ class RangeDetailsView extends StatelessWidget {
               //     ),
               //   ),
               // ),
-              DatePickerField(tittle: '', hint: 'Select Date',textcontroller: maincontroller.dateController,),
+              DatePickerField(
+                tittle: '',
+                hint: 'Select Date',
+                textcontroller: maincontroller.dateController,
+              ),
               SizedBox(height: 20),
               Row(
                 children: [
@@ -160,19 +164,19 @@ class RangeDetailsView extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                          'The number of days you want a remainder for next qualification',
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                            color: Color(0xff4B5563),
-                          ),
-                        ),
+                      'The number of days you want a remainder for next qualification',
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: Color(0xff4B5563),
+                      ),
+                    ),
                   ),
                 ],
               ),
-                 Container(
+              Container(
                 height: 45,
                 decoration: BoxDecoration(
                   border: Border.all(width: 1, color: Color(0xffE5E7EB)),
@@ -193,7 +197,7 @@ class RangeDetailsView extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Row(
                 children: [
                   Icon(Icons.speed, color: Color(0xffEF8E44)),
