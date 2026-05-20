@@ -1,4 +1,5 @@
 import 'package:ameriajproducts/app/common_widgets/medpro_card.dart';
+import 'package:ameriajproducts/app/common_widgets/medpro_card_fa.dart';
 import 'package:ameriajproducts/app/common_widgets/medpro_history_details_alert_dialouge.dart';
 import 'package:ameriajproducts/app/modules/medpro_details/medpro_model.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +84,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                         context: context,
                         builder: (context) => MedproHistoryDetailsAlertDialouge(date: immunization[0].displayDate,name: immunization[0].name,)
                       ),
-                      child: MedproCard(
+                      child: MedproCardFa(
                         tittle: 'Immunization',
                         color: Color(0xffEF4444),
                         icon: FontAwesomeIcons.syringe,
@@ -111,7 +112,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                         context: context,
                         builder: (context) => MedproHistoryDetailsAlertDialouge(date: dentalTests[0].displayDate,name: dentalTests[0].name,)
                       ),
-                      child: MedproCard(
+                      child: MedproCardFa(
                         tittle: 'Dental',
                         color: Color(0xff22C55E),
                         icon: FontAwesomeIcons.tooth,
@@ -134,7 +135,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                         context: context,
                         builder: (context) => MedproHistoryDetailsAlertDialouge(date: hivTests[0].displayDate,name: hivTests[0].name,)
                       ),
-                      child: MedproCard(tittle: 'HIV', color: Color(0xffEF44B9), icon: FontAwesomeIcons.ribbon))
+                      child: MedproCardFa(tittle: 'HIV', color: Color(0xffEF44B9), icon: FontAwesomeIcons.ribbon))
                   ],
                 ),
                 SizedBox(height: 20,),
@@ -152,7 +153,7 @@ var dnaTests = tests.where((test) => test.type == 'dna').toList();
                         context: context,
                         builder: (context) => MedproHistoryDetailsAlertDialouge(date: dnaTests[0].displayDate,name: dnaTests[0].name,)
                       ),
-                      child: MedproCard(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna))
+                      child: MedproCardFa(tittle: 'DNA', color: Color(0xff22C5A4), icon: FontAwesomeIcons.dna))
                   ],
                 ),
           ],

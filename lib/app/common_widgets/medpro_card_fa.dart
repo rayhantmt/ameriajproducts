@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class MedproCard extends StatelessWidget {
-  const MedproCard({
+class MedproCardFa extends StatelessWidget {
+  const MedproCardFa({
     super.key,
     required this.tittle,
     required this.color,
@@ -11,7 +12,7 @@ class MedproCard extends StatelessWidget {
 
   final String tittle;
   final Color color;
-  final IconData icon;
+  final FaIconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class MedproCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(icon, color: color),
+            FaIcon(icon, color: color),
             Text(
               tittle,
               style: TextStyle(

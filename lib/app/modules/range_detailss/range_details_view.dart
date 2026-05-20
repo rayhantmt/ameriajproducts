@@ -121,7 +121,7 @@ class RangeDetailsView extends StatelessWidget {
               SizedBox(height: 20),
               Row(
                 children: [
-                  Icon(
+                  FaIcon(
                     FontAwesomeIcons.gun,
                     size: 20,
                     color: Color(0xff22C55E),
@@ -318,6 +318,7 @@ class RangeDetailsView extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(height: Get.height*0.3,)
             ],
           ),
         ),

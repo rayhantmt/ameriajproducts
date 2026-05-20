@@ -36,6 +36,7 @@ class RangeController extends GetxController {
             .selectedQualification
             .value
             .toLowerCase(),
+            'reminderDays':remaindercontroller.text
       },
     };
 

@@ -338,6 +338,7 @@ class Weapon extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(height: Get.height*0.3,)
             ],
           ),
         ),

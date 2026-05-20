@@ -1,5 +1,6 @@
 import 'package:ameriajproducts/app/common_widgets/common_button.dart';
 import 'package:ameriajproducts/app/common_widgets/medpro_card.dart';
+import 'package:ameriajproducts/app/common_widgets/medpro_card_fa.dart';
 import 'package:ameriajproducts/app/common_widgets/medpro_details_alert_dialouge.dart';
 import 'package:ameriajproducts/app/modules/medpro_details/medpro_details_controller.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +84,7 @@ class MedproView extends GetView<MedproDetailsController> {
                       builder: (context) =>
                           MedproDetailsAlertDialouge(type: 'immunization'),
                     ),
-                    child: MedproCard(
+                    child: MedproCardFa(
                       tittle: 'Immunization',
                       color: Color(0xffEF4444),
                       icon: FontAwesomeIcons.syringe,
@@ -113,7 +114,7 @@ class MedproView extends GetView<MedproDetailsController> {
                       builder: (context) =>
                           MedproDetailsAlertDialouge(type: 'dental'),
                     ),
-                    child: MedproCard(
+                    child: MedproCardFa(
                       tittle: 'Dental',
                       color: Color(0xff22C55E),
                       icon: FontAwesomeIcons.tooth,
@@ -143,7 +144,7 @@ class MedproView extends GetView<MedproDetailsController> {
                       builder: (context) =>
                           MedproDetailsAlertDialouge(type: 'hiv'),
                     ),
-                    child: MedproCard(
+                    child: MedproCardFa(
                       tittle: 'HIV',
                       color: Color(0xffEF44B9),
                       icon: FontAwesomeIcons.ribbon,
@@ -173,7 +174,7 @@ class MedproView extends GetView<MedproDetailsController> {
                       builder: (context) =>
                           MedproDetailsAlertDialouge(type: 'dna'),
                     ),
-                    child: MedproCard(
+                    child: MedproCardFa(
                       tittle: 'DNA',
                       color: Color(0xff22C5A4),
                       icon: FontAwesomeIcons.dna,
